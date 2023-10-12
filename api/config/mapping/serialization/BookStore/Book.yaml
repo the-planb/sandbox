@@ -1,0 +1,25 @@
+---
+# App\BookStore\Domain\Model\VO\Title:
+#  attributes:
+#    title:
+#      groups: [write, read]
+
+#
+App\BookStore\Domain\Model\Book:
+  attributes:
+    id:
+      groups: [read]
+    title:
+      groups: [read]
+    price:
+      groups: [read]
+    author:
+      groups: [read]
+
+
+App\BookStore\Domain\Model\Author:
+  attributes:
+    id:
+      groups: [read]
+    name:
+      groups: [read]

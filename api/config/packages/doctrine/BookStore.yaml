@@ -1,0 +1,14 @@
+doctrine:
+    orm:
+        mappings:
+            BookStore:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/doctrine/BookStore'
+                prefix: App\BookStore\Domain\Model
+    dbal:
+        types:
+            BookStore.BookId: App\BookStore\Framework\Doctrine\DBAL\BookIdDBALType
+            BookStore.AuthorId: App\BookStore\Framework\Doctrine\DBAL\AuthorIdDBALType
+            BookStore.Price: App\BookStore\Framework\Doctrine\DBAL\PriceDBALType
+            BookStore.Title: App\BookStore\Framework\Doctrine\DBAL\TitleDBALType

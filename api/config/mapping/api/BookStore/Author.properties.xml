@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<properties xmlns="https://api-platform.com/schema/metadata/properties-3.0">
+  <property resource="App\BookStore\Application\Input\AuthorInput" name="name">
+    <openapiContext>
+      <values>
+        <value name="type">object</value>
+        <value name="example">
+          <values>
+            <value name="firstName">M&#xF3;nica</value>
+            <value name="lastName">Gutierrez Perez</value>
+          </values>
+        </value>
+      </values>
+    </openapiContext>
+  </property>
+</properties>

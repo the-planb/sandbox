@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\BookStore\Domain\Model\Book" table="bookstore_books" repository-class="App\BookStore\Framework\Doctrine\Repository\BookDoctrineRepository">
+    <id name="id" type="BookStore.BookId"/>
+    <field name="title" type="BookStore.Title"/>
+    <field name="price" type="float"/>
+    <many-to-one field="author" target-entity="App\BookStore\Domain\Model\Author"  >
+
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

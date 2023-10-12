@@ -1,0 +1,217 @@
+{
+  "pages": {
+    "login": {
+      "title": "Accede con tu cuenta",
+      "signin": "Acceder",
+      "signup": "Registro",
+      "divider": "o",
+      "fields": {
+        "email": "Email",
+        "password": "Contraseña"
+      },
+      "errors": {
+        "validEmail": "El email no es correcto"
+      },
+      "buttons": {
+        "submit": "Login",
+        "forgotPassword": "¿Olvidaste la contraseña?",
+        "noAccount": "¿No tienes cuenta?",
+        "rememberMe": "Recuerdame"
+      }
+    },
+    "forgotPassword": {
+      "title": "¿Olvidaste la contraseña??",
+      "fields": {
+        "email": "Email"
+      },
+      "errors": {
+        "validEmail": "El email no es correcto"
+      },
+      "buttons": {
+        "submit": "Enviar instrucciones de restablecimiento"
+      }
+    },
+    "register": {
+      "title": "Regístrese para obtener su cuenta",
+      "fields": {
+        "email": "Email",
+        "password": "Contraseña"
+      },
+      "errors": {
+        "validEmail": "El email no es correcto"
+      },
+      "buttons": {
+        "submit": "Registrarse",
+        "haveAccount": "¿Tienes una cuenta?"
+      }
+    },
+    "updatePassword": {
+      "title": "Actualizar contraseña",
+      "fields": {
+        "password": "Nueva contraseña",
+        "confirmPassword": "Confirmar nueva contraseña"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Las contraseñas no coinciden"
+      },
+      "buttons": {
+        "submit": "Actualizar"
+      }
+    },
+    "error": {
+      "info": "Puede que hayas olvidado añadir el componente {{action}} al recurso {{resource}}.",
+      "404": "Lo sentimos, la página que ha visitado no existe.",
+      "resource404": "¿Está seguro de haber creado el recurso {{resource}}?.",
+      "backHome": "Volver al inicio"
+    }
+  },
+  "actions": {
+    "list": "Lista",
+    "create": "Crear",
+    "edit": "Editar",
+    "show": "Mostrar"
+  },
+  "buttons": {
+    "create": "Crear",
+    "save": "Guardar",
+    "logout": "Cerrar sesión",
+    "delete": "Borrar",
+    "edit": "Editar",
+    "cancel": "Cancelar",
+    "confirm": "¿Estas seguro?",
+    "filter": "Búsqueda",
+    "search": "Buscar",
+    "clear": "Limpiar",
+    "refresh": "Refrescar",
+    "show": "Mostrar",
+    "undo": "Deshacer",
+    "import": "Importar",
+    "clone": "Clonar",
+    "notAccessTitle": "No tienes permiso para acceder"
+  },
+  "warnWhenUnsavedChanges": "¿Estás seguro de que quieres irte? Tienes cambios sin guardar",
+  "notifications": {
+    "success": "Exito",
+    "error": "Error (status code: {{statusCode}})",
+    "undoable": "Tienes {{seconds}} segundos para deshacer",
+    "createSuccess": "Creado con éxito {{resource}}",
+    "createError": "Se ha producido un error al crear {{resource}} (status code: {{statusCode}})",
+    "deleteSuccess": "Eliminado con éxito {{resource}}",
+    "deleteError": "Error al eliminar {{resource}} (status code: {{statusCode}})",
+    "editSuccess": "Editado con éxito {{resource}}",
+    "editError": "Error al editar {{resource}} (status code: {{statusCode}})",
+    "importProgress": "Importandoo: {{processed}}/{{total}}"
+  },
+  "loading": "Cargando",
+  "tags": {
+    "clone": "Clonar"
+  },
+  "dashboard": {
+    "dashboard": "Escritorio",
+    "titles": {
+      "list": "Escritorio"
+    }
+  },
+  "locale": {
+    "es": "Español",
+    "en": "English"
+  },
+  "filters": {
+    "operators": {
+      "partial": "contiene",
+      "exact": "igual a",
+      "start": "empieza por",
+      "end": "termina en"
+    }
+  },
+  "bookstore": {
+    "bookstore": "Libreria",
+    "titles": {
+      "list": "Librería"
+    }
+  },
+  "bookstore/books": {
+    "bookstore/books": "Libros",
+    "fields": {
+      "id": "Id",
+      "title": "Título",
+      "summary": "Sinopsis",
+      "author": "Autor",
+      "tags": "Etiquetas",
+      "@type": "@type"
+    },
+    "columns": {
+      "id": "Id",
+      "title": "Título",
+      "author": "Autor",
+      "price": "precio"
+    },
+    "filters": {
+      "id": "Id",
+      "title": "Título",
+      "summary": "Sinopsis",
+      "price.amount": "Precio"
+    },
+    "fieldsets": {
+      "data": "Datos",
+      "metadata": "Metadata"
+    },
+    "titles": {
+      "create": "Nuevo Libro",
+      "edit": "Editar Libro",
+      "list": "Libros",
+      "show": "Mostar Libro"
+    }
+  },
+  "bookstore/tags": {
+    "bookstore/tags": "Etiquetas",
+    "fields": {
+      "id": "Id",
+      "name": "Etiqueta"
+    },
+    "columns": {
+      "id": "Id",
+      "name": "Etiqueta"
+    },
+    "filters": {
+      "id": "Id",
+      "name": "Nombre"
+    },
+    "fieldsets": {
+      "tag": "Etiqueta"
+    },
+    "titles": {
+      "create": "Nueva Etiqueta",
+      "edit": "Editar Etiqueta",
+      "list": "Etiquetas",
+      "show": "Mostar Etiqueta"
+    }
+  },
+  "bookstore/authors": {
+    "bookstore/authors": "Autores",
+    "fields": {
+      "id": "Id",
+      "name": "Nombre"
+    },
+    "columns": {
+      "id": "Id",
+      "name": "Nombre"
+    },
+    "filters": {
+      "id": "Id",
+      "name.firstName": "Nombre"
+    },
+    "fieldsets": {
+      "data": "Autor"
+    },
+    "titles": {
+      "create": "Nuevo Autor",
+      "edit": "Editar Autor",
+      "list": "Autores",
+      "show": "Mostar Autor"
+    }
+  },
+  "table": {
+    "actions": "Acciones"
+  }
+}
