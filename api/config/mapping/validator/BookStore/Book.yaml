@@ -1,0 +1,11 @@
+---
+App\BookStore\Domain\Model\Book:
+  properties:
+    title:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\BookStore\Domain\Model\VO\Constraint\TitleConstraint: ~
+    price:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\BookStore\Domain\Model\VO\Constraint\PriceConstraint: ~
+    author:
+      - Symfony\Component\Validator\Constraints\NotNull: ~

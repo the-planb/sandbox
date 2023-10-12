@@ -64,12 +64,38 @@
         reverse_proxy @www http://{$WWW_UPSTREAM}
         reverse_proxy @admin http://{$ADMIN_UPSTREAM}
 
-       reverse_proxy  {
+
+#===== sin cache ============
+#       # Add trailing slash for directory requests
+#       @canonicalPath {
+#           file {path}/index.php
+#           not path */
+#       }
+#       redir @canonicalPath {path}/ 308
+#       # If the requested file does not exist, try index files
+#       @indexFiles file {
+#           try_files {path} {path}/index.php index.php
+#           split_path .php
+#       }
+#       rewrite @indexFiles {http.matchers.file.relative}
+
+#        # FrankenPHP!
+#        @phpFiles path *.php
+#        php @phpFiles
+        #
+#        encode zstd gzip
+#        file_server
+        #
+#        respond 404
+#===== sin cache ============
+
+#===== con cache ============
+        reverse_proxy  {
             to http://varnish:6081
             header_up Host "localhost" # Won't work with another value or transparent preset
             header_up X-Real-IP {remote}
-       }
-
+        }
+#===== con cache ============
     }
 }
 

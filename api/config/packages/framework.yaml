@@ -24,7 +24,7 @@ framework:
         log: true
     
     http_cache:    
-        enabled: false
+        enabled: true
 
 when@test:
     framework:

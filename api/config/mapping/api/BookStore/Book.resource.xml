@@ -1,15 +1,31 @@
 <?xml version="1.0"?>
-<resources xmlns="https://api-platform.com/schema/metadata/resources-3.0"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="https://api-platform.com/schema/metadata/resources-3.0 https://api-platform.com/schema/metadata/resources-3.0.xsd">
-    <resource class="App\BookStore\Domain\Model\Book" routePrefix="bookstore" shortName="Book">
-        <operations>
-            <operation class="ApiPlatform\Metadata\Get"/>
-            <operation class="ApiPlatform\Metadata\GetCollection"/>
-            <operation class="ApiPlatform\Metadata\Post" input="App\BookStore\Application\Input\BookInput"
-                       processor="App\BookStore\Framework\Api\State\Processor\CreateBookProcessor"/>
-            <operation class="ApiPlatform\Metadata\Put" input="App\BookStore\Application\Input\BookInput"
-                       processor="App\BookStore\Framework\Api\State\Processor\UpdateBookProcessor"/>
-        </operations>
-    </resource>
+<resources xmlns="https://api-platform.com/schema/metadata/resources-3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://api-platform.com/schema/metadata/resources-3.0 https://api-platform.com/schema/metadata/resources-3.0.xsd">
+  <resource class="App\BookStore\Domain\Model\Book" routePrefix="bookstore" shortName="Book">
+    <operations>
+      <operation class="ApiPlatform\Metadata\Get"/>
+      <operation class="ApiPlatform\Metadata\GetCollection" provider="App\BookStore\Framework\Api\State\Provider\GetBookProvider"/>
+      <operation class="ApiPlatform\Metadata\Post" input="App\BookStore\Application\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\CreateBookProcessor"/>
+      <operation class="ApiPlatform\Metadata\Put" input="App\BookStore\Application\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\UpdateBookProcessor"/>
+    </operations>
+    <normalizationContext>
+      <values>
+        <value name="groups">
+          <values>
+            <value>read.bookstore.book</value>
+            <value>read</value>
+          </values>
+        </value>
+      </values>
+    </normalizationContext>
+    <denormalizationContext>
+      <values>
+        <value name="groups">
+          <values>
+            <value>write.bookstore.book</value>
+            <value>write</value>
+          </values>
+        </value>
+      </values>
+    </denormalizationContext>
+  </resource>
 </resources>

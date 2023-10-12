@@ -4,29 +4,29 @@ declare(strict_types=1);
 
 namespace App\BookStore\Domain\Model;
 
-use App\BookStore\Domain\Model\VO\FullName;
+use App\BookStore\Domain\Model\VO\Price;
 use App\BookStore\Domain\Model\VO\Title;
 
 class Book
 {
     private BookId $id;
     private Title $title;
+    private Price $price;
     private Author $author;
-    private float $price;
 
-    public function __construct(Title $title, Author $author, float $price = 10)
+    public function __construct(Title $title, Price $price, Author $author)
     {
         $this->id = new BookId();
         $this->title = $title;
-        $this->author = $author;
         $this->price = $price;
+        $this->author = $author;
     }
 
-    public function update(Title $title, Author $author, float $price = 10): self
+    public function update(Title $title, Price $price, Author $author): self
     {
         $this->title = $title;
-        $this->author = $author;
         $this->price = $price;
+        $this->author = $author;
 
         return $this;
     }
@@ -41,18 +41,13 @@ class Book
         return $this->title;
     }
 
-    public function getAuthor(): Author
-    {
-        return $this->author;
-    }
-
-    public function getPrice(): float
+    public function getPrice(): Price
     {
         return $this->price;
     }
 
-    public function getName(): FullName
+    public function getAuthor(): Author
     {
-        return $this->author->getName();
+        return $this->author;
     }
 }

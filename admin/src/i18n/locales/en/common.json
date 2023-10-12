@@ -91,10 +91,10 @@
   },
   "filters": {
     "operators": {
-      "partial": "contains",
-      "exact": "equals",
-      "start": "begins with",
-      "end": "ends in"
+      "contains": "contains",
+      "equals": "equals",
+      "starts": "begins with",
+      "ends": "ends in"
     }
   },
   "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",

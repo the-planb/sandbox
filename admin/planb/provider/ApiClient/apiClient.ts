@@ -11,6 +11,7 @@ export function ApiClient(mode: ApiClientMode = 'ClientMode') {
 
   return {
     get: async (path: string, options: RequestInit = {}) => {
+
       return fetchJson(baseUrl, path, {
         ...options,
         headers: {
@@ -19,12 +20,13 @@ export function ApiClient(mode: ApiClientMode = 'ClientMode') {
           'Accept': 'application/ld+json'
         },
         method: 'GET'
-      }).then((data) => {
-        return IriComposer({
-          data,
-          headers: options.headers
-        })
       })
+        // .then((data) => {
+        //   return IriComposer({
+        //     data,
+        //     headers: options.headers
+        //   })
+        // })
     },
     post: async (path: string, data: object, options: RequestInit = {}) => {
       return fetchJson(baseUrl, path, {
@@ -38,6 +40,16 @@ export function ApiClient(mode: ApiClientMode = 'ClientMode') {
         method: 'POST'
       })
     },
-
+    delete: async (path: string, options: RequestInit = {}) => {
+      return fetchJson(baseUrl, path, {
+        ...options,
+        headers: {
+          ...options.headers,
+          'Content-Type': 'application/ld+json',
+          'Accept': 'application/ld+json'
+        },
+        method: 'DELETE'
+      })
+    },
   }
 }

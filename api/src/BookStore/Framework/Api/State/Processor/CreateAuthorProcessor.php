@@ -6,8 +6,8 @@ namespace App\BookStore\Framework\Api\State\Processor;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
-use App\BookStore\Application\Command\CreateAuthor;
 use App\BookStore\Application\Input\AuthorInput;
+use App\BookStore\Application\UseCase\Create\CreateAuthor;
 use League\Tactician\CommandBus;
 
 final class CreateAuthorProcessor implements ProcessorInterface

@@ -1,0 +1,5 @@
+---
+App\BookStore\Domain\Model\VO\Title:
+  attributes:
+    title:
+      groups: [read, write]

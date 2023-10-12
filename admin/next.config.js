@@ -7,7 +7,7 @@ module.exports = {
     prependData: `@import "global.module.scss";`
   },
   env: {
-    NEXT_PUBLIC_SERVER_NAME: process.env.NEXT_PUBLIC_SERVER_NAME,
+    NEXT_PUBLIC_ENTRYPOINT: process.env.NEXT_PUBLIC_ENTRYPOINT,
   },
   async redirects() {
     return [
@@ -29,7 +29,7 @@ module.exports = {
     ]
   },
   experimental: {
-    newNextLinkBehavior: true,
+    newNextLinkBehavior: true
   },
   transpilePackages: [
     '@refinedev/antd',

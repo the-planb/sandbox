@@ -1,7 +1,9 @@
 import * as process from "process";
 import {ApiClientMode} from "./apiClient";
 
-const serverUrl: string = (process.env.NEXT_PUBLIC_SERVER_NAME as string) || 'http://localhost'
+const serverUrl: string = (process.env.NEXT_PUBLIC_ENTRYPOINT as string) || 'http://localhost'
+
+
 
 const modes = {
   ProxyMode: new URL('/admin/api', serverUrl),

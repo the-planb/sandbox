@@ -5,7 +5,6 @@ import {Table} from "antd";
 import {IBook} from "@model";
 import {useTranslate} from "@refinedev/core";
 import {RangeFilter, TextFilter} from "@planb/components/filters";
-import {ApiClient} from "@planb/provider";
 
 export const BookList = () => {
 
@@ -27,7 +26,7 @@ export const BookList = () => {
     tableProps={{
       expandable: {
         expandedRowRender: (record) => {
-          return record.summary
+          return record.title
         }
       }
     }}

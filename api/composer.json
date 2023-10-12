@@ -33,8 +33,7 @@
         "league/tactician-bundle": "^1.4",
         "league/tactician-doctrine": "^1.2",
         "lexik/jwt-authentication-bundle": "^2.19",
-        "planb/planb": "v1.0.0",
-        "planb/planb-bundle": "dev-develop"
+        "planb/planb-bundle": "dev-main"
     },
     "require-dev": {
         "api-platform/schema-generator": "^5.0",
@@ -62,7 +61,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "PlanB\\": "planb/"
         }
     },
     "autoload-dev": {

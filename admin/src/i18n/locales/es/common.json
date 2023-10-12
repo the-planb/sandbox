@@ -118,10 +118,10 @@
   },
   "filters": {
     "operators": {
-      "partial": "contiene",
-      "exact": "igual a",
-      "start": "empieza por",
-      "end": "termina en"
+      "contains": "contiene",
+      "equals": "igual a",
+      "starts": "empieza por",
+      "ends": "termina en"
     }
   },
   "bookstore": {

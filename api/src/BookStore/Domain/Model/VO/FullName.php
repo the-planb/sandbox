@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace App\BookStore\Domain\Model\VO;
 
+use PlanB\Validation\Traits\ValidableTrait;
+
 final class FullName
 {
+    use ValidableTrait;
     private string $firstName;
     private string $lastName;
 
     public function __construct(string $firstName, string $lastName)
     {
+        $this->assert(firstName: $firstName, lastName: $lastName);
         $this->firstName = $firstName;
         $this->lastName = $lastName;
     }

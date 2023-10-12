@@ -31,8 +31,8 @@ api_platform:
         pagination_maximum_items_per_page: 50
         cache_headers:
             etag: false
-            max_age: 0
-            shared_max_age: 3600
+            max_age: 10
+            shared_max_age: 2592000
             vary: [ 'Content-Type', 'Authorization', 'Origin' ]
         #            invalidation:
         #                xkey:
@@ -40,3 +40,13 @@ api_platform:
         
         extra_properties:
             standard_put: true
+
+
+when@dev:
+    api_platform:
+        defaults:
+            cache_headers:
+                max_age: 0
+                shared_max_age: 0
+    
+    

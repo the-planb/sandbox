@@ -9,7 +9,7 @@ services:
     volumes:
       - ./api:/app
       - /app/var
-      - ./api/frankenphp/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./api/frankenphp/Caddyfile.dev:/etc/caddy/Caddyfile:ro
       - ./api/frankenphp/conf.d/app.dev.ini:/usr/local/etc/php/conf.d/app.dev.ini:ro
       # If you develop on Mac or Windows you can remove the vendor/ directory
       #  from the bind-mount for better performance by enabling the next line:
@@ -28,9 +28,9 @@ services:
       target: dev
     volumes:
       - ./www:/srv/app
-    environment:
-      API_PLATFORM_CREATE_CLIENT_ENTRYPOINT: http://php
-      API_PLATFORM_CREATE_CLIENT_OUTPUT: .
+#    environment:
+#      API_PLATFORM_CREATE_CLIENT_ENTRYPOINT: http://php
+#      API_PLATFORM_CREATE_CLIENT_OUTPUT: .
       # On Linux, you may want to comment the following line for improved performance
       #WATCHPACK_POLLING: "true"
       
@@ -40,9 +40,9 @@ services:
       target: dev
     volumes:
       - ./admin:/srv/app
-    environment:
-      API_PLATFORM_CREATE_CLIENT_ENTRYPOINT: http://php
-      API_PLATFORM_CREATE_CLIENT_OUTPUT: .
+#    environment:
+#      API_PLATFORM_CREATE_CLIENT_ENTRYPOINT: http://php
+#      API_PLATFORM_CREATE_CLIENT_OUTPUT: .
       # On Linux, you may want to comment the following line for improved performance
       #WATCHPACK_POLLING: "true"
 

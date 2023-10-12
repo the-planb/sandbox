@@ -35,15 +35,15 @@ services:
 
   www:
     image: ${IMAGES_PREFIX:-}www
-    environment:
-      NEXT_PUBLIC_ENTRYPOINT: http://php
-      NEXT_PUBLIC_SERVER_NAME: https://${SERVER_NAME}
-  
+#    environment:
+#      NEXT_PUBLIC_ENTRYPOINT: http://php
+#      NEXT_PUBLIC_SERVER_NAME: https://${SERVER_NAME}
+#  
   admin:
     image: ${IMAGES_PREFIX:-}admin
-    environment:
-      NEXT_PUBLIC_ENTRYPOINT: http://php
-      NEXT_PUBLIC_SERVER_NAME: https://${SERVER_NAME} 
+#    environment:
+#      NEXT_PUBLIC_ENTRYPOINT: http://php
+#      NEXT_PUBLIC_SERVER_NAME: https://${SERVER_NAME} 
 
   varnish:
     tty: true

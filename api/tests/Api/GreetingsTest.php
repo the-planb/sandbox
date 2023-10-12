@@ -4,9 +4,12 @@ namespace App\Tests\Api;
 
 use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 
+/**
+ * @internal
+ */
 class GreetingsTest extends ApiTestCase
 {
-    public function testCreateGreeting(): void
+    public function test_create_greeting(): void
     {
         static::createClient()->request('POST', '/greetings', [
             'json' => [

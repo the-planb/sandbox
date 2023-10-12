@@ -6,6 +6,8 @@ namespace App\BookStore\Domain\Repository;
 
 use App\BookStore\Domain\Model\Book;
 use App\BookStore\Domain\Model\BookId;
+use App\BookStore\Domain\Model\BookList;
+use PlanB\Domain\Criteria\Criteria;
 
 interface BookRepository
 {
@@ -14,4 +16,6 @@ interface BookRepository
     public function delete(BookId $bookId): void;
 
     public function findById(BookId $bookId): ?Book;
+
+    public function match(Criteria $criteria): BookList;
 }

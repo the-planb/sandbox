@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace App\BookStore\Domain\Model\VO;
 
 use PlanB\Type\IntegerValue;
+use PlanB\Validation\Traits\ValidableTrait;
 
 final class Price implements IntegerValue
 {
+    use ValidableTrait;
     private ?int $amount;
 
     public function __construct(?int $amount)
     {
+        $this->assert(amount: $amount);
         $this->amount = $amount;
     }
 

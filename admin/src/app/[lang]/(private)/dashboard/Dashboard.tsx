@@ -1,22 +1,17 @@
 'use client'
 
 import {Button} from "antd";
-import {useState} from "react";
+import fetchJson from "@planb/provider/ApiClient/fetchJson";
+import {ApiUrl} from "@planb/provider";
 
 export default function Dashboard() {
-  const [count, setCounter] = useState<number>(0)
-  const handle = () => {
-    setCounter(count + 1)
-  }
 
-  const prepare = (count: number) => {
-    return count * 5
+  const handle = async () => {
+    const url = ApiUrl("ClientMode")
+    fetchJson(url, '/api/bookstore/books')
   }
 
   return <>
-
     <Button onClick={handle}>Dale</Button>
-
-    COUNT: {prepare(count)}
   </>
 }

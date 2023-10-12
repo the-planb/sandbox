@@ -15,15 +15,15 @@ export const TextFilter = ({value, onChange}: TextFilterProps) => {
 
   const t = useTranslate()
   const operators = {
-    exact: t('filters.operators.exact'),
-    partial: t('filters.operators.partial'),
-    start: t('filters.operators.start'),
-    end: t('filters.operators.end')
+    equals: t('filters.operators.equals'),
+    contains: t('filters.operators.contains'),
+    starts: t('filters.operators.starts'),
+    ends: t('filters.operators.ends')
   }
 
   const [data, setData] = useState({
     value: value?.value ?? null,
-    operator: value?.operator ?? 'partial'
+    operator: value?.operator ?? 'contains'
   })
 
   const triggerChange = (changedValue: Partial<FilterData>) => {

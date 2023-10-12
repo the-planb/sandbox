@@ -8,18 +8,19 @@
       </values>
     </openapiContext>
   </property>
+  <property resource="App\BookStore\Application\Input\BookInput" name="price">
+    <openapiContext>
+      <values>
+        <value name="type">object</value>
+        <value name="example">1400</value>
+      </values>
+    </openapiContext>
+  </property>
   <property resource="App\BookStore\Application\Input\BookInput" name="author">
     <openapiContext>
       <values>
         <value name="type">object</value>
         <value name="example"/>
-      </values>
-    </openapiContext>
-  </property>
-  <property resource="App\BookStore\Application\Input\BookInput" name="price">
-    <openapiContext>
-      <values>
-        <value name="example">1400</value>
       </values>
     </openapiContext>
   </property>

@@ -1,0 +1,5 @@
+---
+App\BookStore\Domain\Model\VO\Price:
+  attributes:
+    amount:
+      groups: [read, write]

@@ -6,6 +6,8 @@ namespace App\BookStore\Domain\Repository;
 
 use App\BookStore\Domain\Model\Author;
 use App\BookStore\Domain\Model\AuthorId;
+use App\BookStore\Domain\Model\AuthorList;
+use PlanB\Domain\Criteria\Criteria;
 
 interface AuthorRepository
 {
@@ -14,4 +16,6 @@ interface AuthorRepository
     public function delete(AuthorId $authorId): void;
 
     public function findById(AuthorId $authorId): ?Author;
+
+    public function match(Criteria $criteria): AuthorList;
 }

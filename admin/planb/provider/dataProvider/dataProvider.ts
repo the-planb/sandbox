@@ -45,6 +45,7 @@ export function DataProvider(): IDataProvider {
 
     create: async ({resource, variables}) => {
       const url = `${resource}`;
+
       // const {data} = await httpClient.post(url, variables);
       const data = {}
       return {
@@ -64,12 +65,22 @@ export function DataProvider(): IDataProvider {
 
 
     deleteOne: async ({resource, id, variables}) => {
-      const url = `${resource}/${id}`;
-      // const {data} = await httpClient.delete(url, (variables as AxiosRequestConfig));
-      const data = {}
-      return {
-        data,
-      };
+      const path = `${resource}/${id}`;
+
+      return apiClient.delete(path)
+        .then((response: BaseRecord) => {
+          console.log(response)
+          return {
+            data: response,
+          }
+        })
+
+
+      // // const {data} = await httpClient.delete(url, (variables as AxiosRequestConfig));
+      // const data = {}
+      // return {
+      //   data,
+      // };
     },
 
     deleteMany: async ({resource, ids, variables}) => {

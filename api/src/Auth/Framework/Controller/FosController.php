@@ -4,17 +4,14 @@ namespace App\Auth\Framework\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use FOS\HttpCache\UserContext\DefaultHashGenerator;
 
 final class FosController extends AbstractController
 {
-
     public function __invoke()
     {
         if ('application/vnd.fos.user-context-hash' == strtolower($_SERVER['HTTP_ACCEPT'])) {
-
-            //encontrar el rol más restrictivo
-            //o ver como lo hace foshttpcache para symfony
+            // encontrar el rol más restrictivo
+            // o ver como lo hace foshttpcache para symfony
             $user = $this->getUser();
             $hash = md5(serialize($user->getRoles()));
 
