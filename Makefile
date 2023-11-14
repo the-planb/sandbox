@@ -65,6 +65,9 @@ restart/php:
 build/prod: --prod
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build
 
+build/prod/admin: --prod
+	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build admin
+
 build/dev: --dev
 	docker-compose --env-file=.env build
 

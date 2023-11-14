@@ -17,10 +17,10 @@ import {useTranslation} from "@i18n";
 import {LayoutProps} from "@components/layout";
 import vars from '@styles/vars.module.scss'
 
-export async function generateStaticParams() {
-  return languages.map((lang) => ({lang}))
-}
-
+// export async function generateStaticParams() {
+//   return languages.map((lang) => ({lang}))
+// }
+//
 
 const Theme = {
   token: {
@@ -70,6 +70,7 @@ export default async function Layout({children, params}: LayoutProps) {
             ]}
             options={{
               syncWithLocation: true,
+              disableTelemetry: true
             }}
           >
             {children}

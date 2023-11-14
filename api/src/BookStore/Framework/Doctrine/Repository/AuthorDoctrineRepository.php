@@ -9,6 +9,9 @@ use App\BookStore\Domain\Model\AuthorId;
 use App\BookStore\Domain\Model\AuthorList;
 use App\BookStore\Domain\Repository\AuthorRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\Query\QueryException;
 use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
@@ -35,7 +38,10 @@ final class AuthorDoctrineRepository extends ServiceEntityRepository implements 
 
     public function findById(AuthorId $authorId): ?Author
     {
-        return $this->find($authorId);
+        $author = $this->find($authorId);
+        assert($author instanceof Author || is_null($author));
+
+        return $author;
     }
 
     public function match(Criteria $criteria): AuthorList
@@ -44,5 +50,23 @@ final class AuthorDoctrineRepository extends ServiceEntityRepository implements 
         $data = $this->matching($doctrineCriteria);
 
         return AuthorList::collect($data);
+    }
+
+    /**
+     * @throws QueryException
+     * @throws NonUniqueResultException
+     * @throws NoResultException
+     */
+    public function totalItems(Criteria $criteria = null): int
+    {
+        $doctrineCriteria = DoctrineCriteriaConverter::convertOnlyFilters($criteria);
+
+        $query = $this->createQueryBuilder('A')
+            ->select('count(A.id)')
+            ->addCriteria($doctrineCriteria)
+            ->getQuery()
+        ;
+
+        return $query->getSingleScalarResult();
     }
 }

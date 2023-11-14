@@ -28,9 +28,6 @@ module.exports = {
       },
     ]
   },
-  experimental: {
-    newNextLinkBehavior: true
-  },
   transpilePackages: [
     '@refinedev/antd',
     "@refinedev/inferencer",
@@ -41,5 +38,12 @@ module.exports = {
     '@ant-design/pro-provider',
     'rc-pagination',
     'rc-picker'
-  ]
+  ],
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 };

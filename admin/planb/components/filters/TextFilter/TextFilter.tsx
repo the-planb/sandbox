@@ -16,7 +16,9 @@ export const TextFilter = ({value, onChange}: TextFilterProps) => {
   const t = useTranslate()
   const operators = {
     equals: t('filters.operators.equals'),
+    not_equals: t('filters.operators.not_equals'),
     contains: t('filters.operators.contains'),
+    not_contains: t('filters.operators.not_contains'),
     starts: t('filters.operators.starts'),
     ends: t('filters.operators.ends')
   }

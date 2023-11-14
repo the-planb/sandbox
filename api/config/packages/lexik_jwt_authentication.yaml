@@ -11,8 +11,8 @@ lexik_jwt_authentication:
             prefix:  Bearer
             name:    Authorization
 
-        # check token in a cookie
-        cookie:
-            enabled: true
-            name:    token
-    #        name:    BEARER
+#        # check token in a cookie
+#        cookie:
+#            enabled: true
+#            name:    token
+#    #        name:    BEARER

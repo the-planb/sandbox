@@ -7,8 +7,8 @@ import {ApiUrl} from "@planb/provider";
 export default function Dashboard() {
 
   const handle = async () => {
-    const url = ApiUrl("ClientMode")
-    fetchJson(url, '/api/bookstore/books')
+    const url = ApiUrl("ProxyMode")
+    fetchJson(url, '/bookstore/books')
   }
 
   return <>

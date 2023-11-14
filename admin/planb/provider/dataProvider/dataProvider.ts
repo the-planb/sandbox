@@ -4,7 +4,7 @@ import {GenerateQuery, PreloadHeaderCollection, PreloadHeaderItem} from "./utils
 import {ApiClient} from "@planb/provider";
 
 export function DataProvider(): IDataProvider {
-  const apiClient = ApiClient()
+  const apiClient = ApiClient("ProxyMode")
 
   return {
     getList: async ({resource, pagination, filters, sorters, meta = {}}) => {
@@ -40,7 +40,6 @@ export function DataProvider(): IDataProvider {
             data: response,
           }
         })
-
     },
 
     create: async ({resource, variables}) => {
@@ -69,7 +68,6 @@ export function DataProvider(): IDataProvider {
 
       return apiClient.delete(path)
         .then((response: BaseRecord) => {
-          console.log(response)
           return {
             data: response,
           }

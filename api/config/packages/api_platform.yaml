@@ -31,7 +31,7 @@ api_platform:
         pagination_maximum_items_per_page: 50
         cache_headers:
             etag: false
-            max_age: 10
+#            max_age: 1000
             shared_max_age: 2592000
             vary: [ 'Content-Type', 'Authorization', 'Origin' ]
         #            invalidation:

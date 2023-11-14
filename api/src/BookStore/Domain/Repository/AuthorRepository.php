@@ -18,4 +18,6 @@ interface AuthorRepository
     public function findById(AuthorId $authorId): ?Author;
 
     public function match(Criteria $criteria): AuthorList;
+
+    public function totalItems(): int;
 }

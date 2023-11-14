@@ -7,7 +7,6 @@ import {useTranslate} from "@refinedev/core";
 import {RangeFilter, TextFilter} from "@planb/components/filters";
 
 export const BookList = () => {
-
   const t = useTranslate()
 
   return <TableData<IBook>
@@ -17,18 +16,15 @@ export const BookList = () => {
     filters={{
       title: <TextFilter/>,
       summary: <TextFilter/>,
-      'price.amount': <RangeFilter/>
+      price: <RangeFilter/>
     }}
 
-    pagination={{
-      pageSize: 15
-    }}
     tableProps={{
       expandable: {
         expandedRowRender: (record) => {
           return record.title
         }
-      }
+      },
     }}
   >
 
@@ -50,19 +46,16 @@ export const BookList = () => {
       }}
     />
 
-    {/*<Table.Column*/}
-    {/*  width={100}*/}
-    {/*  dataIndex="price.amount"*/}
-    {/*  title={t('bookstore/books.columns.price')}*/}
-    {/*  sorter={true}*/}
-    {/*  render={(_, record: IBook) => {*/}
-    {/*    const {price} = record*/}
-    {/*    return price.currency === 'EUR' ?*/}
-    {/*      `${price.amount} €` :*/}
-    {/*      `$${price.amount}`*/}
-
-    {/*  }}*/}
-    {/*/>*/}
+    <Table.Column
+      width={100}
+      dataIndex="price"
+      title={t('bookstore/books.columns.price')}
+      sorter={true}
+      render={(_, record: IBook) => {
+        const {price} = record
+        return `${price} €`
+      }}
+    />
 
   </TableData>
 }

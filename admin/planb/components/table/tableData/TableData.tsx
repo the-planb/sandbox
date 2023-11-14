@@ -58,13 +58,20 @@ export const TableData = <TQueryFnData extends BaseRecord = BaseRecord,
   } = useTable<TQueryFnData, TError, TSearchVariables, TData>
   ({
     ...params,
+    sorters: {
+      initial: [{
+        field: 'id',
+        order: "asc"
+      }],
+      ...params.sorters
+    },
     filters: {
       mode: "server",
       defaultBehavior: 'replace',
     },
     syncWithLocation: true,
     pagination: {
-      pageSize: 15
+      pageSize: 10
     },
     onSearch: onSearch
   });
@@ -76,8 +83,7 @@ export const TableData = <TQueryFnData extends BaseRecord = BaseRecord,
       ..._tableProps.pagination,
       showSizeChanger: false,
       hideOnSinglePage: true,
-    },
-    ...tableParams
+    }
   }
 
   const searchFormProps = {

@@ -118,8 +118,10 @@
   },
   "filters": {
     "operators": {
-      "contains": "contiene",
       "equals": "igual a",
+      "not_equals": "diferente a",
+      "contains": "contiene",
+      "not_contains": "no contiene",
       "starts": "empieza por",
       "ends": "termina en"
     }

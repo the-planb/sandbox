@@ -28,19 +28,23 @@ const HeaderToPaths = (header: string): Array<string> => {
     .map(XPathToJson)
 }
 
-const GetIriPromises = (data: object, paths: Array<string>): Map<string, Promise<any>> => {
+const GetIriPromises = (data: object, paths: Array<string>, headers: HeadersInit): Map<string, Promise<any>> => {
 
   const promises = new Map()
-  const baseUrl = ApiUrl("ClientMode")
+  const baseUrl = ApiUrl("ServerMode")
 
+  if ('Preload' in headers) {
+    delete headers['Preload']
+  }
 
   paths.forEach((path: string) => {
-
     JSONPath
       .nodes(data, path)
       .forEach(({path, value}) => {
         const key = JSONPath.stringify(path)
-        promises.set(key, fetchJson(baseUrl, value, {}))
+        promises.set(key, fetchJson(baseUrl, value, {
+          headers
+        }))
       })
   })
 
@@ -65,7 +69,7 @@ export const IriComposer = async ({data, headers = {}}: IriComposerInput): Promi
   if (header === null) return data
 
   const paths = HeaderToPaths(header)
-  const promises = GetIriPromises(data, paths)
+  const promises = GetIriPromises(data, paths, headers)
   const keys = Array.from(promises.keys())
   const values = await Promise.all(promises.values())
 

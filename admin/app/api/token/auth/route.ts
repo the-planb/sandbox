@@ -4,8 +4,6 @@ import {cookies} from "next/headers";
 import {ApiUrl} from "@planb/provider";
 
 const SetCookies = (data: { token: string, }) => {
-
-
   const jwt = decode(data.token) as JwtPayload
   const exp = new Date(jwt.exp as number * 1000)
   const user = btoa(JSON.stringify(jwt))
@@ -48,7 +46,6 @@ export async function POST(request: NextRequest) {
       status
     })
   }
-
 
   SetCookies(json)
   return NextResponse.json({code: 200}, {

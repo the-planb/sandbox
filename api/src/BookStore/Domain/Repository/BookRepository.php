@@ -18,4 +18,6 @@ interface BookRepository
     public function findById(BookId $bookId): ?Book;
 
     public function match(Criteria $criteria): BookList;
+
+    public function totalItems(Criteria $criteria = null): int;
 }

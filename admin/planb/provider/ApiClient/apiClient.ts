@@ -1,12 +1,11 @@
 'use client'
 
 import {ApiUrl} from "@planb/provider";
-import {IriComposer} from "./iriComposer";
 import fetchJson from "./fetchJson";
 
 export type ApiClientMode = 'ProxyMode' | 'ClientMode' | 'ServerMode'
 
-export function ApiClient(mode: ApiClientMode = 'ClientMode') {
+export function ApiClient(mode: ApiClientMode = 'ProxyMode') {
   const baseUrl = ApiUrl(mode)
 
   return {
@@ -21,12 +20,6 @@ export function ApiClient(mode: ApiClientMode = 'ClientMode') {
         },
         method: 'GET'
       })
-        // .then((data) => {
-        //   return IriComposer({
-        //     data,
-        //     headers: options.headers
-        //   })
-        // })
     },
     post: async (path: string, data: object, options: RequestInit = {}) => {
       return fetchJson(baseUrl, path, {
