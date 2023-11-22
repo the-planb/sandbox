@@ -1,18 +1,16 @@
-import {Button, Card, Form, FormInstance, FormProps} from "antd";
+import { Button, Card, Form, type FormInstance, type FormProps } from 'antd'
 
 import css from './style.module.scss'
-import {useTranslate} from "@refinedev/core";
-import {ReactNode} from "react";
-import {FilterList, FilterValueList} from "@planb/components/table/tableData/filterPanel/types";
+import { useTranslate } from '@refinedev/core'
+import { type ReactNode } from 'react'
+import { type FilterList, type FilterValueList } from '@planb/components/table/tableData/filterPanel/types'
 
 interface FilterPanelProps extends FormProps {
-  filters: FilterList,
+  filters: FilterList
   defaultValues?: FilterValueList
 }
 
-
 const mergeDefaultValues = (filters: FilterList, defaultValues?: FilterValueList): FilterValueList => {
-
   const emptyValues = Object.keys(filters).reduce((carry, name) => {
     return {
       ...carry,
@@ -27,21 +25,19 @@ const mergeDefaultValues = (filters: FilterList, defaultValues?: FilterValueList
     ...emptyValues,
     ...defaultValues
   }
-
 }
 
-export const FilterPanel = ({filters, defaultValues, resource, ...formProps}: FilterPanelProps) => {
-
+export const FilterPanel = ({ filters, defaultValues, resource, ...formProps }: FilterPanelProps) => {
   const t = useTranslate()
 
   const onReset = () => {
-    const form = (formProps.form as FormInstance);
+    const form = (formProps.form as FormInstance)
     const values = mergeDefaultValues(filters, defaultValues)
 
     form.resetFields()
     form.setFieldsValue(values)
     form.submit()
-  };
+  }
 
   return <Form {...formProps} className={css.filterForm} layout={'vertical'}>
     <Card title={t('buttons.filter')} bordered={false} className={css.filterPanel} actions={[
@@ -61,5 +57,4 @@ export const FilterPanel = ({filters, defaultValues, resource, ...formProps}: Fi
       })}
     </Card>
   </Form>
-
 }

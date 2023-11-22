@@ -1,16 +1,16 @@
-import React from "react";
-import {Grid, Layout as AntdLayout} from "antd";
-import {RefineThemedLayoutV2Props, ThemedLayoutContextProvider} from "@refinedev/antd";
-import {Header, Sider} from "@components/layout";
+import React from 'react'
+import { Grid, Layout as AntdLayout } from 'antd'
+import { type RefineThemedLayoutV2Props, ThemedLayoutContextProvider } from '@refinedev/antd'
+import { Header, Sider } from '@components/layout'
 
-export const Layout: React.FC<RefineThemedLayoutV2Props> = ({children, OffLayoutArea,}) => {
-  const breakpoint = Grid.useBreakpoint();
+export const Layout: React.FC<RefineThemedLayoutV2Props> = ({ children, OffLayoutArea }) => {
+  const breakpoint = Grid.useBreakpoint()
 
-  const isSmall = typeof breakpoint.sm === "undefined" ? true : breakpoint.sm;
+  const isSmall = typeof breakpoint.sm === 'undefined' ? true : breakpoint.sm
 
   return (
     <ThemedLayoutContextProvider>
-      <AntdLayout style={{height: "100vh"}}>
+      <AntdLayout style={{ height: '100vh' }}>
         <Sider/>
         <AntdLayout>
           <Header/>
@@ -26,9 +26,9 @@ export const Layout: React.FC<RefineThemedLayoutV2Props> = ({children, OffLayout
             </div>
             {OffLayoutArea && <OffLayoutArea/>}
           </AntdLayout.Content>
-          {/*{Footer && <Footer/>}*/}
+          {/* {Footer && <Footer/>} */}
         </AntdLayout>
       </AntdLayout>
     </ThemedLayoutContextProvider>
-  );
-};
+  )
+}

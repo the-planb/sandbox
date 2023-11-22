@@ -1,7 +1,6 @@
-import {MetaQuery} from "@refinedev/core";
+import { type MetaQuery } from '@refinedev/core'
 
 export const PreloadHeaderCollection = (meta: MetaQuery): HeadersInit => {
-
   const fields = meta.preload ?? []
 
   if (fields.length < 1) {
@@ -11,11 +10,10 @@ export const PreloadHeaderCollection = (meta: MetaQuery): HeadersInit => {
   const Preload = fields.map((field: string) => `"hydra:member/*/${field}"`)
     .join(',')
 
-  return {'X-Preload': Preload}
+  return { 'X-Preload': Preload }
 }
 
 export const PreloadHeaderItem = (meta: MetaQuery): HeadersInit => {
-
   const fields = meta.preload ?? []
 
   if (fields.length < 1) {
@@ -25,5 +23,5 @@ export const PreloadHeaderItem = (meta: MetaQuery): HeadersInit => {
   const Preload = fields.map((field: string) => `"/${field}"`)
     .join(',')
 
-  return {'X-Preload': Preload}
+  return { 'X-Preload': Preload }
 }

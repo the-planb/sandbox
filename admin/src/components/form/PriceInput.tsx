@@ -1,24 +1,25 @@
-import {Money} from "@model";
-import {RuleObject} from "rc-field-form/es/interface";
-import {InputNumber, InputProps, Select} from "antd";
+import { type Money } from '@model'
+import { type RuleObject } from 'rc-field-form/es/interface'
+import { InputNumber, type InputProps, Select } from 'antd'
 
 interface PriceInputProps extends Omit<InputProps, 'value' | 'onChange'> {
-  value?: Money,
+  value?: Money
   onChange?: (data: Money) => void
 }
 
-export const PriceRule = (rule: RuleObject, value: Money) => {
-  const {amount} = value
+export const PriceRule = async (rule: RuleObject, value: Money) => {
+  const { amount } = value
 
   if (amount > 0) {
-    return Promise.resolve()
+    await Promise.resolve()
+    return
   }
-  return Promise.reject('Price must be greater than zero!')
+  return await Promise.reject('Price must be greater than zero!')
 }
 
 export const PriceInput = (props: PriceInputProps) => {
   const {
-    value = {amount: 0, currency: 'EUR'},
+    value = { amount: 0, currency: 'EUR' },
     onChange
   } = props
 
@@ -33,8 +34,8 @@ export const PriceInput = (props: PriceInputProps) => {
   const currencySelect = <Select
     value={value?.currency ?? 'EUR'}
     options={[
-      {value: 'EUR', label: '€'},
-      {value: 'DOL', label: '$'}
+      { value: 'EUR', label: '€' },
+      { value: 'DOL', label: '$' }
     ]}
     onChange={(currency) => {
       triggerChange({
@@ -58,4 +59,3 @@ export const PriceInput = (props: PriceInputProps) => {
 
   </>
 }
-

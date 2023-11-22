@@ -1,17 +1,17 @@
-import {ActionList, ActionProps} from "@planb/components/table/tableData/types";
-import {DeleteButton, EditButton} from "@refinedev/antd";
-import {FC} from "react";
-import {BaseKey} from "@refinedev/core";
-import {buttonProps} from "@planb/components/table/tableData/buttonProps";
+import { type ActionList, type ActionProps } from '@planb/components/table/tableData/types'
+import { DeleteButton, EditButton } from '@refinedev/antd'
+import { type FC } from 'react'
+import { type BaseKey } from '@refinedev/core'
+import { buttonProps } from '@planb/components/table/tableData/buttonProps'
 
 interface DefaultActionsProps {
-  resource: string,
+  resource: string
   show?: (id?: BaseKey) => void
 }
 
-const defaultActions = ({resource, show}: DefaultActionsProps): ActionList => {
+const defaultActions = ({ resource, show }: DefaultActionsProps): ActionList => {
   return {
-    edit: ({record}) => <EditButton
+    edit: ({ record }) => <EditButton
       resource={resource}
       icon={false}
       size="small"
@@ -19,7 +19,7 @@ const defaultActions = ({resource, show}: DefaultActionsProps): ActionList => {
       {...buttonProps(show, record)}
     />,
     delete:
-      ({record}) => <DeleteButton
+      ({ record }) => <DeleteButton
         size="small"
         icon={false}
         recordItemId={record.id}
@@ -27,9 +27,7 @@ const defaultActions = ({resource, show}: DefaultActionsProps): ActionList => {
   }
 }
 
-interface ResolveActionsReturnType {
-  [key: string]: FC<ActionProps>;
-}
+type ResolveActionsReturnType = Record<string, FC<ActionProps>>
 
 interface ResolveActionsProps {
   resource: string
@@ -37,8 +35,7 @@ interface ResolveActionsProps {
   show?: (id?: BaseKey) => void
 }
 
-export const resolveActions = ({resource, actions, show}: ResolveActionsProps): ResolveActionsReturnType => {
-
+export const resolveActions = ({ resource, actions, show }: ResolveActionsProps): ResolveActionsReturnType => {
   const merged = {
     ...defaultActions({
       resource,
@@ -54,7 +51,4 @@ export const resolveActions = ({resource, actions, show}: ResolveActionsProps): 
     })
 
   return (Object.fromEntries(entries) as ResolveActionsReturnType)
-
 }
-
-

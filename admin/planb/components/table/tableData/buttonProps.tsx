@@ -1,4 +1,4 @@
-import {BaseKey, BaseRecord} from "@refinedev/core";
+import { type BaseKey, type BaseRecord } from '@refinedev/core'
 
 export const buttonProps = (show?: (id?: BaseKey) => void, record?: BaseRecord) => {
   if (show === undefined) {

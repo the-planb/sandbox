@@ -1,7 +1,6 @@
-import {nodeTree} from "@planb/components/form/nodeTree/nodeTree";
-import {ReactNode} from "react";
-import {FormProps} from "antd";
-
+import { nodeTree } from '@planb/components/form/nodeTree/nodeTree'
+import { type ReactNode } from 'react'
+import { type FormProps } from 'antd'
 
 type ChildrenLike = ReactNode | ReactNode[] | FormProps['children']
 
@@ -15,35 +14,33 @@ const EmptyAncestors: Ancestors = {
   fieldsets: []
 }
 
-interface FieldsMap {
-  [key: string]: Ancestors
-}
+type FieldsMap = Record<string, Ancestors>
 
 export const itemsMap = (children: ChildrenLike): FieldsMap => {
   const map: FieldsMap = {}
 
-  nodeTree({children})
+  nodeTree({ children })
     .tabs((props, index, node) => {
-      nodeTree({children: props.children})
+      nodeTree({ children: props.children })
         .formItems((item) => item.name)
         .forEach((name: string) => {
           const prev: Ancestors = map[name] ?? EmptyAncestors
           map[name] = {
             tabs: [...prev.tabs, props.key],
-            fieldsets: prev.fieldsets,
+            fieldsets: prev.fieldsets
           }
         })
     })
 
-  nodeTree({children})
+  nodeTree({ children })
     .fieldsets((props, index, node) => {
-      nodeTree({children: props.children})
+      nodeTree({ children: props.children })
         .formItems((item) => item.name)
         .forEach((name: string) => {
           const prev: Ancestors = map[name] ?? EmptyAncestors
           map[name] = {
             tabs: prev.tabs,
-            fieldsets: [...prev.fieldsets, props.id],
+            fieldsets: [...prev.fieldsets, props.id]
           }
         })
     })

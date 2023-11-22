@@ -1,11 +1,11 @@
-import {useFormData} from "@planb/components/form";
-import React from "react";
-import {AuthorForm} from "@components/crud/authors";
+import { useFormData } from '@planb/components/form'
+import React from 'react'
+import { AuthorForm } from '@components/crud/authors'
 
 export const AuthorEdit = () => {
-  const {...props} = useFormData({
+  const { ...props } = useFormData({
     resource: 'bookstore/authors',
-    action: "edit",
+    action: 'edit'
   })
-  return <AuthorForm  {...props} />
+  return <AuthorForm {...props} />
 }

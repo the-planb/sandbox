@@ -1,8 +1,7 @@
-import {FC} from "react";
-import {FormDataProps} from "@planb/components/form";
-import {BaseKey} from "@refinedev/core";
-import {resolveActionForm} from "@planb/components/table/tableData/useListForms/resolveActionForm";
-
+import { type FC } from 'react'
+import { type FormDataProps } from '@planb/components/form'
+import { type BaseKey } from '@refinedev/core'
+import { resolveActionForm } from '@planb/components/table/tableData/useListForms/resolveActionForm'
 
 type ListForm = {
   modal: FC<FormDataProps>
@@ -18,24 +17,24 @@ interface UseListFormsProps {
   create?: ListForm
 }
 
-type UseListFormsReturnType = {
-  showEdit?: (id?: BaseKey) => void,
+interface UseListFormsReturnType {
+  showEdit?: (id?: BaseKey) => void
   editForm?: JSX.Element
-  showCreate?: (id?: BaseKey) => void,
+  showCreate?: (id?: BaseKey) => void
   createForm?: JSX.Element
 }
-export const useListForms = ({resource, edit, create}: UseListFormsProps): UseListFormsReturnType => {
-  const {show: showEdit, form: editForm} = resolveActionForm({
+export const useListForms = ({ resource, edit, create }: UseListFormsProps): UseListFormsReturnType => {
+  const { show: showEdit, form: editForm } = resolveActionForm({
     resource,
     action: 'edit',
     ...edit
   })
 
-  const {show: showCreate, form: createForm} = resolveActionForm({
+  const { show: showCreate, form: createForm } = resolveActionForm({
     resource,
     action: 'create',
     ...create
   })
 
-  return {showEdit, editForm, showCreate, createForm}
+  return { showEdit, editForm, showCreate, createForm }
 }

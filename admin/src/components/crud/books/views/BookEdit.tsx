@@ -1,15 +1,13 @@
 'use client'
 
-import {useFormData} from "@planb/components/form";
-import {BookForm} from "@components/crud/books";
+import { useFormData } from '@planb/components/form'
+import { BookForm } from '@components/crud/books'
 
-export function BookEdit() {
-
-  const {...props} = useFormData({
+export function BookEdit () {
+  const { ...props } = useFormData({
     resource: 'bookstore/books',
-    action: "edit",
+    action: 'edit'
   })
 
-  return <BookForm  {...props} />
+  return <BookForm {...props} />
 }
-

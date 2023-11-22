@@ -1,2 +1,1 @@
-export {AuthProvider} from './authProvider'
-
+export { AuthProvider } from './authProvider'

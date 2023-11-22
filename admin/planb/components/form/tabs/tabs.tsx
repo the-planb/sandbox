@@ -1,8 +1,8 @@
-import slug from "slug";
-import {Tab} from "rc-tabs/lib/interface";
+import slug from 'slug'
+import { type Tab } from 'rc-tabs/lib/interface'
 
-import React from "react";
-import {TabLabel} from "./TabLabel";
+import React from 'react'
+import { TabLabel } from './TabLabel'
 
 interface TabArgs extends Omit<Tab, 'key' | 'label'> {
   key?: string
@@ -10,14 +10,14 @@ interface TabArgs extends Omit<Tab, 'key' | 'label'> {
 }
 
 export const tab = (props: TabArgs): Tab => {
-  const {label, children, ...tabProps} = props
+  const { label, children, ...tabProps } = props
   const key = slug(label)
 
   return {
-    key: key,
+    key,
     forceRender: true,
     label: <TabLabel label={label}/>,
     children,
-    ...tabProps,
+    ...tabProps
   }
 }

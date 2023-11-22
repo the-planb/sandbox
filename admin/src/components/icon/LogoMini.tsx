@@ -1,4 +1,4 @@
-import type {CustomIconComponentProps} from '@ant-design/icons/lib/components/Icon';
+import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon'
 
 export const LogoMini = (props: Partial<CustomIconComponentProps>) => {
   return <svg width="34" height="45" fill="white" {...props} xmlns="http://www.w3.org/2000/svg">

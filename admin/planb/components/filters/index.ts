@@ -1,2 +1,2 @@
-export {TextFilter} from './TextFilter'
-export {RangeFilter} from './RangeFilter'
+export { TextFilter } from './TextFilter'
+export { RangeFilter } from './RangeFilter'

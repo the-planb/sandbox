@@ -1,19 +1,18 @@
-import React from "react";
-import {FormAction} from "@refinedev/core";
-import {UseFormDataReturnType} from "./useFormData";
-import {WithChildren} from "./types";
-import {PageForm, PageFormProps} from "./PageForm";
-import {createErrorBag, ErrorBagContext} from "./useErrorBag";
-import {ModalForm, ModalFormProps} from "./ModalForm";
-import {DrawerForm, DrawerFormProps} from "./DrawerForm";
-import {FormContext} from "./useFormContext";
-
+import React from 'react'
+import { type FormAction } from '@refinedev/core'
+import { type UseFormDataReturnType } from './useFormData'
+import { type WithChildren } from './types'
+import { PageForm, type PageFormProps } from './PageForm'
+import { createErrorBag, ErrorBagContext } from './useErrorBag'
+import { ModalForm, type ModalFormProps } from './ModalForm'
+import { DrawerForm, type DrawerFormProps } from './DrawerForm'
+import { FormContext } from './useFormContext'
 
 export type FormDataProps = Omit<UseFormDataReturnType, 'show'>
 
-export function FormData({like, children, ...props}: FormDataProps & WithChildren) {
+export function FormData ({ like, children, ...props }: FormDataProps & WithChildren) {
   const errorBag = createErrorBag(children)
-  const {form} = props
+  const { form } = props
 
   return <FormContext.Provider value={{
     action: (props.action as FormAction),
@@ -25,7 +24,4 @@ export function FormData({like, children, ...props}: FormDataProps & WithChildre
       {(like === 'view' || like === undefined) && <PageForm {...props as PageFormProps}>{children}</PageForm>}
     </ErrorBagContext.Provider>
   </FormContext.Provider>
-
 }
-
-

@@ -15,7 +15,8 @@ final class UpdateBook
     private Title $title;
     private Price $price;
     private Author $author;
-    private BookId $__previous_id;
+
+    private BookId $id;
 
     public function __construct(BookInput $input, BookId $bookId)
     {
@@ -23,7 +24,7 @@ final class UpdateBook
         $this->price = $input->price;
         $this->author = $input->author;
 
-        $this->__previous_id = $bookId;
+        $this->id = $bookId;
     }
 
     public function toArray(): array
@@ -37,6 +38,6 @@ final class UpdateBook
 
     public function getId(): BookId
     {
-        return $this->__previous_id;
+        return $this->id;
     }
 }

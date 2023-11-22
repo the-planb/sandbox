@@ -1,3 +1,2 @@
-export {useFormData} from './useFormData';
-export type {UseFormDataReturnType} from './useFormData';
-
+export { useFormData } from './useFormData'
+export type { UseFormDataReturnType } from './useFormData'

@@ -1,27 +1,26 @@
-import {BaseRecord} from "@refinedev/core";
-
+import { type BaseRecord } from '@refinedev/core'
 
 export interface IAuthor extends BaseRecord {
-  '@id': string,
+  '@id': string
   name: {
-    firstName: string,
+    firstName: string
     lastName: string
   }
 }
 
 export interface IBook extends BaseRecord {
   title: string
-  author: IAuthor,
+  author: IAuthor
   price: Money
   summary: string
 }
 
 export interface Money {
-  amount: number,
+  amount: number
   currency: 'EUR' | 'DOL'
 }
 
 export interface FullName {
-  firstName: string,
+  firstName: string
   lastName: string
 }

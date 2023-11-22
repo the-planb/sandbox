@@ -1,11 +1,11 @@
-import {JSONPath} from '@astronautlabs/jsonpath';
-import fetchJson from "@planb/provider/ApiClient/fetchJson";
-import zip from "lodash/zip";
-import isEmpty from "lodash/isEmpty";
-import {ApiUrl} from "@planb/provider";
+import { JSONPath } from '@astronautlabs/jsonpath'
+import fetchJson from '@planb/provider/ApiClient/fetchJson'
+import zip from 'lodash/zip'
+import isEmpty from 'lodash/isEmpty'
+import { ApiUrl } from '@planb/provider'
 
 interface IriComposerInput {
-  data: object,
+  data: object
   headers?: HeadersInit
 }
 
@@ -22,25 +22,24 @@ const XPathToJson = (path: string) => {
   return `$${jsonPath}`
 }
 
-const HeaderToPaths = (header: string): Array<string> => {
+const HeaderToPaths = (header: string): string[] => {
   return header
     .split(',')
     .map(XPathToJson)
 }
 
-const GetIriPromises = (data: object, paths: Array<string>, headers: HeadersInit): Map<string, Promise<any>> => {
-
+const GetIriPromises = (data: object, paths: string[], headers: HeadersInit): Map<string, Promise<any>> => {
   const promises = new Map()
-  const baseUrl = ApiUrl("ServerMode")
+  const baseUrl = ApiUrl('ServerMode')
 
   if ('Preload' in headers) {
-    delete headers['Preload']
+    delete headers.Preload
   }
 
   paths.forEach((path: string) => {
     JSONPath
       .nodes(data, path)
-      .forEach(({path, value}) => {
+      .forEach(({ path, value }) => {
         const key = JSONPath.stringify(path)
         promises.set(key, fetchJson(baseUrl, value, {
           headers
@@ -51,7 +50,7 @@ const GetIriPromises = (data: object, paths: Array<string>, headers: HeadersInit
   return promises
 }
 
-function AssembleAll(data: object, keys: string[], values: object[]): object {
+function AssembleAll (data: object, keys: string[], values: object[]): object {
   zip(keys, values)
     .forEach(([path, value]) => {
       JSONPath.value(data, path, value)
@@ -60,10 +59,9 @@ function AssembleAll(data: object, keys: string[], values: object[]): object {
   return data
 }
 
-export const IriComposer = async ({data, headers = {}}: IriComposerInput): Promise<object> => {
-
+export const IriComposer = async ({ data, headers = {} }: IriComposerInput): Promise<object> => {
   const header = 'Preload' in headers
-    ? headers['Preload']
+    ? headers.Preload
     : null
 
   if (header === null) return data
@@ -75,5 +73,3 @@ export const IriComposer = async ({data, headers = {}}: IriComposerInput): Promi
 
   return AssembleAll(data, keys, values)
 }
-
-

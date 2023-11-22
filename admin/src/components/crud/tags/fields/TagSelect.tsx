@@ -1,12 +1,11 @@
-import {SelectProps, Tag} from "antd";
-import React from "react";
-import {EntitySelect, RemoteFilter} from "@planb/components/fields/EntitySelect";
-import {BaseRecord} from "@refinedev/core";
-import {CustomTagProps} from "rc-select/es/BaseSelect";
-import {TagForm} from "@components/crud/tags";
+import { type SelectProps, Tag } from 'antd'
+import React from 'react'
+import { EntitySelect, type RemoteFilter } from '@planb/components/fields/EntitySelect'
+import { type BaseRecord } from '@refinedev/core'
+import { type CustomTagProps } from 'rc-select/es/BaseSelect'
+import { TagForm } from '@components/crud/tags'
 
 export const TagSelect = (props: SelectProps) => {
-
   const itemToOption = (item: BaseRecord) => {
     return {
       label: item ? item.name : null,
@@ -21,9 +20,9 @@ export const TagSelect = (props: SelectProps) => {
     }
   }
 
-  const tagRender = ({label, ...props}: CustomTagProps) => {
+  const tagRender = ({ label, ...props }: CustomTagProps) => {
     return <Tag color={'processing'} {...props} > {label} </Tag>
-  };
+  }
 
   return <EntitySelect
     {...props}

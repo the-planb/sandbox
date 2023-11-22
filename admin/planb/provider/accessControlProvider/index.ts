@@ -1,2 +1,1 @@
-export {AccessControlProvider} from './accessControlProvider'
-
+export { AccessControlProvider } from './accessControlProvider'

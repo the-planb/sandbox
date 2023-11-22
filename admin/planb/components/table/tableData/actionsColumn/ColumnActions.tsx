@@ -1,10 +1,9 @@
-import {Space, Table} from "antd";
-import {BaseKey, BaseRecord} from "@refinedev/core";
-import React, {Fragment} from "react";
-import {ActionList} from "@planb/components/table/tableData/types";
+import { Space, Table } from 'antd'
+import { type BaseKey, type BaseRecord } from '@refinedev/core'
+import React, { Fragment } from 'react'
+import { type ActionList } from '@planb/components/table/tableData/types'
 import css from '../style.module.scss'
-import {resolveActions} from "./resolveActions";
-
+import { resolveActions } from './resolveActions'
 
 interface TableActionsProps {
   resource: string
@@ -25,7 +24,7 @@ export const ColumnActions = (props: TableActionsProps) => {
       <Space>
         {Object.values(actions).map((action, index) => {
           return <Fragment key={index}>
-            {action({record})}
+            {action({ record })}
           </Fragment>
         })}
       </Space>

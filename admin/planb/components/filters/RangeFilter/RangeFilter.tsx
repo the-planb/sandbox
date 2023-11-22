@@ -1,16 +1,15 @@
-import {InputNumber, Space} from "antd";
-import {useEffect, useState} from "react";
-import {FilterData} from "@planb/components/table/tableData/filterPanel";
+import { InputNumber, Space } from 'antd'
+import { useEffect, useState } from 'react'
+import { type FilterData } from '@planb/components/table/tableData/filterPanel'
 import css from './styles.module.scss'
-import {filterDataToRange, rangeToFilterData, sortRange, Range} from "@planb/components/filters/RangeFilter/utils";
-
+import { filterDataToRange, rangeToFilterData, sortRange, type Range } from '@planb/components/filters/RangeFilter/utils'
 
 interface RangeFilterProps {
   onChange?: (value: FilterData) => void
   value?: FilterData
 }
 
-export const RangeFilter = ({value, onChange}: RangeFilterProps) => {
+export const RangeFilter = ({ value, onChange }: RangeFilterProps) => {
   const [range, setRange] = useState<Range>({} as Range)
 
   const triggerChange = (value: Partial<Range>) => {
@@ -19,14 +18,12 @@ export const RangeFilter = ({value, onChange}: RangeFilterProps) => {
       ...value
     }
     setRange(newRange)
-  };
-
+  }
 
   useEffect(() => {
     const locationValue = filterDataToRange(value)
     triggerChange(locationValue as Range)
   }, [])
-
 
   const onBlur = () => {
     const sorted = sortRange(range)
@@ -40,11 +37,11 @@ export const RangeFilter = ({value, onChange}: RangeFilterProps) => {
     <InputNumber
       controls={false}
       bordered={false}
-      placeholder={"Min"}
+      placeholder={'Min'}
       value={range?.min}
       onBlur={onBlur}
       onChange={(value) => {
-        triggerChange({min: value as number})
+        triggerChange({ min: value as number })
       }}/>
 
     <span>/</span>
@@ -52,11 +49,11 @@ export const RangeFilter = ({value, onChange}: RangeFilterProps) => {
     <InputNumber
       controls={false}
       bordered={false}
-      placeholder={"Max"}
+      placeholder={'Max'}
       value={range?.max}
       onBlur={onBlur}
       onChange={(value) => {
-        triggerChange({max: value as number})
+        triggerChange({ max: value as number })
       }}/>
   </Space>
 }

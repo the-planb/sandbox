@@ -19,5 +19,5 @@ interface BookRepository
 
     public function match(Criteria $criteria): BookList;
 
-    public function totalItems(Criteria $criteria = null): int;
+    public function totalItems(): int;
 }

@@ -1,5 +1,5 @@
-import {AntdShowInferencer} from "@refinedev/inferencer/antd";
+import { AntdShowInferencer } from '@refinedev/inferencer/antd'
 
 export const TagShow = () => {
-  return <AntdShowInferencer/>;
+  return <AntdShowInferencer/>
 }

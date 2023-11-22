@@ -1,5 +1,5 @@
-import {AntdCreateInferencer} from "@refinedev/inferencer/antd";
+import { AntdCreateInferencer } from '@refinedev/inferencer/antd'
 
 export const AuthorCreate = () => {
-  return <AntdCreateInferencer/>;
+  return <AntdCreateInferencer/>
 }

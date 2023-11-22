@@ -1,15 +1,13 @@
-import {AuthBindings} from "@refinedev/core";
-import {ApiClient} from "@planb/provider";
-import {AuthTokenResponse, GetUser, OnCheck, OnError, OnLogin, Redirect} from "./responses";
+import { type AuthBindings } from '@refinedev/core'
+import { ApiClient } from '@planb/provider'
+import { type AuthTokenResponse, GetUser, OnCheck, OnError, OnLogin, Redirect } from './responses'
 
-
-export function AuthProvider(): AuthBindings {
-  const httpClient = ApiClient("ProxyMode")
+export function AuthProvider (): AuthBindings {
+  const httpClient = ApiClient('ProxyMode')
 
   return {
-    login: async ({username, password, to}) => {
-
-      return httpClient.post('token/auth', {
+    login: async ({ username, password, to }) => {
+      return await httpClient.post('token/auth', {
         username,
         password
       })
@@ -23,25 +21,23 @@ export function AuthProvider(): AuthBindings {
         })
     },
     logout: async () => {
-      return httpClient.get('token/logout')
+      return await httpClient.get('token/logout')
         .then(() => {
           return Redirect('/')
         })
     },
     check: async (ctx: any) => {
       const user = GetUser()
-      return OnCheck(null !== user)
+      return OnCheck(user !== null)
     },
     getPermissions: async () => {
       return GetUser()?.roles
-
     },
     getIdentity: async () => {
       return GetUser()
     },
     onError: async (error) => {
-      return {error};
-    },
+      return { error }
+    }
   }
 }
-

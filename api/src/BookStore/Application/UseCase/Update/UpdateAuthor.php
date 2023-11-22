@@ -11,13 +11,14 @@ use App\BookStore\Domain\Model\VO\FullName;
 final class UpdateAuthor
 {
     private FullName $name;
-    private AuthorId $__previous_id;
+
+    private AuthorId $id;
 
     public function __construct(AuthorInput $input, AuthorId $authorId)
     {
         $this->name = $input->name;
 
-        $this->__previous_id = $authorId;
+        $this->id = $authorId;
     }
 
     public function toArray(): array
@@ -29,6 +30,6 @@ final class UpdateAuthor
 
     public function getId(): AuthorId
     {
-        return $this->__previous_id;
+        return $this->id;
     }
 }

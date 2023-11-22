@@ -1,10 +1,10 @@
 'use client'
 
-import {TableData} from "@planb/components/table";
-import {Table} from "antd";
-import {IBook} from "@model";
-import {useTranslate} from "@refinedev/core";
-import {RangeFilter, TextFilter} from "@planb/components/filters";
+import { TableData } from '@planb/components/table'
+import { Table } from 'antd'
+import { type IBook } from '@model'
+import { useTranslate } from '@refinedev/core'
+import { RangeFilter, TextFilter } from '@planb/components/filters'
 
 export const BookList = () => {
   const t = useTranslate()
@@ -24,7 +24,7 @@ export const BookList = () => {
         expandedRowRender: (record) => {
           return record.title
         }
-      },
+      }
     }}
   >
 
@@ -36,7 +36,7 @@ export const BookList = () => {
 
     <Table.Column
       width={200}
-      dataIndex={"author"}
+      dataIndex={'author'}
       title={t('bookstore/books.columns.author')}
       sorter={true}
       render={(field, record: IBook) => {
@@ -52,7 +52,7 @@ export const BookList = () => {
       title={t('bookstore/books.columns.price')}
       sorter={true}
       render={(_, record: IBook) => {
-        const {price} = record
+        const { price } = record
         return `${price} €`
       }}
     />

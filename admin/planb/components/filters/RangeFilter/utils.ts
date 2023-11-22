@@ -1,8 +1,8 @@
-import isNil from "lodash/isNil";
-import {FilterData} from "@planb/components/table/tableData/filterPanel";
+import isNil from 'lodash/isNil'
+import { type FilterData } from '@planb/components/table/tableData/filterPanel'
 
 export interface Range {
-  min: number,
+  min: number
   max: number
 }
 
@@ -11,7 +11,7 @@ export const sortRange = (range: Range): Range => {
     return range
   }
 
-  const {min, max} = range
+  const { min, max } = range
   if (min <= max) {
     return range
   }

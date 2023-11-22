@@ -1,39 +1,37 @@
-"use client";
+'use client'
 
-import {Button, Card, Col, Form, Input, Row, Typography} from "antd";
-import {ILoginForm} from "@refinedev/core";
-import vars from '@styles/vars.module.scss';
-import Icon from "@components/icon";
-import {useLogin} from "@refinedev/core";
-import {PageProps} from "@components/layout";
+import { Button, Card, Col, Form, Input, Row, Typography } from 'antd'
+import { type ILoginForm, useLogin } from '@refinedev/core'
+import vars from '@styles/vars.module.scss'
+import Icon from '@components/icon'
+import { type PageProps } from '@components/layout'
 
-const {Title} = Typography;
+const { Title } = Typography
 
-export default function Login({searchParams}: PageProps) {
-  const {colorPrimary} = vars
+export default function Login ({ searchParams }: PageProps) {
+  const { colorPrimary } = vars
 
-  const [form] = Form.useForm<ILoginForm>();
-  const {mutate} = useLogin<ILoginForm | {redirectTo: string}>();
+  const [form] = Form.useForm<ILoginForm>()
+  const { mutate } = useLogin<ILoginForm | { redirectTo: string }>()
 
-  const login = (values: ILoginForm)=>{
+  const login = (values: ILoginForm) => {
     mutate({
       ...values,
       redirectTo: searchParams.to ?? '/'
     })
   }
 
-
   const CardTitle = (
     <Title level={3} className="title">
       Sign in your account
     </Title>
-  );
+  )
 
   return <Row
     justify="center"
     align="middle"
     style={{
-      height: "100vh",
+      height: '100vh'
     }}
   >
     <Col xs={8}>
@@ -41,20 +39,20 @@ export default function Login({searchParams}: PageProps) {
         <div className="imageContainer">
           <Icon.Logo fill={colorPrimary}/>
         </div>
-        <Card title={CardTitle} headStyle={{borderBottom: 0}}>
+        <Card title={CardTitle} headStyle={{ borderBottom: 0 }}>
           <Form<ILoginForm>
             layout="vertical"
             form={form}
             onFinish={login}
             requiredMark={false}
             initialValues={{
-              remember: false,
+              remember: false
             }}
           >
             <Form.Item
               name="username"
               label="Username"
-              rules={[{required: true}]}
+              rules={[{ required: true }]}
             >
               <Input
                 size="large"
@@ -64,8 +62,8 @@ export default function Login({searchParams}: PageProps) {
             <Form.Item
               name="password"
               label="Password"
-              rules={[{required: true}]}
-              style={{marginBottom: "12px"}}
+              rules={[{ required: true }]}
+              style={{ marginBottom: '12px' }}
             >
               <Input
                 type="password"
@@ -85,7 +83,7 @@ export default function Login({searchParams}: PageProps) {
         </Card>
       </div>
     </Col>
-  </Row>;
+  </Row>
 }
 //
 // Login.layout = "auth";

@@ -1,8 +1,8 @@
-import {createContext, useContext} from "react";
-import {FormAction} from "@refinedev/core";
+import { createContext, useContext } from 'react'
+import { type FormAction } from '@refinedev/core'
 
 interface IFormContext {
-  action: FormAction,
+  action: FormAction
   like: 'view' | 'modal' | 'drawer'
 }
 
@@ -11,4 +11,3 @@ export const FormContext = createContext<IFormContext>({} as IFormContext)
 export const useFormContext = (): IFormContext => {
   return useContext<IFormContext>(FormContext)
 }
-

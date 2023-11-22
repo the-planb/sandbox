@@ -1,5 +1,5 @@
-import React, {isValidElement, ReactNode} from "react";
-import {FormProps} from "antd";
+import React, { isValidElement, type ReactNode } from 'react'
+import { type FormProps } from 'antd'
 
 export type ChildrenLike = ReactNode | ReactNode[] | FormProps['children']
 

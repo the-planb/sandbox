@@ -36,7 +36,7 @@ final class GetAuthorProvider implements ProviderInterface
             $data,
             $pagination->getCurrentPage(),
             $pagination->getMaxResults(),
-            $this->repository->totalItems()
+            $this->repository->totalItems($criteria)
         );
     }
 }

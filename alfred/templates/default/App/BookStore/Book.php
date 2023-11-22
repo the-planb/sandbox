@@ -7,7 +7,6 @@ return AggregateRoot('Book')
     )
     ->with('price', Attribute('VO(Price)')
         ->example(1400)
-
     )
     ->with('author', ManyToOne('Entity(Author)')
 //        ->fetch(Fetch::EAGER)

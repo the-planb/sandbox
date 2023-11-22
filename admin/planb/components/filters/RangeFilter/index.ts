@@ -1,1 +1,1 @@
-export {RangeFilter} from './RangeFilter'
+export { RangeFilter } from './RangeFilter'

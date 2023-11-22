@@ -1,15 +1,15 @@
-import {FullName} from "@model";
-import {RuleObject} from "rc-field-form/es/interface";
-import {Input, InputNumber, InputProps, Select, Space} from "antd";
-import {ChangeEvent} from "react";
+import { type FullName } from '@model'
+import { type RuleObject } from 'rc-field-form/es/interface'
+import { Input, type InputProps, Space } from 'antd'
+import { type ChangeEvent } from 'react'
 
 interface FullNameInputProps extends Omit<InputProps, 'value' | 'onChange'> {
-  value?: FullName,
+  value?: FullName
   onChange?: (data: FullName) => void
 }
 
-export const FullNameRule = (rule: RuleObject, value: FullName) => {
-  return Promise.resolve()
+export const FullNameRule = async (rule: RuleObject, value: FullName) => {
+  await Promise.resolve()
   // const {amount} = value
   //
   // if (amount > 0) {
@@ -18,8 +18,7 @@ export const FullNameRule = (rule: RuleObject, value: FullName) => {
   // return Promise.reject('FullName must be greater than zero!')
 }
 
-export const FullNameInput = ({value, onChange}: FullNameInputProps) => {
-
+export const FullNameInput = ({ value, onChange }: FullNameInputProps) => {
   const triggerChange = (data: Partial<FullName>) => {
     console.log(value, data)
 
@@ -34,7 +33,7 @@ export const FullNameInput = ({value, onChange}: FullNameInputProps) => {
       value={value?.firstName}
       placeholder={'Nombre'}
       onChange={(el: ChangeEvent<HTMLInputElement>) => {
-        const firstName = el.target.value as string
+        const firstName = el.target.value
         triggerChange({
           firstName
         })
@@ -45,7 +44,7 @@ export const FullNameInput = ({value, onChange}: FullNameInputProps) => {
       value={value?.lastName}
       placeholder={'Apellidos'}
       onChange={(el: ChangeEvent<HTMLInputElement>) => {
-        const lastName = el.target.value as string
+        const lastName = el.target.value
         triggerChange({
           lastName
         })
@@ -54,4 +53,3 @@ export const FullNameInput = ({value, onChange}: FullNameInputProps) => {
 
   </Space>
 }
-

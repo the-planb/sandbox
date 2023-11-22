@@ -1,7 +1,7 @@
-import {NextRequest, NextResponse} from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 import acceptLanguage from 'accept-language'
-import {fallbackLng, languages} from '@i18n/settings'
-import {RequestCookie} from "next/dist/compiled/@edge-runtime/cookies";
+import { fallbackLng, languages } from '@i18n/settings'
+import { type RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
 acceptLanguage.languages(languages)
 
@@ -12,10 +12,10 @@ export const config = {
 
 const cookieName = 'i18next'
 
-export function middleware(req: NextRequest) {
+export function middleware (req: NextRequest) {
   let lang
   if (req.cookies.has(cookieName)) {
-    const {value} = req.cookies.get(cookieName) as RequestCookie;
+    const { value } = req.cookies.get(cookieName) as RequestCookie
     lang = acceptLanguage.get(value)
   }
   if (!lang) lang = acceptLanguage.get(req.headers.get('Accept-Language'))

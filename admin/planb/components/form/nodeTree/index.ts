@@ -1,1 +1,1 @@
-export {nodeTree} from './nodeTree'
+export { nodeTree } from './nodeTree'

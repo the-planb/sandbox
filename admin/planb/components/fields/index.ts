@@ -1,2 +1,2 @@
-export {EntitySelect} from './EntitySelect'
+export { EntitySelect } from './EntitySelect'
 export * from './types'

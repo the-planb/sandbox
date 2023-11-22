@@ -1,21 +1,18 @@
-import {Layout as AntdLayout,} from "antd";
-import {LangSwitcher} from "./langSwitcher";
-import {UserPanel} from "./userPanel";
+import { Layout as AntdLayout } from 'antd'
+import { LangSwitcher } from './langSwitcher'
+import { UserPanel } from './userPanel'
 
 import css from './style.module.scss'
-import React from "react";
-import {CollapseToggle} from "@components/layout/header/collapseToggle";
-
+import React from 'react'
+import { CollapseToggle } from '@components/layout/header/collapseToggle'
 
 export const Header: React.FC = () => {
-
-
   return (
     <AntdLayout.Header
       className={css.header}
       style={{
-        padding: "0 1em 0 0",
-        height: "70px"
+        padding: '0 1em 0 0',
+        height: '70px'
       }}
     >
       <div className={'header-left'}>
@@ -30,5 +27,5 @@ export const Header: React.FC = () => {
       </div>
 
     </AntdLayout.Header>
-  );
+  )
 }

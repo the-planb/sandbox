@@ -1,6 +1,6 @@
-import {FormDataProps, useFormData} from "@planb/components/form";
-import {FC} from "react";
-import {BaseKey} from "@refinedev/core";
+import { type FormDataProps, useFormData } from '@planb/components/form'
+import { type FC } from 'react'
+import { type BaseKey } from '@refinedev/core'
 
 interface ResolveFormLikeProps {
   modal?: FC<FormDataProps>
@@ -12,20 +12,20 @@ interface ResolveFormLikeReturnType {
   form?: FC<FormDataProps>
 }
 
-const resolveFormLike = ({modal, drawer}: ResolveFormLikeProps): ResolveFormLikeReturnType => {
+const resolveFormLike = ({ modal, drawer }: ResolveFormLikeProps): ResolveFormLikeReturnType => {
   if (modal !== undefined) {
-    return {like: 'modal', form: modal}
+    return { like: 'modal', form: modal }
   }
 
   if (drawer !== undefined) {
-    return {like: 'drawer', form: drawer}
+    return { like: 'drawer', form: drawer }
   }
 
-  return {like: undefined, form: undefined}
+  return { like: undefined, form: undefined }
 }
 
 interface ResolveActionFormProps {
-  resource: string,
+  resource: string
   action: 'edit' | 'create'
   modal?: FC<FormDataProps>
   drawer?: FC<FormDataProps>
@@ -43,7 +43,7 @@ export const resolveActionForm = (props: ResolveActionFormProps): ResolveListFor
   } = props
 
   if (modal !== undefined) {
-    const {show, ...props} = useFormData({
+    const { show, ...props } = useFormData({
       like: 'modal',
       resource,
       action,
@@ -51,11 +51,11 @@ export const resolveActionForm = (props: ResolveActionFormProps): ResolveListFor
         width: width ?? '1000px'
       }
     })
-    return {show, form: modal(props) as JSX.Element}
+    return { show, form: modal(props) as JSX.Element }
   }
 
   if (drawer !== undefined) {
-    const {show, ...props} = useFormData({
+    const { show, ...props } = useFormData({
       like: 'drawer',
       resource,
       action,
@@ -63,8 +63,8 @@ export const resolveActionForm = (props: ResolveActionFormProps): ResolveListFor
         width: width ?? '500px'
       }
     })
-    return {show, form: drawer(props) as JSX.Element}
+    return { show, form: drawer(props) as JSX.Element }
   }
 
-  return {show: undefined, form: undefined}
+  return { show: undefined, form: undefined }
 }

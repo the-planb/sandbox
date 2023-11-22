@@ -1,13 +1,12 @@
 'use client'
 
-import {Button} from "antd";
-import fetchJson from "@planb/provider/ApiClient/fetchJson";
-import {ApiUrl} from "@planb/provider";
+import { Button } from 'antd'
+import fetchJson from '@planb/provider/ApiClient/fetchJson'
+import { ApiUrl } from '@planb/provider'
 
-export default function Dashboard() {
-
+export default function Dashboard () {
   const handle = async () => {
-    const url = ApiUrl("ProxyMode")
+    const url = ApiUrl('ProxyMode')
     fetchJson(url, '/bookstore/books')
   }
 

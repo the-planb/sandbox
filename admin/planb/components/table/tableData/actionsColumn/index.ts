@@ -1,1 +1,1 @@
-export {ColumnActions} from './ColumnActions'
+export { ColumnActions } from './ColumnActions'

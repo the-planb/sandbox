@@ -1,18 +1,17 @@
-import {Input, Select, Space} from "antd";
+import { Input, Select, Space } from 'antd'
 
-import {useState} from "react";
-import {useTranslate} from "@refinedev/core";
-import {FilterData} from "@planb/components/table/tableData/filterPanel";
+import { useState } from 'react'
+import { useTranslate } from '@refinedev/core'
+import { type FilterData } from '@planb/components/table/tableData/filterPanel'
 
-const {Option} = Select;
+const { Option } = Select
 
 interface TextFilterProps {
   onChange?: (value: FilterData) => void
   value?: FilterData
 }
 
-export const TextFilter = ({value, onChange}: TextFilterProps) => {
-
+export const TextFilter = ({ value, onChange }: TextFilterProps) => {
   const t = useTranslate()
   const operators = {
     equals: t('filters.operators.equals'),
@@ -35,17 +34,17 @@ export const TextFilter = ({value, onChange}: TextFilterProps) => {
     }
 
     setData(newData)
-    onChange?.(newData);
-  };
+    onChange?.(newData)
+  }
 
   const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    triggerChange({value})
-  };
+    const value = e.target.value
+    triggerChange({ value })
+  }
 
   const onOperatorChange = (operator: string) => {
-    triggerChange({operator})
-  };
+    triggerChange({ operator })
+  }
 
   return <Space>
     <Select
@@ -58,5 +57,4 @@ export const TextFilter = ({value, onChange}: TextFilterProps) => {
 
     <Input value={data.value} onChange={onValueChange}/>
   </Space>
-
 }

@@ -1,25 +1,22 @@
-import {ChildrenLike} from "../../nodeTree/utils";
-import {itemsMap} from "@planb/components/form/formData/useErrorBag/itemsMap";
-import {useMemo, useState} from "react";
-import {FieldData} from "rc-field-form/es/interface";
-import {isEqual} from "lodash";
+import { type ChildrenLike } from '../../nodeTree/utils'
+import { itemsMap } from '@planb/components/form/formData/useErrorBag/itemsMap'
+import { useMemo, useState } from 'react'
+import { type FieldData } from 'rc-field-form/es/interface'
+import { isEqual } from 'lodash'
 
 interface Ancestors {
   tabs: string[]
   fieldsets: string[]
 }
 
-interface FieldsMap {
-  [key: string]: Ancestors
-}
+type FieldsMap = Record<string, Ancestors>
 
 export interface ErrorBag {
   update: (fields: FieldData[]) => void
-  errorFieldsets: { [key: string]: boolean }
-  errorTabs: { [key: string]: boolean }
+  errorFieldsets: Record<string, boolean>
+  errorTabs: Record<string, boolean>
   isValid: boolean
 }
-
 
 const unique = (values: string[]) => {
   return values.filter((item, index, all) => {
@@ -37,7 +34,7 @@ const build = (fields: string[], map: FieldsMap, type: 'fieldsets' | 'tabs') => 
   }))
 
   return all.reduce((carry, item) => {
-    return {...carry, [item]: withError.includes(item)}
+    return { ...carry, [item]: withError.includes(item) }
   }, {})
 }
 
@@ -79,4 +76,3 @@ export const createErrorBag = (children: ChildrenLike): ErrorBag => {
     isValid
   }
 }
-

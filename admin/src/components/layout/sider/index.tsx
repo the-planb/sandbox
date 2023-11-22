@@ -1,27 +1,27 @@
-"use client";
+'use client'
 
-import React from "react";
-import {Grid, Layout as AntdLayout, Menu, MenuProps} from "antd";
-import {useMenu, useTranslate,} from "@refinedev/core";
-import {ItemType} from "antd/es/menu/hooks/useItems";
-import {Title} from "@components/layout/title";
-import Link from "next/link";
-import {TreeMenuItem} from "@refinedev/core/dist/hooks/menu/useMenu";
-import {useLayoutContext} from "@contexts";
+import React from 'react'
+import { Grid, Layout as AntdLayout, Menu, type MenuProps } from 'antd'
+import { useMenu, useTranslate } from '@refinedev/core'
+import { type ItemType } from 'antd/es/menu/hooks/useItems'
+import { Title } from '@components/layout/title'
+import Link from 'next/link'
+import { type TreeMenuItem } from '@refinedev/core/dist/hooks/menu/useMenu'
+import { useLayoutContext } from '@contexts'
 
 import css from './style.module.scss'
 
 export const Sider = () => {
-  const {collapsed, setCollapsed} = useLayoutContext()
-  const translate = useTranslate();
-  const {menuItems, selectedKey, defaultOpenKeys} = useMenu();
-  const breakpoint = Grid.useBreakpoint();
-  const isMobile = typeof breakpoint.lg === "undefined" ? false : !breakpoint.lg;
+  const { collapsed, setCollapsed } = useLayoutContext()
+  const translate = useTranslate()
+  const { menuItems, selectedKey, defaultOpenKeys } = useMenu()
+  const breakpoint = Grid.useBreakpoint()
+  const isMobile = typeof breakpoint.lg === 'undefined' ? false : !breakpoint.lg
 
-  type MenuItem = Required<MenuProps>['items'][number];
+  type MenuItem = Required<MenuProps>['items'][number]
 
-  function parseItem(item: TreeMenuItem): ItemType {
-    const {route, name, icon, children, meta} = item;
+  function parseItem (item: TreeMenuItem): ItemType {
+    const { route, name, icon, children, meta } = item
     const parent = meta?.parent ?? null
     const key = parent ? `/${parent}/${name}` : `/${name}`
     const anchor = translate(`${name.toLowerCase()}.titles.list`)
@@ -31,7 +31,7 @@ export const Sider = () => {
         key,
         icon,
         style: {
-          fontWeight: selectedKey === key ? "bold" : "normal",
+          fontWeight: selectedKey === key ? 'bold' : 'normal'
         },
         label: anchor,
         children: children.map(parseItem)
@@ -42,9 +42,9 @@ export const Sider = () => {
       key,
       icon,
       style: {
-        fontWeight: selectedKey === key ? "bold" : "normal",
+        fontWeight: selectedKey === key ? 'bold' : 'normal'
       },
-      label: <Link href={route}>{anchor}</Link>,
+      label: <Link href={route}>{anchor}</Link>
     }
   }
 
@@ -73,12 +73,12 @@ export const Sider = () => {
         mode="inline"
         onClick={() => {
           if (!breakpoint.lg) {
-            setCollapsed(true);
+            setCollapsed(true)
           }
         }}
         items={items}
       />
     </AntdLayout.Sider>
 
-  );
-};
+  )
+}

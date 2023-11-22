@@ -1,5 +1,5 @@
-import {createContext, useContext} from "react";
-import {ErrorBag} from "./errorBag";
+import { createContext, useContext } from 'react'
+import { type ErrorBag } from './errorBag'
 
 export const ErrorBagContext = createContext<ErrorBag>({} as ErrorBag)
 

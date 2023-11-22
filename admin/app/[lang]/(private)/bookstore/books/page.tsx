@@ -1,7 +1,6 @@
-import {BookList} from "@components/crud/books";
+import { BookList } from '@components/crud/books'
 
 const BooksListPage = (params: {}) => {
-
   return <BookList/>
 }
 

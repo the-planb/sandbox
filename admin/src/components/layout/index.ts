@@ -1,8 +1,7 @@
-import {PropsWithChildren} from "react";
+import { type PropsWithChildren } from 'react'
 
-export {Header} from './header'
-export {Sider} from './sider'
-
+export { Header } from './header'
+export { Sider } from './sider'
 
 export type LayoutProps = PropsWithChildren & {
   params: {
@@ -12,12 +11,10 @@ export type LayoutProps = PropsWithChildren & {
 //
 // export type LayoutPropsWithChildren = PropsWithChildren & LayoutProps
 
-export type PageProps = {
+export interface PageProps {
   params: {
-    lang: string,
+    lang: string
     [key: string]: string | undefined
-  },
-  searchParams: {
-    [key: string]: undefined
   }
+  searchParams: Record<string, undefined>
 }
