@@ -7,12 +7,12 @@ acceptLanguage.languages(languages)
 
 export const config = {
   // matcher: '/:lang*'
-  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)']
+  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)'],
 }
 
 const cookieName = 'i18next'
 
-export function middleware (req: NextRequest) {
+export function middleware(req: NextRequest) {
   let lang
   if (req.cookies.has(cookieName)) {
     const { value } = req.cookies.get(cookieName) as RequestCookie
@@ -23,15 +23,19 @@ export function middleware (req: NextRequest) {
 
   // Redirect if lang in path is not supported
   if (
-    !languages.some(loc => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
+    !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
     !req.nextUrl.pathname.startsWith('/_next')
   ) {
-    return NextResponse.redirect(new URL(`/${lang}${req.nextUrl.pathname}`, req.url))
+    return NextResponse.redirect(
+      new URL(`/${lang}${req.nextUrl.pathname}`, req.url),
+    )
   }
 
   if (req.headers.has('referer')) {
     const refererUrl = new URL(req.headers.get('referer') as string)
-    const lngInReferer = languages.find((l) => refererUrl.pathname.startsWith(`/${l}`))
+    const lngInReferer = languages.find((l) =>
+      refererUrl.pathname.startsWith(`/${l}`),
+    )
     const response = NextResponse.next()
     if (lngInReferer) response.cookies.set(cookieName, lngInReferer)
     return response

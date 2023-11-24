@@ -18,44 +18,42 @@ export const PriceRule = async (rule: RuleObject, value: Money) => {
 }
 
 export const PriceInput = (props: PriceInputProps) => {
-  const {
-    value = { amount: 0, currency: 'EUR' },
-    onChange
-  } = props
+  const { value = { amount: 0, currency: 'EUR' }, onChange } = props
 
   const triggerChange = (data: Partial<Money>) => {
     onChange?.({
       amount: value.amount,
       currency: value?.currency,
-      ...data
+      ...data,
     })
   }
 
-  const currencySelect = <Select
-    value={value?.currency ?? 'EUR'}
-    options={[
-      { value: 'EUR', label: '€' },
-      { value: 'DOL', label: '$' }
-    ]}
-    onChange={(currency) => {
-      triggerChange({
-        currency: currency ?? 'EUR'
-      })
-    }
-    }
-  />
-
-  return <>
-    <InputNumber
-      value={value?.amount}
-      addonAfter={currencySelect}
-      onChange={(amount) => {
+  const currencySelect = (
+    <Select
+      value={value?.currency ?? 'EUR'}
+      options={[
+        { value: 'EUR', label: '€' },
+        { value: 'DOL', label: '$' },
+      ]}
+      onChange={(currency) => {
         triggerChange({
-          amount: amount ?? 0
+          currency: currency ?? 'EUR',
         })
-      }
-      }
+      }}
     />
+  )
 
-  </>
+  return (
+    <>
+      <InputNumber
+        value={value?.amount}
+        addonAfter={currencySelect}
+        onChange={(amount) => {
+          triggerChange({
+            amount: amount ?? 0,
+          })
+        }}
+      />
+    </>
+  )
 }

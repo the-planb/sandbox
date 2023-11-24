@@ -1,5 +1,10 @@
 'use client'
-import React, { createContext, type PropsWithChildren, useContext, useState } from 'react'
+import React, {
+  createContext,
+  type PropsWithChildren,
+  useContext,
+  useState,
+} from 'react'
 
 interface ILayoutContext {
   collapsed: boolean
@@ -21,11 +26,10 @@ export const LayoutContextProvider = ({ children }: PropsWithChildren) => {
     setCollapsed,
     toggleCollapsed: () => {
       setCollapsed(!collapsed)
-    }
+    },
   }
 
   return (
-    <LayoutContext.Provider value={context}>
-      {children}
-    </LayoutContext.Provider>)
+    <LayoutContext.Provider value={context}>{children}</LayoutContext.Provider>
+  )
 }

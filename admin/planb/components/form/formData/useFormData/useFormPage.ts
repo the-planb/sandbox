@@ -1,5 +1,14 @@
-import { type BaseKey, type BaseRecord, type FormAction, type HttpError } from '@refinedev/core'
-import { useForm, type UseFormProps, type UseFormReturnType } from '@refinedev/antd'
+import {
+  type BaseKey,
+  type BaseRecord,
+  type FormAction,
+  type HttpError,
+} from '@refinedev/core'
+import {
+  useForm,
+  type UseFormProps,
+  type UseFormReturnType,
+} from '@refinedev/antd'
 import { type FormProps } from 'antd'
 
 export interface UseFormPageProps<
@@ -28,17 +37,25 @@ export interface UseFormPageReturnType<
   show: () => void
 }
 
-const FakeShow = (): void => {
-
-}
-export const useFormDataPage =
-  <TData extends BaseRecord = BaseRecord, TError extends HttpError = HttpError, TVariables = {}, TSelectData extends BaseRecord = TData>
-  ({ like, ...props }: UseFormPageProps<TData, TError, TVariables>): UseFormPageReturnType<TData, TError, TVariables> => {
-    return {
-      like: 'view',
-      action: props.action,
-      resource: props.resource,
-      show: () => FakeShow,
-      ...useForm(props)
-    }
+const FakeShow = (): void => {}
+export const useFormDataPage = <
+  TData extends BaseRecord = BaseRecord,
+  TError extends HttpError = HttpError,
+  TVariables = {},
+  TSelectData extends BaseRecord = TData,
+>({
+  like,
+  ...props
+}: UseFormPageProps<TData, TError, TVariables>): UseFormPageReturnType<
+  TData,
+  TError,
+  TVariables
+> => {
+  return {
+    like: 'view',
+    action: props.action,
+    resource: props.resource,
+    show: () => FakeShow,
+    ...useForm(props),
   }
+}

@@ -1,18 +1,16 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    :global {
-        div {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-center {
-            flex-grow: 1;
-        }
+  :global {
+    div {
+      display: flex;
+      align-items: center;
     }
 
+    .header-center {
+      flex-grow: 1;
+    }
+  }
 }
-

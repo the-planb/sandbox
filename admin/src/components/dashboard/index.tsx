@@ -1,20 +1,20 @@
 import React from 'react'
 
-export default function Dashboard () {
+export default function Dashboard() {
   // const {show, ...props} = useFormData({
   //   resource: 'bookstore/tags',
   //   action: 'create',
   //   like: "modal",
   // })
 
-  return <>
+  return (
+    <>
+      {/* {TagForm(props)} */}
 
-    {/* {TagForm(props)} */}
-
-    {/* /!*<TagForm {...props}/>*!/ */}
-    {/* <Button onClick={()=>( */}
-    {/*  show() */}
-    {/* )}>dale</Button> */}
-
-  </>
+      {/* /!*<TagForm {...props}/>*!/ */}
+      {/* <Button onClick={()=>( */}
+      {/*  show() */}
+      {/* )}>dale</Button> */}
+    </>
+  )
 }

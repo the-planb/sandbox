@@ -1,6 +1,9 @@
 import { type BaseKey, type BaseRecord } from '@refinedev/core'
 
-export const buttonProps = (show?: (id?: BaseKey) => void, record?: BaseRecord) => {
+export const buttonProps = (
+  show?: (id?: BaseKey) => void,
+  record?: BaseRecord,
+) => {
   if (show === undefined) {
     return {}
   }
@@ -9,6 +12,6 @@ export const buttonProps = (show?: (id?: BaseKey) => void, record?: BaseRecord) 
   return {
     onClick: () => {
       show(id)
-    }
+    },
   }
 }

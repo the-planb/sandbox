@@ -16,19 +16,18 @@ export const ColumnActions = (props: TableActionsProps) => {
 
   const width = 5 + Object.values(actions).length * 70
 
-  return <Table.Column
-    dataIndex="__actions"
-    className={css.actionsColumn}
-    width={width}
-    render={(text, record: BaseRecord) => (
-      <Space>
-        {Object.values(actions).map((action, index) => {
-          return <Fragment key={index}>
-            {action({ record })}
-          </Fragment>
-        })}
-      </Space>
-    )
-    }
-  />
+  return (
+    <Table.Column
+      dataIndex='__actions'
+      className={css.actionsColumn}
+      width={width}
+      render={(text, record: BaseRecord) => (
+        <Space>
+          {Object.values(actions).map((action, index) => {
+            return <Fragment key={index}>{action({ record })}</Fragment>
+          })}
+        </Space>
+      )}
+    />
+  )
 }

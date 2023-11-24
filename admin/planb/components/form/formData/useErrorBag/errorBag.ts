@@ -24,14 +24,22 @@ const unique = (values: string[]) => {
   })
 }
 
-const build = (fields: string[], map: FieldsMap, type: 'fieldsets' | 'tabs') => {
-  const all = unique(Object.values(map).flatMap((item) => {
-    return item[type]
-  }))
+const build = (
+  fields: string[],
+  map: FieldsMap,
+  type: 'fieldsets' | 'tabs',
+) => {
+  const all = unique(
+    Object.values(map).flatMap((item) => {
+      return item[type]
+    }),
+  )
 
-  const withError = unique(fields.flatMap((item) => {
-    return map[item][type]
-  }))
+  const withError = unique(
+    fields.flatMap((item) => {
+      return map[item][type]
+    }),
+  )
 
   return all.reduce((carry, item) => {
     return { ...carry, [item]: withError.includes(item) }
@@ -43,11 +51,13 @@ export const createErrorBag = (children: ChildrenLike): ErrorBag => {
   const map = itemsMap(children)
 
   const update = (allFields: FieldData[]) => {
-    const fieldsWithErrors = allFields.filter((field) => {
-      return (field.errors?.length as number) > 0
-    }).flatMap((field) => {
-      return field.name as string
-    })
+    const fieldsWithErrors = allFields
+      .filter((field) => {
+        return (field.errors?.length as number) > 0
+      })
+      .flatMap((field) => {
+        return field.name as string
+      })
 
     updateFields((prevState) => {
       if (isEqual(prevState.sort(), fieldsWithErrors.sort())) {
@@ -73,6 +83,6 @@ export const createErrorBag = (children: ChildrenLike): ErrorBag => {
     update,
     errorFieldsets: fieldsets,
     errorTabs: tabs,
-    isValid
+    isValid,
   }
 }

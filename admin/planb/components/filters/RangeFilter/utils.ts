@@ -18,7 +18,7 @@ export const sortRange = (range: Range): Range => {
 
   return {
     min: max,
-    max: min
+    max: min,
   }
 }
 export const filterDataToRange = (data?: FilterData): undefined | Range => {
@@ -28,13 +28,13 @@ export const filterDataToRange = (data?: FilterData): undefined | Range => {
 
   if (data.operator === 'lte') {
     return {
-      max: data.value
+      max: data.value,
     } as Range
   }
 
   if (data.operator === 'gte') {
     return {
-      min: data.value
+      min: data.value,
     } as Range
   }
 
@@ -43,33 +43,33 @@ export const filterDataToRange = (data?: FilterData): undefined | Range => {
 
     return {
       min,
-      max
+      max,
     } as Range
   }
 }
 export const rangeToFilterData = (range: Range): FilterData => {
   if (isNil(range.min) && isNil(range.max)) {
     return {
-      value: null
+      value: null,
     }
   }
 
   if (isNil(range.min) && !isNil(range.max)) {
     return {
       operator: 'lte',
-      value: range.max
+      value: range.max,
     }
   }
 
   if (!isNil(range.min) && isNil(range.max)) {
     return {
       operator: 'gte',
-      value: range.min
+      value: range.min,
     }
   }
 
   return {
     operator: 'between',
-    value: `${range.min}..${range.max}`
+    value: `${range.min}..${range.max}`,
   }
 }

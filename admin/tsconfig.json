@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,48 +15,20 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@planb/*": [
-        "planb/*"
-      ],
-      "@planb": [
-        "planb"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@components": [
-        "src/components"
-      ],
-      "@contexts/*": [
-        "src/contexts/*"
-      ],
-      "@contexts": [
-        "src/contexts"
-      ],
-      "@i18n/*": [
-        "src/i18n/*"
-      ],
-      "@i18n": [
-        "src/i18n"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@styles": [
-        "src/styles"
-      ],
-      "@model/*": [
-        "src/model/*"
-      ],
-      "@model": [
-        "src/model"
-      ],
-      "@public/*": [
-        "public/*"
-      ],
-      "@public": [
-        "public"
-      ]
+      "@planb/*": ["planb/*"],
+      "@planb": ["planb"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"],
+      "@contexts/*": ["src/contexts/*"],
+      "@contexts": ["src/contexts"],
+      "@i18n/*": ["src/i18n/*"],
+      "@i18n": ["src/i18n"],
+      "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles"],
+      "@model/*": ["src/model/*"],
+      "@model": ["src/model"],
+      "@public/*": ["public/*"],
+      "@public": ["public"]
     },
     "incremental": true,
     "plugins": [
@@ -69,13 +37,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

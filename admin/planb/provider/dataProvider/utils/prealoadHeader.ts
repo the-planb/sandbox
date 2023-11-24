@@ -7,7 +7,8 @@ export const PreloadHeaderCollection = (meta: MetaQuery): HeadersInit => {
     return {}
   }
 
-  const Preload = fields.map((field: string) => `"hydra:member/*/${field}"`)
+  const Preload = fields
+    .map((field: string) => `"hydra:member/*/${field}"`)
     .join(',')
 
   return { 'X-Preload': Preload }
@@ -20,8 +21,7 @@ export const PreloadHeaderItem = (meta: MetaQuery): HeadersInit => {
     return {}
   }
 
-  const Preload = fields.map((field: string) => `"/${field}"`)
-    .join(',')
+  const Preload = fields.map((field: string) => `"/${field}"`).join(',')
 
   return { 'X-Preload': Preload }
 }

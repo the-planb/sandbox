@@ -7,19 +7,20 @@ import { useTranslate } from '@refinedev/core'
 
 export const TagList = () => {
   const t = useTranslate()
-  return <TableData
-    resource={'bookstore/tags'}
-    filters={{
-      name: <TextFilter/>
-    }}
-    edit={{ modal: TagForm, width: 500 }}
-    create={{ drawer: TagForm }}
-  >
-    <Table.Column
-      width={'auto'}
-      className={'main'}
-      dataIndex="name"
-      title={t('bookstore/tags.columns.name')}
-    />
-  </TableData>
+  return (
+    <TableData
+      resource={'bookstore/tags'}
+      filters={{
+        name: <TextFilter />,
+      }}
+      edit={{ modal: TagForm, width: 500 }}
+      create={{ drawer: TagForm }}>
+      <Table.Column
+        width={'auto'}
+        className={'main'}
+        dataIndex='name'
+        title={t('bookstore/tags.columns.name')}
+      />
+    </TableData>
+  )
 }

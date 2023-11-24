@@ -20,7 +20,7 @@ export const Sider = () => {
 
   type MenuItem = Required<MenuProps>['items'][number]
 
-  function parseItem (item: TreeMenuItem): ItemType {
+  function parseItem(item: TreeMenuItem): ItemType {
     const { route, name, icon, children, meta } = item
     const parent = meta?.parent ?? null
     const key = parent ? `/${parent}/${name}` : `/${name}`
@@ -31,10 +31,10 @@ export const Sider = () => {
         key,
         icon,
         style: {
-          fontWeight: selectedKey === key ? 'bold' : 'normal'
+          fontWeight: selectedKey === key ? 'bold' : 'normal',
         },
         label: anchor,
-        children: children.map(parseItem)
+        children: children.map(parseItem),
       }
     }
 
@@ -42,9 +42,9 @@ export const Sider = () => {
       key,
       icon,
       style: {
-        fontWeight: selectedKey === key ? 'bold' : 'normal'
+        fontWeight: selectedKey === key ? 'bold' : 'normal',
       },
-      label: <Link href={route}>{anchor}</Link>
+      label: <Link href={route}>{anchor}</Link>,
     }
   }
 
@@ -55,22 +55,21 @@ export const Sider = () => {
   const items: MenuItem[] = menuItems.map(parseItem)
 
   return (
-
     <AntdLayout.Sider
       trigger={null}
       collapsible
       collapsed={collapsed}
       onCollapse={onCollapse}
       collapsedWidth={isMobile ? 0 : 80}
-      breakpoint="lg"
+      breakpoint='lg'
       // theme={'light'}
     >
-      <Title collapsed={collapsed}/>
+      <Title collapsed={collapsed} />
       <Menu
         className={css.menu}
         selectedKeys={[selectedKey]}
         defaultOpenKeys={defaultOpenKeys}
-        mode="inline"
+        mode='inline'
         onClick={() => {
           if (!breakpoint.lg) {
             setCollapsed(true)
@@ -79,6 +78,5 @@ export const Sider = () => {
         items={items}
       />
     </AntdLayout.Sider>
-
   )
 }

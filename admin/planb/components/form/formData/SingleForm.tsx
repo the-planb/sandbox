@@ -7,13 +7,19 @@ import css from './style.module.scss'
 
 export type SingleFormProps = { formProps: FormProps } & WithChildren
 
-export function SingleForm ({ children, formProps }: SingleFormProps) {
+export function SingleForm({ children, formProps }: SingleFormProps) {
   const errorBag = useErrorBag()
   const onFieldsChange = (_: FieldData[], allFields: FieldData[]) => {
     errorBag.update(allFields)
   }
 
-  return <Form layout={'vertical'} className={css.formData} {...formProps} onFieldsChange={onFieldsChange}>
-    {children as ReactNode}
-  </Form>
+  return (
+    <Form
+      layout={'vertical'}
+      className={css.formData}
+      {...formProps}
+      onFieldsChange={onFieldsChange}>
+      {children as ReactNode}
+    </Form>
+  )
 }

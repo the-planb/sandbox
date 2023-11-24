@@ -12,28 +12,30 @@ interface TocProps {
   children: ReactNode | ReactNode[]
 }
 
-export function Toc ({ children }: TocProps) {
+export function Toc({ children }: TocProps) {
   const { errorFieldsets } = useErrorBag()
   const { like } = useFormContext()
 
-  const items: AnchorLinkItemProps[] = nodeTree({ children })
-    .fieldsets((props, index, node) => {
+  const items: AnchorLinkItemProps[] = nodeTree({ children }).fieldsets(
+    (props, index, node) => {
       return {
         title: props.legend,
         key: index,
         href: `#${props.id}`,
-        className: errorFieldsets[props.id] ? 'error' : undefined
+        className: errorFieldsets[props.id] ? 'error' : undefined,
       }
-    })
+    },
+  )
 
   const hasToc = items.length > 1
   const anchorProps: AnchorProps = {
     affix: false,
-    getContainer: () => (document.querySelector(`.${css.toc} .anchor-container`) as HTMLElement),
+    getContainer: () =>
+      document.querySelector(`.${css.toc} .anchor-container`) as HTMLElement,
     offsetTop: 10,
     targetOffset: 50,
     showInkInFixed: true,
-    items
+    items,
   }
 
   const className = classNames(css.toc, 'toc')
@@ -42,24 +44,26 @@ export function Toc ({ children }: TocProps) {
     xs: 24,
     sm: 24,
     md: like === 'view' || hasToc ? 6 : 24,
-    lg: like === 'view' || hasToc ? 6 : 24
+    lg: like === 'view' || hasToc ? 6 : 24,
   }
 
   const formSizes = {
     xs: 24,
     sm: 24,
     md: calculePanelSize(24, false, hasToc),
-    lg: calculePanelSize(24, like === 'view', true)
+    lg: calculePanelSize(24, like === 'view', true),
   }
 
-  return <Row className={className}>
-    <Col className={'anchor-links'} {...linksSizes}>
-      {hasToc && <Anchor {...anchorProps}/>}
-    </Col>
-    <Col className={'anchor-container'} {...formSizes} >
-      {children}
-    </Col>
-  </Row>
+  return (
+    <Row className={className}>
+      <Col className={'anchor-links'} {...linksSizes}>
+        {hasToc && <Anchor {...anchorProps} />}
+      </Col>
+      <Col className={'anchor-container'} {...formSizes}>
+        {children}
+      </Col>
+    </Row>
+  )
 }
 
 const calculePanelSize = (space: number, isLarge: boolean, hasToc: boolean) => {

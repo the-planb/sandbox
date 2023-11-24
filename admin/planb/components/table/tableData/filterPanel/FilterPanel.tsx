@@ -3,35 +3,46 @@ import { Button, Card, Form, type FormInstance, type FormProps } from 'antd'
 import css from './style.module.scss'
 import { useTranslate } from '@refinedev/core'
 import { type ReactNode } from 'react'
-import { type FilterList, type FilterValueList } from '@planb/components/table/tableData/filterPanel/types'
+import {
+  type FilterList,
+  type FilterValueList,
+} from '@planb/components/table/tableData/filterPanel/types'
 
 interface FilterPanelProps extends FormProps {
   filters: FilterList
   defaultValues?: FilterValueList
 }
 
-const mergeDefaultValues = (filters: FilterList, defaultValues?: FilterValueList): FilterValueList => {
+const mergeDefaultValues = (
+  filters: FilterList,
+  defaultValues?: FilterValueList,
+): FilterValueList => {
   const emptyValues = Object.keys(filters).reduce((carry, name) => {
     return {
       ...carry,
       [name]: {
         operator: undefined,
-        value: null
-      }
+        value: null,
+      },
     }
   }, {})
 
   return {
     ...emptyValues,
-    ...defaultValues
+    ...defaultValues,
   }
 }
 
-export const FilterPanel = ({ filters, defaultValues, resource, ...formProps }: FilterPanelProps) => {
+export const FilterPanel = ({
+  filters,
+  defaultValues,
+  resource,
+  ...formProps
+}: FilterPanelProps) => {
   const t = useTranslate()
 
   const onReset = () => {
-    const form = (formProps.form as FormInstance)
+    const form = formProps.form as FormInstance
     const values = mergeDefaultValues(filters, defaultValues)
 
     form.resetFields()
@@ -39,22 +50,33 @@ export const FilterPanel = ({ filters, defaultValues, resource, ...formProps }: 
     form.submit()
   }
 
-  return <Form {...formProps} className={css.filterForm} layout={'vertical'}>
-    <Card title={t('buttons.filter')} bordered={false} className={css.filterPanel} actions={[
-      <div className={'footer'}>
-        <Button htmlType="button" onClick={onReset}>
-          {t('buttons.clear')}
-        </Button>
-        <Button htmlType="submit" type="primary">
-          {t('buttons.search')}
-        </Button>
-      </div>
-    ]}>
-      {Object.entries(filters).map(([name, Input], index) => {
-        return <Form.Item name={name} key={index} label={t(`${resource}.filters.${name}`)}>
-          {Input as ReactNode}
-        </Form.Item>
-      })}
-    </Card>
-  </Form>
+  return (
+    <Form {...formProps} className={css.filterForm} layout={'vertical'}>
+      <Card
+        title={t('buttons.filter')}
+        bordered={false}
+        className={css.filterPanel}
+        actions={[
+          <div className={'footer'}>
+            <Button htmlType='button' onClick={onReset}>
+              {t('buttons.clear')}
+            </Button>
+            <Button htmlType='submit' type='primary'>
+              {t('buttons.search')}
+            </Button>
+          </div>,
+        ]}>
+        {Object.entries(filters).map(([name, Input], index) => {
+          return (
+            <Form.Item
+              name={name}
+              key={index}
+              label={t(`${resource}.filters.${name}`)}>
+              {Input as ReactNode}
+            </Form.Item>
+          )
+        })}
+      </Card>
+    </Form>
+  )
 }

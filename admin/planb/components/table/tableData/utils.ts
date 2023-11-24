@@ -1,16 +1,18 @@
-import { type FilterValueList, type FilterData } from '@planb/components/table/tableData/filterPanel/types'
+import {
+  type FilterValueList,
+  type FilterData,
+} from '@planb/components/table/tableData/filterPanel/types'
 import { type CrudFilters, LogicalFilter } from '@refinedev/core'
 
 type FilterList = Array<FilterData & { field: string }>
 
 export const onSearch = (input: FilterValueList): CrudFilters => {
-  return Object.entries(input)
-    .map(([field, value]) => {
-      return {
-        field,
-        ...value
-      }
-    }) as CrudFilters
+  return Object.entries(input).map(([field, value]) => {
+    return {
+      field,
+      ...value,
+    }
+  }) as CrudFilters
 }
 
 export const getFiltersRecord = (input: CrudFilters): FilterValueList => {
@@ -23,8 +25,8 @@ export const getFiltersRecord = (input: CrudFilters): FilterValueList => {
       ...carry,
       [field]: {
         operator,
-        value
-      }
+        value,
+      },
     }
   }, {})
 }

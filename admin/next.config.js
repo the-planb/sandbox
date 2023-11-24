@@ -1,10 +1,10 @@
-const path = require("path");
+const path = require('path')
 
 module.exports = {
   basePath: '/admin',
   sassOptions: {
     includePaths: [path.join(__dirname, 'src', 'styles')],
-    prependData: `@import "global.module.scss";`
+    prependData: `@import "global.module.scss";`,
   },
   env: {
     NEXT_PUBLIC_ENTRYPOINT: process.env.NEXT_PUBLIC_ENTRYPOINT,
@@ -30,14 +30,14 @@ module.exports = {
   },
   transpilePackages: [
     '@refinedev/antd',
-    "@refinedev/inferencer",
+    '@refinedev/inferencer',
     'antd',
     '@ant-design/pro-components',
     '@ant-design/pro-layout',
     '@ant-design/pro-utils',
     '@ant-design/pro-provider',
     'rc-pagination',
-    'rc-picker'
+    'rc-picker',
   ],
   typescript: {
     // !! WARN !!
@@ -46,4 +46,4 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-};
+}

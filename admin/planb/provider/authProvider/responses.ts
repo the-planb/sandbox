@@ -5,7 +5,7 @@ export interface AuthTokenResponse {
   message: string
 }
 
-export function OnLogin (redirectTo: string) {
+export function OnLogin(redirectTo: string) {
   return Redirect(redirectTo)
 }
 
@@ -14,20 +14,20 @@ export const OnError = (message: string) => {
     success: false,
     error: {
       name: 'Error Login',
-      message
-    }
+      message,
+    },
   }
 }
 
 export const OnCheck = (authenticated: boolean) => {
   return authenticated
     ? {
-        authenticated: true
+        authenticated: true,
       }
     : {
         authenticated: false,
         logout: true,
-        redirectTo: '/login'
+        redirectTo: '/login',
       }
 }
 
@@ -39,6 +39,6 @@ export const GetUser = () => {
 export const Redirect = (redirectTo: string) => {
   return {
     success: true,
-    redirectTo
+    redirectTo,
   }
 }

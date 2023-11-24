@@ -24,32 +24,33 @@ export const FullNameInput = ({ value, onChange }: FullNameInputProps) => {
 
     onChange?.({
       ...(value as FullName),
-      ...data
+      ...data,
     })
   }
 
-  return <Space>
-    <Input
-      value={value?.firstName}
-      placeholder={'Nombre'}
-      onChange={(el: ChangeEvent<HTMLInputElement>) => {
-        const firstName = el.target.value
-        triggerChange({
-          firstName
-        })
-      }}
-    />
+  return (
+    <Space>
+      <Input
+        value={value?.firstName}
+        placeholder={'Nombre'}
+        onChange={(el: ChangeEvent<HTMLInputElement>) => {
+          const firstName = el.target.value
+          triggerChange({
+            firstName,
+          })
+        }}
+      />
 
-    <Input
-      value={value?.lastName}
-      placeholder={'Apellidos'}
-      onChange={(el: ChangeEvent<HTMLInputElement>) => {
-        const lastName = el.target.value
-        triggerChange({
-          lastName
-        })
-      }}
-    />
-
-  </Space>
+      <Input
+        value={value?.lastName}
+        placeholder={'Apellidos'}
+        onChange={(el: ChangeEvent<HTMLInputElement>) => {
+          const lastName = el.target.value
+          triggerChange({
+            lastName,
+          })
+        }}
+      />
+    </Space>
+  )
 }

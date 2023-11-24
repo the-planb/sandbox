@@ -1,6 +1,12 @@
-import { type AuthBindings, type CanParams, type IAccessControlContext } from '@refinedev/core'
+import {
+  type AuthBindings,
+  type CanParams,
+  type IAccessControlContext,
+} from '@refinedev/core'
 
-export function AccessControlProvider ({ getPermissions }: AuthBindings): Required<IAccessControlContext> {
+export function AccessControlProvider({
+  getPermissions,
+}: AuthBindings): Required<IAccessControlContext> {
   return {
     can: async ({ resource, action, params }: CanParams) => {
       const roles = (getPermissions ? await getPermissions() : []) as string[]
@@ -12,15 +18,15 @@ export function AccessControlProvider ({ getPermissions }: AuthBindings): Requir
 
       return {
         can: false,
-        reason: 'Unauthorized'
+        reason: 'Unauthorized',
       }
     },
     options: {
       buttons: {
         enableAccessControl: true,
-        hideIfUnauthorized: false
-      }
-    }
+        hideIfUnauthorized: false,
+      },
+    },
   }
 }
 

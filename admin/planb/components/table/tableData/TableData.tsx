@@ -9,27 +9,33 @@ import { type BaseRecord, type HttpError } from '@refinedev/core'
 import { type ActionList } from '@planb/components/table/tableData/types'
 import { buttonProps } from '@planb/components/table/tableData/buttonProps'
 import { FilterPanel } from '@planb/components/table/tableData/filterPanel/FilterPanel'
-import { type FilterList, type FilterValueList } from '@planb/components/table/tableData/filterPanel/types'
-import { getFiltersRecord, onSearch } from '@planb/components/table/tableData/utils'
+import {
+  type FilterList,
+  type FilterValueList,
+} from '@planb/components/table/tableData/filterPanel/types'
+import {
+  getFiltersRecord,
+  onSearch,
+} from '@planb/components/table/tableData/utils'
 
-type ActionMode = {
-  modal: FC<FormDataProps>
-  width?: string | number
-  drawer?: never
-} | {
-  drawer: FC<FormDataProps>
-  width?: string | number
-  modal?: never
-}
+type ActionMode =
+  | {
+      modal: FC<FormDataProps>
+      width?: string | number
+      drawer?: never
+    }
+  | {
+      drawer: FC<FormDataProps>
+      width?: string | number
+      modal?: never
+    }
 
-interface TableDataProps<TQueryFnData extends BaseRecord = BaseRecord,
+interface TableDataProps<
+  TQueryFnData extends BaseRecord = BaseRecord,
   TError extends HttpError = HttpError,
   TSearchVariables extends FilterValueList = FilterValueList,
-  TData extends BaseRecord = TQueryFnData>
-  extends useTableProps<TQueryFnData,
-  TError,
-  TSearchVariables,
-  TData> {
+  TData extends BaseRecord = TQueryFnData,
+> extends useTableProps<TQueryFnData, TError, TSearchVariables, TData> {
   resource: string
   children: ReactNode | ReactNode[]
   actions?: ActionList
@@ -40,37 +46,50 @@ interface TableDataProps<TQueryFnData extends BaseRecord = BaseRecord,
   tableProps?: TableProps<TData>
 }
 
-export const TableData = <TQueryFnData extends BaseRecord = BaseRecord,
+export const TableData = <
+  TQueryFnData extends BaseRecord = BaseRecord,
   TError extends HttpError = HttpError,
   TSearchVariables extends FilterValueList = FilterValueList,
-  TData extends BaseRecord = TQueryFnData
->(props: TableDataProps<TQueryFnData, TError, TSearchVariables, TData>) => {
-  const { children, edit, create, actions, filters, filtersDefaultValues, tableProps: tableParams, ...params } = props
+  TData extends BaseRecord = TQueryFnData,
+>(
+  props: TableDataProps<TQueryFnData, TError, TSearchVariables, TData>,
+) => {
+  const {
+    children,
+    edit,
+    create,
+    actions,
+    filters,
+    filtersDefaultValues,
+    tableProps: tableParams,
+    ...params
+  } = props
   const { resource } = props
 
   const {
     searchFormProps: _searchFormProps,
     filters: filterValues,
-    tableProps: _tableProps
-  } = useTable<TQueryFnData, TError, TSearchVariables, TData>
-  ({
+    tableProps: _tableProps,
+  } = useTable<TQueryFnData, TError, TSearchVariables, TData>({
     ...params,
     sorters: {
-      initial: [{
-        field: 'id',
-        order: 'asc'
-      }],
-      ...params.sorters
+      initial: [
+        {
+          field: 'id',
+          order: 'asc',
+        },
+      ],
+      ...params.sorters,
     },
     filters: {
       mode: 'server',
-      defaultBehavior: 'replace'
+      defaultBehavior: 'replace',
     },
     syncWithLocation: true,
     pagination: {
-      pageSize: 10
+      pageSize: 10,
     },
-    onSearch
+    onSearch,
   })
 
   const tableProps = {
@@ -79,58 +98,64 @@ export const TableData = <TQueryFnData extends BaseRecord = BaseRecord,
     pagination: {
       ..._tableProps.pagination,
       showSizeChanger: false,
-      hideOnSinglePage: true
-    }
+      hideOnSinglePage: true,
+    },
   }
 
   const searchFormProps = {
     ..._searchFormProps,
-    initialValues: getFiltersRecord(filterValues)
+    initialValues: getFiltersRecord(filterValues),
   }
 
   const { showEdit, editForm, showCreate, createForm } = useListForms({
     resource,
     edit,
-    create
+    create,
   })
 
   const hasFilters = Object.keys(filters ?? {}).length > 0
   const md = hasFilters ? 19 : 24
 
-  return <>
-    <List resource={resource}
-          breadcrumb={false}
-          wrapperProps={{
-            className: css.tableData
-          }}
-          createButtonProps={{
-            icon: false,
-            ...buttonProps(showCreate)
-          }}
-    >
-      <Row>
-        {hasFilters && <Col className={'filterWrapper'} sm={24} md={5}>
-          <FilterPanel {...searchFormProps} resource={resource} filters={filters as FilterList}
-                       defaultValues={filtersDefaultValues}/>
-        </Col>}
+  return (
+    <>
+      <List
+        resource={resource}
+        breadcrumb={false}
+        wrapperProps={{
+          className: css.tableData,
+        }}
+        createButtonProps={{
+          icon: false,
+          ...buttonProps(showCreate),
+        }}>
+        <Row>
+          {hasFilters && (
+            <Col className={'filterWrapper'} sm={24} md={5}>
+              <FilterPanel
+                {...searchFormProps}
+                resource={resource}
+                filters={filters as FilterList}
+                defaultValues={filtersDefaultValues}
+              />
+            </Col>
+          )}
 
-        <Col sm={24} md={md}>
-          <Table {...tableProps} rowKey="id">
-            {children}
+          <Col sm={24} md={md}>
+            <Table {...tableProps} rowKey='id'>
+              {children}
 
-            {ColumnActions({
-              resource,
-              show: showEdit,
-              actions
-            })}
+              {ColumnActions({
+                resource,
+                show: showEdit,
+                actions,
+              })}
+            </Table>
+          </Col>
+        </Row>
+      </List>
 
-          </Table>
-        </Col>
-
-      </Row>
-    </List>
-
-    {editForm}
-    {createForm}
-  </>
+      {editForm}
+      {createForm}
+    </>
+  )
 }

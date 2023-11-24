@@ -12,20 +12,18 @@ export const Header: React.FC = () => {
       className={css.header}
       style={{
         padding: '0 1em 0 0',
-        height: '70px'
-      }}
-    >
+        height: '70px',
+      }}>
       <div className={'header-left'}>
-        <CollapseToggle/>
+        <CollapseToggle />
       </div>
 
       <div className={'header-center'}></div>
 
       <div className={'header-right'}>
-        <LangSwitcher/>
-        <UserPanel/>
+        <LangSwitcher />
+        <UserPanel />
       </div>
-
     </AntdLayout.Header>
   )
 }

@@ -5,7 +5,7 @@ import { AuthorForm } from '@components/crud/authors'
 export const AuthorEdit = () => {
   const { ...props } = useFormData({
     resource: 'bookstore/authors',
-    action: 'edit'
+    action: 'edit',
   })
   return <AuthorForm {...props} />
 }

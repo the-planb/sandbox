@@ -1,4 +1,8 @@
-import { type CrudFilters, type CrudSort, type Pagination } from '@refinedev/core'
+import {
+  type CrudFilters,
+  type CrudSort,
+  type Pagination,
+} from '@refinedev/core'
 
 interface GenerateQueryProps {
   filters?: CrudFilters
@@ -6,7 +10,11 @@ interface GenerateQueryProps {
   pagination?: Pagination
 }
 
-export default function GenerateQuery ({ filters, sorters, pagination }: GenerateQueryProps): string {
+export default function GenerateQuery({
+  filters,
+  sorters,
+  pagination,
+}: GenerateQueryProps): string {
   const params = new URLSearchParams()
 
   sorters?.forEach((item: CrudSort) => {
@@ -26,11 +34,11 @@ export default function GenerateQuery ({ filters, sorters, pagination }: Generat
   })
 
   if (pagination?.current) {
-    params.append('page', (pagination.current as unknown as string))
+    params.append('page', pagination.current as unknown as string)
   }
 
   if (pagination?.pageSize) {
-    params.append('itemsPerPage', (pagination.pageSize as unknown as string))
+    params.append('itemsPerPage', pagination.pageSize as unknown as string)
   }
 
   return params.toString()

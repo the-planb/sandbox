@@ -1,9 +1,15 @@
 import React from 'react'
 import { Grid, Layout as AntdLayout } from 'antd'
-import { type RefineThemedLayoutV2Props, ThemedLayoutContextProvider } from '@refinedev/antd'
+import {
+  type RefineThemedLayoutV2Props,
+  ThemedLayoutContextProvider,
+} from '@refinedev/antd'
 import { Header, Sider } from '@components/layout'
 
-export const Layout: React.FC<RefineThemedLayoutV2Props> = ({ children, OffLayoutArea }) => {
+export const Layout: React.FC<RefineThemedLayoutV2Props> = ({
+  children,
+  OffLayoutArea,
+}) => {
   const breakpoint = Grid.useBreakpoint()
 
   const isSmall = typeof breakpoint.sm === 'undefined' ? true : breakpoint.sm
@@ -11,20 +17,19 @@ export const Layout: React.FC<RefineThemedLayoutV2Props> = ({ children, OffLayou
   return (
     <ThemedLayoutContextProvider>
       <AntdLayout style={{ height: '100vh' }}>
-        <Sider/>
+        <Sider />
         <AntdLayout>
-          <Header/>
+          <Header />
           <AntdLayout.Content>
             <div
               style={{
                 height: '100%',
                 padding: '1em',
-                margin: 0
-              }}
-            >
+                margin: 0,
+              }}>
               {children}
             </div>
-            {OffLayoutArea && <OffLayoutArea/>}
+            {OffLayoutArea && <OffLayoutArea />}
           </AntdLayout.Content>
           {/* {Footer && <Footer/>} */}
         </AntdLayout>

@@ -1,9 +1,16 @@
-import { type BaseRecord, type DataProvider as IDataProvider } from '@refinedev/core'
-import { GenerateQuery, PreloadHeaderCollection, PreloadHeaderItem } from './utils'
+import {
+  type BaseRecord,
+  type DataProvider as IDataProvider,
+} from '@refinedev/core'
+import {
+  GenerateQuery,
+  PreloadHeaderCollection,
+  PreloadHeaderItem,
+} from './utils'
 
 import { ApiClient } from '@planb/provider'
 
-export function DataProvider (): IDataProvider {
+export function DataProvider(): IDataProvider {
   const apiClient = ApiClient('ProxyMode')
 
   return {
@@ -11,19 +18,20 @@ export function DataProvider (): IDataProvider {
       const query = GenerateQuery({
         filters,
         sorters,
-        pagination
+        pagination,
       })
 
       const path = `${resource}?${query}`
       const options = {
-        headers: PreloadHeaderCollection(meta)
+        headers: PreloadHeaderCollection(meta),
       }
 
-      return await apiClient.get(path, options)
+      return await apiClient
+        .get(path, options)
         .then((response: Record<string, any>) => {
           return {
             total: response['hydra:totalItems'],
-            data: response['hydra:member']
+            data: response['hydra:member'],
           }
         })
     },
@@ -31,15 +39,14 @@ export function DataProvider (): IDataProvider {
       const path = `${resource}/${id}`
 
       const options = {
-        headers: PreloadHeaderItem(meta)
+        headers: PreloadHeaderItem(meta),
       }
 
-      return await apiClient.get(path, options)
-        .then((response: BaseRecord) => {
-          return {
-            data: response
-          }
-        })
+      return await apiClient.get(path, options).then((response: BaseRecord) => {
+        return {
+          data: response,
+        }
+      })
     },
 
     create: async ({ resource, variables }) => {
@@ -48,7 +55,7 @@ export function DataProvider (): IDataProvider {
       // const {data} = await httpClient.post(url, variables);
       const data = {}
       return {
-        data
+        data,
       }
     },
 
@@ -58,19 +65,18 @@ export function DataProvider (): IDataProvider {
       const data = {}
 
       return {
-        data
+        data,
       }
     },
 
     deleteOne: async ({ resource, id, variables }) => {
       const path = `${resource}/${id}`
 
-      return await apiClient.delete(path)
-        .then((response: BaseRecord) => {
-          return {
-            data: response
-          }
-        })
+      return await apiClient.delete(path).then((response: BaseRecord) => {
+        return {
+          data: response,
+        }
+      })
 
       // // const {data} = await httpClient.delete(url, (variables as AxiosRequestConfig));
       // const data = {}
@@ -89,6 +95,6 @@ export function DataProvider (): IDataProvider {
 
     custom: async ({ url, method, filters, sort, payload, query, headers }) => {
       throw new Error('FALTA POR HACER')
-    }
+    },
   } as IDataProvider
 }

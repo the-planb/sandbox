@@ -1,26 +1,24 @@
 .menu {
-    background: transparent;
+  background: transparent;
 
-    :global {
-        li {
-            color: $colorBgPanel;
-        }
-
-        li.ant-menu-item-selected {
-            background: $colorPrimary;
-            color: $colorBgPanel;
-        }
-
-        li.ant-menu-item-active {
-            border: solid 1px $colorPrimary;
-            color: $colorBgPanel !important;
-
-            a {
-                color: $colorBgPanel !important;
-                font-weight: bold;
-
-            }
-        }
+  :global {
+    li {
+      color: $colorBgPanel;
     }
 
+    li.ant-menu-item-selected {
+      background: $colorPrimary;
+      color: $colorBgPanel;
+    }
+
+    li.ant-menu-item-active {
+      border: solid 1px $colorPrimary;
+      color: $colorBgPanel !important;
+
+      a {
+        color: $colorBgPanel !important;
+        font-weight: bold;
+      }
+    }
+  }
 }

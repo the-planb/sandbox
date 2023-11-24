@@ -1,7 +1,7 @@
 import { BookList } from '@components/crud/books'
 
 const BooksListPage = (params: {}) => {
-  return <BookList/>
+  return <BookList />
 }
 
 export default BooksListPage

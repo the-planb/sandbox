@@ -3,13 +3,15 @@ import { type FormDataProps } from '@planb/components/form'
 import { type BaseKey } from '@refinedev/core'
 import { resolveActionForm } from '@planb/components/table/tableData/useListForms/resolveActionForm'
 
-type ListForm = {
-  modal: FC<FormDataProps>
-  drawer?: never
-} | {
-  modal?: never
-  drawer: FC<FormDataProps>
-}
+type ListForm =
+  | {
+      modal: FC<FormDataProps>
+      drawer?: never
+    }
+  | {
+      modal?: never
+      drawer: FC<FormDataProps>
+    }
 
 interface UseListFormsProps {
   resource: string
@@ -23,17 +25,21 @@ interface UseListFormsReturnType {
   showCreate?: (id?: BaseKey) => void
   createForm?: JSX.Element
 }
-export const useListForms = ({ resource, edit, create }: UseListFormsProps): UseListFormsReturnType => {
+export const useListForms = ({
+  resource,
+  edit,
+  create,
+}: UseListFormsProps): UseListFormsReturnType => {
   const { show: showEdit, form: editForm } = resolveActionForm({
     resource,
     action: 'edit',
-    ...edit
+    ...edit,
   })
 
   const { show: showCreate, form: createForm } = resolveActionForm({
     resource,
     action: 'create',
-    ...create
+    ...create,
   })
 
   return { showEdit, editForm, showCreate, createForm }

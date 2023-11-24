@@ -6,7 +6,7 @@ import { useFormData } from '@planb/components/form'
 const BooksEditPage = () => {
   const { ...props } = useFormData({
     resource: 'bookstore/books',
-    action: 'edit'
+    action: 'edit',
   })
 
   return <BookForm {...props} />

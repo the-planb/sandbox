@@ -95,12 +95,13 @@ varnish/logs:
 alfred/please:
 
 	@(/mnt/workspace/the-planb/alfred/bin/entrypoint && \
-	cd api; \
-	php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null && \
-	export YAMLFIX_NONE_REPRESENTATION="~" && \
-	export export YAMLFIX_SECTION_WHITELINES="2" && \
-	yamlfix config/mapping config/filters \
-    )
+			(cd admin; pnpm prettier > /dev/null ) && \
+			(cd api; \
+			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null && \
+			export YAMLFIX_NONE_REPRESENTATION="~" && \
+			export export YAMLFIX_SECTION_WHITELINES="2" && \
+			yamlfix config/mapping config/filters 2> /dev/null) \
+  )
 
 qa:
 	(cd api; vendor/planb/planb/bin/qa src)

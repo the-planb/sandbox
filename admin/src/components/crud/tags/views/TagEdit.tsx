@@ -4,7 +4,7 @@ import { TagForm } from '@components/crud/tags'
 
 export const TagEdit = () => {
   const props = useFormData({
-    resource: 'bookstore/tags'
+    resource: 'bookstore/tags',
   })
   return <TagForm {...props} />
 }

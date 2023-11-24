@@ -16,8 +16,8 @@ export const tab = (props: TabArgs): Tab => {
   return {
     key,
     forceRender: true,
-    label: <TabLabel label={label}/>,
+    label: <TabLabel label={label} />,
     children,
-    ...tabProps
+    ...tabProps,
   }
 }

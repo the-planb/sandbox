@@ -5,7 +5,7 @@ import { Menu } from './Menu'
 const Icon = {
   Logo,
   LogoMini,
-  Menu
+  Menu,
 }
 
 export default Icon

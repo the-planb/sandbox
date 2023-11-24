@@ -12,7 +12,10 @@ interface ResolveFormLikeReturnType {
   form?: FC<FormDataProps>
 }
 
-const resolveFormLike = ({ modal, drawer }: ResolveFormLikeProps): ResolveFormLikeReturnType => {
+const resolveFormLike = ({
+  modal,
+  drawer,
+}: ResolveFormLikeProps): ResolveFormLikeReturnType => {
   if (modal !== undefined) {
     return { like: 'modal', form: modal }
   }
@@ -37,10 +40,10 @@ interface ResolveListFormReturnType {
   form?: JSX.Element
 }
 
-export const resolveActionForm = (props: ResolveActionFormProps): ResolveListFormReturnType => {
-  const {
-    resource, action, modal, drawer, width
-  } = props
+export const resolveActionForm = (
+  props: ResolveActionFormProps,
+): ResolveListFormReturnType => {
+  const { resource, action, modal, drawer, width } = props
 
   if (modal !== undefined) {
     const { show, ...props } = useFormData({
@@ -48,8 +51,8 @@ export const resolveActionForm = (props: ResolveActionFormProps): ResolveListFor
       resource,
       action,
       modalProps: {
-        width: width ?? '1000px'
-      }
+        width: width ?? '1000px',
+      },
     })
     return { show, form: modal(props) as JSX.Element }
   }
@@ -60,8 +63,8 @@ export const resolveActionForm = (props: ResolveActionFormProps): ResolveListFor
       resource,
       action,
       drawerProps: {
-        width: width ?? '500px'
-      }
+        width: width ?? '500px',
+      },
     })
     return { show, form: drawer(props) as JSX.Element }
   }

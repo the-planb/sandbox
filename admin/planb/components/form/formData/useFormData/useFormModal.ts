@@ -1,5 +1,14 @@
-import { type BaseKey, type BaseRecord, type FormAction, type HttpError } from '@refinedev/core'
-import { useModalForm, type UseModalFormProps, type UseModalFormReturnType } from '@refinedev/antd'
+import {
+  type BaseKey,
+  type BaseRecord,
+  type FormAction,
+  type HttpError,
+} from '@refinedev/core'
+import {
+  useModalForm,
+  type UseModalFormProps,
+  type UseModalFormReturnType,
+} from '@refinedev/antd'
 import { type FormProps, type ModalProps } from 'antd'
 import { useState } from 'react'
 
@@ -29,28 +38,42 @@ export interface UseFormModalReturnType<
   resource: string
 }
 
-export const useFormDataModal =
-  <TData extends BaseRecord = BaseRecord, TError extends HttpError = HttpError, TVariables = {}, TSelectData extends BaseRecord = TData>
-  ({ like, ...props }: UseFormModalProps<TData, TError, TVariables>): UseFormModalReturnType<TData, TError, TVariables> => {
-    const { modalProps: modal, formProps: form, ...extra } = useModalForm(props as UseModalFormProps)
-    const modalProps: ModalProps = {
-      destroyOnClose: true,
-      focusTriggerAfterClose: true,
-      ...modal,
-      ...props.modalProps
-    }
-
-    const formProps = {
-      ...form,
-      ...props.formProps
-    }
-
-    return {
-      like: 'modal',
-      action: (props.action as FormAction),
-      resource: props.resource,
-      formProps,
-      modalProps,
-      ...extra
-    }
+export const useFormDataModal = <
+  TData extends BaseRecord = BaseRecord,
+  TError extends HttpError = HttpError,
+  TVariables = {},
+  TSelectData extends BaseRecord = TData,
+>({
+  like,
+  ...props
+}: UseFormModalProps<TData, TError, TVariables>): UseFormModalReturnType<
+  TData,
+  TError,
+  TVariables
+> => {
+  const {
+    modalProps: modal,
+    formProps: form,
+    ...extra
+  } = useModalForm(props as UseModalFormProps)
+  const modalProps: ModalProps = {
+    destroyOnClose: true,
+    focusTriggerAfterClose: true,
+    ...modal,
+    ...props.modalProps,
   }
+
+  const formProps = {
+    ...form,
+    ...props.formProps,
+  }
+
+  return {
+    like: 'modal',
+    action: props.action as FormAction,
+    resource: props.resource,
+    formProps,
+    modalProps,
+    ...extra,
+  }
+}

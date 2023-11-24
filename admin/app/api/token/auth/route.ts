@@ -5,7 +5,7 @@ import { ApiUrl } from '@planb/provider'
 
 const SetCookies = (data: { token: string }) => {
   const jwt = decode(data.token) as JwtPayload
-  const exp = new Date(jwt.exp as number * 1000)
+  const exp = new Date((jwt.exp as number) * 1000)
   const user = btoa(JSON.stringify(jwt))
 
   cookies().set('token', data.token, {
@@ -13,7 +13,7 @@ const SetCookies = (data: { token: string }) => {
     httpOnly: true,
     secure: true,
     sameSite: 'lax',
-    expires: exp
+    expires: exp,
   })
 
   cookies().set('auth', user, {
@@ -21,21 +21,21 @@ const SetCookies = (data: { token: string }) => {
     httpOnly: false,
     secure: true,
     sameSite: 'lax',
-    expires: exp
+    expires: exp,
   })
 }
 
-export async function POST (request: NextRequest) {
+export async function POST(request: NextRequest) {
   const data = await request.json()
   const url = ApiUrl('ServerMode', 'token/auth')
 
   const res = await fetch(url, {
     headers: {
       'Content-Type': 'application/ld+json',
-      Accept: 'application/ld+json'
+      Accept: 'application/ld+json',
     },
     body: JSON.stringify(data),
-    method: 'POST'
+    method: 'POST',
   })
 
   const { status } = res
@@ -43,12 +43,15 @@ export async function POST (request: NextRequest) {
 
   if (status !== 200) {
     return NextResponse.json(json, {
-      status
+      status,
     })
   }
 
   SetCookies(json)
-  return NextResponse.json({ code: 200 }, {
-    status
-  })
+  return NextResponse.json(
+    { code: 200 },
+    {
+      status,
+    },
+  )
 }

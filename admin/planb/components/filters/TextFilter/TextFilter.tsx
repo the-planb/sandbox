@@ -19,18 +19,18 @@ export const TextFilter = ({ value, onChange }: TextFilterProps) => {
     contains: t('filters.operators.contains'),
     not_contains: t('filters.operators.not_contains'),
     starts: t('filters.operators.starts'),
-    ends: t('filters.operators.ends')
+    ends: t('filters.operators.ends'),
   }
 
   const [data, setData] = useState({
     value: value?.value ?? null,
-    operator: value?.operator ?? 'contains'
+    operator: value?.operator ?? 'contains',
   })
 
   const triggerChange = (changedValue: Partial<FilterData>) => {
     const newData = {
       ...data,
-      ...changedValue
+      ...changedValue,
     }
 
     setData(newData)
@@ -46,15 +46,19 @@ export const TextFilter = ({ value, onChange }: TextFilterProps) => {
     triggerChange({ operator })
   }
 
-  return <Space>
-    <Select
-      value={data.operator}
-      onChange={onOperatorChange}>
-      {Object.entries(operators).map(([operator, label]) => {
-        return <Option key={operator} value={operator}>{label}</Option>
-      })}
-    </Select>
+  return (
+    <Space>
+      <Select value={data.operator} onChange={onOperatorChange}>
+        {Object.entries(operators).map(([operator, label]) => {
+          return (
+            <Option key={operator} value={operator}>
+              {label}
+            </Option>
+          )
+        })}
+      </Select>
 
-    <Input value={data.value} onChange={onValueChange}/>
-  </Space>
+      <Input value={data.value} onChange={onValueChange} />
+    </Space>
+  )
 }

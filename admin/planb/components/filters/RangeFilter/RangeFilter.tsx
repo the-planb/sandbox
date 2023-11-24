@@ -2,7 +2,12 @@ import { InputNumber, Space } from 'antd'
 import { useEffect, useState } from 'react'
 import { type FilterData } from '@planb/components/table/tableData/filterPanel'
 import css from './styles.module.scss'
-import { filterDataToRange, rangeToFilterData, sortRange, type Range } from '@planb/components/filters/RangeFilter/utils'
+import {
+  filterDataToRange,
+  rangeToFilterData,
+  sortRange,
+  type Range,
+} from '@planb/components/filters/RangeFilter/utils'
 
 interface RangeFilterProps {
   onChange?: (value: FilterData) => void
@@ -15,7 +20,7 @@ export const RangeFilter = ({ value, onChange }: RangeFilterProps) => {
   const triggerChange = (value: Partial<Range>) => {
     const newRange = {
       ...range,
-      ...value
+      ...value,
     }
     setRange(newRange)
   }
@@ -33,27 +38,31 @@ export const RangeFilter = ({ value, onChange }: RangeFilterProps) => {
     onChange?.(data)
   }
 
-  return <Space className={css.range}>
-    <InputNumber
-      controls={false}
-      bordered={false}
-      placeholder={'Min'}
-      value={range?.min}
-      onBlur={onBlur}
-      onChange={(value) => {
-        triggerChange({ min: value as number })
-      }}/>
+  return (
+    <Space className={css.range}>
+      <InputNumber
+        controls={false}
+        bordered={false}
+        placeholder={'Min'}
+        value={range?.min}
+        onBlur={onBlur}
+        onChange={(value) => {
+          triggerChange({ min: value as number })
+        }}
+      />
 
-    <span>/</span>
+      <span>/</span>
 
-    <InputNumber
-      controls={false}
-      bordered={false}
-      placeholder={'Max'}
-      value={range?.max}
-      onBlur={onBlur}
-      onChange={(value) => {
-        triggerChange({ max: value as number })
-      }}/>
-  </Space>
+      <InputNumber
+        controls={false}
+        bordered={false}
+        placeholder={'Max'}
+        value={range?.max}
+        onBlur={onBlur}
+        onChange={(value) => {
+          triggerChange({ max: value as number })
+        }}
+      />
+    </Space>
+  )
 }

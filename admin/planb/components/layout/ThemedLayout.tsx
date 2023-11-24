@@ -1,15 +1,20 @@
 import React from 'react'
 import { Grid, Layout as AntdLayout } from 'antd'
-import { type RefineThemedLayoutV2Props, ThemedHeaderV2, ThemedLayoutContextProvider, ThemedSiderV2 } from '@refinedev/antd'
+import {
+  type RefineThemedLayoutV2Props,
+  ThemedHeaderV2,
+  ThemedLayoutContextProvider,
+  ThemedSiderV2,
+} from '@refinedev/antd'
 
-export default function ThemedLayout ({
+export default function ThemedLayout({
   children,
   Header,
   Sider,
   Title,
   Footer,
   OffLayoutArea,
-  initialSiderCollapsed
+  initialSiderCollapsed,
 }: RefineThemedLayoutV2Props) {
   const breakpoint = Grid.useBreakpoint()
   const SiderToRender = Sider ?? ThemedSiderV2
@@ -17,28 +22,25 @@ export default function ThemedLayout ({
   const isSmall = typeof breakpoint.sm === 'undefined' ? true : breakpoint.sm
 
   return (
-    <ThemedLayoutContextProvider
-      initialSiderCollapsed={initialSiderCollapsed}
-    >
+    <ThemedLayoutContextProvider initialSiderCollapsed={initialSiderCollapsed}>
       <AntdLayout style={{ minHeight: '100vh' }}>
-        <SiderToRender Title={Title}/>
+        <SiderToRender Title={Title} />
         <AntdLayout>
-          <HeaderToRender/>
+          <HeaderToRender />
           <AntdLayout.Content>
             <div
               style={{
                 height: '100%',
                 maxHeight: '93vh',
-                padding: isSmall ? 24 : 12
-              }}
-            >
+                padding: isSmall ? 24 : 12,
+              }}>
               {children}
             </div>
-            {OffLayoutArea && <OffLayoutArea/>}
+            {OffLayoutArea && <OffLayoutArea />}
           </AntdLayout.Content>
-          {Footer && <Footer/>}
+          {Footer && <Footer />}
         </AntdLayout>
       </AntdLayout>
     </ThemedLayoutContextProvider>
   )
-};
+}

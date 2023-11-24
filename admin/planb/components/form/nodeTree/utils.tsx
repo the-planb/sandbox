@@ -9,7 +9,7 @@ const nodeHasProps = (node: ReactNode, propNames: string[]): boolean => {
   }
 
   const props = Object.keys(node?.props ?? {})
-  return propNames.every(key => props.includes(key))
+  return propNames.every((key) => props.includes(key))
 }
 
 export const isTab = (node: ReactNode) => {

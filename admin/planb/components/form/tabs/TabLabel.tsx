@@ -7,7 +7,7 @@ interface TabLabelProps {
   label: string
 }
 
-export function TabLabel ({ label }: TabLabelProps) {
+export function TabLabel({ label }: TabLabelProps) {
   const { errorTabs } = useErrorBag()
   const error = errorTabs[slug(label)]
 

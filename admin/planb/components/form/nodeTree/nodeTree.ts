@@ -6,9 +6,14 @@ import { type ChildrenLike, isFieldset, isFormItem, isTab } from './utils'
 
 type FilterCallback = (node: ReactNode) => boolean
 
-const find = (children: ChildrenLike, callback: FilterCallback, deep: boolean): ReactElement[] => {
-  const elements = (children instanceof Array ? children : [children])
-    .filter((item) => isValidElement(item)) as ReactElement[]
+const find = (
+  children: ChildrenLike,
+  callback: FilterCallback,
+  deep: boolean,
+): ReactElement[] => {
+  const elements = (children instanceof Array ? children : [children]).filter(
+    (item) => isValidElement(item),
+  ) as ReactElement[]
 
   if (!deep) {
     return elements.filter(callback)
@@ -30,8 +35,16 @@ const find = (children: ChildrenLike, callback: FilterCallback, deep: boolean): 
 }
 
 type TabCallback = (props: Tab, index: number, node: ReactElement) => any
-type FieldsetCallback = (props: FieldsetProps, index: number, node: ReactElement) => any
-type FormItemCallback = (props: FormItemProps, index: number, node: ReactElement) => any
+type FieldsetCallback = (
+  props: FieldsetProps,
+  index: number,
+  node: ReactElement,
+) => any
+type FormItemCallback = (
+  props: FormItemProps,
+  index: number,
+  node: ReactElement,
+) => any
 
 interface NodeTreeProps {
   children: ChildrenLike
@@ -50,25 +63,25 @@ export const nodeTree = ({ children, deep = true }: NodeTreeProps) => {
 
       return callback
         ? tabs.map((node, index) => {
-          return callback(node, index, node)
-        })
+            return callback(node, index, node)
+          })
         : tabs
     },
     fieldsets: (callback?: FieldsetCallback): any[] => {
       const items = find(children, isFieldset, deep)
       return callback
         ? items.map((node, index) => {
-          return callback(node.props, index, node)
-        })
+            return callback(node.props, index, node)
+          })
         : items
     },
     formItems: (callback?: FormItemCallback): any[] => {
       const items = find(children, isFormItem, deep)
       return callback
         ? items.map((node, index) => {
-          return callback(node.props, index, node)
-        })
+            return callback(node.props, index, node)
+          })
         : items
-    }
+    },
   }
 }

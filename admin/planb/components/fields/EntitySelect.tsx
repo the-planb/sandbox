@@ -1,8 +1,17 @@
 import { Button, Select, type SelectProps } from 'antd'
 import React, { type FC, useEffect, useState } from 'react'
-import { type BaseRecord, type CrudFilter, useCan, useDataProvider, useTranslate } from '@refinedev/core'
+import {
+  type BaseRecord,
+  type CrudFilter,
+  useCan,
+  useDataProvider,
+  useTranslate,
+} from '@refinedev/core'
 import { type DefaultOptionType, type FilterFunc } from 'rc-select/es/Select'
-import { type FormDataProps, useFormData } from '@planb/components/form/formData'
+import {
+  type FormDataProps,
+  useFormData,
+} from '@planb/components/form/formData'
 
 interface EntitySelectProps extends SelectProps {
   resource: string
@@ -11,7 +20,11 @@ interface EntitySelectProps extends SelectProps {
   createForm?: FC<FormDataProps>
 }
 
-export type RemoteFilter = (term: string) => { field: string, operator: string, value: any }
+export type RemoteFilter = (term: string) => {
+  field: string
+  operator: string
+  value: any
+}
 
 interface CreateButtonProps {
   resource: string
@@ -24,26 +37,41 @@ const CreateButton = ({ resource, createForm }: CreateButtonProps) => {
   const { show, ...props } = useFormData({
     resource,
     action: 'create',
-    like: 'modal'
+    like: 'modal',
   })
 
-  return <>
-    <Button type="link"
-            style={{ paddingLeft: 0 }}
-            onClick={() => { show() }}>{t(`${resource}.titles.create`)}</Button>
+  return (
+    <>
+      <Button
+        type='link'
+        style={{ paddingLeft: 0 }}
+        onClick={() => {
+          show()
+        }}>
+        {t(`${resource}.titles.create`)}
+      </Button>
 
-    {createForm(props)}
-  </>
+      {createForm(props)}
+    </>
+  )
 }
 
-export const EntitySelect = ({ resource, itemToOption, createForm, remote, ...props }: EntitySelectProps) => {
+export const EntitySelect = ({
+  resource,
+  itemToOption,
+  createForm,
+  remote,
+  ...props
+}: EntitySelectProps) => {
   const { data: role } = useCan({
     resource,
-    action: 'create'
+    action: 'create',
   })
   const dataProvider = useDataProvider()('default')
   const [data, setData] = useState<BaseRecord[]>([])
-  const [value, setValue] = useState<DefaultOptionType | DefaultOptionType[] | undefined>([])
+  const [value, setValue] = useState<
+    DefaultOptionType | DefaultOptionType[] | undefined
+  >([])
 
   useEffect(() => {
     if (['tags', 'multiple'].includes(props.mode as string)) {
@@ -66,21 +94,26 @@ export const EntitySelect = ({ resource, itemToOption, createForm, remote, ...pr
   useEffect(() => {
     if (remote) {
       if (['tags', 'multiple'].includes(props.mode as string)) {
-        setData((props.value ?? []))
+        setData(props.value ?? [])
         return
       }
       setData([])
       return
     }
 
-    dataProvider.getList({
-      resource
-    }).then((response) => {
-      setData(response.data)
-    })
+    dataProvider
+      .getList({
+        resource,
+      })
+      .then((response) => {
+        setData(response.data)
+      })
   }, [remote])
 
-  const onChange = (value: any, option: DefaultOptionType | DefaultOptionType[]) => {
+  const onChange = (
+    value: any,
+    option: DefaultOptionType | DefaultOptionType[],
+  ) => {
     props.onChange?.(value, option)
     setValue(option)
   }
@@ -92,33 +125,37 @@ export const EntitySelect = ({ resource, itemToOption, createForm, remote, ...pr
   const onSearch = (term: string) => {
     const filters = remote ? [remote(term) as CrudFilter] : undefined
 
-    dataProvider.getList({
-      resource,
-      filters
-    }).then((response) => {
-      setData(response.data)
-    })
+    dataProvider
+      .getList({
+        resource,
+        filters,
+      })
+      .then((response) => {
+        setData(response.data)
+      })
   }
 
   const search = remote
     ? {
-        onSearch
+        onSearch,
       }
     : {}
 
-  return <>
-    <Select
-      {...props}
-      options={data.map(itemToOption)}
-      showSearch={true}
-      value={value}
-      onChange={onChange}
+  return (
+    <>
+      <Select
+        {...props}
+        options={data.map(itemToOption)}
+        showSearch={true}
+        value={value}
+        onChange={onChange}
+        {...search}
+        filterOption={filterOption}
+      />
 
-      {...search}
-      filterOption={filterOption}
-    />
-
-    {role?.can && createForm != undefined && <CreateButton resource={resource} createForm={createForm}/>}
-
-  </>
+      {role?.can && createForm != undefined && (
+        <CreateButton resource={resource} createForm={createForm} />
+      )}
+    </>
+  )
 }

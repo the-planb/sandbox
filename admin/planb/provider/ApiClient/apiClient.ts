@@ -5,7 +5,7 @@ import fetchJson from './fetchJson'
 
 export type ApiClientMode = 'ProxyMode' | 'ClientMode' | 'ServerMode'
 
-export function ApiClient (mode: ApiClientMode = 'ProxyMode') {
+export function ApiClient(mode: ApiClientMode = 'ProxyMode') {
   const baseUrl = ApiUrl(mode)
 
   return {
@@ -15,9 +15,9 @@ export function ApiClient (mode: ApiClientMode = 'ProxyMode') {
         headers: {
           ...options.headers,
           'Content-Type': 'application/ld+json',
-          Accept: 'application/ld+json'
+          Accept: 'application/ld+json',
         },
-        method: 'GET'
+        method: 'GET',
       })
     },
     post: async (path: string, data: object, options: RequestInit = {}) => {
@@ -26,10 +26,10 @@ export function ApiClient (mode: ApiClientMode = 'ProxyMode') {
         headers: {
           ...options.headers,
           'Content-Type': 'application/ld+json',
-          Accept: 'application/ld+json'
+          Accept: 'application/ld+json',
         },
         body: JSON.stringify(data),
-        method: 'POST'
+        method: 'POST',
       })
     },
     delete: async (path: string, options: RequestInit = {}) => {
@@ -38,10 +38,10 @@ export function ApiClient (mode: ApiClientMode = 'ProxyMode') {
         headers: {
           ...options.headers,
           'Content-Type': 'application/ld+json',
-          Accept: 'application/ld+json'
+          Accept: 'application/ld+json',
         },
-        method: 'DELETE'
+        method: 'DELETE',
       })
-    }
+    },
   }
 }

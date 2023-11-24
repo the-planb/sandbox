@@ -10,13 +10,17 @@ const sanitize = (path: string): string => {
   return path
 }
 
-const fetchJson = async (baseUrl: URL, path: string, options: RequestInit = {}) => {
+const fetchJson = async (
+  baseUrl: URL,
+  path: string,
+  options: RequestInit = {},
+) => {
   const url = `${baseUrl}/${sanitize(path)}`
 
   const response = await fetch(url, {
     ...options,
     // cache: "force-cache",
-    next: { revalidate: 3 }
+    next: { revalidate: 3 },
   })
 
   if (response.status === 204) {

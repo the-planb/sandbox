@@ -3,10 +3,10 @@
 import { useFormData } from '@planb/components/form'
 import { BookForm } from '@components/crud/books'
 
-export function BookEdit () {
+export function BookEdit() {
   const { ...props } = useFormData({
     resource: 'bookstore/books',
-    action: 'edit'
+    action: 'edit',
   })
 
   return <BookForm {...props} />

@@ -5,16 +5,16 @@ import { Image } from 'antd'
 import Link from 'next/link'
 
 export const Title: React.FC<TitleProps> = ({ collapsed }) => (
-  <Link href="/">
+  <Link href='/'>
     {collapsed ? (
       <Image
         preview={false}
         src={'/admin/images/refine-collapsed.svg'}
-        alt="Refine"
+        alt='Refine'
         style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
           // padding: "12px 24px",
         }}
       />
@@ -22,11 +22,11 @@ export const Title: React.FC<TitleProps> = ({ collapsed }) => (
       <Image
         preview={false}
         src={'/admin/images/refine.svg'}
-        alt="Refine"
+        alt='Refine'
         style={{
           width: '200px',
           // height: "70px",
-          padding: '13px 25px'
+          padding: '13px 25px',
         }}
       />
     )}
