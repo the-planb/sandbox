@@ -132,12 +132,18 @@
   "bookstore/books": {
     "tags": "Books",
     "fields": {
-      "id": "Id",
-      "title": "Title",
-      "summary": "Summary",
-      "@id": "@id",
-      "@context": "@context",
-      "@type": "@type"
+      "title": {
+        "label": "Title"
+      },
+      "price": {
+        "label": "Price"
+      },
+      "author": {
+        "label": "Author"
+      },
+      "tags": {
+        "label": "Tags"
+      }
     },
     "columns": {
       "id": "Id",

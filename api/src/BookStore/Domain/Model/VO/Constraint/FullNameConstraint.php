@@ -25,15 +25,18 @@ final class FullNameConstraint extends Compound
     protected function getConstraints(array $options): array
     {
         return [
-            new Collection([
-                'firstName' => new Length([
-                    'min' => 3,
-                ]),
+            new Collection(
+                fields: [
+                    'firstName' => new Length([
+                        'min' => 3,
+                    ]),
 
-                'lastName' => new Length([
-                    'min' => 3,
-                ]),
-            ]),
+                    'lastName' => new Length([
+                        'min' => 3,
+                    ]),
+                ],
+                allowExtraFields: true
+            ),
         ];
     }
 }

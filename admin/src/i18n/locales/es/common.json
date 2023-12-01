@@ -130,17 +130,29 @@
     "bookstore": "Libreria",
     "titles": {
       "list": "Librería"
+    },
+    "fields": {
+      "fullName": {
+        "firstName": "Nombre",
+        "lastName": "Apellidos"
+      }
     }
   },
   "bookstore/books": {
     "bookstore/books": "Libros",
     "fields": {
-      "id": "Id",
-      "title": "Título",
-      "summary": "Sinopsis",
-      "author": "Autor",
-      "tags": "Etiquetas",
-      "@type": "@type"
+      "title": {
+        "label": "Título"
+      },
+      "price": {
+        "label": "Precio"
+      },
+      "author": {
+        "label": "Autor"
+      },
+      "tags": {
+        "label": "Etiquetas"
+      }
     },
     "columns": {
       "id": "Id",
@@ -152,7 +164,7 @@
       "id": "Id",
       "title": "Título",
       "summary": "Sinopsis",
-      "price.amount": "Precio"
+      "price": "Precio"
     },
     "fieldsets": {
       "data": "Datos",

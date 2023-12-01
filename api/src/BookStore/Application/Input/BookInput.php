@@ -13,6 +13,6 @@ final class BookInput
 {
     public BookId $id;
     public Title $title;
-    public Price $price;
+    public ?Price $price;
     public Author $author;
 }

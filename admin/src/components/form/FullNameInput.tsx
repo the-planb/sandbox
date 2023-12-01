@@ -1,4 +1,4 @@
-import { type FullName } from '@model'
+import { type FullName } from '@model/bookstore'
 import { type RuleObject } from 'rc-field-form/es/interface'
 import { Input, type InputProps, Space } from 'antd'
 import { type ChangeEvent } from 'react'
@@ -20,8 +20,6 @@ export const FullNameRule = async (rule: RuleObject, value: FullName) => {
 
 export const FullNameInput = ({ value, onChange }: FullNameInputProps) => {
   const triggerChange = (data: Partial<FullName>) => {
-    console.log(value, data)
-
     onChange?.({
       ...(value as FullName),
       ...data,

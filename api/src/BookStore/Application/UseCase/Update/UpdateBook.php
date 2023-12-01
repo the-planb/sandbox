@@ -13,7 +13,7 @@ use App\BookStore\Domain\Model\VO\Title;
 final class UpdateBook
 {
     private Title $title;
-    private Price $price;
+    private ?Price $price;
     private Author $author;
 
     private BookId $id;

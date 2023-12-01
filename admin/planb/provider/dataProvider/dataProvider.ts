@@ -61,12 +61,14 @@ export function DataProvider(): IDataProvider {
 
     update: async ({ resource, id, variables }) => {
       const url = `${resource}/${id}`
-      // const {data} = await httpClient.put(url, variables);
-      const data = {}
 
-      return {
-        data,
-      }
+      return await apiClient
+        .put(url, variables as object)
+        .then((response: Record<string, any>) => {
+          return {
+            data: response,
+          }
+        })
     },
 
     deleteOne: async ({ resource, id, variables }) => {

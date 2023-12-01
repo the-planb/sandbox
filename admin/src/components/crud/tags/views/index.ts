@@ -1,5 +1,0 @@
-export { TagCreate } from './TagCreate'
-export { TagEdit } from './TagEdit'
-export { TagForm } from './TagForm'
-export { TagList } from './TagList'
-export { TagShow } from './TagShow'

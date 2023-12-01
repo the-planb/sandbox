@@ -20,6 +20,18 @@ export function ApiClient(mode: ApiClientMode = 'ProxyMode') {
         method: 'GET',
       })
     },
+    put: async (path: string, data: object, options: RequestInit = {}) => {
+      return await fetchJson(baseUrl, path, {
+        ...options,
+        headers: {
+          ...options.headers,
+          'Content-Type': 'application/ld+json',
+          Accept: 'application/ld+json',
+        },
+        body: JSON.stringify(data),
+        method: 'PUT',
+      })
+    },
     post: async (path: string, data: object, options: RequestInit = {}) => {
       return await fetchJson(baseUrl, path, {
         ...options,

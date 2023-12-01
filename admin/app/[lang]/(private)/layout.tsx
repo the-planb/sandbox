@@ -1,6 +1,6 @@
 'use client'
 
-import { Header, type LayoutProps, Sider } from '@components/layout'
+import { Header, type LayoutProps, Sider } from 'src/layout'
 import { Authenticated } from '@refinedev/core'
 import ThemedLayout from '@planb/components/layout'
 

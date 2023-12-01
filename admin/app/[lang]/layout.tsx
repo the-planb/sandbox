@@ -18,13 +18,8 @@ import { languages } from '@i18n/settings'
 import { RefineKbar, RefineKbarProvider } from '@refinedev/kbar'
 import { LayoutContextProvider } from '@contexts'
 import { useTranslation } from '@i18n'
-import { type LayoutProps } from '@components/layout'
+import { type LayoutProps } from 'src/layout'
 import vars from '@styles/vars.module.scss'
-
-// export async function generateStaticParams() {
-//   return languages.map((lang) => ({lang}))
-// }
-//
 
 const Theme = {
   token: {
@@ -69,6 +64,17 @@ export default async function Layout({ children, params }: LayoutProps) {
                     meta: {
                       canDelete: true,
                       preload: ['author'],
+                    },
+                  },
+                  {
+                    name: 'bookstore/authors',
+                    list: `${lang}/bookstore/authors`,
+                    create: `${lang}/bookstore/authors/create`,
+                    edit: `${lang}/bookstore/authors/edit/:id`,
+                    // show: `${lang}/bookstore/books/show/:id`,
+                    meta: {
+                      canDelete: true,
+                      // preload: ['author'],
                     },
                   },
                 ]}

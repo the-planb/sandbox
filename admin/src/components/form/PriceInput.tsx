@@ -1,4 +1,5 @@
-import { type Money } from '@model'
+//@ts-ignore
+import { type Money } from '@model/bookstore'
 import { type RuleObject } from 'rc-field-form/es/interface'
 import { InputNumber, type InputProps, Select } from 'antd'
 

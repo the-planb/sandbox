@@ -3,7 +3,7 @@
   <entity name="App\BookStore\Domain\Model\Book" table="bookstore_books" repository-class="App\BookStore\Framework\Doctrine\Repository\BookDoctrineRepository">
     <id name="id" type="BookStore.BookId"/>
     <field name="title" type="BookStore.Title"/>
-    <field name="price" type="BookStore.Price"/>
+    <field name="price" type="BookStore.Price" nullable="true"/>
     <many-to-one field="author" target-entity="App\BookStore\Domain\Model\Author"/>
   </entity>
 </doctrine-mapping>

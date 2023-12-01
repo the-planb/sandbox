@@ -11,10 +11,10 @@ class Book
 {
     private BookId $id;
     private Title $title;
-    private Price $price;
+    private ?Price $price;
     private Author $author;
 
-    public function __construct(Title $title, Price $price, Author $author)
+    public function __construct(Title $title, ?Price $price, Author $author)
     {
         $this->id = new BookId();
         $this->title = $title;
@@ -22,7 +22,7 @@ class Book
         $this->author = $author;
     }
 
-    public function update(Title $title, Price $price, Author $author): self
+    public function update(Title $title, ?Price $price, Author $author): self
     {
         $this->title = $title;
         $this->price = $price;
@@ -41,7 +41,7 @@ class Book
         return $this->title;
     }
 
-    public function getPrice(): Price
+    public function getPrice(): ?Price
     {
         return $this->price;
     }

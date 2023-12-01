@@ -93,6 +93,7 @@ export const TableData = <
   })
 
   const tableProps = {
+    ...props.tableProps,
     ..._tableProps,
     scroll: { y: '69vh' },
     pagination: {

@@ -12,7 +12,7 @@ use App\BookStore\Domain\Model\VO\Title;
 final class CreateBook
 {
     private Title $title;
-    private Price $price;
+    private ?Price $price;
     private Author $author;
 
     public function __construct(BookInput $input)

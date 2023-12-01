@@ -3,8 +3,8 @@
 import { Button, Card, Col, Form, Input, Row, Typography } from 'antd'
 import { type ILoginForm, useLogin } from '@refinedev/core'
 import vars from '@styles/vars.module.scss'
-import Icon from '@components/icon'
-import { type PageProps } from '@components/layout'
+import Icon from 'src/icon'
+import { type PageProps } from 'src/layout'
 
 const { Title } = Typography
 

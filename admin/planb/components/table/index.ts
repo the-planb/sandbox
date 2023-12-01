@@ -1,1 +1,1 @@
-export { TableData } from './tableData'
+export { TableData, TableCell } from './tableData'

@@ -2,7 +2,7 @@
 
 import { TableData } from '@planb/components/table'
 import { Table } from 'antd'
-import { type IBook } from '@model'
+import { type Book } from '@model/bookstore'
 import { useTranslate } from '@refinedev/core'
 import { RangeFilter, TextFilter } from '@planb/components/filters'
 
@@ -10,7 +10,7 @@ export const BookList = () => {
   const t = useTranslate()
 
   return (
-    <TableData<IBook>
+    <TableData<Book>
       resource={'bookstore/books'}
       // edit={{modal: BookForm}}
       // create={{drawer: BookForm, width: 1000}}
@@ -38,7 +38,7 @@ export const BookList = () => {
         dataIndex={'author'}
         title={t('bookstore/books.columns.author')}
         sorter={true}
-        render={(field, record: IBook) => {
+        render={(field, record: Book) => {
           const name = record.author.name ?? {}
 
           return (
@@ -54,7 +54,7 @@ export const BookList = () => {
         dataIndex='price'
         title={t('bookstore/books.columns.price')}
         sorter={true}
-        render={(_, record: IBook) => {
+        render={(_, record: Book) => {
           const { price } = record
           return `${price} €`
         }}

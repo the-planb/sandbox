@@ -15,6 +15,7 @@ export async function GET(request: NextRequest) {
   const options: RequestInit = {
     headers: {
       ...request.headers,
+      'Content-Type': 'application/ld+json',
       Authorization: `Bearer ${request.cookies.get('token')?.value}`,
       ...Preload,
     },
@@ -28,4 +29,23 @@ export async function GET(request: NextRequest) {
   })
 
   return NextResponse.json(complete)
+}
+
+export async function PUT(request: NextRequest) {
+  const base = ApiUrl('ServerMode')
+  const url = new URL(request.url)
+
+  const options: RequestInit = {
+    headers: {
+      ...request.headers,
+      'Content-Type': 'application/ld+json',
+      Authorization: `Bearer ${request.cookies.get('token')?.value}`,
+    },
+    body: request.body,
+    method: 'PUT',
+  }
+
+  const data = await fetchJson(base, `${url.pathname}${url.search}`, options)
+
+  return NextResponse.json(data)
 }
