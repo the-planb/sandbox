@@ -34,6 +34,12 @@ export function DataProvider(): IDataProvider {
             data: response['hydra:member'],
           }
         })
+        .catch((error) => {
+          return Promise.reject({
+            message: error['hydra:description'],
+            statusCode: error['hydra:title'],
+          })
+        })
     },
     getOne: async ({ resource, id, meta = {} }) => {
       const path = `${resource}/${id}`

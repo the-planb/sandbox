@@ -1,0 +1,13 @@
+---
+App\BookStore\Domain\Model\Tag:
+  attributes:
+    id:
+      groups: [read.bookstore.tag]
+    name:
+      groups: [read.bookstore.tag, write]
+
+
+App\BookStore\Application\Input\TagInput:
+  attributes:
+    name:
+      groups: [write.bookstore.tag]

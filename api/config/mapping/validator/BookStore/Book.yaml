@@ -8,3 +8,5 @@ App\BookStore\Domain\Model\Book:
       - App\BookStore\Domain\Model\VO\Constraint\PriceConstraint: ~
     author:
       - Symfony\Component\Validator\Constraints\NotNull: ~
+    tags:
+      - Symfony\Component\Validator\Constraints\NotNull: ~

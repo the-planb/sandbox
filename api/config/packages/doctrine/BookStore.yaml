@@ -10,5 +10,7 @@ doctrine:
         types:
             BookStore.BookId: App\BookStore\Framework\Doctrine\DBAL\BookIdDBALType
             BookStore.AuthorId: App\BookStore\Framework\Doctrine\DBAL\AuthorIdDBALType
+            BookStore.TagId: App\BookStore\Framework\Doctrine\DBAL\TagIdDBALType
+            BookStore.TagName: App\BookStore\Framework\Doctrine\DBAL\TagNameDBALType
             BookStore.Price: App\BookStore\Framework\Doctrine\DBAL\PriceDBALType
             BookStore.Title: App\BookStore\Framework\Doctrine\DBAL\TitleDBALType

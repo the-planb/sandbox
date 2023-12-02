@@ -6,6 +6,8 @@ namespace App\BookStore\Domain\Model;
 
 use App\BookStore\Domain\Model\VO\Price;
 use App\BookStore\Domain\Model\VO\Title;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 class Book
 {
@@ -13,20 +15,23 @@ class Book
     private Title $title;
     private ?Price $price;
     private Author $author;
+    private Collection $tags;
 
-    public function __construct(Title $title, ?Price $price, Author $author)
+    public function __construct(Title $title, ?Price $price, Author $author, TagList $tags)
     {
         $this->id = new BookId();
         $this->title = $title;
         $this->price = $price;
         $this->author = $author;
+        $this->tags = new ArrayCollection($tags->toArray());
     }
 
-    public function update(Title $title, ?Price $price, Author $author): self
+    public function update(Title $title, ?Price $price, Author $author, TagList $tags): self
     {
         $this->title = $title;
         $this->price = $price;
         $this->author = $author;
+        $this->tags = new ArrayCollection($tags->toArray());
 
         return $this;
     }
@@ -49,5 +54,10 @@ class Book
     public function getAuthor(): Author
     {
         return $this->author;
+    }
+
+    public function getTags(): TagList
+    {
+        return TagList::collect($this->tags);
     }
 }

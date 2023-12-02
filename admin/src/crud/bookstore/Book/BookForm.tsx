@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Col, Form, Input, InputNumber, Row, Tabs } from 'antd'
+import { Col, Form, Input, InputNumber, Row, Space, Tabs } from 'antd'
 import {
   Fieldset,
   FormData,
@@ -27,6 +27,7 @@ const Data = () => {
           ]}>
           <Input placeholder={t('bookstore/books.fields.title.placeholder')} />
         </Form.Item>
+
         <Form.Item
           label={t('bookstore/books.fields.price.label')}
           name={'price'}
@@ -40,6 +41,7 @@ const Data = () => {
             placeholder={t('bookstore/books.fields.price.placeholder')}
           />
         </Form.Item>
+
         <Form.Item
           label={t('bookstore/books.fields.author.label')}
           name={'author'}
@@ -49,6 +51,17 @@ const Data = () => {
             },
           ]}>
           <BookStore.AuthorInput />
+        </Form.Item>
+
+        <Form.Item
+          label={t('bookstore/books.fields.tags.label')}
+          name={'tags'}
+          rules={[
+            {
+              required: true,
+            },
+          ]}>
+          <BookStore.TagInput mode={'tags'} />
         </Form.Item>
       </Fieldset>
       <Fieldset legend='otros campos' id={'otro'}>

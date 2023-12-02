@@ -18,7 +18,13 @@ export function ApiClient(mode: ApiClientMode = 'ProxyMode') {
           Accept: 'application/ld+json',
         },
         method: 'GET',
+      }).then((response) => {
+        console.log({ then: 'apiClient' })
+        return response
       })
+      // .catch(()=>{
+      //   console.log({ catch: 'apiClient' })
+      // })
     },
     put: async (path: string, data: object, options: RequestInit = {}) => {
       return await fetchJson(baseUrl, path, {

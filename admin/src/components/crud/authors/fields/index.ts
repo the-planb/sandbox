@@ -1,1 +1,0 @@
-export { AuthorSelect } from './AuthorSelect'

@@ -11,6 +11,7 @@ doctrine:
                 prefix: App\Auth\Domain\Model
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
+        
         types:
             Auth.UserId: \App\Auth\Framework\Doctrine\DBAL\UserIdDBALType
             Auth.Email: \App\Auth\Framework\Doctrine\DBAL\EmailDBALType

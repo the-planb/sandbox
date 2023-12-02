@@ -8,19 +8,22 @@ use App\BookStore\Domain\Model\Author;
 use App\BookStore\Domain\Model\AuthorId;
 use App\BookStore\Domain\Model\AuthorList;
 use App\BookStore\Domain\Repository\AuthorRepository;
+use App\BookStore\Framework\Doctrine\Filter\FullNameFilter;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
-use Doctrine\ORM\Query\QueryException;
 use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
 final class AuthorDoctrineRepository extends ServiceEntityRepository implements AuthorRepository
 {
+    private DoctrineCriteriaConverter $criteriaConverter;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Author::class);
+        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
+            'name' => new FullNameFilter(),
+        ]);
     }
 
     public function save(Author $author): Author
@@ -46,27 +49,19 @@ final class AuthorDoctrineRepository extends ServiceEntityRepository implements 
 
     public function match(Criteria $criteria): AuthorList
     {
-        $doctrineCriteria = DoctrineCriteriaConverter::convert($criteria);
-        $data = $this->matching($doctrineCriteria);
+        $data = $this->criteriaConverter
+            ->match($criteria)
+            ->execute()
+        ;
 
         return AuthorList::collect($data);
     }
 
-    /**
-     * @throws QueryException
-     * @throws NonUniqueResultException
-     * @throws NoResultException
-     */
     public function totalItems(Criteria $criteria = null): int
     {
-        $doctrineCriteria = DoctrineCriteriaConverter::convertOnlyFilters($criteria);
-
-        $query = $this->createQueryBuilder('A')
-            ->select('count(A.id)')
-            ->addCriteria($doctrineCriteria)
-            ->getQuery()
+        return $this->criteriaConverter
+            ->count($criteria)
+            ->getSingleScalarResult()
         ;
-
-        return $query->getSingleScalarResult();
     }
 }

@@ -15,9 +15,7 @@ export const FullNameInput = ({ value, onChange }: FullNameInputProps) => {
       ...data,
     })
   }
-
   const t = useTranslate()
-
   return (
     <Space>
       <Input

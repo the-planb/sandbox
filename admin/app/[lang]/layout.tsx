@@ -63,7 +63,7 @@ export default async function Layout({ children, params }: LayoutProps) {
                     // show: `${lang}/bookstore/books/show/:id`,
                     meta: {
                       canDelete: true,
-                      preload: ['author'],
+                      preload: ['author', 'tags'],
                     },
                   },
                   {
@@ -71,6 +71,17 @@ export default async function Layout({ children, params }: LayoutProps) {
                     list: `${lang}/bookstore/authors`,
                     create: `${lang}/bookstore/authors/create`,
                     edit: `${lang}/bookstore/authors/edit/:id`,
+                    // show: `${lang}/bookstore/books/show/:id`,
+                    meta: {
+                      canDelete: true,
+                      // preload: ['author'],
+                    },
+                  },
+                  {
+                    name: 'bookstore/tags',
+                    list: `${lang}/bookstore/tags`,
+                    create: `${lang}/bookstore/tags/create`,
+                    edit: `${lang}/bookstore/tags/edit/:id`,
                     // show: `${lang}/bookstore/books/show/:id`,
                     meta: {
                       canDelete: true,

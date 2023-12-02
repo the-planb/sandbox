@@ -1,6 +1,9 @@
 <?php
 
 
+use PlanB\Alfred\Domain\Artefact\Dependency\Cascade;
+use PlanB\Alfred\Domain\Artefact\Dependency\Fetch;
+
 return AggregateRoot('Book')
     ->with('title', Attribute('VO(Title)')
         ->example('the title')
@@ -10,9 +13,12 @@ return AggregateRoot('Book')
         ->nullable()
     )
     ->with('author', ManyToOne('Entity(Author)')
-//        ->fetch(Fetch::EAGER)
-//        ->cascade(Cascade::DETACH, Cascade::MERGE)
-//        ->mappedBy('id')
-//        ->cache('region', CacheUsage::NONSTRICT_READ_WRITE)
-//        ->orphanRemoval(true)
+        ->fetch(Fetch::EAGER)
+//        ->inversedBy('author')
+        ->cascade(Cascade::PERSIST)
+    )
+    ->with('tags', ManyToMany('Entity(Tag)')
+//        ->inversedBy('id')
+        ->fetch(Fetch::EAGER)
+        ->cascade(Cascade::PERSIST)
     );

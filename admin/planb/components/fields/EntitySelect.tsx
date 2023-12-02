@@ -8,14 +8,11 @@ import {
   useTranslate,
 } from '@refinedev/core'
 import { type DefaultOptionType, type FilterFunc } from 'rc-select/es/Select'
-import {
-  type FormDataProps,
-  useFormData,
-} from '@planb/components/form/formData'
+import { type FormDataProps, useFormData } from '@planb/components/form/formData'
 
-interface EntitySelectProps extends SelectProps {
+interface EntitySelectProps<T extends BaseRecord> extends SelectProps {
   resource: string
-  itemToOption: (item: BaseRecord) => DefaultOptionType
+  itemToOption: (item: T) => DefaultOptionType
   remote?: RemoteFilter
   createForm?: FC<FormDataProps>
 }
@@ -56,13 +53,10 @@ const CreateButton = ({ resource, createForm }: CreateButtonProps) => {
   )
 }
 
-export const EntitySelect = ({
-  resource,
-  itemToOption,
-  createForm,
-  remote,
-  ...props
-}: EntitySelectProps) => {
+export const EntitySelect = <T extends BaseRecord>(
+  selectProps: EntitySelectProps<T>,
+) => {
+  const { resource, itemToOption, createForm, remote, ...props } = selectProps
   const { data: role } = useCan({
     resource,
     action: 'create',
@@ -75,7 +69,8 @@ export const EntitySelect = ({
 
   useEffect(() => {
     if (['tags', 'multiple'].includes(props.mode as string)) {
-      const value = (props.value ?? []).map(itemToOption)
+
+      const value = ([props.value]).map(itemToOption)
       setValue(value)
 
       const mapped = value.map((option: DefaultOptionType) => option.value)
@@ -137,15 +132,15 @@ export const EntitySelect = ({
 
   const search = remote
     ? {
-        onSearch,
-      }
+      onSearch,
+    }
     : {}
 
   return (
     <>
       <Select
         {...props}
-        options={data.map(itemToOption)}
+        options={data.map((record) => itemToOption(record as T))}
         showSearch={true}
         value={value}
         onChange={onChange}

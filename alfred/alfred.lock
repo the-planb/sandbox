@@ -7,69 +7,84 @@ api/src/BookStore/Domain/Model/VO/Constraint/FullNameConstraint.php:
 api/config/mapping/doctrine/BookStore/VO.FullName.orm.xml:
     timestamp: 1700647574
     hash: e7fe7e75dde2688e6570c5b8e877f1b3
+api/src/BookStore/Framework/Doctrine/Filter/FullNameFilter.php:
+    timestamp: 1701700191
+    hash: f16c9f150ba794ea5a2506cc796b3afe
 api/config/mapping/serialization/BookStore/VO/FullName.yaml:
     timestamp: 1700422570
     hash: fedcca2b35739e0d555ff3f9b59375ac
+api/src/BookStore/Domain/Model/VO/TagName.php:
+    timestamp: 1701717501
+    hash: d3addf21cee57094c7d592977d3a76ce
+api/src/BookStore/Domain/Model/VO/Constraint/TagNameConstraint.php:
+    timestamp: 1701717501
+    hash: b417b3feb0b2fd7ef92a8a20bc535115
+api/src/BookStore/Framework/Doctrine/DBAL/TagNameDBALType.php:
+    timestamp: 1701717501
+    hash: 1862c3b172c3a53be5f8fad3d7aa1c24
+api/config/mapping/serialization/BookStore/VO/TagName.yaml:
+    timestamp: 1701717501
+    hash: bd0d34355abfcb8e38abe7d880335427
 api/src/BookStore/Domain/Repository/BookRepository.php:
-    timestamp: 1700737422
-    hash: a7ddda5bfb4548d5fd7cbc24b06d1ce9
+    timestamp: 1701717501
+    hash: ac822379fc034734b9963ae240f29f1b
 api/src/BookStore/Framework/Doctrine/Repository/BookDoctrineRepository.php:
-    timestamp: 1700737422
-    hash: ec7abb6e2494b5ef259b300c169ae3ee
+    timestamp: 1701636966
+    hash: d981dce645e88f029764d515d7ab47e5
 api/src/BookStore/Application/Input/BookInput.php:
-    timestamp: 1701448104
-    hash: baac2bec5ebb91a050aa8a7db406f1eb
+    timestamp: 1701784105
+    hash: 601248bb8c0ea3662c241d1776c61dde
 api/src/BookStore/Application/UseCase/Create/CreateBook.php:
-    timestamp: 1701448104
-    hash: 107cdbfbbc2301722898e2242c57cc22
+    timestamp: 1701784207
+    hash: 0fe8d420817b23c2b4d93f73753a328f
 api/src/BookStore/Application/UseCase/Create/CreateBookUseCase.php:
     timestamp: 1700737422
     hash: c643bd161bd25eb4e1c67ad4f57b1b50
 api/src/BookStore/Framework/Api/State/Processor/CreateBookProcessor.php:
-    timestamp: 1700737422
-    hash: 95855b81108229a0010e751397074bd5
+    timestamp: 1701717503
+    hash: 1028d18adc10676bba432512d01794ea
 api/src/BookStore/Application/UseCase/Update/UpdateBook.php:
-    timestamp: 1701448106
-    hash: 392efa197f3f2b4c59e8db6d96f515ff
+    timestamp: 1701784207
+    hash: 0986052999a915ec4f5202e2f5332dea
 api/src/BookStore/Application/UseCase/Update/UpdateBookUseCase.php:
     timestamp: 1700737422
     hash: c5a6f5bec304326f406f6ea3cac73252
 api/src/BookStore/Framework/Api/State/Processor/UpdateBookProcessor.php:
-    timestamp: 1700737422
-    hash: 7d2784e5fe789e8550fecd648d3b85fa
+    timestamp: 1701717503
+    hash: 2b0c6afbf55109490b15f3a42d617c9d
 api/src/BookStore/Application/UseCase/Delete/DeleteBook.php:
-    timestamp: 1700737422
-    hash: 31360a813b1978c6ea3a6f59204e60c3
+    timestamp: 1701717503
+    hash: 38a4bdcdd359f465bb6ef357201dcac9
 api/src/BookStore/Application/UseCase/Delete/DeleteBookUseCase.php:
     timestamp: 1700737422
     hash: 258f7da5a02379964339c27e5756a02f
 api/src/BookStore/Framework/Api/State/Processor/DeleteBookProcessor.php:
-    timestamp: 1700737422
-    hash: 2fe61f94c202fc47a04d5dafea0495f0
+    timestamp: 1701717503
+    hash: 1f501b4ae16d07d608b095fe1d589dd2
 api/src/BookStore/Application/UseCase/Search/SearchBook.php:
-    timestamp: 1700737422
-    hash: b54309b58be102adff88f794cc71c6c7
+    timestamp: 1701717503
+    hash: 4f3763d6b80bf01a6a037cbbbc90fba4
 api/src/BookStore/Application/UseCase/Search/SearchBookUseCase.php:
     timestamp: 1700737422
     hash: 1af24b5031f096b7c9231d47f07f75ce
 api/src/BookStore/Framework/Api/State/Provider/GetBookProvider.php:
-    timestamp: 1700737422
-    hash: b6f3521b35c72e70249caf076b533646
+    timestamp: 1701717503
+    hash: b6cbdc45b8cb314b586b46e6d99ff09f
 api/config/mapping/api/BookStore/Book.resource.xml:
     timestamp: 1700737422
     hash: 7e0119c04eb0132c1140f57ec2dc3f61
 api/config/mapping/api/BookStore/Book.properties.xml:
-    timestamp: 1700482195
-    hash: f123aa908c07e3c7a7e2a5f7475b344c
+    timestamp: 1701774212
+    hash: 28cc878afd2f1bea6b464633096c09b4
 api/config/mapping/serialization/BookStore/Book.yaml:
-    timestamp: 1700737422
-    hash: bc96dc8923486ee8fdfee0d4537d0436
+    timestamp: 1701776207
+    hash: 3e17bb990ca10a410cc2ea58b9576506
 api/config/mapping/validator/BookStore/Book.yaml:
-    timestamp: 1701448106
-    hash: efde8e89a260b9889e600ebb25100810
+    timestamp: 1701721137
+    hash: 86f3501f72498c669c8a256093057a2f
 api/src/BookStore/Domain/Model/Book.php:
-    timestamp: 1701448106
-    hash: bfa7f7ad0ba06193fa958a3672ac458e
+    timestamp: 1701785893
+    hash: 7f66fa0c97c20ecdfcfcec7d053648f4
 api/src/BookStore/Domain/Model/BookList.php:
     timestamp: 1700737422
     hash: a2b1179adad30621107028fd865dfabe
@@ -79,15 +94,18 @@ api/src/BookStore/Domain/Model/BookId.php:
 api/src/BookStore/Framework/Doctrine/DBAL/BookIdDBALType.php:
     timestamp: 1700737422
     hash: 8e45ac0790127a4b3718861543846a2e
+api/src/BookStore/Framework/Doctrine/Fixtures/BookFixture.php:
+    timestamp: 1701792650
+    hash: 00eea10796a28b72bb4719c0010bfe29
 api/config/mapping/doctrine/BookStore/Book.orm.xml:
-    timestamp: 1701455972
-    hash: 544ddbd5e1e63d51fd98686a90d191ea
+    timestamp: 1701794874
+    hash: bdad964c57c43098bb54d24851476670
 api/src/BookStore/Domain/Repository/AuthorRepository.php:
     timestamp: 1700737422
     hash: c443cf093ba247426da30a685a634624
 api/src/BookStore/Framework/Doctrine/Repository/AuthorDoctrineRepository.php:
-    timestamp: 1700737422
-    hash: 08ff914371faaf4b7de02f062ceb6387
+    timestamp: 1701636966
+    hash: 3d59171c436991c8ce77d4a204ee06fb
 api/src/BookStore/Application/Input/AuthorInput.php:
     timestamp: 1700737422
     hash: 7ffdf1e580c5f0471c849791435e59bd
@@ -131,17 +149,17 @@ api/config/mapping/api/BookStore/Author.resource.xml:
     timestamp: 1700737422
     hash: 559d5f38ce1eb589fd285924669b95bd
 api/config/mapping/api/BookStore/Author.properties.xml:
-    timestamp: 1700482199
+    timestamp: 1701774212
     hash: 9686efab66cd1f56171a3faf58b3298f
 api/config/mapping/serialization/BookStore/Author.yaml:
-    timestamp: 1700737422
-    hash: 421e398bfb4d0a3834ed39640ef4acd8
+    timestamp: 1701776207
+    hash: be1c50a261884efe0904187bff8d9551
 api/config/mapping/validator/BookStore/Author.yaml:
     timestamp: 1700482199
     hash: 915f07428b40ead2387e175c391cb17e
 api/src/BookStore/Domain/Model/Author.php:
-    timestamp: 1701379979
-    hash: f5b727f5e5f645fe06c607e5ffdc0fbc
+    timestamp: 1701785651
+    hash: 5596b6d4ab7d9320ede3fed25d87bfbe
 api/src/BookStore/Domain/Model/AuthorList.php:
     timestamp: 1700737422
     hash: 89d1d7814385e45bbb14d153382fb0ba
@@ -151,9 +169,87 @@ api/src/BookStore/Domain/Model/AuthorId.php:
 api/src/BookStore/Framework/Doctrine/DBAL/AuthorIdDBALType.php:
     timestamp: 1700737422
     hash: 5ec26b8d351063ec3023efd2455a8103
+api/src/BookStore/Framework/Doctrine/Fixtures/AuthorFixture.php:
+    timestamp: 1701792650
+    hash: 45e28e75d124250ae2647e921b9d886c
 api/config/mapping/doctrine/BookStore/Author.orm.xml:
     timestamp: 1700737422
     hash: 5049454b08724f2c2b59561d25edced9
+api/src/BookStore/Domain/Repository/TagRepository.php:
+    timestamp: 1701717503
+    hash: 94217ec95b2f7ab1339bf5aa7b9d2546
+api/src/BookStore/Framework/Doctrine/Repository/TagDoctrineRepository.php:
+    timestamp: 1701717503
+    hash: 62a47b2538d251c2800a606498d08c3d
+api/src/BookStore/Application/Input/TagInput.php:
+    timestamp: 1701717503
+    hash: d4d509ba63edfa8fe30343d58a94025c
+api/src/BookStore/Application/UseCase/Create/CreateTag.php:
+    timestamp: 1701717503
+    hash: 41c829bbb485e37364bca9799abab7a4
+api/src/BookStore/Application/UseCase/Create/CreateTagUseCase.php:
+    timestamp: 1701717503
+    hash: 00bb9a733fcadee2d362fecd7f3178e3
+api/src/BookStore/Framework/Api/State/Processor/CreateTagProcessor.php:
+    timestamp: 1701717503
+    hash: 6c415d71bc04aac1a1a3c035a3fb9d74
+api/src/BookStore/Application/UseCase/Update/UpdateTag.php:
+    timestamp: 1701717503
+    hash: 00e54777145e0453d935c7727bde1b34
+api/src/BookStore/Application/UseCase/Update/UpdateTagUseCase.php:
+    timestamp: 1701717503
+    hash: 6281ed526fd1559efe1dd1a61a6d4a12
+api/src/BookStore/Framework/Api/State/Processor/UpdateTagProcessor.php:
+    timestamp: 1701717503
+    hash: 3df47198634188f74770f47c17f607eb
+api/src/BookStore/Application/UseCase/Delete/DeleteTag.php:
+    timestamp: 1701717503
+    hash: 2825ee0ec650eb2528b2bdd63d799acb
+api/src/BookStore/Application/UseCase/Delete/DeleteTagUseCase.php:
+    timestamp: 1701717503
+    hash: 2a38f49e58710aa96cb5312f6938a2e1
+api/src/BookStore/Framework/Api/State/Processor/DeleteTagProcessor.php:
+    timestamp: 1701717503
+    hash: b293b076e1656e4cf61bf9c8c89ea0d4
+api/src/BookStore/Application/UseCase/Search/SearchTag.php:
+    timestamp: 1701717503
+    hash: 80496aa99ef4fabff4c5763ef3d5373a
+api/src/BookStore/Application/UseCase/Search/SearchTagUseCase.php:
+    timestamp: 1701717503
+    hash: 171f550524a734ff7dc0caa556240f05
+api/src/BookStore/Framework/Api/State/Provider/GetTagProvider.php:
+    timestamp: 1701717503
+    hash: abf3e3739b972e4e407a5b1e2e17acb9
+api/config/mapping/api/BookStore/Tag.resource.xml:
+    timestamp: 1701717503
+    hash: 2c4bb9c76e40357024e8faee297fc03b
+api/config/mapping/api/BookStore/Tag.properties.xml:
+    timestamp: 1701774212
+    hash: 6b4cf6679ce5fc3d1fac3c277b7af65f
+api/config/mapping/serialization/BookStore/Tag.yaml:
+    timestamp: 1701776209
+    hash: 0c98a197f937705455008b32857d01e2
+api/config/mapping/validator/BookStore/Tag.yaml:
+    timestamp: 1701717503
+    hash: 6da9fc69317c5e957744597cb561f2eb
+api/src/BookStore/Domain/Model/Tag.php:
+    timestamp: 1701785651
+    hash: 03aa84e720e0c6d2a5e220d545918b35
+api/src/BookStore/Domain/Model/TagList.php:
+    timestamp: 1701717503
+    hash: bc051242e601cadf3fb8ec3c909de7da
+api/src/BookStore/Domain/Model/TagId.php:
+    timestamp: 1701717503
+    hash: 4cbd8d763767ef6dec1546d086ac6896
+api/src/BookStore/Framework/Doctrine/DBAL/TagIdDBALType.php:
+    timestamp: 1701717503
+    hash: 7bec63ea320bf335521e752f18361047
+api/src/BookStore/Framework/Doctrine/Fixtures/TagFixture.php:
+    timestamp: 1701792694
+    hash: f3f6ab8793e2fe0df14b0eeeb998e9b3
+api/config/mapping/doctrine/BookStore/Tag.orm.xml:
+    timestamp: 1701717503
+    hash: 3969251ebb9a5d8fa7ad1587a3c98bca
 api/src/BookStore/Domain/Model/VO/Price.php:
     timestamp: 1701466187
     hash: 9abf9b3902dc32e4fce83fce31ed0139
@@ -179,11 +275,11 @@ api/config/mapping/serialization/BookStore/VO/Title.yaml:
     timestamp: 1700422576
     hash: 8c68f546fbb3e5c5a391d47bb8d53759
 api/config/packages/doctrine/BookStore.yaml:
-    timestamp: 1700737422
-    hash: 9436bd64b035dd8c4a1685af53357394
+    timestamp: 1701717503
+    hash: 02b91d598d7df9c244a4d0426c00a418
 admin/src/crud/bookstore/FullName/FullName.ts:
-    timestamp: 1701460320
-    hash: 533fccb63806a7b7b90e71353ccdfae3
+    timestamp: 1701518204
+    hash: 587d41e6e9883bec983d90aa0961e8b1
 admin/src/crud/bookstore/FullName/FullNameValidator.ts:
     timestamp: 1701462780
     hash: ee88b6eb26131fcaeebd8530513eceff
@@ -191,8 +287,14 @@ admin/src/crud/bookstore/FullName/FullNameRenderer.ts:
     timestamp: 1701462987
     hash: 25cf9b64f86a71dfe69f3ad21878744e
 admin/src/crud/bookstore/FullName/FullNameInput.tsx:
-    timestamp: 1701467373
-    hash: 9a7ca6dbf14b8309662100f68f8c36b2
+    timestamp: 1701714680
+    hash: 2a9f447d8d3abcb85e0bad45e9d77e66
+admin/src/crud/bookstore/TagName/TagName.ts:
+    timestamp: 1701717503
+    hash: b5ae9a259c6bf997ff3d6b3bff95719b
+admin/src/crud/bookstore/TagName/TagNameValidator.ts:
+    timestamp: 1701717503
+    hash: ceb5e46e773989562f0b12e95456b51e
 'admin/app/[lang]/(private)/bookstore/books/page.tsx':
     timestamp: 1701459729
     hash: f85b5bf001acdffa409104bc8402498e
@@ -203,17 +305,20 @@ admin/src/crud/bookstore/FullName/FullNameInput.tsx:
     timestamp: 1701459867
     hash: b092539680c7e2ceb89503600179f0ed
 admin/src/crud/bookstore/Book/BookList.tsx:
-    timestamp: 1701459729
-    hash: 1b68ea9a8cd84267e10dcc69db6a588b
+    timestamp: 1701721137
+    hash: 558beff1b501a02f171138b871a541bd
 admin/src/crud/bookstore/Book/BookForm.tsx:
-    timestamp: 1701463177
-    hash: 3a8c307e8d43b1ad2db8bc92b2804d24
+    timestamp: 1701721137
+    hash: 70913ca0f46f143e906c29ba2ed38146
 admin/src/crud/bookstore/Book/Book.ts:
-    timestamp: 1701460435
-    hash: 0dc12235e4d328d5b2905f9945391281
+    timestamp: 1701721137
+    hash: cc2f543965980e323fbd858c098b1d62
 admin/src/crud/bookstore/Book/BookRenderer.ts:
     timestamp: 1701462780
     hash: 2b5b52df3dd2039ed8c730a8a37f199f
+admin/src/crud/bookstore/Book/BookInput.tsx:
+    timestamp: 1701714828
+    hash: 96b47ff7303bffe2c32f7646da3b1dc5
 'admin/app/[lang]/(private)/bookstore/authors/page.tsx':
     timestamp: 1701459729
     hash: 6a0119876b78f2631646f3bdb838924e
@@ -227,26 +332,53 @@ admin/src/crud/bookstore/Author/AuthorList.tsx:
     timestamp: 1701459729
     hash: c54db53397500411d9f9a65be7d88d94
 admin/src/crud/bookstore/Author/AuthorForm.tsx:
-    timestamp: 1701461816
-    hash: 1805e74946966958732ad5630e285398
+    timestamp: 1701714518
+    hash: 2a90afa5630c4855cbf684ff6d8c7e2c
 admin/src/crud/bookstore/Author/Author.ts:
-    timestamp: 1701460435
-    hash: 252464973cd7f5bc706f51b926f2422d
+    timestamp: 1701518375
+    hash: 82bf9ce68835863cd0f7178366254863
 admin/src/crud/bookstore/Author/AuthorRenderer.ts:
     timestamp: 1701462780
     hash: bbc999bf5e97c4db68e6618079eeca1c
+admin/src/crud/bookstore/Author/AuthorInput.tsx:
+    timestamp: 1701714828
+    hash: c773051f4eb5540098038155dd3e8759
+'admin/app/[lang]/(private)/bookstore/tags/page.tsx':
+    timestamp: 1701717503
+    hash: 959767132561cdc2e050c104caca269c
+'admin/app/[lang]/(private)/bookstore/tags/edit/[id]/page.tsx':
+    timestamp: 1701717503
+    hash: f3a957829d20dae393077f4033a4a9d1
+'admin/app/[lang]/(private)/bookstore/tags/create/page.tsx':
+    timestamp: 1701717503
+    hash: 159c1df49df7cf262231fb74e8b5a130
+admin/src/crud/bookstore/Tag/TagList.tsx:
+    timestamp: 1701717503
+    hash: 8d8773b74b2aba0dfefa43ad0efdcec4
+admin/src/crud/bookstore/Tag/TagForm.tsx:
+    timestamp: 1701717503
+    hash: d9555556ec974adaa9fbad6a637ca292
+admin/src/crud/bookstore/Tag/Tag.ts:
+    timestamp: 1701717503
+    hash: bb22ec33bbd6a8b66deda5fa6694abc2
+admin/src/crud/bookstore/Tag/TagRenderer.ts:
+    timestamp: 1701717503
+    hash: d97d8775b60d773818ea6b80e81ac998
+admin/src/crud/bookstore/Tag/TagInput.tsx:
+    timestamp: 1701717503
+    hash: 9a7d6257b35b5cfda31e01ba4356c595
 admin/src/crud/bookstore/Price/Price.ts:
-    timestamp: 1701459729
-    hash: bb54c67c86bc2261355ebd4821b566ae
+    timestamp: 1701518207
+    hash: 6fd0e0963a7cc09cf4bd386cda2af54c
 admin/src/crud/bookstore/Price/PriceValidator.ts:
     timestamp: 1701462780
     hash: c600698cac59d070f5e410ebfb0b43bf
 admin/src/crud/bookstore/Title/Title.ts:
-    timestamp: 1701459729
-    hash: bb381b1f1460ef7c099355f99175601d
+    timestamp: 1701518207
+    hash: d88662c0945fcc00299644d620ef0b54
 admin/src/crud/bookstore/Title/TitleValidator.ts:
     timestamp: 1701462780
     hash: 7e56b98d50d5aa180a64810f91086735
 admin/src/crud/bookstore//index.ts:
-    timestamp: 1701463461
-    hash: 78021f7cffbb0c693db8146439820eed
+    timestamp: 1701717503
+    hash: b371ef2df5ac97c4c273b13d70d43faa

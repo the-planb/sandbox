@@ -49,9 +49,8 @@ security:
         - { path: ^/api/docs, roles: PUBLIC_ACCESS }
         - { path: ^/api/_fos_user_context_hash, roles: PUBLIC_ACCESS }
         - { path: ^/api/token/auth, roles: PUBLIC_ACCESS }
-#        - { path: ^/api, roles: PUBLIC_ACCESS }
         - { path: ^/api, roles: ROLE_EDITOR }
-        
+
 
 when@test:
     security:

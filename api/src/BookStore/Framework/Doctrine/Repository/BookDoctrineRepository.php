@@ -9,18 +9,19 @@ use App\BookStore\Domain\Model\BookId;
 use App\BookStore\Domain\Model\BookList;
 use App\BookStore\Domain\Repository\BookRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
-use Doctrine\ORM\Query\QueryException;
 use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
 final class BookDoctrineRepository extends ServiceEntityRepository implements BookRepository
 {
+    private DoctrineCriteriaConverter $criteriaConverter;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Book::class);
+        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
+        ]);
     }
 
     public function save(Book $book): Book
@@ -46,27 +47,19 @@ final class BookDoctrineRepository extends ServiceEntityRepository implements Bo
 
     public function match(Criteria $criteria): BookList
     {
-        $doctrineCriteria = DoctrineCriteriaConverter::convert($criteria);
-        $data = $this->matching($doctrineCriteria);
+        $data = $this->criteriaConverter
+            ->match($criteria)
+            ->execute()
+        ;
 
         return BookList::collect($data);
     }
 
-    /**
-     * @throws QueryException
-     * @throws NonUniqueResultException
-     * @throws NoResultException
-     */
     public function totalItems(Criteria $criteria = null): int
     {
-        $doctrineCriteria = DoctrineCriteriaConverter::convertOnlyFilters($criteria);
-
-        $query = $this->createQueryBuilder('A')
-            ->select('count(A.id)')
-            ->addCriteria($doctrineCriteria)
-            ->getQuery()
+        return $this->criteriaConverter
+            ->count($criteria)
+            ->getSingleScalarResult()
         ;
-
-        return $query->getSingleScalarResult();
     }
 }

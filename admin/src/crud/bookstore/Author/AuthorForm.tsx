@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Col, Form, Input, InputNumber, Row, Tabs } from 'antd'
+import { Col, Form, Input, InputNumber, Row, Space, Tabs } from 'antd'
 import {
   Fieldset,
   FormData,

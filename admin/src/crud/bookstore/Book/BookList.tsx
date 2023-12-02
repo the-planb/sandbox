@@ -26,6 +26,7 @@ export const BookList = () => {
         title: <TextFilter />,
         price: <RangeFilter />,
         author: <TextFilter />,
+        tags: <TextFilter />,
       }}>
       <Table.Column
         dataIndex='title'
@@ -49,6 +50,13 @@ export const BookList = () => {
         render={(value) => (
           <TableCell value={BookStore.authorRenderer(value)} />
         )}
+      />
+      <Table.Column
+        dataIndex='tags'
+        width={'auto'}
+        title={t('bookstore/books.columns.tags')}
+        sorter={true}
+        render={(value) => <TableCell value={BookStore.tagRenderer(value)} />}
       />
     </TableData>
   )

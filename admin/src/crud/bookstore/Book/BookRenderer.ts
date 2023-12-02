@@ -1,4 +1,5 @@
-import * as BookStore from '@crud/bookstore'
-export const bookRenderer = (book: BookStore.Book): string => {
+import { Book } from '@crud/bookstore'
+
+export const bookRenderer = (book: Book): string => {
   return 'TODO: bookRenderer'
 }

@@ -4,6 +4,15 @@
     <id name="id" type="BookStore.BookId"/>
     <field name="title" type="BookStore.Title"/>
     <field name="price" type="BookStore.Price" nullable="true"/>
-    <many-to-one field="author" target-entity="App\BookStore\Domain\Model\Author"/>
+    <many-to-one field="author" target-entity="App\BookStore\Domain\Model\Author" fetch="EAGER">
+      <cascade>
+        <cascade-persist/>
+      </cascade>
+    </many-to-one>
+    <many-to-many field="tags" target-entity="App\BookStore\Domain\Model\Tag" fetch="EAGER" orphan-removal="true">
+      <cascade>
+        <cascade-persist/>
+      </cascade>
+    </many-to-many>
   </entity>
 </doctrine-mapping>

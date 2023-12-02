@@ -27,7 +27,12 @@ const fetchJson = async (
     return {}
   }
 
-  return await response.json()
+  const json = await response.json()
+  if (!response.ok) {
+    return Promise.reject(json)
+  }
+
+  return json
 }
 
 export default fetchJson

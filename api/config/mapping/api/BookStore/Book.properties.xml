@@ -24,4 +24,12 @@
       </values>
     </openapiContext>
   </property>
+  <property resource="App\BookStore\Application\Input\BookInput" name="tags">
+    <openapiContext>
+      <values>
+        <value name="type">object</value>
+        <value name="example"/>
+      </values>
+    </openapiContext>
+  </property>
 </properties>
