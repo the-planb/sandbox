@@ -63,7 +63,7 @@ export default async function Layout({ children, params }: LayoutProps) {
                     // show: `${lang}/bookstore/books/show/:id`,
                     meta: {
                       canDelete: true,
-                      preload: ['author', 'tags'],
+                      preload: ['author'],
                     },
                   },
                   {

@@ -22,9 +22,9 @@ final class BookFixture extends UseCaseFixture implements DependentFixtureInterf
             $title = sprintf('libro num. %02d', $index);
             $input = new BookInput();
             $input->title = new Title($title);
-            $input->price = new Price($this->faker->randomNumber(2));
+            $input->price = new Price($this->faker->numberBetween(10, 60));
             $input->tags = TagList::collect([
-                $this->getReference($this->referenceName(Tag::class, rand(0, 9))),
+                $this->getReference($this->referenceName(Tag::class, rand(0, 4))),
             ]);
 
             $input->author = $this->getReference($this->referenceName(Author::class, rand(0, 9)));

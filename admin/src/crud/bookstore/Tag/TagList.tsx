@@ -2,8 +2,8 @@
 
 import { Table } from 'antd'
 import { useTranslate } from '@refinedev/core'
-import { TableData, TableCell } from '@planb/components/table'
-import { RangeFilter, TextFilter } from '@planb/components/filters'
+import { TableCell, TableData } from '@planb/components/table'
+import { TextFilter } from '@planb/components/filters'
 import * as BookStore from '@crud/bookstore'
 
 export const TagList = () => {
@@ -14,14 +14,13 @@ export const TagList = () => {
       resource={'bookstore/tags'}
       // edit={{modal: BookForm}}
       // create={{drawer: BookForm, width: 1000}}
-      //    tableProps={{
-      //        expandable: {
-      //            expandedRowRender: (record) => {
-      //                return '...'
-      //            },
-      //        },
-      //    }}
-
+      tableProps={{
+        expandable: {
+          expandedRowRender: (record) => {
+            return record.id
+          },
+        },
+      }}
       filters={{
         name: <TextFilter />,
       }}>

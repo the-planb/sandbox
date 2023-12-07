@@ -5,6 +5,7 @@ import { useTranslate } from '@refinedev/core'
 import { TableData, TableCell } from '@planb/components/table'
 import { RangeFilter, TextFilter } from '@planb/components/filters'
 import * as BookStore from '@crud/bookstore'
+import { Tag } from '@crud/bookstore'
 
 export const BookList = () => {
   const t = useTranslate()
@@ -51,13 +52,13 @@ export const BookList = () => {
           <TableCell value={BookStore.authorRenderer(value)} />
         )}
       />
-      <Table.Column
-        dataIndex='tags'
-        width={'auto'}
-        title={t('bookstore/books.columns.tags')}
-        sorter={true}
-        render={(value) => <TableCell value={BookStore.tagRenderer(value)} />}
-      />
+      {/*<Table.Column*/}
+      {/*  dataIndex='tags'*/}
+      {/*  width={'auto'}*/}
+      {/*  title={t('bookstore/books.columns.tags')}*/}
+      {/*  sorter={true}*/}
+      {/*  render={(value) => value.map((tag: Tag)=>BookStore.tagRenderer(tag))}*/}
+      {/*/>*/}
     </TableData>
   )
 }

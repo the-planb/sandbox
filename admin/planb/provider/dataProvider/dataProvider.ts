@@ -1,14 +1,8 @@
-import {
-  type BaseRecord,
-  type DataProvider as IDataProvider,
-} from '@refinedev/core'
-import {
-  GenerateQuery,
-  PreloadHeaderCollection,
-  PreloadHeaderItem,
-} from './utils'
+import { type DataProvider as IDataProvider } from '@refinedev/core'
+import { GenerateQuery } from './utils'
 
 import { ApiClient } from '@planb/provider'
+import { fetchData } from '@planb/provider/fetchData'
 
 export function DataProvider(): IDataProvider {
   const apiClient = ApiClient('ProxyMode')
@@ -21,76 +15,101 @@ export function DataProvider(): IDataProvider {
         pagination,
       })
 
-      const path = `${resource}?${query}`
-      const options = {
-        headers: PreloadHeaderCollection(meta),
+      const { error, data, status } = await fetchData({
+        path: `${resource}?${query}`,
+        method: 'GET',
+        collection: true,
+        preload: meta.preload,
+      })
+
+      if (error) {
+        return Promise.reject({
+          message: error['hydra:description'] || 'An error occurred',
+          statusCode: status,
+        })
       }
 
-      return await apiClient
-        .get(path, options)
-        .then((response: Record<string, any>) => {
-          return {
-            total: response['hydra:totalItems'],
-            data: response['hydra:member'],
-          }
-        })
-        .catch((error) => {
-          return Promise.reject({
-            message: error['hydra:description'],
-            statusCode: error['hydra:title'],
-          })
-        })
+      return {
+        total: data['hydra:totalItems'],
+        data: data['hydra:member'],
+      }
     },
     getOne: async ({ resource, id, meta = {} }) => {
-      const path = `${resource}/${id}`
+      const { error, data, status } = await fetchData({
+        path: `${resource}/${id}`,
+        method: 'GET',
+        collection: false,
+        preload: meta.preload,
+      })
 
-      const options = {
-        headers: PreloadHeaderItem(meta),
+      if (error) {
+        return Promise.reject({
+          message: error['hydra:description'] || 'An error occurred',
+          statusCode: status,
+        })
       }
 
-      return await apiClient.get(path, options).then((response: BaseRecord) => {
-        return {
-          data: response,
-        }
-      })
+      return {
+        data,
+      }
     },
 
     create: async ({ resource, variables }) => {
-      const url = `${resource}`
+      const { error, data, status } = await fetchData({
+        path: `${resource}`,
+        method: 'POST',
+        body: JSON.stringify(variables) as BodyInit,
+      })
 
-      // const {data} = await httpClient.post(url, variables);
-      const data = {}
+      if (error) {
+        return Promise.reject({
+          message: error['hydra:description'] || 'An error occurred',
+          statusCode: status,
+        })
+      }
+
       return {
         data,
       }
     },
 
     update: async ({ resource, id, variables }) => {
-      const url = `${resource}/${id}`
+      const { error, data, status } = await fetchData({
+        path: `${resource}/${id}`,
+        method: 'PUT',
+        body: JSON.stringify(variables) as BodyInit,
+      })
 
-      return await apiClient
-        .put(url, variables as object)
-        .then((response: Record<string, any>) => {
-          return {
-            data: response,
-          }
+      if (error) {
+        return Promise.reject({
+          message: error['hydra:description'] || 'An error occurred',
+          statusCode: status,
         })
+      }
+
+      return {
+        data,
+      }
     },
 
     deleteOne: async ({ resource, id, variables }) => {
       const path = `${resource}/${id}`
 
-      return await apiClient.delete(path).then((response: BaseRecord) => {
-        return {
-          data: response,
-        }
+      const { error, data, status } = await fetchData({
+        path: `${resource}/${id}`,
+        method: 'DELETE',
       })
 
-      // // const {data} = await httpClient.delete(url, (variables as AxiosRequestConfig));
-      // const data = {}
-      // return {
-      //   data,
-      // };
+      if (error) {
+        return Promise.reject({
+          message: error['hydra:description'] || 'An error occurred',
+          statusCode: status,
+        })
+      }
+
+      return {
+        data,
+      }
     },
 
     deleteMany: async ({ resource, ids, variables }) => {

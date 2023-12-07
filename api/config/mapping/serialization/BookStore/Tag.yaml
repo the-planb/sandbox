@@ -4,7 +4,7 @@ App\BookStore\Domain\Model\Tag:
     id:
       groups: [read.bookstore.tag]
     name:
-      groups: [read.bookstore.tag, write]
+      groups: [read.bookstore.tag]
 
 
 App\BookStore\Application\Input\TagInput:

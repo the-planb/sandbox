@@ -25,7 +25,6 @@ final class GetBookProvider implements ProviderInterface
 
     public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
     {
-        sleep(1);
         $filters = $context['filters'] ?? [];
         $criteria = Criteria::fromValues($filters);
         $pagination = $criteria->getPagination();

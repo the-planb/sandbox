@@ -8,7 +8,10 @@ import {
   useTranslate,
 } from '@refinedev/core'
 import { type DefaultOptionType, type FilterFunc } from 'rc-select/es/Select'
-import { type FormDataProps, useFormData } from '@planb/components/form/formData'
+import {
+  type FormDataProps,
+  useFormData,
+} from '@planb/components/form/formData'
 
 interface EntitySelectProps<T extends BaseRecord> extends SelectProps {
   resource: string
@@ -69,8 +72,7 @@ export const EntitySelect = <T extends BaseRecord>(
 
   useEffect(() => {
     if (['tags', 'multiple'].includes(props.mode as string)) {
-
-      const value = ([props.value]).map(itemToOption)
+      const value = [props.value].map(itemToOption)
       setValue(value)
 
       const mapped = value.map((option: DefaultOptionType) => option.value)
@@ -132,8 +134,8 @@ export const EntitySelect = <T extends BaseRecord>(
 
   const search = remote
     ? {
-      onSearch,
-    }
+        onSearch,
+      }
     : {}
 
   return (

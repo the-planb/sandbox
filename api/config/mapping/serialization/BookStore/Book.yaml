@@ -4,13 +4,13 @@ App\BookStore\Domain\Model\Book:
     id:
       groups: [read.bookstore.book]
     title:
-      groups: [read.bookstore.book, write]
+      groups: [read.bookstore.book]
     price:
-      groups: [read.bookstore.book, write]
+      groups: [read.bookstore.book]
     author:
-      groups: [read.bookstore.book, write]
+      groups: [read.bookstore.book]
     tags:
-      groups: [read.bookstore.book, write]
+      groups: [read.bookstore.book]
 
 
 App\BookStore\Application\Input\BookInput:

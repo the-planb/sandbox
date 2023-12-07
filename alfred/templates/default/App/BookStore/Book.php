@@ -3,6 +3,7 @@
 
 use PlanB\Alfred\Domain\Artefact\Dependency\Cascade;
 use PlanB\Alfred\Domain\Artefact\Dependency\Fetch;
+use PlanB\Alfred\Domain\Type\Native;
 
 return AggregateRoot('Book')
     ->with('title', Attribute('VO(Title)')

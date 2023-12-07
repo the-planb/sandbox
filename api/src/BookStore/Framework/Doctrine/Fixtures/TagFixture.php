@@ -14,7 +14,7 @@ final class TagFixture extends UseCaseFixture // implements DependentFixtureInte
 {
     public function loadData(): void
     {
-        $this->createMany(100, function (int $index) {
+        $this->createMany(5, function (int $index) {
             $input = new TagInput();
             $input->name = new TagName(sprintf('tag %02d', $index));
 

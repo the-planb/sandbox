@@ -21,8 +21,8 @@ export const TagInput = (props: SelectProps) => {
   const tagRender = ({ label, ...props }: CustomTagProps) => {
     return (
       <Tag color={'processing'} {...props}>
-        {' '}{label}{' '}
-
+        {' '}
+        {label}{' '}
       </Tag>
     )
   }

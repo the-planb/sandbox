@@ -68,6 +68,9 @@ build/prod: --prod
 build/prod/admin: --prod
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build admin
 
+build/prod/php: --prod
+	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build php
+
 build/dev: --dev
 	docker-compose --env-file=.env build
 
@@ -85,6 +88,10 @@ down:
 
 varnish/reload:
 	docker-compose  exec  varnish varnishreload
+
+
+varnish/restart:
+	docker-compose  restart  varnish
 
 varnish/purge:
 	docker-compose exec varnish varnishadm 'ban req.url ~ /'

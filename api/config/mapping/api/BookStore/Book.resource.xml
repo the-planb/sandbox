@@ -2,10 +2,21 @@
 <resources xmlns="https://api-platform.com/schema/metadata/resources-3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://api-platform.com/schema/metadata/resources-3.0 https://api-platform.com/schema/metadata/resources-3.0.xsd">
   <resource class="App\BookStore\Domain\Model\Book" routePrefix="bookstore" shortName="Book">
     <operations>
-      <operation class="ApiPlatform\Metadata\Get"/>
-      <operation class="ApiPlatform\Metadata\GetCollection" provider="App\BookStore\Framework\Api\State\Provider\GetBookProvider"/>
+      <operation class="ApiPlatform\Metadata\Get">
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
+      <operation class="ApiPlatform\Metadata\GetCollection" provider="App\BookStore\Framework\Api\State\Provider\GetBookProvider">
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
       <operation class="ApiPlatform\Metadata\Post" input="App\BookStore\Application\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\CreateBookProcessor"/>
       <operation class="ApiPlatform\Metadata\Put" input="App\BookStore\Application\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\UpdateBookProcessor"/>
+      <operation class="ApiPlatform\Metadata\Delete" processor="App\BookStore\Framework\Api\State\Processor\DeleteBookProcessor"/>
     </operations>
     <normalizationContext>
       <values>

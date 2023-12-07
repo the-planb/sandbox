@@ -1,57 +1,130 @@
 import { type NextRequest, NextResponse } from 'next/server'
-import { ApiUrl } from '@planb/provider'
-import fetchJson from '@planb/provider/ApiClient/fetchJson'
-import { IriComposer } from '@planb/provider/ApiClient/iriComposer'
+import { iriComposer } from '@planb/provider/ApiClient/iriComposer'
 
-export async function GET(request: NextRequest) {
-  const base = ApiUrl('ServerMode')
-  const url = new URL(request.url)
+const BASE_URL: string = `http://php`
 
+type DoFetchReturnType = {
+  data: object
+  status: number
+  ok: boolean
+}
 
-  const Preload = request.headers.get('X-Preload')
-    ? { Preload: request.headers.get('X-Preload') }
+interface RequestConfig {
+  url: string
+  options: RequestInit
+}
+
+const configureRequest = (request: NextRequest): RequestConfig => {
+  // const XPreload = request.headers.get('X-Preload')
+  // const Preload: { Preload: string } | {} = XPreload
+  //   ? { Preload: XPreload }
+  //   : {}
+
+  const body = ['PUT', 'POST'].includes(request.method)
+    ? {
+        body: request.body,
+        duplex: 'half',
+      }
     : {}
 
   const options: RequestInit = {
+    method: request.method,
+    // cache: 'reload',
+    ...body,
+
     headers: {
-      ...request.headers,
       'Content-Type': 'application/ld+json',
       Authorization: `Bearer ${request.cookies.get('token')?.value}`,
-      ...Preload,
+      //...Preload,
     },
-    body: null,
   }
 
-  return await fetchJson(base, `${url.pathname}${url.search}`, options)
-    .then(async (data) => {
-      const complete = await IriComposer({
-        data: data as object,
-        headers: options.headers,
-      })
-      return NextResponse.json(complete)
+  const url = new URL(request.url)
+  const endpoint = `${BASE_URL}${url.pathname}${url.search}`
+
+  return { url: endpoint, options }
+}
+
+const doFetch = async ({
+  url,
+  options,
+}: RequestConfig): Promise<DoFetchReturnType> => {
+  return await fetch(url, options)
+    .then(async (res) => {
+      const responseText = await res.text()
+      try {
+        if (res.status === 204 && options.method === 'DELETE') {
+          return {
+            data: {},
+            status: 200,
+            ok: true,
+          }
+        }
+
+        const data = JSON.parse(responseText)
+        return {
+          data,
+          status: res.status,
+          ok: true,
+        }
+      } catch (error) {
+        console.log({ error }, '<----')
+
+        return Promise.reject({
+          data: {
+            raw: responseText,
+          },
+          status: res.status,
+          ok: false,
+        })
+      }
     })
     .catch((error) => {
-      return NextResponse.json(error, {
-        status: 500,
-      })
+      console.log({ error })
+      return error
     })
 }
 
-export async function PUT(request: NextRequest) {
-  const base = ApiUrl('ServerMode')
-  const url = new URL(request.url)
+export async function GET(request: NextRequest) {
+  const { url, options } = configureRequest(request)
+  const { data, status, ok } = await doFetch({ url, options })
 
-  const options: RequestInit = {
-    headers: {
-      ...request.headers,
-      'Content-Type': 'application/ld+json',
-      Authorization: `Bearer ${request.cookies.get('token')?.value}`,
-    },
-    body: request.body,
-    method: 'PUT',
+  if (ok) {
+    await iriComposer({
+      baseUrl: BASE_URL,
+      data,
+      preload: request.headers.get('X-Preload'),
+      options,
+    })
   }
+  return NextResponse.json(data, {
+    status,
+  })
+}
 
-  const data = await fetchJson(base, `${url.pathname}${url.search}`, options)
+export async function PUT(request: NextRequest) {
+  const { url, options } = configureRequest(request)
+  const { data, status, ok } = await doFetch({ url, options })
 
-  return NextResponse.json(data)
+  return NextResponse.json(data, {
+    status,
+  })
+}
+
+export async function POST(request: NextRequest) {
+  const { url, options } = configureRequest(request)
+  const { data, status, ok } = await doFetch({ url, options })
+
+  return NextResponse.json(data, {
+    status,
+  })
+}
+
+export async function DELETE(request: NextRequest) {
+  const { url, options } = configureRequest(request)
+  const { data, status, ok } = await doFetch({ url, options })
+
+  return NextResponse.json(data, {
+    status,
+  })
 }

@@ -4,7 +4,7 @@ App\BookStore\Domain\Model\Author:
     id:
       groups: [read.bookstore.author]
     name:
-      groups: [read.bookstore.author, write]
+      groups: [read.bookstore.author]
 
 
 App\BookStore\Application\Input\AuthorInput:

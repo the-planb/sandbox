@@ -1,8 +1,6 @@
 import { type MetaQuery } from '@refinedev/core'
 
-export const PreloadHeaderCollection = (meta: MetaQuery): HeadersInit => {
-  const fields = meta.preload ?? []
-
+export const PreloadHeaderCollection = (fields: string[]): HeadersInit => {
   if (fields.length < 1) {
     return {}
   }
@@ -14,9 +12,7 @@ export const PreloadHeaderCollection = (meta: MetaQuery): HeadersInit => {
   return { 'X-Preload': Preload }
 }
 
-export const PreloadHeaderItem = (meta: MetaQuery): HeadersInit => {
-  const fields = meta.preload ?? []
-
+export const PreloadHeaderItem = (fields: string[]): HeadersInit => {
   if (fields.length < 1) {
     return {}
   }

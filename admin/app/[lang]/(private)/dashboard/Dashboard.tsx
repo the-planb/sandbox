@@ -1,38 +1,55 @@
 'use client'
 
-import { Button } from 'antd'
-import fetchJson from '@planb/provider/ApiClient/fetchJson'
-import { ApiUrl } from '@planb/provider'
-import { useState } from 'react'
-
 export default function Dashboard() {
+  return <></>
 
-  const [code, setCode] = useState<string>('')
+  // const handle = async () => {
+  //   const book = await window
+  //     .fetch('/api/bookstore/books/018c3ac1-537a-d59b-1624-e36c2289327d', {
+  //       // credentials: 'omit',
+  //       // mode: 'no-cors',
+  //       headers: { Preload: `"/author"` },
+  //     })
+  //     .then(async (res) => {
+  //       return { a: 12313 }
+  //     })
+  //
+  //   console.log(book)
+  // }
+  //
+  // return (
+  //   <>
+  //     <Button onClick={handle}>dale</Button>
+  //   </>
+  // )
 
-  const handle = async () => {
-    const url = ApiUrl('ClientMode')
-    setCode('....')
-    console.time('s')
-    // await fetchJson(url, '/bookstore/books/018c3ac1-537a-d59b-1624-e36c2289327d')
-    // const data = await fetchJson(url, '/bookstore/books/018c3ac1-537a-d59b-1624-e36c2289327d')
+  // const [code, setCode] = useState<string>('')
+  //
+  // const { isLoading, error, data } = fetchData({
+  //   path: '/bookstore/books/',
+  //   method: 'GET',
+  //   collection: true,
+  //   preload: ['author', 'tags'],
+  // })
 
-    await fetch('https://www.prueba.local/bookstore/books/')
-    const data = await fetchJson(url, '/bookstore/books/')
-
-    console.timeEnd('s')
-    setCode(JSON.stringify(data, null, 4))
-
-  }
-
-  return (
-    <>
-      <Button onClick={handle}>Dale</Button>
-
-      <code>
-        <pre>
-          {code}
-        </pre>
-      </code>
-    </>
-  )
+  // if (isLoading) return <div>loading...</div>
+  //
+  // if (error)
+  //   return (
+  //     <div>
+  //       <pre>
+  //         <h2>error</h2>
+  //         <code>{JSON.stringify(error, null, 4)}</code>
+  //       </pre>
+  //     </div>
+  //   )
+  //
+  // return (
+  //   <div>
+  //     <pre>
+  //       <h2>data</h2>
+  //       <code>{JSON.stringify(data, null, 4)}</code>
+  //     </pre>
+  //   </div>
+  // )
 }

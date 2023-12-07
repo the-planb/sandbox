@@ -14,7 +14,7 @@ final class AuthorFixture extends UseCaseFixture // implements DependentFixtureI
 {
     public function loadData(): void
     {
-        $this->createMany(25, function (int $index) {
+        $this->createMany(10, function (int $index) {
             $input = new AuthorInput();
             $input->name = new FullName(
                 firstName: $this->faker->firstName,
