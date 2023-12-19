@@ -1,11 +1,11 @@
 import { type DataProvider as IDataProvider } from '@refinedev/core'
 import { GenerateQuery } from './utils'
 
-import { ApiClient } from '@planb/provider'
+// import { ApiClient } from '@planb/provider'
 import { fetchData } from '@planb/provider/fetchData'
 
 export function DataProvider(): IDataProvider {
-  const apiClient = ApiClient('ProxyMode')
+  // const apiClient = ApiClient('ProxyMode')
 
   return {
     getList: async ({ resource, pagination, filters, sorters, meta = {} }) => {

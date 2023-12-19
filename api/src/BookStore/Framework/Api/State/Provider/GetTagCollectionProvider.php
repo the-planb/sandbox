@@ -12,7 +12,7 @@ use League\Tactician\CommandBus;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Api\State\Pagination\CriteriaPaginator;
 
-final class GetTagProvider implements ProviderInterface
+final class GetTagCollectionProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
     private TagRepository $repository;

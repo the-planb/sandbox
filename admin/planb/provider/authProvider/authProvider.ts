@@ -1,35 +1,38 @@
 import { type AuthBindings } from '@refinedev/core'
-import { ApiClient } from '@planb/provider'
-import {
-  type AuthTokenResponse,
-  GetUser,
-  OnCheck,
-  OnError,
-  OnLogin,
-  Redirect,
-} from './responses'
+// import { ApiClient } from '@planb/provider'
+import { GetUser, OnCheck, OnError, OnLogin, Redirect } from './responses'
+import { fetchData } from '@planb/provider'
 
 export function AuthProvider(): AuthBindings {
-  const httpClient = ApiClient('ProxyMode')
+  // const httpClient = ApiClient('ProxyMode')
 
   return {
     login: async ({ username, password, to }) => {
-      return await httpClient
-        .post('token/auth', {
+      const { error, data, status } = await fetchData({
+        path: 'token/auth',
+        method: 'POST',
+        body: JSON.stringify({
           username,
           password,
-        })
-        .then((data: AuthTokenResponse) => {
-          return data.code === 200 ? OnLogin(to) : OnError(data.message)
-        })
-        .catch((error) => {
-          return OnError(error.message)
-        })
+        }) as BodyInit,
+      })
+
+      if (error) {
+        return OnError(error['hydra:description'] || 'An error occurred')
+      }
+
+      return OnLogin(to)
     },
     logout: async () => {
-      return await httpClient.get('token/logout').then(() => {
-        return Redirect('/')
+      const { error, data, status } = await fetchData({
+        path: 'token/logout',
+        method: 'GET',
       })
+      if (error) {
+        return OnError('Logout error occurred')
+      }
+
+      return Redirect('/')
     },
     check: async (ctx: any) => {
       const user = GetUser()

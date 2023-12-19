@@ -91,7 +91,7 @@
 
 #===== con cache ============
         reverse_proxy  {
-            to http://varnish:6081
+            to http://http-cache
             header_up Host "localhost" # Won't work with another value or transparent preset
             header_up X-Real-IP {remote}
         }
@@ -100,7 +100,7 @@
 }
 
 #varnish backend
-http://localhost:8060 {
+http://php:8060 {
     root * /app/public
     tls internal
     route {

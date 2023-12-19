@@ -2,30 +2,30 @@ import { type FormDataProps, useFormData } from '@planb/components/form'
 import { type FC } from 'react'
 import { type BaseKey } from '@refinedev/core'
 
-interface ResolveFormLikeProps {
-  modal?: FC<FormDataProps>
-  drawer?: FC<FormDataProps>
-}
+// interface ResolveFormLikeProps {
+//   modal?: FC<FormDataProps>
+//   drawer?: FC<FormDataProps>
+// }
+//
+// interface ResolveFormLikeReturnType {
+//   like?: 'modal' | 'drawer'
+//   form?: FC<FormDataProps>
+// }
 
-interface ResolveFormLikeReturnType {
-  like?: 'modal' | 'drawer'
-  form?: FC<FormDataProps>
-}
-
-const resolveFormLike = ({
-  modal,
-  drawer,
-}: ResolveFormLikeProps): ResolveFormLikeReturnType => {
-  if (modal !== undefined) {
-    return { like: 'modal', form: modal }
-  }
-
-  if (drawer !== undefined) {
-    return { like: 'drawer', form: drawer }
-  }
-
-  return { like: undefined, form: undefined }
-}
+// const resolveFormLike = ({
+//   modal,
+//   drawer,
+// }: ResolveFormLikeProps): ResolveFormLikeReturnType => {
+//   if (modal !== undefined) {
+//     return { like: 'modal', form: modal }
+//   }
+//
+//   if (drawer !== undefined) {
+//     return { like: 'drawer', form: drawer }
+//   }
+//
+//   return { like: undefined, form: undefined }
+// }
 
 interface ResolveActionFormProps {
   resource: string

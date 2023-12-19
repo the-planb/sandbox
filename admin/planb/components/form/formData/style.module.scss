@@ -132,17 +132,25 @@
   padding: 0;
   overflow: hidden;
 
-  :global(form) {
-    margin: 0;
-    overflow: hidden;
-    max-height: var(--form-height);
-  }
+  :global {
+    .ant-modal-content {
+      padding: 0 0 1px 0;
+    }
+    .ant-page-header-content {
+      border: none;
+    }
+    .ant-card {
+      box-shadow: none;
+    }
 
-  :global(.anchor-container) {
-    max-height: calc(var(--form-height) - 4em);
-  }
-}
+    form {
+      margin: 0;
+      overflow: hidden;
+      max-height: var(--form-height);
+    }
 
-.drawerForm {
-  background-color: red;
+    .anchor-container {
+      max-height: calc(var(--form-height) - 4em);
+    }
+  }
 }

@@ -31,8 +31,6 @@ class Author
 
     public function getName(): FullName
     {
-        sleep(2);
-
         return $this->name;
     }
 }

@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server'
-import { iriComposer } from '@planb/provider/ApiClient/iriComposer'
+import { iriComposer } from '@planb/provider/fetchData/iriComposer'
 
 const BASE_URL: string = `http://php`
 
@@ -15,11 +15,6 @@ interface RequestConfig {
 }
 
 const configureRequest = (request: NextRequest): RequestConfig => {
-  // const XPreload = request.headers.get('X-Preload')
-  // const Preload: { Preload: string } | {} = XPreload
-  //   ? { Preload: XPreload }
-  //   : {}
-
   const body = ['PUT', 'POST'].includes(request.method)
     ? {
         body: request.body,

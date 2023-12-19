@@ -1,7 +1,8 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { decode, type JwtPayload } from 'jsonwebtoken'
 import { cookies } from 'next/headers'
-import { ApiUrl } from '@planb/provider'
+
+const BASE_URL: string = `http://php`
 
 const SetCookies = (data: { token: string }) => {
   const jwt = decode(data.token) as JwtPayload
@@ -26,15 +27,19 @@ const SetCookies = (data: { token: string }) => {
 }
 
 export async function POST(request: NextRequest) {
-  const data = await request.json()
-  const url = ApiUrl('ServerMode', 'token/auth')
+  const body = {
+    body: request.body,
+    duplex: 'half',
+  }
 
+  const url = `${BASE_URL}/api/token/auth`
+  //
   const res = await fetch(url, {
     headers: {
       'Content-Type': 'application/ld+json',
       Accept: 'application/ld+json',
     },
-    body: JSON.stringify(data),
+    ...body,
     method: 'POST',
   })
 
@@ -42,9 +47,14 @@ export async function POST(request: NextRequest) {
   const json = await res.json()
 
   if (status !== 200) {
-    return NextResponse.json(json, {
-      status,
-    })
+    return NextResponse.json(
+      {
+        'hydra:description': json.message,
+      },
+      {
+        status,
+      },
+    )
   }
 
   SetCookies(json)

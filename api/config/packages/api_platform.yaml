@@ -20,8 +20,11 @@ api_platform:
     http_cache:
         invalidation:
             enabled: true
-            varnish_urls: [ '%env(VARNISH_URL)%' ]
-            purger: 'api_platform.http_cache.purger.varnish.ban'
+#            varnish_urls: [ '%env(VARNISH_URL)%' ]
+            varnish_urls: [ 'http://http-cache' ]
+            purger: 'api_platform.http_cache.purger.varnish.xkey'
+            xkey: 
+                glue: ','
         public: true
     
     # Good cache defaults for REST APIs
@@ -34,9 +37,6 @@ api_platform:
 #            max_age: 1000
             shared_max_age: 2592000
             vary: [ 'Content-Type', 'Authorization', 'Origin' ]
-        #            invalidation:
-        #                xkey:
-        #                    glue: ','
         
         extra_properties:
             standard_put: true

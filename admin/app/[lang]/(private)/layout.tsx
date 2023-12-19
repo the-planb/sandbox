@@ -9,6 +9,7 @@ export default function Layout({ children, params }: LayoutProps) {
 
   return (
     <Authenticated
+      key='private'
       redirectOnFail={`/${lang}/login`}
       v3LegacyAuthProviderCompatible>
       <ThemedLayout Sider={Sider} Header={Header}>

@@ -51,6 +51,9 @@ logs/all:
 logs/php:
 	docker-compose logs -f php
 
+logs/cache:
+	docker-compose logs -f http-cache
+
 logs/admin:
 	docker-compose logs -f admin
 
@@ -59,8 +62,11 @@ restart/all: down up/dev
 restart/admin:
 	docker-compose --env-file=.env restart admin
 
-restart/php:
+restart/php: restart/cache
 	docker-compose --env-file=.env restart php
+
+restart/cache:
+	docker-compose --env-file=.env restart http-cache
 
 build/prod: --prod
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build
@@ -74,6 +80,9 @@ build/prod/php: --prod
 build/dev: --dev
 	docker-compose --env-file=.env build
 
+build/dev/cache: --dev
+	docker-compose --env-file=.env build http-cache
+
 up/prod: --prod down
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml up -d --remove-orphans
 	@echo "==== PROD ===="
@@ -85,19 +94,17 @@ up/dev: --dev down
 down:
 	docker-compose down --remove-orphans
 
-
-varnish/reload:
-	docker-compose  exec  varnish varnishreload
-
-
-varnish/restart:
-	docker-compose  restart  varnish
-
-varnish/purge:
-	docker-compose exec varnish varnishadm 'ban req.url ~ /'
-
-varnish/logs:
-	docker-compose exec varnish varnishlog -g raw
+#varnish/reload:
+#	docker-compose  exec  varnish varnishreload
+#
+#varnish/restart:
+#	docker-compose  restart  varnish
+#
+#varnish/purge:
+#	docker-compose exec varnish varnishadm 'ban req.url ~ /'
+#
+#varnish/logs:
+#	docker-compose exec varnish varnishlog -g raw
 
 alfred/please:
 

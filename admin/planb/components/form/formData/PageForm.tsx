@@ -24,6 +24,7 @@ export function PageForm({
   const noIcon = {
     icon: false,
   }
+
   const saveButtonProps = {
     ...saveButton,
     ...noIcon,

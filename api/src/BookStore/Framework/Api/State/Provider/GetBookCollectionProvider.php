@@ -6,18 +6,18 @@ namespace App\BookStore\Framework\Api\State\Provider;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
-use App\BookStore\Application\UseCase\Search\SearchAuthor;
-use App\BookStore\Domain\Repository\AuthorRepository;
+use App\BookStore\Application\UseCase\Search\SearchBook;
+use App\BookStore\Domain\Repository\BookRepository;
 use League\Tactician\CommandBus;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Api\State\Pagination\CriteriaPaginator;
 
-final class GetAuthorProvider implements ProviderInterface
+final class GetBookCollectionProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
-    private AuthorRepository $repository;
+    private BookRepository $repository;
 
-    public function __construct(CommandBus $commandBus, AuthorRepository $repository)
+    public function __construct(CommandBus $commandBus, BookRepository $repository)
     {
         $this->commandBus = $commandBus;
         $this->repository = $repository;
@@ -29,7 +29,7 @@ final class GetAuthorProvider implements ProviderInterface
         $criteria = Criteria::fromValues($filters);
         $pagination = $criteria->getPagination();
 
-        $command = new SearchAuthor($criteria);
+        $command = new SearchBook($criteria);
         $data = $this->commandBus->handle($command);
 
         return new CriteriaPaginator(

@@ -61,7 +61,7 @@ const Data = () => {
               required: true,
             },
           ]}>
-          <BookStore.TagInput />
+          <BookStore.TagInput mode='multiple' />
         </Form.Item>
       </Fieldset>
       <Fieldset legend='otros campos' id={'otro'}>

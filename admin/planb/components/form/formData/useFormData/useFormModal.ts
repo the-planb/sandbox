@@ -10,7 +10,6 @@ import {
   type UseModalFormReturnType,
 } from '@refinedev/antd'
 import { type FormProps, type ModalProps } from 'antd'
-import { useState } from 'react'
 
 export interface UseFormModalProps<
   TData extends BaseRecord = BaseRecord,
@@ -56,11 +55,13 @@ export const useFormDataModal = <
     formProps: form,
     ...extra
   } = useModalForm(props as UseModalFormProps)
+
   const modalProps: ModalProps = {
     destroyOnClose: true,
     focusTriggerAfterClose: true,
     ...modal,
     ...props.modalProps,
+    footer: false,
   }
 
   const formProps = {
@@ -73,7 +74,9 @@ export const useFormDataModal = <
     action: props.action as FormAction,
     resource: props.resource,
     formProps,
-    modalProps,
+    modalProps: {
+      ...modalProps,
+    },
     ...extra,
   }
 }

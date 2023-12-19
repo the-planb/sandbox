@@ -101,13 +101,32 @@ RUN set -eux; \
 	composer run-script --no-dev post-install-cmd; \
 	chmod +x bin/console; sync;
 
-FROM varnish:latest AS app_varnish
-ADD frankenphp/varnish/ /etc/varnish/
-COPY --link frankenphp/varnish/default.vcl /etc/varnish/default.vcl
+FROM openresty/openresty:alpine-fat as app_http_cache
+ADD frankenphp/cache/conf.d /etc/nginx/conf.d/
+ADD frankenphp/cache/lua/http-cache /usr/local/openresty/luajit/share/lua/5.1/http-cache/
 
-CMD ["varnishd", "-F", \
-    "-a", ":6081", \
-    "-T", "localhost:6082", \
-    "-f", "/etc/varnish/default.vcl", \
-    "-p", "http_resp_hdr_len=65536", \
-    "-p", "http_resp_size=98304"]
+RUN apk add libressl-dev cmake;
+RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-http;
+RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-redis;
+RUN /usr/local/openresty/luajit/bin/luarocks install rapidjson;
+RUN /usr/local/openresty/luajit/bin/luarocks install base64;
+RUN /usr/local/openresty/luajit/bin/luarocks install --server=http://luarocks.org/manifests/kikito md5
+RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-jwt;
+
+#CMD ["redis-server && /usr/local/openresty/bin/openresty", "-g", "daemon off;"]
+
+FROM redis:alpine as app_redis
+
+#RUN /usr/local/openresty/luajit/bin/luarocks install luacrypto;
+#RUN /usr/local/openresty/luajit/bin/luarocks install luajwt;
+
+#FROM varnish:latest AS app_varnish
+#ADD frankenphp/varnish/ /etc/varnish/
+#COPY --link frankenphp/varnish/default.vcl /etc/varnish/default.vcl
+#
+#CMD ["varnishd", "-F", \
+#    "-a", ":6081", \
+#    "-T", "localhost:6082", \
+#    "-f", "/etc/varnish/default.vcl", \
+#    "-p", "http_resp_hdr_len=65536", \
+#    "-p", "http_resp_size=98304"]

@@ -47,11 +47,16 @@ services:
       # On Linux, you may want to comment the following line for improved performance
       #WATCHPACK_POLLING: "true"
 
-  varnish:
-    volumes:
-      - ./api/frankenphp/varnish/:/etc/varnish/
+#  varnish:
+#    volumes:
+#      - ./api/frankenphp/varnish/:/etc/varnish/
 
-###> doctrine/doctrine-bundle ###
+  http-cache:
+    volumes:
+      - ./api/frankenphp/cache/conf.d:/etc/nginx/conf.d
+      - ./api/frankenphp/cache/lua/http-cache:/usr/local/openresty/luajit/share/lua/5.1/http-cache
+  
+  ###> doctrine/doctrine-bundle ###
   database:
     ports:
       - target: 5432
