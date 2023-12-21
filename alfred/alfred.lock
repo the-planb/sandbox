@@ -353,8 +353,8 @@ admin/src/crud/bookstore/Book/BookRenderer.ts:
     timestamp: 1701462780
     hash: 2b5b52df3dd2039ed8c730a8a37f199f
 admin/src/crud/bookstore/Book/BookInput.tsx:
-    timestamp: 1703023833
-    hash: da262a27f93909ab5745aa8992062cbf
+    timestamp: 1703156626
+    hash: c120773a22a7b80f9cc2b9e258335214
 'admin/app/[lang]/(private)/bookstore/authors/page.tsx':
     timestamp: 1701459729
     hash: 6a0119876b78f2631646f3bdb838924e
@@ -377,8 +377,8 @@ admin/src/crud/bookstore/Author/AuthorRenderer.ts:
     timestamp: 1701462780
     hash: bbc999bf5e97c4db68e6618079eeca1c
 admin/src/crud/bookstore/Author/AuthorInput.tsx:
-    timestamp: 1703023835
-    hash: 3ba7c67b99820f17e0161ffaa8411909
+    timestamp: 1703156626
+    hash: e551f434ab5cdf086edb8e8e79ed301a
 'admin/app/[lang]/(private)/bookstore/tags/page.tsx':
     timestamp: 1701717503
     hash: 959767132561cdc2e050c104caca269c
@@ -401,8 +401,8 @@ admin/src/crud/bookstore/Tag/TagRenderer.ts:
     timestamp: 1701717503
     hash: d97d8775b60d773818ea6b80e81ac998
 admin/src/crud/bookstore/Tag/TagInput.tsx:
-    timestamp: 1703023835
-    hash: 54aa36b8bd04b895ee1f31b134494bc2
+    timestamp: 1703156626
+    hash: 5f3909e9bdf290ec1a7c40b2ae22e2da
 admin/src/crud/bookstore/Price/Price.ts:
     timestamp: 1701518207
     hash: 6fd0e0963a7cc09cf4bd386cda2af54c

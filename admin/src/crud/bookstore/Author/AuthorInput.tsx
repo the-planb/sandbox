@@ -12,20 +12,15 @@ export const AuthorInput = (props: SelectProps) => {
     value: author ? author['@id'] : null,
   })
 
-  const remote: RemoteFilter = (term: any) => {
-    return {
-      field: 'name',
-      operator: 'contains',
-      value: term,
-    }
-  }
-
   const tagRender = ({ label, ...props }: CustomTagProps) => (
     <Tag color={'processing'} {...props}>
-      {' '}
-      {label}{' '}
+      {label}
     </Tag>
   )
+  const searchFilter = {
+    field: 'name',
+    operator: 'contains',
+  }
 
   return (
     <Space>
@@ -33,9 +28,8 @@ export const AuthorInput = (props: SelectProps) => {
         {...props}
         resource={'bookstore/authors'}
         itemToOption={itemToOption}
-        // mode='multiple'
         tagRender={tagRender}
-        //    remote={remote}
+        searchFilter={searchFilter}
         createForm={BookStore.AuthorForm}
       />
     </Space>

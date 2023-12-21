@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  reactStrictMode: true, //<<<doble render
   basePath: '/admin',
   sassOptions: {
     includePaths: [path.join(__dirname, 'src', 'styles')],

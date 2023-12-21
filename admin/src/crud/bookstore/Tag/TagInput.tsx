@@ -1,8 +1,7 @@
 import { type SelectProps, Space, Tag } from 'antd'
 import React from 'react'
 import { CustomTagProps } from 'rc-select/es/BaseSelect'
-import { type BaseRecord } from '@refinedev/core'
-import { EntitySelect, type RemoteFilter } from '@planb/components'
+import { EntitySelect } from '@planb/components'
 
 import * as BookStore from '@crud/bookstore'
 
@@ -12,20 +11,17 @@ export const TagInput = (props: SelectProps) => {
     value: tag ? tag['@id'] : null,
   })
 
-  const remote: RemoteFilter = (term: any) => {
-    return {
-      field: 'name',
-      operator: 'contains',
-      value: term,
-    }
+  const tagRender = ({ label, ...props }: CustomTagProps) => {
+    return (
+      <Tag color={'processing'} {...props}>
+        {label}
+      </Tag>
+    )
   }
-
-  const tagRender = ({ label, ...props }: CustomTagProps) => (
-    <Tag color={'processing'} {...props}>
-      {' '}
-      {label}{' '}
-    </Tag>
-  )
+  const searchFilter = {
+    field: 'name',
+    operator: 'contains',
+  }
 
   return (
     <Space>
@@ -33,9 +29,8 @@ export const TagInput = (props: SelectProps) => {
         {...props}
         resource={'bookstore/tags'}
         itemToOption={itemToOption}
-        // mode='multiple'
         tagRender={tagRender}
-        //    remote={remote}
+        searchFilter={searchFilter}
         createForm={BookStore.TagForm}
       />
     </Space>

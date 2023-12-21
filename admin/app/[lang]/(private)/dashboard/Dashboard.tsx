@@ -1,55 +1,23 @@
 'use client'
 
+import { useEffect, useMemo, useState } from 'react'
+import { Button } from 'antd'
+import { AuthorInput } from '@crud/bookstore'
+
+function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+
+
 export default function Dashboard() {
-  return <></>
+  const [prop, setProp] = useState<number>(0)
 
-  // const handle = async () => {
-  //   const book = await window
-  //     .fetch('/api/bookstore/books/018c3ac1-537a-d59b-1624-e36c2289327d', {
-  //       // credentials: 'omit',
-  //       // mode: 'no-cors',
-  //       headers: { Preload: `"/author"` },
-  //     })
-  //     .then(async (res) => {
-  //       return { a: 12313 }
-  //     })
-  //
-  //   console.log(book)
-  // }
-  //
-  // return (
-  //   <>
-  //     <Button onClick={handle}>dale</Button>
-  //   </>
-  // )
+  return <>
 
-  // const [code, setCode] = useState<string>('')
-  //
-  // const { isLoading, error, data } = fetchData({
-  //   path: '/bookstore/books/',
-  //   method: 'GET',
-  //   collection: true,
-  //   preload: ['author', 'tags'],
-  // })
+    <AuthorInput />
+    <hr />
 
-  // if (isLoading) return <div>loading...</div>
-  //
-  // if (error)
-  //   return (
-  //     <div>
-  //       <pre>
-  //         <h2>error</h2>
-  //         <code>{JSON.stringify(error, null, 4)}</code>
-  //       </pre>
-  //     </div>
-  //   )
-  //
-  // return (
-  //   <div>
-  //     <pre>
-  //       <h2>data</h2>
-  //       <code>{JSON.stringify(data, null, 4)}</code>
-  //     </pre>
-  //   </div>
-  // )
+  </>
+
 }

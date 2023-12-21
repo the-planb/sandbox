@@ -14,10 +14,13 @@ export function SingleForm({ children, formProps }: SingleFormProps) {
   }
 
   return (
+
     <Form
       layout={'vertical'}
       className={css.formData}
       {...formProps}
+
+
       onFieldsChange={onFieldsChange}>
       {children as ReactNode}
     </Form>

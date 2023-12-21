@@ -94,6 +94,10 @@ up/dev: --dev down
 down:
 	docker-compose down --remove-orphans
 
+cache/flushall:
+	docker-compose exec redis redis-cli FLUSHALL
+
+
 #varnish/reload:
 #	docker-compose  exec  varnish varnishreload
 #
