@@ -1,6 +1,6 @@
 import { useErrorBag } from '@planb/components/form/formData/useErrorBag'
 import { type FieldData } from 'rc-field-form/es/interface'
-import { Form, type FormProps } from 'antd'
+import { Button, Form, type FormProps } from 'antd'
 import React, { type ReactNode } from 'react'
 import { type WithChildren } from '@planb/components/form/formData/types'
 import css from './style.module.scss'
@@ -14,14 +14,12 @@ export function SingleForm({ children, formProps }: SingleFormProps) {
   }
 
   return (
-
     <Form
       layout={'vertical'}
       className={css.formData}
-      {...formProps}
-
-
-      onFieldsChange={onFieldsChange}>
+      validateTrigger={['onBlur', 'onChange']}
+      onFieldsChange={onFieldsChange}
+      {...formProps}>
       {children as ReactNode}
     </Form>
   )

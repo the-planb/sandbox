@@ -1,39 +1,52 @@
 import classNames from 'classnames'
 import css from './style.module.scss'
-import { Create, Edit } from '@refinedev/antd'
-import {
-  SingleForm,
-  type SingleFormProps,
-} from '@planb/components/form/formData/SingleForm'
+import { Create, Edit, ListButton, RefreshButton } from '@refinedev/antd'
+import { SingleForm, type SingleFormProps } from '@planb/components/form/formData/SingleForm'
 import React from 'react'
-import { type UseFormPageReturnType } from '@planb/components/form/formData/useFormData/useFormPage'
 import { type WithChildren } from '@planb/components/form/formData/types'
 import { useFormContext } from '@planb/components/form/formData/useFormContext'
 import { useErrorBag } from '@planb/components/form'
+import { ActionButtons } from '@planb/components/form/formData/ActionButtons'
+import { ArrowLeftOutlined } from '@ant-design/icons'
+import { UseFormPageReturnType } from '@planb/components/form/formData/useFormData/useFormPage'
 
 export type PageFormProps = Omit<UseFormPageReturnType, 'like'> & WithChildren
 
 export function PageForm({
-  action,
-  resource,
-  saveButtonProps: saveButton,
-  ...props
-}: PageFormProps) {
+                           action,
+                           resource,
+                           saveButtonProps: saveButton,
+                           ...props
+                         }: PageFormProps) {
   const { isValid } = useErrorBag()
   const { like } = useFormContext()
-  const noIcon = {
-    icon: false,
-  }
-
-  const saveButtonProps = {
-    ...saveButton,
-    ...noIcon,
-    disabled: !isValid,
-  }
 
   const wrapperProps = {
     className: classNames(css.formPage, like),
   }
+
+  const extra = like === 'view' ?
+    {
+      headerButtons: <>
+        <ListButton icon={<ArrowLeftOutlined />} />
+        <RefreshButton />
+      </>,
+      footerButtons: <ActionButtons form={props.form}
+                                    redirect={props.redirect}
+                                    onFinish={props.onFinish}
+                                    disabled={!isValid} />,
+    } :
+    {
+      headerButtons: <></>,
+      saveButtonProps: {
+        ...saveButton,
+        icon: null,
+        disabled: !isValid,
+      },
+      deleteButtonProps: {
+        icon: null,
+      },
+    }
 
   if (action === 'create') {
     return (
@@ -41,8 +54,9 @@ export function PageForm({
         resource={resource}
         goBack={false}
         breadcrumb={false}
-        saveButtonProps={saveButtonProps}
-        wrapperProps={wrapperProps}>
+        wrapperProps={wrapperProps}
+        {...extra}
+      >
         <SingleForm {...(props as SingleFormProps)} />
       </Create>
     )
@@ -52,10 +66,9 @@ export function PageForm({
       resource={resource}
       goBack={false}
       breadcrumb={false}
-      saveButtonProps={saveButtonProps}
-      deleteButtonProps={noIcon}
       wrapperProps={wrapperProps}
-      headerButtons={[]}>
+      {...extra}
+    >
       <SingleForm {...(props as SingleFormProps)} />
     </Edit>
   )

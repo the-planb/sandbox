@@ -1,12 +1,7 @@
 'use client'
-import React, { Suspense } from 'react'
+import React from 'react'
 import { Form, Input, InputNumber, Tabs } from 'antd'
-import {
-  Fieldset,
-  FormData,
-  type FormDataProps,
-  Toc,
-} from '@planb/components/form'
+import { Fieldset, FormData, type FormDataProps, Toc } from '@planb/components/form'
 import { useTranslate } from '@refinedev/core'
 
 import * as BookStore from '@crud/bookstore'
@@ -64,6 +59,7 @@ const Data = () => {
           <BookStore.TagInput mode='multiple' />
         </Form.Item>
       </Fieldset>
+
       <Fieldset legend='otros campos' id={'otro'}>
         distribuir los campos en varios fieldsets ...
       </Fieldset>
@@ -73,7 +69,7 @@ const Data = () => {
 
 export function BookForm(props: FormDataProps) {
   return (
-    <FormData {...props}>
+    <FormData {...props} >
       <Tabs
         items={[
           {

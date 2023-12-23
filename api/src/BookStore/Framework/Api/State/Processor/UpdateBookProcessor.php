@@ -24,7 +24,6 @@ final class UpdateBookProcessor implements ProcessorInterface
         assert($data instanceof BookInput);
 
         $bookId = $context['previous_data']->getId();
-
         $command = new UpdateBook($data, $bookId);
 
         return $this->commandBus->handle($command);

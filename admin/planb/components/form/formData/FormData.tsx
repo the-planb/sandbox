@@ -32,7 +32,7 @@ export function FormData({
           <DrawerForm {...(props as DrawerFormProps)}>{children}</DrawerForm>
         )}
         {(like === 'view' || like === undefined) && (
-          <PageForm {...(props as PageFormProps)} >{children}</PageForm>
+          <PageForm {...(props as PageFormProps)}>{children}</PageForm>
         )}
       </ErrorBagContext.Provider>
     </FormContext.Provider>

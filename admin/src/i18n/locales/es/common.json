@@ -74,6 +74,8 @@
   "buttons": {
     "create": "Crear",
     "save": "Guardar",
+    "saveAndBack": "Guardar y volver",
+    "saveAndCreate": "Guardar y crear nuevo",
     "logout": "Cerrar sesión",
     "delete": "Borrar",
     "edit": "Editar",
