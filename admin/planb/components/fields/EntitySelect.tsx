@@ -1,21 +1,20 @@
 import { Button, Select, type SelectProps } from 'antd'
 import React, { type FC, useEffect, useState } from 'react'
-import { type BaseRecord, type CrudFilter, useCan, useDataProvider, useTranslate } from '@refinedev/core'
+import {
+  type BaseRecord,
+  type CrudFilter,
+  useCan,
+  useDataProvider,
+  useTranslate,
+} from '@refinedev/core'
 import { type DefaultOptionType } from 'rc-select/es/Select'
-import { type FormDataProps, useFormData } from '@planb/components/form/formData'
+import {
+  type FormDataProps,
+  useFormData,
+} from '@planb/components/form/formData'
 import { UseFormProps } from '@refinedev/antd/src/hooks/form/useForm'
 
 const _ = require('lodash')
-
-interface EntitySelectProps<T extends BaseRecord> extends SelectProps {
-  resource: string
-  itemToOption: (item: T) => DefaultOptionType
-  searchFilter: {
-    field: string
-    operator: string
-  }
-  createForm?: FC<FormDataProps>
-}
 
 interface CreateButtonProps {
   resource: string
@@ -24,10 +23,10 @@ interface CreateButtonProps {
 }
 
 const CreateButton = ({
-                        resource,
-                        createForm,
-                        onMutationSuccess,
-                      }: CreateButtonProps) => {
+  resource,
+  createForm,
+  onMutationSuccess,
+}: CreateButtonProps) => {
   const t = useTranslate()
 
   const { show, ...props } = useFormData({
@@ -53,20 +52,42 @@ const CreateButton = ({
   )
 }
 
+export interface EntitySelectProps<T extends BaseRecord> extends SelectProps {
+  resource: string
+  itemToOption: (item: T) => DefaultOptionType
+  hideCreateButton?: boolean
+  searchFilter: {
+    field: string
+    operator: string
+  }
+  createForm?: FC<FormDataProps>
+}
+
 export const EntitySelect = <T extends BaseRecord>(
   selectProps: EntitySelectProps<T>,
 ) => {
+  const MAX = 30
+  const {
+    resource,
+    itemToOption,
+    createForm,
+    searchFilter,
+    hideCreateButton = false,
+    ...props
+  } = selectProps
 
-  const MAX = 10
-  const { resource, itemToOption, createForm, searchFilter, ...props } = selectProps
   const { data: role } = useCan({ resource, action: 'create' })
   const dataProvider = useDataProvider()('default')
   const [reloaded, setReload] = useState<Boolean>(false)
   const [data, setData] = useState<BaseRecord[]>([])
   const [total, setTotal] = useState<number>(-1)
-  const [value, setValue] = useState<DefaultOptionType | DefaultOptionType[] | undefined>([])
+  const [value, setValue] = useState<
+    DefaultOptionType | DefaultOptionType[] | undefined
+  >([])
 
-  const updateValue = (value: undefined | DefaultOptionType[] | DefaultOptionType) => {
+  const updateValue = (
+    value: undefined | DefaultOptionType[] | DefaultOptionType,
+  ) => {
     if (Array.isArray(value)) {
       setValue(value)
       const mapped = value.map((option: DefaultOptionType) => option.value)
@@ -79,7 +100,6 @@ export const EntitySelect = <T extends BaseRecord>(
         props.onChange?.(value?.value, value)
       }
     }
-
   }
 
   useEffect(() => {
@@ -89,19 +109,13 @@ export const EntitySelect = <T extends BaseRecord>(
         setTotal(response.total)
         const data = response.total <= MAX ? response.data : []
         const values = Array.isArray(props.value) ? props.value : []
-        const merged = _.uniqBy([
-          ...values,
-          ...data,
-        ], 'id')
+        const merged = _.uniqBy([...values, ...data], 'id')
 
         setData(merged)
-
       })
   }, [reloaded])
 
-
   useEffect(() => {
-
     if (['tags', 'multiple'].includes(props.mode as string)) {
       let temp = props.value || []
       temp = Array.isArray(temp) ? temp : [temp]
@@ -109,10 +123,20 @@ export const EntitySelect = <T extends BaseRecord>(
       updateValue(value)
       return
     } else {
-      const value = props.value ? itemToOption(props.value) : undefined
-      updateValue(value)
+      if (typeof props.value == 'string') {
+        dataProvider
+          .getOne({
+            resource,
+            id: props.value,
+          })
+          .then((data) => {
+            updateValue(itemToOption(data.data as T))
+          })
+      } else {
+        const value = props.value ? itemToOption(props.value) : undefined
+        updateValue(value)
+      }
     }
-
   }, [])
 
   const onChange = (
@@ -147,12 +171,14 @@ export const EntitySelect = <T extends BaseRecord>(
         onChange={onChange}
         {...search}
         filterOption={(input, option) => {
-          return (option?.label as string).toLowerCase().includes(input.toLowerCase())
+          return (option?.label as string)
+            .toLowerCase()
+            .includes(input.toLowerCase())
         }}
         notFoundContent={null}
       />
 
-      {role?.can && createForm != undefined && (
+      {role?.can && !hideCreateButton && createForm != undefined && (
         <CreateButton
           resource={resource}
           createForm={createForm}

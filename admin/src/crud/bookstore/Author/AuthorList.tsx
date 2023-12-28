@@ -31,7 +31,7 @@ export const AuthorList = () => {
         title={t('bookstore/authors.columns.name')}
         sorter={true}
         render={(value) => (
-          <TableCell value={BookStore.fullNameRenderer(value)} />
+          <TableCell value={value} renderer={BookStore.fullNameRenderer} />
         )}
       />
     </TableData>

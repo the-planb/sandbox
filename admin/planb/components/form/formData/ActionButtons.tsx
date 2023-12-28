@@ -13,11 +13,11 @@ type ActionButtonsProps = {
 }
 
 export const ActionButtons = ({
-                                form,
-                                onFinish,
-                                redirect,
-                                disabled,
-                              }: ActionButtonsProps) => {
+  form,
+  onFinish,
+  redirect,
+  disabled,
+}: ActionButtonsProps) => {
   const t = useTranslate()
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -43,26 +43,27 @@ export const ActionButtons = ({
     },
   ]
 
-  return <Space>
-    <DeleteButton
-      key={'delete'}
-      icon={null}
-      danger
-      onSuccess={() => {
-        redirect('list')
-      }}
-    />
+  return (
+    <Space>
+      <DeleteButton
+        key={'delete'}
+        icon={null}
+        danger
+        onSuccess={() => {
+          redirect('list')
+        }}
+      />
 
-    <Dropdown.Button
-      key={'save'}
-      loading={loading}
-      icon={<DownOutlined />}
-      type={'primary'}
-      menu={{ items }}
-      onClick={() => onClick('edit')}
-      disabled={disabled}>
-      {t('buttons.save')}
-    </Dropdown.Button>
-  </Space>
-
+      <Dropdown.Button
+        key={'save'}
+        loading={loading}
+        icon={<DownOutlined />}
+        type={'primary'}
+        menu={{ items }}
+        onClick={() => onClick('edit')}
+        disabled={disabled}>
+        {t('buttons.save')}
+      </Dropdown.Button>
+    </Space>
+  )
 }

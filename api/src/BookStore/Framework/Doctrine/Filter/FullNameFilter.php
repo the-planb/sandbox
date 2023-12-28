@@ -72,4 +72,9 @@ final class FullNameFilter extends CustomFilter
     {
         throw InvalidFilterException::make(Operator::BETWEEN, $field);
     }
+
+    protected function identity(Expr $expr, string $field, mixed $value): ?string
+    {
+        throw InvalidFilterException::make(Operator::IDENTITY, $field);
+    }
 }

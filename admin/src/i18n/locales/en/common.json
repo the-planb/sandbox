@@ -94,7 +94,11 @@
       "contains": "contains",
       "equals": "equals",
       "starts": "begins with",
-      "ends": "ends in"
+      "ends": "ends in",
+      "not_equals": "diferente a",
+      "identity": "es",
+      "not_identity": "no es",
+      "not_contains": "no contiene"
     }
   },
   "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",

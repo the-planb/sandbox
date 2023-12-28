@@ -3,10 +3,11 @@ import React from 'react'
 import { CustomTagProps } from 'rc-select/es/BaseSelect'
 import { type BaseRecord } from '@refinedev/core'
 import { EntitySelect, type RemoteFilter } from '@planb/components'
-
 import * as BookStore from '@crud/bookstore'
 
-export const AuthorInput = (props: SelectProps) => {
+export const AuthorInput = (
+  props: SelectProps & { hideCreateButton?: boolean },
+) => {
   const itemToOption = (author: BookStore.Author) => ({
     label: author ? BookStore.authorRenderer(author) : null,
     value: author ? author['@id'] : null,

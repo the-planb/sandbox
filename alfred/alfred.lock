@@ -341,8 +341,8 @@ admin/src/crud/bookstore/TagName/TagNameValidator.ts:
     timestamp: 1701459867
     hash: b092539680c7e2ceb89503600179f0ed
 admin/src/crud/bookstore/Book/BookList.tsx:
-    timestamp: 1702047491
-    hash: 558beff1b501a02f171138b871a541bd
+    timestamp: 1703773478
+    hash: ae44f4295f62565223f5e1f2ef51713c
 admin/src/crud/bookstore/Book/BookForm.tsx:
     timestamp: 1702986900
     hash: 0a606abfa8f1bb45a5548d0f4415a9d9
@@ -353,8 +353,11 @@ admin/src/crud/bookstore/Book/BookRenderer.ts:
     timestamp: 1701462780
     hash: 2b5b52df3dd2039ed8c730a8a37f199f
 admin/src/crud/bookstore/Book/BookInput.tsx:
-    timestamp: 1703156626
-    hash: c120773a22a7b80f9cc2b9e258335214
+    timestamp: 1703770254
+    hash: 53d2a475f4e166e2c2f611384c2fa70d
+admin/src/crud/bookstore/Book/BookFilter.tsx:
+    timestamp: 1703772461
+    hash: 72078e02ab95ee5d89fa260deba97c0e
 'admin/app/[lang]/(private)/bookstore/authors/page.tsx':
     timestamp: 1701459729
     hash: 6a0119876b78f2631646f3bdb838924e
@@ -365,8 +368,8 @@ admin/src/crud/bookstore/Book/BookInput.tsx:
     timestamp: 1701459867
     hash: 53bfbbec5a4c75b12fff30531189851a
 admin/src/crud/bookstore/Author/AuthorList.tsx:
-    timestamp: 1701459729
-    hash: c54db53397500411d9f9a65be7d88d94
+    timestamp: 1703676342
+    hash: b82866f5f1cfacf5d9a02d41f8d4b71c
 admin/src/crud/bookstore/Author/AuthorForm.tsx:
     timestamp: 1701714518
     hash: 2a90afa5630c4855cbf684ff6d8c7e2c
@@ -377,8 +380,11 @@ admin/src/crud/bookstore/Author/AuthorRenderer.ts:
     timestamp: 1701462780
     hash: bbc999bf5e97c4db68e6618079eeca1c
 admin/src/crud/bookstore/Author/AuthorInput.tsx:
-    timestamp: 1703156626
-    hash: e551f434ab5cdf086edb8e8e79ed301a
+    timestamp: 1703770254
+    hash: 6cbd935e0c7178206fbd42405f4a8052
+admin/src/crud/bookstore/Author/AuthorFilter.tsx:
+    timestamp: 1703772328
+    hash: 89b61acf289d96f390324691bb68b533
 'admin/app/[lang]/(private)/bookstore/tags/page.tsx':
     timestamp: 1701717503
     hash: 959767132561cdc2e050c104caca269c
@@ -389,8 +395,8 @@ admin/src/crud/bookstore/Author/AuthorInput.tsx:
     timestamp: 1701717503
     hash: 159c1df49df7cf262231fb74e8b5a130
 admin/src/crud/bookstore/Tag/TagList.tsx:
-    timestamp: 1701717503
-    hash: 8d8773b74b2aba0dfefa43ad0efdcec4
+    timestamp: 1703676342
+    hash: 5a748305afc68c3d23763e8d385e0a4a
 admin/src/crud/bookstore/Tag/TagForm.tsx:
     timestamp: 1701717503
     hash: d9555556ec974adaa9fbad6a637ca292
@@ -401,8 +407,11 @@ admin/src/crud/bookstore/Tag/TagRenderer.ts:
     timestamp: 1701717503
     hash: d97d8775b60d773818ea6b80e81ac998
 admin/src/crud/bookstore/Tag/TagInput.tsx:
-    timestamp: 1703156626
-    hash: 5f3909e9bdf290ec1a7c40b2ae22e2da
+    timestamp: 1703770254
+    hash: f723e15255979d032876e6ddc9d0f3b6
+admin/src/crud/bookstore/Tag/TagFilter.tsx:
+    timestamp: 1703772461
+    hash: 9f70fb50b9d1ddf3cbf234f30e8bfaf7
 admin/src/crud/bookstore/Price/Price.ts:
     timestamp: 1701518207
     hash: 6fd0e0963a7cc09cf4bd386cda2af54c
@@ -416,5 +425,5 @@ admin/src/crud/bookstore/Title/TitleValidator.ts:
     timestamp: 1701462780
     hash: 7e56b98d50d5aa180a64810f91086735
 admin/src/crud/bookstore//index.ts:
-    timestamp: 1701717503
-    hash: b371ef2df5ac97c4c273b13d70d43faa
+    timestamp: 1703772207
+    hash: f0638ded8b58974950dca0a87e1259ac

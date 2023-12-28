@@ -1,21 +1,36 @@
-interface TableCellProps {
-  value: object | number | string
+import { Space } from 'antd'
+import { BaseRecord } from '@refinedev/core'
+
+interface TableCellProps<T> {
+  value: T | T[] | number | string
+  renderer?: (value: T) => string
 }
 
-export const TableCell = ({ value }: TableCellProps) => {
+const defaultRenderer = <T extends BaseRecord>(value: T | string | number) => {
   let data = value as unknown as string
+
   if (typeof value !== 'object') {
     return <>{data}</>
   }
 
-  if ('@type' in value) {
-    const name = value['@type'] as string
+  return <>...</>
+}
+
+export const TableCell = <T extends BaseRecord>({
+  value,
+  renderer,
+}: TableCellProps<T>) => {
+  const custom = renderer || defaultRenderer<T>
+
+  if (Array.isArray(value)) {
     return (
-      <>
-        <strong>TODO:</strong> <em>{name} to string</em>
-      </>
+      <Space>
+        {value.map((item) => {
+          return custom(item)
+        })}
+      </Space>
     )
   }
 
-  return <>...</>
+  return custom(value as T)
 }

@@ -1,7 +1,12 @@
 'use client'
 import React from 'react'
 import { Form, Input, InputNumber, Tabs } from 'antd'
-import { Fieldset, FormData, type FormDataProps, Toc } from '@planb/components/form'
+import {
+  Fieldset,
+  FormData,
+  type FormDataProps,
+  Toc,
+} from '@planb/components/form'
 import { useTranslate } from '@refinedev/core'
 
 import * as BookStore from '@crud/bookstore'
@@ -69,7 +74,7 @@ const Data = () => {
 
 export function BookForm(props: FormDataProps) {
   return (
-    <FormData {...props} >
+    <FormData {...props}>
       <Tabs
         items={[
           {
