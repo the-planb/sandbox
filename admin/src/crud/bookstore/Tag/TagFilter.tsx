@@ -1,11 +1,11 @@
 import React from 'react'
-import { EntityFilter } from '@planb/components'
+import { EntityFilter, EntityFilterProps } from '@planb/components'
 import * as BookStore from '@crud/bookstore'
 
-export const TagFilter = ({}) => {
+export const TagFilter = (props: Omit<EntityFilterProps, 'children'>) => {
   return (
-    <EntityFilter>
-      <BookStore.TagInput />
+    <EntityFilter {...props}>
+      <BookStore.TagInput allowCreate={false} />
     </EntityFilter>
   )
 }

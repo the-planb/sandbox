@@ -1,38 +1,27 @@
 import { type SelectProps, Space, Tag } from 'antd'
 import React from 'react'
-import { CustomTagProps } from 'rc-select/es/BaseSelect'
-import { type BaseRecord } from '@refinedev/core'
 import { EntitySelect, type RemoteFilter } from '@planb/components'
 import * as BookStore from '@crud/bookstore'
 
-export const AuthorInput = (
-  props: SelectProps & { hideCreateButton?: boolean },
-) => {
+export const AuthorInput = ({
+  allowCreate = true,
+  ...props
+}: SelectProps & { allowCreate?: boolean }) => {
   const itemToOption = (author: BookStore.Author) => ({
-    label: author ? BookStore.authorRenderer(author) : null,
-    value: author ? author['@id'] : null,
+    label: BookStore.authorRenderer(author),
+    value: author['@id'],
   })
 
-  const tagRender = ({ label, ...props }: CustomTagProps) => (
-    <Tag color={'processing'} {...props}>
-      {label}
-    </Tag>
-  )
-  const searchFilter = {
-    field: 'name',
-    operator: 'contains',
-  }
-
   return (
-    <Space>
-      <EntitySelect
-        {...props}
-        resource={'bookstore/authors'}
-        itemToOption={itemToOption}
-        tagRender={tagRender}
-        searchFilter={searchFilter}
-        createForm={BookStore.AuthorForm}
-      />
-    </Space>
+    <EntitySelect
+      {...props}
+      resource={'bookstore/authors'}
+      itemToOption={itemToOption}
+      remote={{
+        field: 'name',
+        operator: 'contains',
+      }}
+      useCreateForm={allowCreate ? BookStore.useAuthorModalForm : undefined}
+    />
   )
 }

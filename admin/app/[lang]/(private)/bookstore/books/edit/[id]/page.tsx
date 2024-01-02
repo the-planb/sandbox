@@ -1,15 +1,12 @@
 'use client'
 
-import { useFormData } from '@planb/components/form'
 import * as BookStore from '@crud/bookstore'
 
 const Page = () => {
-  const { ...props } = useFormData({
-    resource: 'bookstore/books',
+  const { Form: BookForm } = BookStore.useBookForm({
     action: 'edit',
   })
-
-  return <BookStore.BookForm {...props} />
+  return <BookForm />
 }
 
 export default Page

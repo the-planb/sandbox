@@ -8,6 +8,7 @@
 /public/bundles/
 /var/
 /vendor/
+/build/
 ###< symfony/framework-bundle ###
 
 ###> friendsofphp/php-cs-fixer ###
@@ -24,7 +25,3 @@
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
 
-###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
-###< phpunit/phpunit ###

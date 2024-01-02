@@ -18,13 +18,17 @@ final class BookFixture extends UseCaseFixture implements DependentFixtureInterf
 {
     public function loadData(): void
     {
-        $this->createMany(100, function (int $index) {
+        $this->createMany(500, function (int $index) {
             $title = sprintf('libro num. %02d', $index);
             $input = new BookInput();
             $input->title = new Title($title);
-            $input->price = new Price($this->faker->numberBetween(10, 60));
+            $input->price = new Price($this->faker->numberBetween(10, 25));
             $input->tags = TagList::collect([
-                $this->getReference($this->referenceName(Tag::class, rand(0, 4))),
+                $this->getReference($this->referenceName(Tag::class, rand(0, 19))),
+                $this->getReference($this->referenceName(Tag::class, rand(0, 19))),
+                $this->getReference($this->referenceName(Tag::class, rand(0, 19))),
+                $this->getReference($this->referenceName(Tag::class, rand(0, 19))),
+                $this->getReference($this->referenceName(Tag::class, rand(0, 19))),
             ]);
 
             $input->author = $this->getReference($this->referenceName(Author::class, rand(0, 9)));

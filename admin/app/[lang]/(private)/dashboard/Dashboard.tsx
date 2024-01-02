@@ -1,20 +1,27 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useGo, useTranslate } from '@refinedev/core'
 import { Button } from 'antd'
-import { AuthorInput } from '@crud/bookstore'
-
-function delay(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
 
 export default function Dashboard() {
-  const [prop, setProp] = useState<number>(0)
+  const t = useTranslate()
+
+  const go = useGo()
 
   return (
     <>
-      <AuthorInput />
-      <hr />
+      <Button
+        onClick={() => {
+          go({
+            to: {
+              resource: 'bookstore/books',
+              action: 'edit',
+              id: '018ce93a-8ca1-2cd8-9668-f1c2e3fab5dc',
+            },
+          })
+        }}>
+        Dale
+      </Button>
     </>
   )
 }

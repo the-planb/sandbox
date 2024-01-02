@@ -2,9 +2,9 @@
 App\BookStore\Domain\Model\Tag:
   attributes:
     id:
-      groups: [read.bookstore.tag]
+      groups: [read.bookstore.tag, read.bookstore.book]
     name:
-      groups: [read.bookstore.tag]
+      groups: [read.bookstore.tag, read.bookstore.book]
 
 
 App\BookStore\Application\Input\TagInput:

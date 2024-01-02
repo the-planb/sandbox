@@ -2,7 +2,7 @@ import { Input, Select, Space } from 'antd'
 
 import { useState } from 'react'
 import { useTranslate } from '@refinedev/core'
-import { type FilterData } from '@planb/components/table/tableData/filterPanel'
+import { FilterData } from '@planb/components'
 
 const { Option } = Select
 
@@ -61,7 +61,7 @@ export const TextFilter = ({ value, onChange }: TextFilterProps) => {
         })}
       </Select>
 
-      <Input value={data.value} onChange={onValueChange} />
+      <Input value={data.value} onChange={onValueChange} style={{ width: '11em' }} />
     </Space>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
 
 import { Refine } from '@refinedev/core'
 import { notificationProvider } from '@refinedev/antd'
@@ -13,13 +13,12 @@ import {
   DataProvider,
 } from '@planb/provider'
 import { dir } from 'i18next'
-
-import { languages } from '@i18n/settings'
 import { RefineKbar, RefineKbarProvider } from '@refinedev/kbar'
 import { LayoutContextProvider } from '@contexts'
 import { useTranslation } from '@i18n'
 import { type LayoutProps } from 'src/layout'
 import vars from '@styles/vars.module.scss'
+import { resources } from '@backend'
 
 const Theme = {
   token: {
@@ -50,45 +49,7 @@ export default async function Layout({ children, params }: LayoutProps) {
                 dataProvider={DataProvider()}
                 notificationProvider={notificationProvider}
                 accessControlProvider={AccessControlProvider(AuthProvider())}
-                resources={[
-                  {
-                    name: 'dashboard',
-                    list: `${lang}/dashboard`,
-                  },
-                  {
-                    name: 'bookstore/books',
-                    list: `${lang}/bookstore/books`,
-                    create: `${lang}/bookstore/books/create`,
-                    edit: `${lang}/bookstore/books/edit/:id`,
-                    // show: `${lang}/bookstore/books/show/:id`,
-                    meta: {
-                      canDelete: true,
-                      preload: ['author', 'tags'],
-                    },
-                  },
-                  {
-                    name: 'bookstore/authors',
-                    list: `${lang}/bookstore/authors`,
-                    create: `${lang}/bookstore/authors/create`,
-                    edit: `${lang}/bookstore/authors/edit/:id`,
-                    // show: `${lang}/bookstore/books/show/:id`,
-                    meta: {
-                      canDelete: true,
-                      // preload: ['author'],
-                    },
-                  },
-                  {
-                    name: 'bookstore/tags',
-                    list: `${lang}/bookstore/tags`,
-                    create: `${lang}/bookstore/tags/create`,
-                    edit: `${lang}/bookstore/tags/edit/:id`,
-                    // show: `${lang}/bookstore/books/show/:id`,
-                    meta: {
-                      canDelete: true,
-                      // preload: ['author'],
-                    },
-                  },
-                ]}
+                resources={resources(lang)}
                 options={{
                   syncWithLocation: true,
                   disableTelemetry: true,

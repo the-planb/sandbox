@@ -93,16 +93,16 @@
   },
   "warnWhenUnsavedChanges": "¿Estás seguro de que quieres irte? Tienes cambios sin guardar",
   "notifications": {
-    "success": "Exito",
+    "success": "OK",
     "error": "Error (status code: {{statusCode}})",
     "undoable": "Tienes {{seconds}} segundos para deshacer",
-    "createSuccess": "Creado con éxito {{resource}}",
-    "createError": "Se ha producido un error al crear {{resource}} (status code: {{statusCode}})",
-    "deleteSuccess": "Eliminado con éxito {{resource}}",
-    "deleteError": "Error al eliminar {{resource}} (status code: {{statusCode}})",
-    "editSuccess": "Editado con éxito {{resource}}",
-    "editError": "Error al editar {{resource}} (status code: {{statusCode}})",
-    "importProgress": "Importandoo: {{processed}}/{{total}}"
+    "createSuccess": "Creado correctamente.",
+    "createError": "Se ha producido un error al crear. (status code: {{statusCode}})",
+    "deleteSuccess": "Eliminado correctamente.",
+    "deleteError": "Error al eliminar. (status code: {{statusCode}})",
+    "editSuccess": "Editado correctamente.",
+    "editError": "Error al editar. (status code: {{statusCode}})",
+    "importProgress": "Importando: {{processed}}/{{total}}"
   },
   "loading": "Cargando",
   "tags": {
@@ -129,107 +129,5 @@
       "starts": "empieza por",
       "ends": "termina en"
     }
-  },
-  "bookstore": {
-    "bookstore": "Libreria",
-    "titles": {
-      "list": "Librería"
-    },
-    "fields": {
-      "fullName": {
-        "firstName": "Nombre",
-        "lastName": "Apellidos"
-      }
-    }
-  },
-  "bookstore/books": {
-    "bookstore/books": "Libros",
-    "fields": {
-      "title": {
-        "label": "Título"
-      },
-      "price": {
-        "label": "Precio"
-      },
-      "author": {
-        "label": "Autor"
-      },
-      "tags": {
-        "label": "Etiquetas"
-      }
-    },
-    "columns": {
-      "id": "Id",
-      "title": "Título",
-      "author": "Autor",
-      "price": "precio"
-    },
-    "filters": {
-      "id": "Id",
-      "title": "Título",
-      "summary": "Sinopsis",
-      "price": "Precio"
-    },
-    "fieldsets": {
-      "data": "Datos",
-      "metadata": "Metadata"
-    },
-    "titles": {
-      "create": "Nuevo Libro",
-      "edit": "Editar Libro",
-      "list": "Libros",
-      "show": "Mostar Libro"
-    }
-  },
-  "bookstore/tags": {
-    "bookstore/tags": "Etiquetas",
-    "fields": {
-      "id": "Id",
-      "name": "Etiqueta"
-    },
-    "columns": {
-      "id": "Id",
-      "name": "Etiqueta"
-    },
-    "filters": {
-      "id": "Id",
-      "name": "Nombre"
-    },
-    "fieldsets": {
-      "tag": "Etiqueta"
-    },
-    "titles": {
-      "create": "Nueva Etiqueta",
-      "edit": "Editar Etiqueta",
-      "list": "Etiquetas",
-      "show": "Mostar Etiqueta"
-    }
-  },
-  "bookstore/authors": {
-    "bookstore/authors": "Autores",
-    "fields": {
-      "id": "Id",
-      "name": "Nombre"
-    },
-    "columns": {
-      "id": "Id",
-      "name": "Nombre"
-    },
-    "filters": {
-      "id": "Id",
-      "name.firstName": "Nombre"
-    },
-    "fieldsets": {
-      "data": "Autor"
-    },
-    "titles": {
-      "create": "Nuevo Autor",
-      "edit": "Editar Autor",
-      "list": "Autores",
-      "show": "Mostar Autor"
-    }
-  },
-  "table": {
-    "actions": "Acciones"
   }
 }

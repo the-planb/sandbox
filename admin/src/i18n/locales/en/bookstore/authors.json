@@ -1,0 +1,28 @@
+{
+  "label": "authors.label",
+  "fields": {
+    "id": {
+      "label": "**authors.fields.id**",
+      "placeholder": "**authors.fields.id**",
+      "column": "**authors.fields.id**",
+      "filter": "**authors.fields.id**"
+    },
+    "name": {
+      "label": "**authors.fields.name**",
+      "placeholder": "**authors.fields.name**",
+      "column": "**authors.fields.name**",
+      "filter": "**authors.fields.name**"
+    }
+  },
+  "titles": {
+    "create": "authors.titles.create",
+    "edit": "authors.titles.edit",
+    "list": "authors.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

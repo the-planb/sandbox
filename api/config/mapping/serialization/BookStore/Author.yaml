@@ -2,9 +2,9 @@
 App\BookStore\Domain\Model\Author:
   attributes:
     id:
-      groups: [read.bookstore.author]
+      groups: [read.bookstore.author, read.bookstore.book]
     name:
-      groups: [read.bookstore.author]
+      groups: [read.bookstore.author, read.bookstore.book]
 
 
 App\BookStore\Application\Input\AuthorInput:

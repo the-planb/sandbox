@@ -5,7 +5,9 @@ local md5 = require('md5')
 local jwt = require('resty.jwt')
 
 local function jwt_token_to_hash(ngx)
-  local token = ngx.req.get_headers()['authorization']
+--  local token = ngx.req.get_headers()['authorization']
+  local token = ngx.var.cookie_token
+
 
   if not token then
     return true, ''

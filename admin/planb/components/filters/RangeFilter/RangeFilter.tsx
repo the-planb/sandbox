@@ -1,6 +1,6 @@
 import { InputNumber, Space } from 'antd'
 import { useEffect, useState } from 'react'
-import { type FilterData } from '@planb/components/table/tableData/filterPanel'
+
 import css from './styles.module.scss'
 import {
   filterDataToRange,
@@ -8,6 +8,7 @@ import {
   sortRange,
   type Range,
 } from '@planb/components/filters/RangeFilter/utils'
+import { FilterData } from '@planb/components'
 
 interface RangeFilterProps {
   onChange?: (value: FilterData) => void

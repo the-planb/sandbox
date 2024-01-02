@@ -19,6 +19,7 @@ insert_final_newline = true
 [*.{js,html,ts,tsx}]
 indent_style = space
 indent_size = 2
+max_line_length = 150
 
 [*.json]
 indent_style = space

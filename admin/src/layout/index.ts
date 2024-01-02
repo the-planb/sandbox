@@ -8,8 +8,6 @@ export type LayoutProps = PropsWithChildren & {
     lang: string
   }
 }
-//
-// export type LayoutPropsWithChildren = PropsWithChildren & LayoutProps
 
 export interface PageProps {
   params: {

@@ -24,7 +24,9 @@ export const Sider = () => {
     const { route, name, icon, children, meta } = item
     const parent = meta?.parent ?? null
     const key = parent ? `/${parent}/${name}` : `/${name}`
-    const anchor = translate(`${name.toLowerCase()}.titles.list`)
+    const anchor = translate('label', {
+      ns: name.toLowerCase(),
+    })
 
     if ((children ?? []).length > 0) {
       return {
@@ -61,9 +63,7 @@ export const Sider = () => {
       collapsed={collapsed}
       onCollapse={onCollapse}
       collapsedWidth={isMobile ? 0 : 80}
-      breakpoint='lg'
-      // theme={'light'}
-    >
+      breakpoint='lg'>
       <Title collapsed={collapsed} />
       <Menu
         className={css.menu}

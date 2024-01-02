@@ -5,7 +5,6 @@ import { useErrorBag } from '@planb/components/form'
 import { type AnchorLinkItemProps } from 'antd/es/anchor/Anchor'
 
 import { nodeTree } from '@planb/components/form/nodeTree'
-import { useFormContext } from '@planb/components/form/formData/useFormContext'
 import classNames from 'classnames'
 
 interface TocProps {
@@ -14,7 +13,6 @@ interface TocProps {
 
 export function Toc({ children }: TocProps) {
   const { errorFieldsets } = useErrorBag()
-  const { like } = useFormContext()
 
   const items: AnchorLinkItemProps[] = nodeTree({ children }).fieldsets(
     (props, index, node) => {
@@ -37,6 +35,7 @@ export function Toc({ children }: TocProps) {
     showInkInFixed: true,
     items,
   }
+  const like = 'view'
 
   const className = classNames(css.toc, 'toc')
 

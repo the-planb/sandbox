@@ -1,9 +1,11 @@
+import { i18nNamespaces } from '@backend'
+
 export const fallbackLng = 'es'
 export const languages = [fallbackLng, 'en']
 export const defaultNS = 'common'
 export const cookieName = 'i18next'
 
-export function getOptions(lng = fallbackLng, ns = defaultNS) {
+export function getOptions(lng = fallbackLng, defaultNS: string = 'common') {
   return {
     // debug: true,
     supportedLngs: languages,
@@ -11,6 +13,6 @@ export function getOptions(lng = fallbackLng, ns = defaultNS) {
     lng,
     fallbackNS: defaultNS,
     defaultNS,
-    ns,
+    ns: ['common', ...i18nNamespaces],
   }
 }

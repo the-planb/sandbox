@@ -2,7 +2,8 @@ import { Select, Space } from 'antd'
 
 import { cloneElement, ReactElement, useState } from 'react'
 import { useDataProvider, useTranslate } from '@refinedev/core'
-import { type FilterData } from '@planb/components/table/tableData/filterPanel'
+import { FilterData } from '@planb/components'
+import css from './styles.module.scss'
 
 const { Option } = Select
 
@@ -52,18 +53,18 @@ export const EntityFilter = ({
   }
 
   const SelectInput = cloneElement(children, {
-    value: data.value,
+    // value: data.value,
     onChange: onValueChange,
-    hideCreateButton: true,
-    style: { width: '14em' },
+    style: { width: '15em' },
   })
 
   return (
     <Space>
       <Select
+        style={{width: '5em'}}
         value={data.operator}
         onChange={onOperatorChange}
-        style={{ width: '6em' }}>
+        >
         {Object.entries(operators).map(([operator, label]) => {
           return (
             <Option key={operator} value={operator}>

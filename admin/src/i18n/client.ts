@@ -67,5 +67,7 @@ export function useTranslation(
         return setCookie(cookieName, lang, { path: '/' })
     }, [lang, cookies.i18next])
   }
+
+  // @ts-ignore
   return ret
 }

@@ -16,7 +16,7 @@ export function DataProvider(): IDataProvider {
       })
 
       const { error, data, status } = await fetchData({
-        path: `${resource}?${query}`,
+        path: `api/${resource}?${query}`,
         method: 'GET',
         collection: true,
         preload: meta.preload,
@@ -36,10 +36,10 @@ export function DataProvider(): IDataProvider {
     },
     getOne: async ({ resource, id, meta = {} }) => {
       const { error, data, status } = await fetchData({
-        path: `${resource}/${id}`,
+        path: `api/${resource}/${id}`,
         method: 'GET',
         collection: false,
-        preload: meta.preload,
+        // preload: meta.preload,
       })
 
       if (error) {
@@ -56,7 +56,7 @@ export function DataProvider(): IDataProvider {
 
     create: async ({ resource, variables }) => {
       const { error, data, status } = await fetchData({
-        path: `${resource}`,
+        path: `api/${resource}`,
         method: 'POST',
         body: JSON.stringify(variables) as BodyInit,
       })
@@ -75,7 +75,7 @@ export function DataProvider(): IDataProvider {
 
     update: async ({ resource, id, variables }) => {
       const { error, data, status } = await fetchData({
-        path: `${resource}/${id}`,
+        path: `api/${resource}/${id}`,
         method: 'PUT',
         body: JSON.stringify(variables) as BodyInit,
       })
@@ -96,7 +96,7 @@ export function DataProvider(): IDataProvider {
       const path = `${resource}/${id}`
 
       const { error, data, status } = await fetchData({
-        path: `${resource}/${id}`,
+        path: `api/${resource}/${id}`,
         method: 'DELETE',
       })
 

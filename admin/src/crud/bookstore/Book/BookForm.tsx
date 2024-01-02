@@ -1,23 +1,29 @@
 'use client'
 import React from 'react'
-import { Form, Input, InputNumber, Tabs } from 'antd'
 import {
-  Fieldset,
-  FormData,
-  type FormDataProps,
-  Toc,
-} from '@planb/components/form'
+  Col,
+  Form,
+  FormProps,
+  Input,
+  InputNumber,
+  Row,
+  Space,
+  Tabs,
+} from 'antd'
+import { Fieldset, FormData, Toc } from '@planb/components/form'
 import { useTranslate } from '@refinedev/core'
 
 import * as BookStore from '@crud/bookstore'
 
-const Data = () => {
+const Main = () => {
   const t = useTranslate()
   return (
     <Toc>
-      <Fieldset legend={t('bookstore/books.fieldsets.data')} id={'datos'}>
+      <Fieldset
+        legend={t('fieldsets.data', { ns: 'bookstore/books' })}
+        id={'data'}>
         <Form.Item
-          label={t('bookstore/books.fields.title.label')}
+          label={t('fields.title.label', { ns: 'bookstore/books' })}
           name={'title'}
           rules={[
             {
@@ -25,11 +31,15 @@ const Data = () => {
               validator: BookStore.titleValidator,
             },
           ]}>
-          <Input placeholder={t('bookstore/books.fields.title.placeholder')} />
+          <Input
+            placeholder={t('fields.title.placeholder', {
+              ns: 'bookstore/books',
+            })}
+          />
         </Form.Item>
 
         <Form.Item
-          label={t('bookstore/books.fields.price.label')}
+          label={t('fields.price.label', { ns: 'bookstore/books' })}
           name={'price'}
           rules={[
             {
@@ -38,12 +48,14 @@ const Data = () => {
             },
           ]}>
           <InputNumber
-            placeholder={t('bookstore/books.fields.price.placeholder')}
+            placeholder={t('fields.price.placeholder', {
+              ns: 'bookstore/books',
+            })}
           />
         </Form.Item>
 
         <Form.Item
-          label={t('bookstore/books.fields.author.label')}
+          label={t('fields.author.label', { ns: 'bookstore/books' })}
           name={'author'}
           rules={[
             {
@@ -54,7 +66,7 @@ const Data = () => {
         </Form.Item>
 
         <Form.Item
-          label={t('bookstore/books.fields.tags.label')}
+          label={t('fields.tags.label', { ns: 'bookstore/books' })}
           name={'tags'}
           rules={[
             {
@@ -64,28 +76,28 @@ const Data = () => {
           <BookStore.TagInput mode='multiple' />
         </Form.Item>
       </Fieldset>
-
-      <Fieldset legend='otros campos' id={'otro'}>
+      <Fieldset legend='Extra Fieldset' id={'extra'}>
         distribuir los campos en varios fieldsets ...
       </Fieldset>
     </Toc>
   )
 }
 
-export function BookForm(props: FormDataProps) {
+export function BookForm(props: FormProps) {
+  const t = useTranslate()
   return (
     <FormData {...props}>
       <Tabs
         items={[
           {
             key: 'tab-1',
-            label: 'Principal',
-            children: Data(),
+            label: t('tabs.main', { ns: 'bookstore/books' }),
+            children: Main(),
           },
         ]}
       />
 
-      {/*{Data()}*/}
+      {/*{Main()}*/}
     </FormData>
   )
 }

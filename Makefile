@@ -125,7 +125,7 @@ qa:
 	(cd api; vendor/planb/planb/bin/qa src)
 
 tests/run:
-	docker-compose exec -T php bin/phpunit --no-coverage
+	docker-compose exec php bin/phpunit --no-coverage
 
 tests/coverage:
-	docker-compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit -d memory_limit=512M
+	docker-compose exec -e XDEBUG_MODE=coverage php bin/phpunit -d memory_limit=512M

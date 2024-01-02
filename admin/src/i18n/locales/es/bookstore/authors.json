@@ -1,0 +1,28 @@
+{
+  "label": "Autores",
+  "fields": {
+    "id": {
+      "label": "Id",
+      "placeholder": "Id",
+      "column": "Id",
+      "filter": "Id"
+    },
+    "name": {
+      "label": "Nombre",
+      "placeholder": "aqu\u00ed el nombre",
+      "column": "Nombre",
+      "filter": "Nombre"
+    }
+  },
+  "titles": {
+    "create": "Nuevo Autor",
+    "edit": "Editar Autor",
+    "list": "Autores"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

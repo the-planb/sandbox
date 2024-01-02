@@ -9,7 +9,7 @@ export function AuthProvider(): AuthBindings {
   return {
     login: async ({ username, password, to }) => {
       const { error, data, status } = await fetchData({
-        path: 'token/auth',
+        path: 'admin/api/token/auth',
         method: 'POST',
         body: JSON.stringify({
           username,
@@ -25,7 +25,7 @@ export function AuthProvider(): AuthBindings {
     },
     logout: async () => {
       const { error, data, status } = await fetchData({
-        path: 'token/logout',
+        path: 'admin/api/token/logout',
         method: 'GET',
       })
       if (error) {

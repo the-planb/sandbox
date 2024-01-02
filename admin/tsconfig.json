@@ -17,8 +17,8 @@
     "paths": {
       "@planb/*": ["planb/*"],
       "@planb": ["planb"],
-      //      "@components/*": ["src/components/*"],
-      //      "@components": ["src/components"],
+      "@backend/*": ["src/backend/*"],
+      "@backend": ["src/backend"],
       "@crud/*": ["src/crud/*"],
       "@crud": ["src/crud"],
       "@contexts/*": ["src/contexts/*"],
@@ -27,8 +27,6 @@
       "@i18n": ["src/i18n"],
       "@styles/*": ["src/styles/*"],
       "@styles": ["src/styles"],
-      //      "@model/*": ["src/model/*"],
-      //      "@model": ["src/model"],
       "@public/*": ["public/*"],
       "@public": ["public"]
     },

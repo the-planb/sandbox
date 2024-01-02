@@ -40,14 +40,14 @@ export const iriComposer = async (props: IriComposerInput): Promise<object> => {
         const key = JSONPath.stringify(path)
 
         const partial = ((value: string | string[]) => {
-          if (value instanceof Array) {
-            const temp = value.map((item) => {
-              return fetch(`${baseUrl}${item}`, options).then((res) => {
-                return res.json()
-              })
-            })
-            return Promise.all(temp)
-          }
+          // if (value instanceof Array) {
+          //   const temp = value.map((item) => {
+          //     return fetch(`${baseUrl}${item}`, options).then((res) => {
+          //       return res.json()
+          //     })
+          //   })
+          //   return Promise.all(temp)
+          // }
 
           return fetch(`${baseUrl}${value}`, options).then((res) => {
             return res.json()
@@ -59,11 +59,17 @@ export const iriComposer = async (props: IriComposerInput): Promise<object> => {
     })
 
   const keys = Array.from(promises.keys())
-  const values = await Promise.all(promises.values())
 
-  zip(keys, values).forEach(([path, value]) => {
-    JSONPath.value(data, path, value)
-  })
+  try {
+    const values = await Promise.all(promises.values())
 
-  return data
+    zip(keys, values).forEach(([path, value]) => {
+      JSONPath.value(data, path, value)
+    })
+
+    return data
+  } catch (err) {
+    console.log({ err })
+    return {}
+  }
 }

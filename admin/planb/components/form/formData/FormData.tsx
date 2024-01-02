@@ -1,40 +1,20 @@
-import React from 'react'
-import { type FormAction } from '@refinedev/core'
-import { type UseFormDataReturnType } from './useFormData'
-import { type WithChildren } from './types'
-import { PageForm, type PageFormProps } from './PageForm'
+import React, { ReactNode } from 'react'
 import { createErrorBag, ErrorBagContext } from './useErrorBag'
-import { ModalForm, type ModalFormProps } from './ModalForm'
-import { DrawerForm, type DrawerFormProps } from './DrawerForm'
-import { FormContext } from './useFormContext'
+import { Form, FormProps } from 'antd'
+import css from './style.module.scss'
+import { FieldData } from 'rc-field-form/es/interface'
 
-export type FormDataProps = Omit<UseFormDataReturnType, 'show'>
-
-export function FormData({
-  like,
-  children,
-  ...props
-}: FormDataProps & WithChildren) {
+export function FormData({ children, ...props }: FormProps) {
   const errorBag = createErrorBag(children)
-  const { form } = props
+  const onFieldsChange = (field: FieldData[], allFields: FieldData[]) => {
+    errorBag.validate(allFields)
+  }
 
   return (
-    <FormContext.Provider
-      value={{
-        action: props.action as FormAction,
-        like: like ?? 'view',
-      }}>
-      <ErrorBagContext.Provider value={errorBag}>
-        {like === 'modal' && (
-          <ModalForm {...(props as ModalFormProps)}>{children}</ModalForm>
-        )}
-        {like === 'drawer' && (
-          <DrawerForm {...(props as DrawerFormProps)}>{children}</DrawerForm>
-        )}
-        {(like === 'view' || like === undefined) && (
-          <PageForm {...(props as PageFormProps)}>{children}</PageForm>
-        )}
-      </ErrorBagContext.Provider>
-    </FormContext.Provider>
+    <ErrorBagContext.Provider value={errorBag}>
+      <Form className={css.formData} onFieldsChange={onFieldsChange} {...props}>
+        {children as ReactNode}
+      </Form>
+    </ErrorBagContext.Provider>
   )
 }

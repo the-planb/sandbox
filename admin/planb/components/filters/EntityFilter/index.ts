@@ -1,1 +1,1 @@
-export { EntityFilter } from './EntityFilter'
+export { EntityFilter, type EntityFilterProps } from './EntityFilter'

@@ -1,6 +1,6 @@
-import { Fetcher } from 'swr'
 import process from 'process'
 import { BaseRecord } from '@refinedev/core'
+import { iriComposer } from '@planb/provider/fetchData/iriComposer'
 
 type GetProps = {
   path: string
@@ -46,81 +46,130 @@ type HydraResponse = {
 const parsePreloadHeaders = ({
   collection,
   preload = [],
-}: GetProps): HeadersInit => {
+}: GetProps): string | null => {
   if (preload?.length < 1) {
-    return {}
+    return null
   }
 
-  const Preload = preload
+  return preload
     .map((field: string) => {
       return collection ? `"hydra:member/*/${field}"` : `"/${field}"`
     })
     .join(',') as string
-
-  return { 'X-Preload': Preload }
 }
 
 const fetchOptions = (props: FetchDataProps): RequestInit => {
   const { path, method } = props
+
+  const headers = {
+    'Content-Type': 'application/ld+json',
+    Accept: 'application/ld+json',
+  }
+
   switch (method) {
     case 'GET': {
       return {
         method,
-        // cache: 'reload',
-        headers: parsePreloadHeaders(props),
+        headers: headers,
       }
     }
     case 'DELETE': {
       return {
         method,
+        headers,
       }
     }
     default: {
       return {
         method,
+        headers,
         body: props.body,
       }
     }
   }
 }
 
-const fetcher: Fetcher<object, FetchDataProps> = async (
-  props: FetchDataProps,
-) => {
-  const serverUrl: string = process.env.NEXT_PUBLIC_ENTRYPOINT as string
-  const { path, method } = props
+const formatData = async (res: Response, options: RequestInit) => {
+  const responseText = await res.text()
+  try {
+    if (res.status === 204 && options.method === 'DELETE') {
+      return {
+        data: {},
+        status: 200,
+        ok: true,
+      }
+    }
 
-  const options = fetchOptions(props)
-  const res = await fetch(`${serverUrl}/admin/api/${path}`, options)
-
-  if (!res.ok) return Promise.reject(await res.json())
-
-  return await res.json()
+    const data = JSON.parse(responseText)
+    return {
+      data,
+      status: res.status,
+      ok: true,
+    }
+  } catch (error) {
+    return Promise.reject({
+      data: {
+        raw: responseText,
+      },
+      status: res.status,
+      ok: false,
+    })
+  }
 }
 
 export const fetchData = async (
   props: FetchDataProps,
 ): Promise<FetchDataReturnType> => {
-  const serverUrl: string = process.env.NEXT_PUBLIC_ENTRYPOINT as string
-  const { path, method } = props
-
+  const baseUrl: string = process.env.NEXT_PUBLIC_ENTRYPOINT as string
+  const { path } = props
   const options = fetchOptions(props)
-  const res = await fetch(`${serverUrl}/admin/api/${path}`, options)
 
-  if (!res.ok)
-    return {
-      error: await res.json(),
-      data: undefined,
-      status: res.status,
-      ok: false,
-    }
+  return fetch(`${baseUrl}/${path}`, options)
+    .then(async (res) => {
+      const responseText = await res.text()
+      try {
+        if (res.status === 204 && options.method === 'DELETE') {
+          return {
+            data: {},
+            status: 200,
+            ok: true,
+          }
+        }
 
-  const data = await res.json()
+        if (res.status < 200 || res.status >= 300) {
+          return {
+            data: undefined,
+            status: res.status,
+            error: JSON.parse(responseText),
+          }
+        }
 
-  return {
-    data,
-    error: undefined,
-    status: res.status,
-    ok: true,
-  }
+        const data =
+          props.method === 'GET'
+            ? await iriComposer({
+                baseUrl,
+                preload: parsePreloadHeaders(props),
+                data: JSON.parse(responseText),
+                options,
+              })
+            : JSON.parse(responseText)
+
+        return {
+          data,
+          status: 200,
+          error: undefined,
+        }
+      } catch (error) {
+        return Promise.reject({
+          data: {
+            raw: responseText,
+          },
+          status: res.status,
+          ok: false,
+        })
+      }
+    })
+    .catch((error) => {
+      return error
+    })
 }
