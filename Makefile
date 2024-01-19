@@ -77,11 +77,16 @@ build/prod/admin: --prod
 build/prod/php: --prod
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build php
 
+build/prod/cache: --prod
+	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build http-cache
+
 build/dev: --dev
 	docker-compose --env-file=.env build
 
 build/dev/cache: --dev
 	docker-compose --env-file=.env build http-cache
+
+
 
 up/prod: --prod down
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml up -d --remove-orphans
@@ -96,19 +101,6 @@ down:
 
 cache/flushall:
 	docker-compose exec redis redis-cli FLUSHALL
-
-
-#varnish/reload:
-#	docker-compose  exec  varnish varnishreload
-#
-#varnish/restart:
-#	docker-compose  restart  varnish
-#
-#varnish/purge:
-#	docker-compose exec varnish varnishadm 'ban req.url ~ /'
-#
-#varnish/logs:
-#	docker-compose exec varnish varnishlog -g raw
 
 alfred/please:
 

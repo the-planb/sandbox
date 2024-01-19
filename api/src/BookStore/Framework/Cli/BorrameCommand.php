@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace App\BookStore\Framework\Cli;
 
-use App\BookStore\Domain\Repository\AuthorRepository;
-use App\BookStore\Framework\Doctrine\Repository\AuthorDoctrineRepository;
-use PlanB\Domain\Criteria\Criteria;
-use PlanB\Domain\Criteria\Filter;
-use PlanB\Domain\Criteria\FilterList;
-use PlanB\Domain\Criteria\Operator;
-use PlanB\Domain\Criteria\Order;
-use PlanB\Domain\Criteria\OrderDir;
+use App\Music\Application\Input\DiscoInput;
+use App\Music\Application\UseCase\Create\CreateDisco;
+use App\Music\Domain\Model\SongList;
+use App\Music\Domain\Model\VO\DiscoName;
+use App\Music\Domain\Repository\DiscoRepository;
+use League\Tactician\CommandBus;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -25,38 +23,36 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class BorrameCommand extends Command
 {
-    private AuthorRepository $repository;
+    private CommandBus $commandBus;
+    private DiscoRepository $repository;
 
-    public function __construct(AuthorDoctrineRepository $repository)
+    public function __construct(DiscoRepository $repository, CommandBus $commandBus)
     {
         parent::__construct(null);
+
+        $this->commandBus = $commandBus;
         $this->repository = $repository;
     }
 
     protected function configure(): void
     {
-        $this
-            ->addArgument('name', InputArgument::REQUIRED, 'the name')
-        ;
+        //        $this
+        //            ->addArgument('name', InputArgument::REQUIRED, 'the name')
+        //        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
 
-        $value = $input->getArgument('name');
+        $input = new DiscoInput();
+        $input->title = new DiscoName('Lo mejor de la musica disco');
+        $input->songs = SongList::collect([
+        ]);
 
-        $criteria = new Criteria(
-            FilterList::collect([
-                new Filter('name', Operator::EQUALS, $value),
-            ]),
-            new Order('id', OrderDir::ASC),
-            1,
-            10
-        );
-        $lista = $this->repository->match($criteria);
+        $command = new CreateDisco($input);
 
-        dump($lista);
+        $this->commandBus->handle($command);
 
         return Command::SUCCESS;
     }

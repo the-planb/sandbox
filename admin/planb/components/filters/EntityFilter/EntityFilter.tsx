@@ -61,10 +61,9 @@ export const EntityFilter = ({
   return (
     <Space>
       <Select
-        style={{width: '5em'}}
+        style={{ width: '5em' }}
         value={data.operator}
-        onChange={onOperatorChange}
-        >
+        onChange={onOperatorChange}>
         {Object.entries(operators).map(([operator, label]) => {
           return (
             <Option key={operator} value={operator}>

@@ -11,6 +11,11 @@ services:
       MERCURE_PUBLISHER_JWT_KEY: ${CADDY_MERCURE_JWT_SECRET}
       MERCURE_SUBSCRIBER_JWT_KEY: ${CADDY_MERCURE_JWT_SECRET}
 
+  http-cache:
+    volumes:
+      - ./api/frankenphp/cache/conf.d:/etc/nginx/conf.d
+      - ./api/frankenphp/cache/lua/http-cache:/usr/local/openresty/luajit/share/lua/5.1/http-cache
+
   www:
      build:
       context: ./www

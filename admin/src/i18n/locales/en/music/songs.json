@@ -1,0 +1,40 @@
+{
+  "label": "songs.label",
+  "fields": {
+    "id": {
+      "label": "**songs.fields.id**",
+      "placeholder": "**songs.fields.id**",
+      "column": "**songs.fields.id**",
+      "filter": "**songs.fields.id**"
+    },
+    "title": {
+      "label": "**songs.fields.title**",
+      "placeholder": "**songs.fields.title**",
+      "column": "**songs.fields.title**",
+      "filter": "**songs.fields.title**"
+    },
+    "duration": {
+      "label": "**songs.fields.duration**",
+      "placeholder": "**songs.fields.duration**",
+      "column": "**songs.fields.duration**",
+      "filter": "**songs.fields.duration**"
+    },
+    "album": {
+      "label": "**songs.fields.album**",
+      "placeholder": "**songs.fields.album**",
+      "column": "**songs.fields.album**",
+      "filter": "**songs.fields.album**"
+    }
+  },
+  "titles": {
+    "create": "songs.titles.create",
+    "edit": "songs.titles.edit",
+    "list": "songs.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

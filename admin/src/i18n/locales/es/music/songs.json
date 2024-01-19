@@ -1,0 +1,40 @@
+{
+  "label": "Canciones",
+  "fields": {
+    "id": {
+      "label": "ID",
+      "placeholder": "ID",
+      "column": "ID",
+      "filter": "ID"
+    },
+    "title": {
+      "label": "T\u00edtulo",
+      "placeholder": "T\u00edtulo",
+      "column": "T\u00edtulo",
+      "filter": "T\u00edtulo"
+    },
+    "duration": {
+      "label": "Duraci\u00f3n",
+      "placeholder": "Duraci\u00f3n",
+      "column": "Duraci\u00f3n",
+      "filter": "Duraci\u00f3n"
+    },
+    "album": {
+      "label": "Disco",
+      "placeholder": "Disco",
+      "column": "Disco",
+      "filter": "Disco"
+    }
+  },
+  "titles": {
+    "create": "Nueva canci\u00f3n",
+    "edit": "Editar canci\u00f3n",
+    "list": "Canciones"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<resources xmlns="https://api-platform.com/schema/metadata/resources-3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://api-platform.com/schema/metadata/resources-3.0 https://api-platform.com/schema/metadata/resources-3.0.xsd">
+  <resource class="App\Music\Domain\Model\Disco" routePrefix="music" shortName="Disco">
+    <operations>
+      <operation class="ApiPlatform\Metadata\Get" provider="App\Music\Framework\Api\State\Provider\GetDiscoItemProvider">
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
+      <operation class="ApiPlatform\Metadata\GetCollection" provider="App\Music\Framework\Api\State\Provider\GetDiscoCollectionProvider">
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
+      <operation class="ApiPlatform\Metadata\Post" input="App\Music\Application\Input\DiscoInput" processor="App\Music\Framework\Api\State\Processor\CreateDiscoProcessor"/>
+      <operation class="ApiPlatform\Metadata\Put" input="App\Music\Application\Input\DiscoInput" processor="App\Music\Framework\Api\State\Processor\UpdateDiscoProcessor"/>
+      <operation class="ApiPlatform\Metadata\Delete" processor="App\Music\Framework\Api\State\Processor\DeleteDiscoProcessor"/>
+    </operations>
+    <normalizationContext>
+      <values>
+        <value name="groups">
+          <values>
+            <value>read.music.disco</value>
+            <value>read</value>
+          </values>
+        </value>
+      </values>
+    </normalizationContext>
+    <denormalizationContext>
+      <values>
+        <value name="groups">
+          <values>
+            <value>write.music.disco</value>
+            <value>write</value>
+          </values>
+        </value>
+      </values>
+    </denormalizationContext>
+  </resource>
+</resources>

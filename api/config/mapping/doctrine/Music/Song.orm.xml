@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Music\Domain\Model\Song" table="music_songs">
+    <id name="id" type="Music.SongId"/>
+    <field name="title" type="Music.SongName"/>
+    <field name="duration" type="Music.Duration" nullable="true"/>
+    <many-to-one field="album" target-entity="App\Music\Domain\Model\Disco" fetch="EAGER" inversed-by="songs">
+      <cascade>
+        <cascade-persist/>
+      </cascade>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

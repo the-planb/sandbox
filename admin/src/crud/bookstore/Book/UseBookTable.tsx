@@ -84,15 +84,15 @@ export const useBookTable = (
             <TableCell value={value} renderer={BookStore.authorRenderer} />
           ),
         },
-        {
-          dataIndex: 'tags',
-          width: 'auto',
-          title: t('fields.tags.column', { ns: 'bookstore/books' }),
-          sorter: true,
-          render: (value) => (
-            <TableCell value={value} renderer={BookStore.tagRenderer} />
-          ),
-        },
+        // {
+        //   dataIndex: 'tags',
+        //   width: 'auto',
+        //   title: t('fields.tags.column', { ns: 'bookstore/books' }),
+        //   sorter: true,
+        //   render: (value) => (
+        //     <TableCell value={value} renderer={BookStore.tagRenderer} />
+        //   ),
+        // },
       ],
       filters: {
         title: <TextFilter />,

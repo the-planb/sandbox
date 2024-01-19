@@ -61,7 +61,11 @@ export const TextFilter = ({ value, onChange }: TextFilterProps) => {
         })}
       </Select>
 
-      <Input value={data.value} onChange={onValueChange} style={{ width: '11em' }} />
+      <Input
+        value={data.value}
+        onChange={onValueChange}
+        style={{ width: '11em' }}
+      />
     </Space>
   )
 }

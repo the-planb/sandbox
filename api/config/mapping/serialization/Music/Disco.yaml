@@ -1,0 +1,17 @@
+---
+App\Music\Domain\Model\Disco:
+  attributes:
+    id:
+      groups: [read.music.disco]
+    title:
+      groups: [read.music.disco]
+    songs:
+      groups: [read.music.disco]
+
+
+App\Music\Application\Input\DiscoInput:
+  attributes:
+    title:
+      groups: [write.music.disco]
+    songs:
+      groups: [write.music.disco]

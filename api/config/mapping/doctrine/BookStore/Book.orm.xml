@@ -9,7 +9,7 @@
         <cascade-persist/>
       </cascade>
     </many-to-one>
-    <many-to-many field="tags" target-entity="App\BookStore\Domain\Model\Tag" fetch="EAGER" orphan-removal="true">
+    <many-to-many field="tags" target-entity="App\BookStore\Domain\Model\Tag" fetch="EAGER" orphan-removal="true" >
       <cascade>
         <cascade-persist/>
       </cascade>

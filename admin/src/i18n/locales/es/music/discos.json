@@ -1,0 +1,34 @@
+{
+  "label": "Discos",
+  "fields": {
+    "id": {
+      "label": "Id",
+      "placeholder": "Id",
+      "column": "Id",
+      "filter": "Id"
+    },
+    "title": {
+      "label": "T\u00edtulo",
+      "placeholder": "T\u00edtulo",
+      "column": "T\u00edtulo",
+      "filter": "T\u00edtulo"
+    },
+    "songs": {
+      "label": "Canciones",
+      "placeholder": "Canciones",
+      "column": "Canciones",
+      "filter": "Canciones"
+    }
+  },
+  "titles": {
+    "create": "Nuevo disco",
+    "edit": "Editar disco",
+    "list": "Discos"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

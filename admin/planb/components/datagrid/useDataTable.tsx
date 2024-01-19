@@ -1,7 +1,18 @@
 import { ListProps, useTable, useTableProps } from '@refinedev/antd'
-import { BaseRecord, CrudFilters, HttpError, useTranslate } from '@refinedev/core'
+import {
+  BaseRecord,
+  CrudFilters,
+  HttpError,
+  useTranslate,
+} from '@refinedev/core'
 import { FlexProps, TableProps } from 'antd'
-import { ActionList, FilterList, FilterValueList, makeActions, SearchFormProps } from '@planb/components'
+import {
+  ActionList,
+  FilterList,
+  FilterValueList,
+  makeActions,
+  SearchFormProps,
+} from '@planb/components'
 import { ReactNode } from 'react'
 
 import { gridCss as css } from '@planb/components/datagrid'
@@ -27,13 +38,13 @@ export type UseDataTableReturnType<TData extends BaseRecord> = {
 }
 
 export const useDataTable = <TData extends BaseRecord>({
-                                                         resource,
-                                                         columns,
-                                                         filters = {},
-                                                         actions = {},
-                                                         headerButtons,
-                                                         ...props
-                                                       }: UseDataTableProps<TData>): UseDataTableReturnType<TData> => {
+  resource,
+  columns,
+  filters = {},
+  actions = {},
+  headerButtons,
+  ...props
+}: UseDataTableProps<TData>): UseDataTableReturnType<TData> => {
   const t = useTranslate()
 
   const {

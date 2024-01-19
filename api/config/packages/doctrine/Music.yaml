@@ -1,0 +1,15 @@
+doctrine:
+    orm:
+        mappings:
+            Music:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/doctrine/Music'
+                prefix: App\Music\Domain\Model
+    dbal:
+        types:
+            Music.DiscoId: App\Music\Framework\Doctrine\DBAL\DiscoIdDBALType
+            Music.SongId: App\Music\Framework\Doctrine\DBAL\SongIdDBALType
+            Music.SongName: App\Music\Framework\Doctrine\DBAL\SongNameDBALType
+            Music.Duration: App\Music\Framework\Doctrine\DBAL\DurationDBALType
+            Music.DiscoName: App\Music\Framework\Doctrine\DBAL\DiscoNameDBALType

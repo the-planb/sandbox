@@ -49,15 +49,6 @@ services:
 #    environment:
 #      NEXT_PUBLIC_ENTRYPOINT: http://php
 #      NEXT_PUBLIC_SERVER_NAME: https://${SERVER_NAME} 
-
-#  varnish:
-#    tty: true
-#    restart: always
-#    depends_on:
-#      - php
-#    build:
-#      context: api/
-#      target: app_varnish
       
   http-cache:
     depends_on:
@@ -70,15 +61,6 @@ services:
     build:
       context: api/
       target: app_redis    
-
-#    ports:
-#      # HTTP
-#      - target: 80
-#        published: 1234
-#        protocol: tcp
-
-    volumes:
-      - ./conf/nginx/conf.d:/etc/nginx/conf.d      
 
 
 ###> doctrine/doctrine-bundle ###

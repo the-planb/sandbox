@@ -102,6 +102,7 @@ RUN set -eux; \
 	chmod +x bin/console; sync;
 
 FROM openresty/openresty:alpine-fat as app_http_cache
+
 ADD frankenphp/cache/conf.d /etc/nginx/conf.d/
 ADD frankenphp/cache/lua/http-cache /usr/local/openresty/luajit/share/lua/5.1/http-cache/
 
@@ -113,7 +114,6 @@ RUN /usr/local/openresty/luajit/bin/luarocks install base64;
 RUN /usr/local/openresty/luajit/bin/luarocks install --server=http://luarocks.org/manifests/kikito md5
 RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-jwt;
 
-#CMD ["redis-server && /usr/local/openresty/bin/openresty", "-g", "daemon off;"]
 
 FROM redis:alpine as app_redis
 

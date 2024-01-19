@@ -4,6 +4,8 @@ export const i18nNamespaces = [
   'bookstore/tags',
   'bookstore/books',
   'bookstore/authors',
+  'music/discos',
+  'music/songs',
 ]
 
 export const resources = (lang: string) => {
@@ -19,7 +21,6 @@ export const resources = (lang: string) => {
       edit: `${lang}/bookstore/books/edit/:id`,
       meta: {
         canDelete: true,
-        // preload: ['author'],
       },
     },
     {
@@ -36,6 +37,15 @@ export const resources = (lang: string) => {
       list: `${lang}/bookstore/tags`,
       create: `${lang}/bookstore/tags/create`,
       edit: `${lang}/bookstore/tags/edit/:id`,
+      meta: {
+        canDelete: true,
+      },
+    },
+    {
+      name: 'music/discos',
+      list: `${lang}/music/discos`,
+      create: `${lang}/music/discos/create`,
+      edit: `${lang}/music/discos/edit/:id`,
       meta: {
         canDelete: true,
       },

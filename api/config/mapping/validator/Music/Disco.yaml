@@ -1,0 +1,8 @@
+---
+App\Music\Domain\Model\Disco:
+  properties:
+    title:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Music\Domain\Model\VO\Constraint\DiscoNameConstraint: ~
+    songs:
+      - Symfony\Component\Validator\Constraints\NotNull: ~

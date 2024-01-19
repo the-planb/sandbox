@@ -1,0 +1,5 @@
+---
+App\Music\Domain\Model\VO\SongName:
+  attributes:
+    name:
+      groups: [read, write]
