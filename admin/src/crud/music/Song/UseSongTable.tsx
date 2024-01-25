@@ -19,7 +19,7 @@ type UseAuxFormProps = {
 }
 
 type UseAuxFormReturnType = {
-  show: (id?: BaseKey) => void
+  show?: (id?: BaseKey) => void
   Form: FC<Partial<UseFormReturnType>>
 }
 
@@ -29,7 +29,7 @@ const useAuxForm = ({
 }: UseAuxFormProps): UseAuxFormReturnType => {
   if (view === 'none') {
     return {
-      show: () => {},
+      show: undefined,
       Form: () => <></>,
     }
   }
@@ -93,19 +93,21 @@ export const useSongTable = (
       headerButtons: (
         <>
           {createButton({
-            resource: 'bookstore/tags',
-            //handle: create,
+            resource: 'music/songs',
+            handle: create,
           })}
         </>
       ),
       actions: {
-        edit: 'default',
+        //            edit: 'default',
+
+        edit: (record: Music.Song) =>
+          editButton({
+            resource: 'music/songs',
+            record,
+            handle: edit,
+          }),
         delete: 'default',
-        //          edit: (record: Music.Song)=>editButton({
-        //              resource: 'bookstore/tags',
-        //              record,
-        //              handle: edit
-        //          }),
         //          otro: (record: Music.Song) => {
         //              return <>...</>
         //          }

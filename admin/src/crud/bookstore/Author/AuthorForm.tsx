@@ -22,17 +22,11 @@ const Main = () => {
       <Fieldset
         legend={t('fieldsets.data', { ns: 'bookstore/authors' })}
         id={'data'}>
-        <Form.Item
+        <BookStore.FullNameInput
+          required={true}
           label={t('fields.name.label', { ns: 'bookstore/authors' })}
           name={'name'}
-          rules={[
-            {
-              required: true,
-              validator: BookStore.fullNameValidator,
-            },
-          ]}>
-          <BookStore.FullNameInput />
-        </Form.Item>
+        />
       </Fieldset>
       <Fieldset legend='Extra Fieldset' id={'extra'}>
         distribuir los campos en varios fieldsets ...

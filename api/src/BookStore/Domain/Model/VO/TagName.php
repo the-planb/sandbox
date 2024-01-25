@@ -10,6 +10,7 @@ use PlanB\Validation\Traits\ValidableTrait;
 final class TagName implements StringValue
 {
     use ValidableTrait;
+
     private string $name;
 
     public function __construct(string $name)

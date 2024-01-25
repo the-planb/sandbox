@@ -2,6 +2,6 @@
 App\BookStore\Domain\Model\VO\FullName:
   attributes:
     firstName:
-      groups: [read, write]
+      groups: [get.item, get.collection, post, put]
     lastName:
-      groups: [read, write]
+      groups: [get.item, get.collection, post, put]

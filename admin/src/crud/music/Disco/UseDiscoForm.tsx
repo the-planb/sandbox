@@ -8,12 +8,7 @@ import {
 import React, { FC } from 'react'
 import * as Music from '@crud/music'
 import { FormAction, useTranslate } from '@refinedev/core'
-import {
-  formCss as css,
-  FooterButtons,
-  HeaderButtons,
-  normalizeFormProps,
-} from '@planb/components'
+import { formCss as css, FooterButtons, HeaderButtons } from '@planb/components'
 import { FormProps } from 'antd'
 
 type UseDiscoFormProps = UseFormProps<Music.Disco> & { action: FormAction }
@@ -25,18 +20,13 @@ export const useDiscoForm = (
   props: UseDiscoFormProps,
 ): UseDiscoFormReturnType => {
   const t = useTranslate()
-  const {
-    formProps: _formProps,
-    formLoading,
-    form,
-    onFinish,
-    redirect,
-  } = useForm<Music.Disco>({
-    resource: 'music/discos',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
+  const { formProps, formLoading, form, onFinish, redirect } =
+    useForm<Music.Disco>({
+      resource: 'music/discos',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   const wrapperProps = {
     className: css.wrapper,
@@ -50,8 +40,6 @@ export const useDiscoForm = (
     resource: 'music/discos',
   }
 
-  const formProps: FormProps = normalizeFormProps(_formProps)
-
   const Form =
     props.action === 'create'
       ? (props: Partial<UseFormReturnType>) => {
@@ -64,7 +52,7 @@ export const useDiscoForm = (
                 headerButtons={<HeaderButtons resource={'music/discos'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <Music.DiscoForm {...formProps} />
+                <Music.DiscoForm {...formProps} layout='vertical' />
               </Create>
             </>
           )
@@ -79,7 +67,7 @@ export const useDiscoForm = (
                 headerButtons={<HeaderButtons resource={'music/discos'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <Music.DiscoForm {...formProps} />
+                <Music.DiscoForm {...formProps} layout='vertical' />
               </Edit>
             </>
           )

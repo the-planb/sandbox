@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <properties xmlns="https://api-platform.com/schema/metadata/properties-3.0">
-  <property resource="App\BookStore\Application\Input\BookInput" name="title">
+  <property resource="App\BookStore\Domain\Input\BookInput" name="title">
     <openapiContext>
       <values>
         <value name="type">object</value>
@@ -8,7 +8,7 @@
       </values>
     </openapiContext>
   </property>
-  <property resource="App\BookStore\Application\Input\BookInput" name="price">
+  <property resource="App\BookStore\Domain\Input\BookInput" name="price">
     <openapiContext>
       <values>
         <value name="type">object</value>
@@ -16,7 +16,7 @@
       </values>
     </openapiContext>
   </property>
-  <property resource="App\BookStore\Application\Input\BookInput" name="author">
+  <property resource="App\BookStore\Domain\Input\BookInput" name="author">
     <openapiContext>
       <values>
         <value name="type">object</value>
@@ -24,7 +24,7 @@
       </values>
     </openapiContext>
   </property>
-  <property resource="App\BookStore\Application\Input\BookInput" name="tags">
+  <property resource="App\BookStore\Domain\Input\BookInput" name="tags">
     <openapiContext>
       <values>
         <value name="type">object</value>

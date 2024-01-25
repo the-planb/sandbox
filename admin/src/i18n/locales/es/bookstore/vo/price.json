@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "amount": {
+      "label": "Precio",
+      "placeholder": "Precio"
+    }
+  }
+}

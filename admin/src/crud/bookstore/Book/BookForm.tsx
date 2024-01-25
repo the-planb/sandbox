@@ -22,59 +22,27 @@ const Main = () => {
       <Fieldset
         legend={t('fieldsets.data', { ns: 'bookstore/books' })}
         id={'data'}>
-        <Form.Item
+        <BookStore.TitleInput
+          required={true}
           label={t('fields.title.label', { ns: 'bookstore/books' })}
           name={'title'}
-          rules={[
-            {
-              required: true,
-              validator: BookStore.titleValidator,
-            },
-          ]}>
-          <Input
-            placeholder={t('fields.title.placeholder', {
-              ns: 'bookstore/books',
-            })}
-          />
-        </Form.Item>
-
-        <Form.Item
+        />
+        <BookStore.PriceInput
+          required={false}
           label={t('fields.price.label', { ns: 'bookstore/books' })}
           name={'price'}
-          rules={[
-            {
-              required: false,
-              validator: BookStore.priceValidator,
-            },
-          ]}>
-          <InputNumber
-            placeholder={t('fields.price.placeholder', {
-              ns: 'bookstore/books',
-            })}
-          />
-        </Form.Item>
-
-        <Form.Item
+        />
+        <BookStore.AuthorInput
+          required={true}
           label={t('fields.author.label', { ns: 'bookstore/books' })}
           name={'author'}
-          rules={[
-            {
-              required: true,
-            },
-          ]}>
-          <BookStore.AuthorInput />
-        </Form.Item>
-
-        <Form.Item
+        />
+        <BookStore.TagInput
+          required={true}
           label={t('fields.tags.label', { ns: 'bookstore/books' })}
           name={'tags'}
-          rules={[
-            {
-              required: true,
-            },
-          ]}>
-          <BookStore.TagInput mode='multiple' />
-        </Form.Item>
+          selectProps={{ mode: 'multiple' }}
+        />
       </Fieldset>
       <Fieldset legend='Extra Fieldset' id={'extra'}>
         distribuir los campos en varios fieldsets ...

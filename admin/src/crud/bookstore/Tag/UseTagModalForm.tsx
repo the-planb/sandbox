@@ -1,7 +1,6 @@
 import { UseFormProps, UseFormReturnType, useModalForm } from '@refinedev/antd'
 import React, { FC, useCallback } from 'react'
 import * as BookStore from '@crud/bookstore'
-import { normalizeFormProps } from '@planb/components'
 import { BaseKey, FormAction } from '@refinedev/core'
 import { FormProps, Modal, Spin } from 'antd'
 
@@ -14,19 +13,13 @@ type UseTagModalFormReturnType = {
 export const useTagModalForm = (
   props: UseTagModalFormProps,
 ): UseTagModalFormReturnType => {
-  const {
-    show,
-    modalProps,
-    formProps: _formProps,
-    formLoading,
-  } = useModalForm<BookStore.Tag>({
-    resource: 'bookstore/tags',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
-
-  const formProps: FormProps = normalizeFormProps(_formProps)
+  const { show, modalProps, formProps, formLoading } =
+    useModalForm<BookStore.Tag>({
+      resource: 'bookstore/tags',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   return {
     show,
@@ -34,7 +27,7 @@ export const useTagModalForm = (
       return (
         <Modal {...modalProps}>
           <Spin spinning={formLoading}>
-            <BookStore.TagForm {...formProps} />
+            <BookStore.TagForm {...formProps} layout='vertical' />
           </Spin>
         </Modal>
       )

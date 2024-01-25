@@ -19,6 +19,7 @@ return AggregateRoot('Book')
         ->cascade(Cascade::PERSIST)
     )
     ->with('tags', ManyToMany('Entity(Tag)')
+
 //        ->inversedBy('id')
         ->fetch(Fetch::EAGER)
         ->cascade(Cascade::PERSIST)

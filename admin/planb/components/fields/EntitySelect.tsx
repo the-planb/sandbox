@@ -8,13 +8,16 @@ import { LogicalFilter } from '@refinedev/core/src/contexts/data/IDataContext'
 import { CreateEntityButton } from '@planb/components/fields/CreateEntityButton'
 import { UseFormFunction } from '@planb/components'
 
-const valueToId = (value?: string | string[]) => {
+const valueToId = (value?: string | BaseRecord | string[] | BaseRecord[]) => {
   if (value === undefined) {
     return undefined
   }
-
   const data = (Array.isArray(value) ? value : [value]).filter((value) => value)
   return data.map((item) => {
+    if (typeof item === 'object') {
+      return item['id'] as BaseKey
+    }
+
     return item.split('/').pop() as BaseKey
   })
 }
@@ -45,7 +48,7 @@ export const EntitySelect = <TData extends BaseRecord>({
     defaultValue: valueToId(value),
     debounce: 500,
     pagination: {
-      pageSize: 3,
+      pageSize: 10,
     },
     queryOptions: {
       retry: 0,
@@ -69,6 +72,7 @@ export const EntitySelect = <TData extends BaseRecord>({
     .map(itemToOption)
 
   const options = uniqBy(data, 'value')
+
   return (
     <>
       <Select

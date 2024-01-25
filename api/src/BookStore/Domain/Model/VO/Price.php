@@ -10,6 +10,7 @@ use PlanB\Validation\Traits\ValidableTrait;
 final class Price implements IntegerValue
 {
     use ValidableTrait;
+
     private ?int $amount;
 
     public function __construct(?int $amount)

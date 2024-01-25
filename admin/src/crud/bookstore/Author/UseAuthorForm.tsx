@@ -8,12 +8,7 @@ import {
 import React, { FC } from 'react'
 import * as BookStore from '@crud/bookstore'
 import { FormAction, useTranslate } from '@refinedev/core'
-import {
-  formCss as css,
-  FooterButtons,
-  HeaderButtons,
-  normalizeFormProps,
-} from '@planb/components'
+import { formCss as css, FooterButtons, HeaderButtons } from '@planb/components'
 import { FormProps } from 'antd'
 
 type UseAuthorFormProps = UseFormProps<BookStore.Author> & {
@@ -27,18 +22,13 @@ export const useAuthorForm = (
   props: UseAuthorFormProps,
 ): UseAuthorFormReturnType => {
   const t = useTranslate()
-  const {
-    formProps: _formProps,
-    formLoading,
-    form,
-    onFinish,
-    redirect,
-  } = useForm<BookStore.Author>({
-    resource: 'bookstore/authors',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
+  const { formProps, formLoading, form, onFinish, redirect } =
+    useForm<BookStore.Author>({
+      resource: 'bookstore/authors',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   const wrapperProps = {
     className: css.wrapper,
@@ -52,8 +42,6 @@ export const useAuthorForm = (
     resource: 'bookstore/authors',
   }
 
-  const formProps: FormProps = normalizeFormProps(_formProps)
-
   const Form =
     props.action === 'create'
       ? (props: Partial<UseFormReturnType>) => {
@@ -66,7 +54,7 @@ export const useAuthorForm = (
                 headerButtons={<HeaderButtons resource={'bookstore/authors'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <BookStore.AuthorForm {...formProps} />
+                <BookStore.AuthorForm {...formProps} layout='vertical' />
               </Create>
             </>
           )
@@ -81,7 +69,7 @@ export const useAuthorForm = (
                 headerButtons={<HeaderButtons resource={'bookstore/authors'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <BookStore.AuthorForm {...formProps} />
+                <BookStore.AuthorForm {...formProps} layout='vertical' />
               </Edit>
             </>
           )

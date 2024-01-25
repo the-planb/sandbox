@@ -19,7 +19,7 @@ type UseAuxFormProps = {
 }
 
 type UseAuxFormReturnType = {
-  show: (id?: BaseKey) => void
+  show?: (id?: BaseKey) => void
   Form: FC<Partial<UseFormReturnType>>
 }
 
@@ -29,7 +29,7 @@ const useAuxForm = ({
 }: UseAuxFormProps): UseAuxFormReturnType => {
   if (view === 'none') {
     return {
-      show: () => {},
+      show: undefined,
       Form: () => <></>,
     }
   }
@@ -76,18 +76,20 @@ export const useTagTable = (
         <>
           {createButton({
             resource: 'bookstore/tags',
-            //handle: create,
+            handle: create,
           })}
         </>
       ),
       actions: {
-        edit: 'default',
+        //            edit: 'default',
+
+        edit: (record: BookStore.Tag) =>
+          editButton({
+            resource: 'bookstore/tags',
+            record,
+            handle: edit,
+          }),
         delete: 'default',
-        //          edit: (record: BookStore.Tag)=>editButton({
-        //              resource: 'bookstore/tags',
-        //              record,
-        //              handle: edit
-        //          }),
         //          otro: (record: BookStore.Tag) => {
         //              return <>...</>
         //          }

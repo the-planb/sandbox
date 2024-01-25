@@ -1,7 +1,6 @@
 import { UseFormProps, UseFormReturnType, useModalForm } from '@refinedev/antd'
 import React, { FC, useCallback } from 'react'
 import * as BookStore from '@crud/bookstore'
-import { normalizeFormProps } from '@planb/components'
 import { BaseKey, FormAction } from '@refinedev/core'
 import { FormProps, Modal, Spin } from 'antd'
 
@@ -16,19 +15,13 @@ type UseAuthorModalFormReturnType = {
 export const useAuthorModalForm = (
   props: UseAuthorModalFormProps,
 ): UseAuthorModalFormReturnType => {
-  const {
-    show,
-    modalProps,
-    formProps: _formProps,
-    formLoading,
-  } = useModalForm<BookStore.Author>({
-    resource: 'bookstore/authors',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
-
-  const formProps: FormProps = normalizeFormProps(_formProps)
+  const { show, modalProps, formProps, formLoading } =
+    useModalForm<BookStore.Author>({
+      resource: 'bookstore/authors',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   return {
     show,
@@ -36,7 +29,7 @@ export const useAuthorModalForm = (
       return (
         <Modal {...modalProps}>
           <Spin spinning={formLoading}>
-            <BookStore.AuthorForm {...formProps} />
+            <BookStore.AuthorForm {...formProps} layout='vertical' />
           </Spin>
         </Modal>
       )

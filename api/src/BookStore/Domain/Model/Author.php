@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace App\BookStore\Domain\Model;
 
 use App\BookStore\Domain\Model\VO\FullName;
+use PlanB\Domain\Model\Entity;
 
-class Author
+class Author implements Entity
 {
     private AuthorId $id;
     private FullName $name;

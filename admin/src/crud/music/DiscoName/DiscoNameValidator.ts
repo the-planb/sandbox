@@ -5,10 +5,9 @@ export const discoNameValidator = async (
   rule: RuleObject,
   value: Music.DiscoName,
 ) => {
-  // if (value.length > 10) {//
-  //    return await Promise.resolve()
-  // }
-  //
-  // return await Promise.reject('El campo necesita al menos 10 caracteres')
-  return await Promise.resolve()
+  if (value.length > 3) {
+    return await Promise.resolve()
+  }
+
+  return await Promise.reject('El campo necesita al menos 3 caracteres')
 }

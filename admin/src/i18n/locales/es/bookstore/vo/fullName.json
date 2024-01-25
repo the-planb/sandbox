@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": "Nombre"
+    },
+    "lastName": {
+      "label": "Apellidos",
+      "placeholder": "Apellidos"
+    }
+  }
+}

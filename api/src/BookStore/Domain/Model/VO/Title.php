@@ -10,6 +10,7 @@ use PlanB\Validation\Traits\ValidableTrait;
 final class Title implements StringValue
 {
     use ValidableTrait;
+
     private string $title;
 
     public function __construct(string $title)

@@ -6,8 +6,8 @@ namespace App\BookStore\Framework\Api\State\Processor;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
-use App\BookStore\Application\Input\AuthorInput;
 use App\BookStore\Application\UseCase\Update\UpdateAuthor;
+use App\BookStore\Domain\Input\AuthorInput;
 use League\Tactician\CommandBus;
 
 final class UpdateAuthorProcessor implements ProcessorInterface

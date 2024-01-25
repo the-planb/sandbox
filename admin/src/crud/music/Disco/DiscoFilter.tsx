@@ -5,7 +5,7 @@ import * as Music from '@crud/music'
 export const DiscoFilter = (props: Omit<EntityFilterProps, 'children'>) => {
   return (
     <EntityFilter {...props}>
-      <Music.DiscoInput allowCreate={false} />
+      <Music.DiscoSelect allowCreate={false} />
     </EntityFilter>
   )
 }

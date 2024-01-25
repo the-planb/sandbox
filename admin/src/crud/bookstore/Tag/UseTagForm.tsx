@@ -8,12 +8,7 @@ import {
 import React, { FC } from 'react'
 import * as BookStore from '@crud/bookstore'
 import { FormAction, useTranslate } from '@refinedev/core'
-import {
-  formCss as css,
-  FooterButtons,
-  HeaderButtons,
-  normalizeFormProps,
-} from '@planb/components'
+import { formCss as css, FooterButtons, HeaderButtons } from '@planb/components'
 import { FormProps } from 'antd'
 
 type UseTagFormProps = UseFormProps<BookStore.Tag> & { action: FormAction }
@@ -23,18 +18,13 @@ type UseTagFormReturnType = {
 
 export const useTagForm = (props: UseTagFormProps): UseTagFormReturnType => {
   const t = useTranslate()
-  const {
-    formProps: _formProps,
-    formLoading,
-    form,
-    onFinish,
-    redirect,
-  } = useForm<BookStore.Tag>({
-    resource: 'bookstore/tags',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
+  const { formProps, formLoading, form, onFinish, redirect } =
+    useForm<BookStore.Tag>({
+      resource: 'bookstore/tags',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   const wrapperProps = {
     className: css.wrapper,
@@ -48,8 +38,6 @@ export const useTagForm = (props: UseTagFormProps): UseTagFormReturnType => {
     resource: 'bookstore/tags',
   }
 
-  const formProps: FormProps = normalizeFormProps(_formProps)
-
   const Form =
     props.action === 'create'
       ? (props: Partial<UseFormReturnType>) => {
@@ -62,7 +50,7 @@ export const useTagForm = (props: UseTagFormProps): UseTagFormReturnType => {
                 headerButtons={<HeaderButtons resource={'bookstore/tags'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <BookStore.TagForm {...formProps} />
+                <BookStore.TagForm {...formProps} layout='vertical' />
               </Create>
             </>
           )
@@ -77,7 +65,7 @@ export const useTagForm = (props: UseTagFormProps): UseTagFormReturnType => {
                 headerButtons={<HeaderButtons resource={'bookstore/tags'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <BookStore.TagForm {...formProps} />
+                <BookStore.TagForm {...formProps} layout='vertical' />
               </Edit>
             </>
           )

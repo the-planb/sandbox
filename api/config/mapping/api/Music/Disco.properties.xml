@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <properties xmlns="https://api-platform.com/schema/metadata/properties-3.0">
-  <property resource="App\Music\Application\Input\DiscoInput" name="title">
+  <property resource="App\Music\Domain\Input\DiscoInput" name="title">
     <openapiContext>
       <values>
         <value name="type">object</value>
@@ -8,7 +8,7 @@
       </values>
     </openapiContext>
   </property>
-  <property resource="App\Music\Application\Input\DiscoInput" name="songs">
+  <property resource="App\Music\Domain\Input\DiscoInput" name="songs">
     <openapiContext>
       <values>
         <value name="type">object</value>

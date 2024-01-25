@@ -37,7 +37,8 @@ const build = (
 
   const withError = unique(
     fields.flatMap((item) => {
-      return map[item][type]
+      //return map[item][type];
+      return map[item] ? map[item][type] : ''
     }),
   )
 

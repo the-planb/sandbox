@@ -58,7 +58,7 @@ final class DiscoDoctrineRepository extends ServiceEntityRepository implements D
     public function totalItems(Criteria $criteria = null): int
     {
         return $this->criteriaConverter
-            ->count($criteria)
+            ->count($criteria ?? Criteria::empty())
             ->getSingleScalarResult()
         ;
     }

@@ -8,7 +8,6 @@ use App\BookStore\Domain\Model\Author;
 use App\BookStore\Domain\Model\AuthorId;
 use App\BookStore\Domain\Model\AuthorList;
 use App\BookStore\Domain\Repository\AuthorRepository;
-use App\BookStore\Framework\Doctrine\Filter\FullNameFilter;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
@@ -22,7 +21,6 @@ final class AuthorDoctrineRepository extends ServiceEntityRepository implements 
     {
         parent::__construct($registry, Author::class);
         $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
-            'name' => new FullNameFilter(),
         ]);
     }
 
@@ -60,7 +58,7 @@ final class AuthorDoctrineRepository extends ServiceEntityRepository implements 
     public function totalItems(Criteria $criteria = null): int
     {
         return $this->criteriaConverter
-            ->count($criteria)
+            ->count($criteria ?? Criteria::empty())
             ->getSingleScalarResult()
         ;
     }

@@ -4,34 +4,36 @@ declare(strict_types=1);
 
 namespace App\BookStore\Domain\Model;
 
+use App\BookStore\Domain\Input\TagListInput;
+use App\BookStore\Domain\Model\Traits\TagCollectionTrait;
 use App\BookStore\Domain\Model\VO\Price;
 use App\BookStore\Domain\Model\VO\Title;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use PlanB\Domain\Model\Entity;
 
-class Book
+class Book implements Entity
 {
+    use TagCollectionTrait;
+
     private BookId $id;
     private Title $title;
     private ?Price $price;
     private Author $author;
-    private Collection $tags;
 
-    public function __construct(Title $title, ?Price $price, Author $author, TagList $tags)
+    public function __construct(Title $title, ?Price $price, Author $author, TagListInput $tags)
     {
         $this->id = new BookId();
         $this->title = $title;
         $this->price = $price;
         $this->author = $author;
-        $this->tags = new ArrayCollection($tags->toArray());
+        $this->tagCollection($tags);
     }
 
-    public function update(Title $title, ?Price $price, Author $author, TagList $tags): self
+    public function update(Title $title, ?Price $price, Author $author, TagListInput $tags): self
     {
         $this->title = $title;
         $this->price = $price;
         $this->author = $author;
-        $this->tags = new ArrayCollection($tags->toArray());
+        $this->tagCollection($tags);
 
         return $this;
     }
@@ -54,10 +56,5 @@ class Book
     public function getAuthor(): Author
     {
         return $this->author;
-    }
-
-    public function getTags(): TagList
-    {
-        return TagList::collect($this->tags);
     }
 }

@@ -2,24 +2,26 @@
 App\BookStore\Domain\Model\Book:
   attributes:
     id:
-      groups: [read.bookstore.book]
+      groups: [get.item, get.collection]
     title:
-      groups: [read.bookstore.book]
+      groups: [get.item, get.collection]
     price:
-      groups: [read.bookstore.book]
+      groups: [get.item, get.collection]
     author:
-      groups: [read.bookstore.book]
+      groups: [get.item, get.collection]
     tags:
-      groups: [read.bookstore.book]
+      groups: [get.item, get.collection]
 
 
-App\BookStore\Application\Input\BookInput:
+App\BookStore\Domain\Input\BookInput:
   attributes:
+    id:
+      groups: [post, put]
     title:
-      groups: [write.bookstore.book]
+      groups: [post, put]
     price:
-      groups: [write.bookstore.book]
+      groups: [post, put]
     author:
-      groups: [write.bookstore.book]
+      groups: [post, put]
     tags:
-      groups: [write.bookstore.book]
+      groups: [post, put]

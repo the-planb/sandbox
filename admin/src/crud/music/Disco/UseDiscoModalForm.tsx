@@ -1,7 +1,6 @@
 import { UseFormProps, UseFormReturnType, useModalForm } from '@refinedev/antd'
 import React, { FC, useCallback } from 'react'
 import * as Music from '@crud/music'
-import { normalizeFormProps } from '@planb/components'
 import { BaseKey, FormAction } from '@refinedev/core'
 import { FormProps, Modal, Spin } from 'antd'
 
@@ -14,19 +13,13 @@ type UseDiscoModalFormReturnType = {
 export const useDiscoModalForm = (
   props: UseDiscoModalFormProps,
 ): UseDiscoModalFormReturnType => {
-  const {
-    show,
-    modalProps,
-    formProps: _formProps,
-    formLoading,
-  } = useModalForm<Music.Disco>({
-    resource: 'music/discos',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
-
-  const formProps: FormProps = normalizeFormProps(_formProps)
+  const { show, modalProps, formProps, formLoading } =
+    useModalForm<Music.Disco>({
+      resource: 'music/discos',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   return {
     show,
@@ -34,7 +27,7 @@ export const useDiscoModalForm = (
       return (
         <Modal {...modalProps}>
           <Spin spinning={formLoading}>
-            <Music.DiscoForm {...formProps} />
+            <Music.DiscoForm {...formProps} layout='vertical' />
           </Spin>
         </Modal>
       )

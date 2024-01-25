@@ -6,8 +6,8 @@ namespace App\Music\Framework\Api\State\Processor;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
-use App\Music\Application\Input\DiscoInput;
 use App\Music\Application\UseCase\Update\UpdateDisco;
+use App\Music\Domain\Input\DiscoInput;
 use League\Tactician\CommandBus;
 
 final class UpdateDiscoProcessor implements ProcessorInterface

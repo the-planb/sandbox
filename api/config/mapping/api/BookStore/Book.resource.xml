@@ -3,40 +3,58 @@
   <resource class="App\BookStore\Domain\Model\Book" routePrefix="bookstore" shortName="Book">
     <operations>
       <operation class="ApiPlatform\Metadata\Get" provider="App\BookStore\Framework\Api\State\Provider\GetBookItemProvider">
+        <normalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>get.item</value>
+              </values>
+            </value>
+          </values>
+        </normalizationContext>
         <cacheHeaders>
           <cacheHeader name="shared_max_age">3600</cacheHeader>
           <cacheHeader name="max_age">10</cacheHeader>
         </cacheHeaders>
       </operation>
       <operation class="ApiPlatform\Metadata\GetCollection" provider="App\BookStore\Framework\Api\State\Provider\GetBookCollectionProvider">
+        <normalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>get.collection</value>
+              </values>
+            </value>
+          </values>
+        </normalizationContext>
         <cacheHeaders>
           <cacheHeader name="shared_max_age">3600</cacheHeader>
           <cacheHeader name="max_age">10</cacheHeader>
         </cacheHeaders>
       </operation>
-      <operation class="ApiPlatform\Metadata\Post" input="App\BookStore\Application\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\CreateBookProcessor"/>
-      <operation class="ApiPlatform\Metadata\Put" input="App\BookStore\Application\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\UpdateBookProcessor"/>
+      <operation class="ApiPlatform\Metadata\Post" input="App\BookStore\Domain\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\CreateBookProcessor">
+        <denormalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>post</value>
+              </values>
+            </value>
+          </values>
+        </denormalizationContext>
+      </operation>
+      <operation class="ApiPlatform\Metadata\Put" input="App\BookStore\Domain\Input\BookInput" processor="App\BookStore\Framework\Api\State\Processor\UpdateBookProcessor">
+        <denormalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>put</value>
+              </values>
+            </value>
+          </values>
+        </denormalizationContext>
+      </operation>
       <operation class="ApiPlatform\Metadata\Delete" processor="App\BookStore\Framework\Api\State\Processor\DeleteBookProcessor"/>
     </operations>
-    <normalizationContext>
-      <values>
-        <value name="groups">
-          <values>
-            <value>read.bookstore.book</value>
-            <value>read</value>
-          </values>
-        </value>
-      </values>
-    </normalizationContext>
-    <denormalizationContext>
-      <values>
-        <value name="groups">
-          <values>
-            <value>write.bookstore.book</value>
-            <value>write</value>
-          </values>
-        </value>
-      </values>
-    </denormalizationContext>
   </resource>
 </resources>

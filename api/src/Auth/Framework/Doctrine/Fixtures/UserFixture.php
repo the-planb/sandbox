@@ -32,7 +32,7 @@ final class UserFixture extends UseCaseFixture
         });
     }
 
-    protected function allowedEnvironments(): array
+    public function allowedEnvironments(): array
     {
         return ['dev'];
     }

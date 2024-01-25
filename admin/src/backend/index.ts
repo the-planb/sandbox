@@ -4,8 +4,15 @@ export const i18nNamespaces = [
   'bookstore/tags',
   'bookstore/books',
   'bookstore/authors',
+  'bookstore/vo/fullName',
+  'bookstore/vo/price',
+  'bookstore/vo/tagName',
+  'bookstore/vo/title',
   'music/discos',
   'music/songs',
+  'music/vo/discoName',
+  'music/vo/duration',
+  'music/vo/songName',
 ]
 
 export const resources = (lang: string) => {

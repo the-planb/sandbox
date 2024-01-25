@@ -4,27 +4,31 @@ declare(strict_types=1);
 
 namespace App\Music\Domain\Model;
 
+use App\Music\Domain\Input\SongListInput;
+use App\Music\Domain\Model\Traits\SongCollectionTrait;
 use App\Music\Domain\Model\VO\DiscoName;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use PlanB\Domain\Model\Entity;
 
-class Disco
+    
+
+class Disco implements Entity
 {
+    use SongCollectionTrait;
+
     private DiscoId $id;
     private DiscoName $title;
-    private Collection $songs;
 
-    public function __construct(DiscoName $title, SongList $songs)
+    public function __construct(DiscoName $title, SongListInput $songs)
     {
         $this->id = new DiscoId();
         $this->title = $title;
-        $this->songs = new ArrayCollection($songs->toArray());
+        $this->songCollection($songs);
     }
 
-    public function update(DiscoName $title, SongList $songs): self
+    public function update(DiscoName $title, SongListInput $songs): self
     {
         $this->title = $title;
-        $this->songs = new ArrayCollection($songs->toArray());
+        $this->songCollection($songs);
 
         return $this;
     }
@@ -37,10 +41,5 @@ class Disco
     public function getTitle(): DiscoName
     {
         return $this->title;
-    }
-
-    public function getSongs(): SongList
-    {
-        return SongList::collect($this->songs);
     }
 }

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\BookStore\Doubles\Domain\Model;
 
 use App\BookStore\Domain\Model\Author;
+use App\BookStore\Domain\Model\AuthorId;
+use App\BookStore\Domain\Model\VO\FullName;
 use PlanB\Framework\Testing\Double;
 use Prophecy\Prophecy\ObjectProphecy;
 
@@ -33,6 +35,12 @@ final class AuthorDouble extends Double
         ;
 
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withId(new AuthorId());
+        $this->withName($this->mock(FullName::class)->reveal());
     }
 
     protected function classNameOrInterface(): string

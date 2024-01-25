@@ -7,6 +7,9 @@
       <cascade>
         <cascade-persist/>
       </cascade>
+      <order-by>
+        <order-by-field name="id"/>
+      </order-by>
     </one-to-many>
   </entity>
 </doctrine-mapping>

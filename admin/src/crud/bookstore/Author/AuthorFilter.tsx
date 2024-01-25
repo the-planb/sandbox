@@ -5,7 +5,7 @@ import * as BookStore from '@crud/bookstore'
 export const AuthorFilter = (props: Omit<EntityFilterProps, 'children'>) => {
   return (
     <EntityFilter {...props}>
-      <BookStore.AuthorInput allowCreate={false} />
+      <BookStore.AuthorSelect allowCreate={false} />
     </EntityFilter>
   )
 }

@@ -2,12 +2,14 @@
 App\BookStore\Domain\Model\Tag:
   attributes:
     id:
-      groups: [read.bookstore.tag, read.bookstore.book]
+      groups: [get.item, get.collection]
     name:
-      groups: [read.bookstore.tag, read.bookstore.book]
+      groups: [get.item, get.collection]
 
 
-App\BookStore\Application\Input\TagInput:
+App\BookStore\Domain\Input\TagInput:
   attributes:
+    id:
+      groups: [post, put]
     name:
-      groups: [write.bookstore.tag]
+      groups: [post, put]

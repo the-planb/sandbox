@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "title": {
+      "label": "**titles.fields.title**",
+      "placeholder": "**titles.fields.title**"
+    }
+  }
+}

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\BookStore\Application\UseCase\Update;
 
-use App\BookStore\Application\Input\BookInput;
+use App\BookStore\Domain\Input\BookInput;
+use App\BookStore\Domain\Input\TagListInput;
 use App\BookStore\Domain\Model\Author;
 use App\BookStore\Domain\Model\BookId;
-use App\BookStore\Domain\Model\TagList;
 use App\BookStore\Domain\Model\VO\Price;
 use App\BookStore\Domain\Model\VO\Title;
 
@@ -16,7 +16,7 @@ final class UpdateBook
     private Title $title;
     private ?Price $price;
     private Author $author;
-    private TagList $tags;
+    private TagListInput $tags;
 
     private BookId $id;
 

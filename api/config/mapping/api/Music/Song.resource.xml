@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<resources xmlns="https://api-platform.com/schema/metadata/resources-3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://api-platform.com/schema/metadata/resources-3.0 https://api-platform.com/schema/metadata/resources-3.0.xsd">
+  <resource class="App\Music\Domain\Model\Song" routePrefix="music" shortName="Song">
+    <operations>
+      <operation class="ApiPlatform\Metadata\Get" openapi="false">
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
+      <operation class="ApiPlatform\Metadata\GetCollection" openapi="false">
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
+      <operation class="ApiPlatform\Metadata\Post" input="App\Music\Domain\Input\SongInput" openapi="false"/>
+      <operation class="ApiPlatform\Metadata\Put" input="App\Music\Domain\Input\SongInput" openapi="false"/>
+      <operation class="ApiPlatform\Metadata\Delete" openapi="false"/>
+    </operations>
+  </resource>
+</resources>

@@ -78,14 +78,14 @@
 #           split_path .php
 #       }
 #       rewrite @indexFiles {http.matchers.file.relative}
-
+#
 #        # FrankenPHP!
 #        @phpFiles path *.php
 #        php @phpFiles
-        #
+#
 #        encode zstd gzip
 #        file_server
-        #
+#
 #        respond 404
 #===== sin cache ============
 

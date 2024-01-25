@@ -22,7 +22,7 @@ class DiscoTest extends TestCase
     public function test_it_can_be_instantiated_properly()
     {
         $title = $this->doubleDiscoName();
-        $songs = $this->doubleSongList();
+        $songs = $this->doubleSongListInput();
 
         $disco = new Disco(...[
             'title' => $title,
@@ -44,7 +44,7 @@ class DiscoTest extends TestCase
         ;
 
         $title = $this->doubleDiscoName();
-        $songs = $this->doubleSongList();
+        $songs = $this->doubleSongListInput();
         $disco->update(...[
             'title' => $title,
             'songs' => $songs,

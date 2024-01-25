@@ -20,10 +20,10 @@
       "filter": "Duraci\u00f3n"
     },
     "album": {
-      "label": "Disco",
-      "placeholder": "Disco",
-      "column": "Disco",
-      "filter": "Disco"
+      "label": "Album",
+      "placeholder": "Album",
+      "column": "Album",
+      "filter": "Album"
     }
   },
   "titles": {

@@ -2,12 +2,14 @@
 App\BookStore\Domain\Model\Author:
   attributes:
     id:
-      groups: [read.bookstore.author, read.bookstore.book]
+      groups: [get.item, get.collection]
     name:
-      groups: [read.bookstore.author, read.bookstore.book]
+      groups: [get.item, get.collection]
 
 
-App\BookStore\Application\Input\AuthorInput:
+App\BookStore\Domain\Input\AuthorInput:
   attributes:
+    id:
+      groups: [post, put]
     name:
-      groups: [write.bookstore.author]
+      groups: [post, put]

@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "name": {
+      "label": "T\u00edtulo",
+      "placeholder": "T\u00edtulo"
+    }
+  }
+}

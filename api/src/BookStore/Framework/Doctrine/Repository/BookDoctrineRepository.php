@@ -58,7 +58,7 @@ final class BookDoctrineRepository extends ServiceEntityRepository implements Bo
     public function totalItems(Criteria $criteria = null): int
     {
         return $this->criteriaConverter
-            ->count($criteria)
+            ->count($criteria ?? Criteria::empty())
             ->getSingleScalarResult()
         ;
     }

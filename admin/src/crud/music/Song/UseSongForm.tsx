@@ -8,12 +8,7 @@ import {
 import React, { FC } from 'react'
 import * as Music from '@crud/music'
 import { FormAction, useTranslate } from '@refinedev/core'
-import {
-  formCss as css,
-  FooterButtons,
-  HeaderButtons,
-  normalizeFormProps,
-} from '@planb/components'
+import { formCss as css, FooterButtons, HeaderButtons } from '@planb/components'
 import { FormProps } from 'antd'
 
 type UseSongFormProps = UseFormProps<Music.Song> & { action: FormAction }
@@ -23,18 +18,13 @@ type UseSongFormReturnType = {
 
 export const useSongForm = (props: UseSongFormProps): UseSongFormReturnType => {
   const t = useTranslate()
-  const {
-    formProps: _formProps,
-    formLoading,
-    form,
-    onFinish,
-    redirect,
-  } = useForm<Music.Song>({
-    resource: 'music/songs',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
+  const { formProps, formLoading, form, onFinish, redirect } =
+    useForm<Music.Song>({
+      resource: 'music/songs',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   const wrapperProps = {
     className: css.wrapper,
@@ -48,8 +38,6 @@ export const useSongForm = (props: UseSongFormProps): UseSongFormReturnType => {
     resource: 'music/songs',
   }
 
-  const formProps: FormProps = normalizeFormProps(_formProps)
-
   const Form =
     props.action === 'create'
       ? (props: Partial<UseFormReturnType>) => {
@@ -62,7 +50,7 @@ export const useSongForm = (props: UseSongFormProps): UseSongFormReturnType => {
                 headerButtons={<HeaderButtons resource={'music/songs'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <Music.SongForm {...formProps} />
+                <Music.SongForm {...formProps} layout='vertical' />
               </Create>
             </>
           )
@@ -77,7 +65,7 @@ export const useSongForm = (props: UseSongFormProps): UseSongFormReturnType => {
                 headerButtons={<HeaderButtons resource={'music/songs'} />}
                 footerButtons={<FooterButtons {...footerButtonsProps} />}
                 isLoading={formLoading}>
-                <Music.SongForm {...formProps} />
+                <Music.SongForm {...formProps} layout='vertical' />
               </Edit>
             </>
           )

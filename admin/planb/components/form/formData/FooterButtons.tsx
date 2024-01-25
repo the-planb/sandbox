@@ -8,6 +8,7 @@ import {
 import { DownOutlined } from '@ant-design/icons'
 import React, { useEffect } from 'react'
 import { DeleteButton, UseFormReturnType } from '@refinedev/antd'
+import { recordWithUris } from '@planb/components'
 
 type ActionButtonsProps = {
   form: FormInstance
@@ -28,7 +29,10 @@ export const FooterButtons = ({
 
   const handleClick = async (action: RedirectAction) => {
     const values = form.getFieldsValue()
-    const data = await onFinish(values)
+
+    // const normalized = recordWithUris(values)
+    const normalized = values
+    const data = await onFinish(normalized)
 
     redirect(action, data?.data?.id)
   }

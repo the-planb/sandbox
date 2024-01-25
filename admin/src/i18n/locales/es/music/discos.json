@@ -2,10 +2,10 @@
   "label": "Discos",
   "fields": {
     "id": {
-      "label": "Id",
-      "placeholder": "Id",
-      "column": "Id",
-      "filter": "Id"
+      "label": "ID",
+      "placeholder": "ID",
+      "column": "ID",
+      "filter": "ID"
     },
     "title": {
       "label": "T\u00edtulo",
@@ -29,6 +29,7 @@
     "main": "Principal"
   },
   "fieldsets": {
-    "data": "General"
+    "data": "General",
+    "songs": "Canciones"
   }
 }

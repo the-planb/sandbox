@@ -58,7 +58,7 @@ final class TagDoctrineRepository extends ServiceEntityRepository implements Tag
     public function totalItems(Criteria $criteria = null): int
     {
         return $this->criteriaConverter
-            ->count($criteria)
+            ->count($criteria ?? Criteria::empty())
             ->getSingleScalarResult()
         ;
     }

@@ -2,16 +2,18 @@
 App\Music\Domain\Model\Disco:
   attributes:
     id:
-      groups: [read.music.disco]
+      groups: [get.item, get.collection]
     title:
-      groups: [read.music.disco]
+      groups: [get.item, get.collection]
     songs:
-      groups: [read.music.disco]
+      groups: [get.item]
 
 
-App\Music\Application\Input\DiscoInput:
+App\Music\Domain\Input\DiscoInput:
   attributes:
+    id:
+      groups: [post, put, write]
     title:
-      groups: [write.music.disco]
+      groups: [post, put, write]
     songs:
-      groups: [write.music.disco]
+      groups: [post, put, write]

@@ -24,7 +24,7 @@ services:
     App\Auth\Framework\Api\OpenApi\JwtDecorator:
         decorates: 'api_platform.openapi.factory'
         arguments: [ '@.inner' ]
-    
+
     jwt_event_listener:
         class: App\Auth\Framework\EventListener\JWTCreatedListener
         tags:

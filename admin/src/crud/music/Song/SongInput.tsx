@@ -1,27 +1,33 @@
-import { type SelectProps, Space, Tag } from 'antd'
+import { Form, FormItemProps, type SelectProps, Space, Tag } from 'antd'
 import React from 'react'
-import { EntitySelect, type RemoteFilter } from '@planb/components'
+import { EntitySelect, type RemoteFilter, recordToId } from '@planb/components'
 import * as Music from '@crud/music'
 
+type SongInputProps = FormItemProps & {
+  selectProps?: SelectProps & { allowCreate?: boolean }
+}
+
 export const SongInput = ({
-  allowCreate = true,
+  name,
+  required,
+  selectProps,
   ...props
-}: SelectProps & { allowCreate?: boolean }) => {
+}: SongInputProps) => {
   const itemToOption = (song: Music.Song) => ({
     label: Music.songRenderer(song),
     value: song['@id'],
   })
 
   return (
-    <EntitySelect
+    <Form.Item
       {...props}
-      resource={'music/songs'}
-      itemToOption={itemToOption}
-      remote={{
-        field: 'name',
-        operator: 'contains',
-      }}
-      useCreateForm={allowCreate ? Music.useSongModalForm : undefined}
-    />
+      name={name}
+      rules={[
+        {
+          required,
+        },
+      ]}>
+      <Music.SongSelect {...selectProps} />
+    </Form.Item>
   )
 }

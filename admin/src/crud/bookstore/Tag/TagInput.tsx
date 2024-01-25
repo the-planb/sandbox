@@ -1,27 +1,33 @@
-import { type SelectProps, Space, Tag } from 'antd'
+import { Form, FormItemProps, type SelectProps, Space, Tag } from 'antd'
 import React from 'react'
-import { EntitySelect, type RemoteFilter } from '@planb/components'
+import { EntitySelect, type RemoteFilter, recordToId } from '@planb/components'
 import * as BookStore from '@crud/bookstore'
 
+type TagInputProps = FormItemProps & {
+  selectProps?: SelectProps & { allowCreate?: boolean }
+}
+
 export const TagInput = ({
-  allowCreate = true,
+  name,
+  required,
+  selectProps,
   ...props
-}: SelectProps & { allowCreate?: boolean }) => {
+}: TagInputProps) => {
   const itemToOption = (tag: BookStore.Tag) => ({
     label: BookStore.tagRenderer(tag),
     value: tag['@id'],
   })
 
   return (
-    <EntitySelect
+    <Form.Item
       {...props}
-      resource={'bookstore/tags'}
-      itemToOption={itemToOption}
-      remote={{
-        field: 'name',
-        operator: 'contains',
-      }}
-      useCreateForm={allowCreate ? BookStore.useTagModalForm : undefined}
-    />
+      name={name}
+      rules={[
+        {
+          required,
+        },
+      ]}>
+      <BookStore.TagSelect {...selectProps} />
+    </Form.Item>
   )
 }

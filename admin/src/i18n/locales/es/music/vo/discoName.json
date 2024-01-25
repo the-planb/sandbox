@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "name": {
+      "label": "Nombre",
+      "placeholder": "Nombre"
+    }
+  }
+}

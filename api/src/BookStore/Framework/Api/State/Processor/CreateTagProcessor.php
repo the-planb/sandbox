@@ -6,8 +6,8 @@ namespace App\BookStore\Framework\Api\State\Processor;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
-use App\BookStore\Application\Input\TagInput;
 use App\BookStore\Application\UseCase\Create\CreateTag;
+use App\BookStore\Domain\Input\TagInput;
 use League\Tactician\CommandBus;
 
 final class CreateTagProcessor implements ProcessorInterface

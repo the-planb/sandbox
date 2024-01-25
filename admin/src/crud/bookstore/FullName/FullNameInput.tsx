@@ -1,41 +1,35 @@
-import { Input, InputNumber, type InputProps, Space } from 'antd'
-import { type ChangeEvent } from 'react'
+import { Form, Input, InputNumber, Space } from 'antd'
+import { FormItemProps } from 'antd/es/form/FormItem'
 import { useTranslate } from '@refinedev/core'
 import * as BookStore from '@crud/bookstore'
 
-interface FullNameInputProps extends Omit<InputProps, 'value' | 'onChange'> {
-  value?: BookStore.FullName
-  onChange?: (data: BookStore.FullName) => void
-}
-
-export const FullNameInput = ({ value, onChange }: FullNameInputProps) => {
-  const triggerChange = (data: Partial<BookStore.FullName>) => {
-    onChange?.({
-      ...(value as BookStore.FullName),
-      ...data,
-    })
-  }
+export const FullNameInput = ({ name, required, ...props }: FormItemProps) => {
   const t = useTranslate()
   return (
-    <Space>
-      <Input
-        value={value?.firstName}
-        placeholder={t('bookstore.fullname.firstname')}
-        onChange={(el: ChangeEvent<HTMLInputElement>) => {
-          triggerChange({
-            firstName: el.target.value,
-          })
-        }}
-      />
-      <Input
-        value={value?.lastName}
-        placeholder={t('bookstore.fullname.lastname')}
-        onChange={(el: ChangeEvent<HTMLInputElement>) => {
-          triggerChange({
-            lastName: el.target.value,
-          })
-        }}
-      />
-    </Space>
+    <Form.Item
+      {...props}
+      rules={[
+        {
+          required,
+          validator: BookStore.fullNameValidator,
+        },
+      ]}>
+      <Space>
+        <Form.Item noStyle name={[name, 'firstName']}>
+          <Input
+            placeholder={t('fields.firstName.placeholder', {
+              ns: 'bookstore/vo/fullName',
+            })}
+          />
+        </Form.Item>
+        <Form.Item noStyle name={[name, 'lastName']}>
+          <Input
+            placeholder={t('fields.lastName.placeholder', {
+              ns: 'bookstore/vo/fullName',
+            })}
+          />
+        </Form.Item>
+      </Space>
+    </Form.Item>
   )
 }

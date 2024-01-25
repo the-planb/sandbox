@@ -6,3 +6,12 @@ App\Music\Domain\Model\Disco:
       - App\Music\Domain\Model\VO\Constraint\DiscoNameConstraint: ~
     songs:
       - Symfony\Component\Validator\Constraints\NotNull: ~
+
+
+App\Music\Domain\Input\DiscoInput:
+  properties:
+    title:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Music\Domain\Model\VO\Constraint\DiscoNameConstraint: ~
+    songs:
+      - Symfony\Component\Validator\Constraints\NotNull: ~

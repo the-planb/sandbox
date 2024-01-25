@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Tests\Music\Doubles\Domain\Model;
 
+use App\Music\Domain\Model\Disco;
 use App\Music\Domain\Model\Song;
+use App\Music\Domain\Model\SongId;
+use App\Music\Domain\Model\VO\Duration;
+use App\Music\Domain\Model\VO\SongName;
 use PlanB\Framework\Testing\Double;
 use Prophecy\Prophecy\ObjectProphecy;
 
@@ -53,6 +57,16 @@ final class SongDouble extends Double
         ;
 
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withId(new SongId());
+        $this->withTitle($this->mock(SongName::class)->reveal());
+
+        $this->withDuration($this->mock(Duration::class)->reveal());
+
+        $this->withAlbum($this->mock(Disco::class)->reveal());
     }
 
     protected function classNameOrInterface(): string

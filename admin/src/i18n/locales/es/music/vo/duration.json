@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "duration": {
+      "label": "Duraci\u00f3n",
+      "placeholder": "Duraci\u00f3n"
+    }
+  }
+}

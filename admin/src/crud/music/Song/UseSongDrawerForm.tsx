@@ -7,7 +7,6 @@ import {
 } from '@refinedev/antd'
 import React, { FC, useCallback } from 'react'
 import * as Music from '@crud/music'
-import { normalizeFormProps } from '@planb/components'
 import { BaseKey, FormAction, useTranslate } from '@refinedev/core'
 import { FormProps, Drawer, Spin } from 'antd'
 
@@ -22,20 +21,13 @@ export const useSongDrawerForm = (
 ): UseSongDrawerFormReturnType => {
   const t = useTranslate()
 
-  const {
-    show,
-    saveButtonProps,
-    drawerProps,
-    formProps: _formProps,
-    formLoading,
-  } = useDrawerForm<Music.Song>({
-    resource: 'music/songs',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
-
-  const formProps: FormProps = normalizeFormProps(_formProps)
+  const { show, saveButtonProps, drawerProps, formProps, formLoading } =
+    useDrawerForm<Music.Song>({
+      resource: 'music/songs',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   const Form =
     props.action === 'create'
@@ -51,7 +43,7 @@ export const useSongDrawerForm = (
                 breadcrumb={false}
                 goBack={false}
                 title={false}>
-                <Music.SongForm {...formProps} />
+                <Music.SongForm {...formProps} layout='vertical' />
               </Create>
             </Drawer>
           )
@@ -68,7 +60,7 @@ export const useSongDrawerForm = (
                 breadcrumb={false}
                 goBack={false}
                 title={false}>
-                <Music.SongForm {...formProps} />
+                <Music.SongForm {...formProps} layout='vertical' />
               </Edit>
             </Drawer>
           )

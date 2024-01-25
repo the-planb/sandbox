@@ -9,10 +9,13 @@
         <cascade-persist/>
       </cascade>
     </many-to-one>
-    <many-to-many field="tags" target-entity="App\BookStore\Domain\Model\Tag" fetch="EAGER" orphan-removal="true" >
+    <many-to-many field="tags" target-entity="App\BookStore\Domain\Model\Tag" fetch="EAGER">
       <cascade>
         <cascade-persist/>
       </cascade>
+      <order-by>
+        <order-by-field name="id"/>
+      </order-by>
     </many-to-many>
   </entity>
 </doctrine-mapping>

@@ -2,4 +2,4 @@
 App\BookStore\Domain\Model\VO\Price:
   attributes:
     amount:
-      groups: [read, write]
+      groups: [get.item, get.collection, post, put]

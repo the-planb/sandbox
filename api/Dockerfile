@@ -69,7 +69,7 @@ RUN set -eux; \
 	install-php-extensions \
     	xdebug \
     ;
-COPY --link frankenphp/Caddyfile.dev /etc/caddy/Caddyfile
+COPY --link frankenphp/Caddyfile /etc/caddy/Caddyfile
 COPY --link frankenphp/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/
 
 CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]

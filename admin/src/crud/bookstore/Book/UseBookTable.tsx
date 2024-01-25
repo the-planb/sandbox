@@ -19,7 +19,7 @@ type UseAuxFormProps = {
 }
 
 type UseAuxFormReturnType = {
-  show: (id?: BaseKey) => void
+  show?: (id?: BaseKey) => void
   Form: FC<Partial<UseFormReturnType>>
 }
 
@@ -29,7 +29,7 @@ const useAuxForm = ({
 }: UseAuxFormProps): UseAuxFormReturnType => {
   if (view === 'none') {
     return {
-      show: () => {},
+      show: undefined,
       Form: () => <></>,
     }
   }
@@ -60,6 +60,7 @@ export const useBookTable = (
   const { listProps, flexProps, tableProps, searchProps, hasFilters } =
     useDataTable<BookStore.Book>({
       resource: 'bookstore/books',
+
       columns: [
         {
           dataIndex: 'title',
@@ -102,19 +103,21 @@ export const useBookTable = (
       headerButtons: (
         <>
           {createButton({
-            resource: 'bookstore/tags',
-            //handle: create,
+            resource: 'bookstore/books',
+            handle: create,
           })}
         </>
       ),
       actions: {
-        edit: 'default',
+        //            edit: 'default',
+
+        edit: (record: BookStore.Book) =>
+          editButton({
+            resource: 'bookstore/books',
+            record,
+            handle: edit,
+          }),
         delete: 'default',
-        //          edit: (record: BookStore.Book)=>editButton({
-        //              resource: 'bookstore/tags',
-        //              record,
-        //              handle: edit
-        //          }),
         //          otro: (record: BookStore.Book) => {
         //              return <>...</>
         //          }

@@ -5,7 +5,7 @@ import * as BookStore from '@crud/bookstore'
 export const TagFilter = (props: Omit<EntityFilterProps, 'children'>) => {
   return (
     <EntityFilter {...props}>
-      <BookStore.TagInput allowCreate={false} />
+      <BookStore.TagSelect allowCreate={false} />
     </EntityFilter>
   )
 }

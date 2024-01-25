@@ -22,33 +22,22 @@ const Main = () => {
       <Fieldset
         legend={t('fieldsets.data', { ns: 'music/discos' })}
         id={'data'}>
-        <Form.Item
+        <Music.DiscoNameInput
+          required={true}
           label={t('fields.title.label', { ns: 'music/discos' })}
           name={'title'}
-          rules={[
-            {
-              required: true,
-              validator: Music.discoNameValidator,
-            },
-          ]}>
-          <Input
-            placeholder={t('fields.title.placeholder', { ns: 'music/discos' })}
-          />
-        </Form.Item>
-
-        {/*<Form.Item*/}
-        {/*  label={t('fields.songs.label', { ns: 'music/discos' })}*/}
-        {/*  name={'songs'}*/}
-        {/*  rules={[*/}
-        {/*    {*/}
-        {/*      required: true,*/}
-        {/*    },*/}
-        {/*  ]}>*/}
-        {/*  <Music.SongInput mode='multiple' />*/}
-        {/*</Form.Item>*/}
+          className={'fullrow'}
+        />
       </Fieldset>
-      <Fieldset legend='Extra Fieldset' id={'extra'}>
-        distribuir los campos en varios fieldsets ...
+      <Fieldset
+        legend={t('fieldsets.songs', { ns: 'music/discos' })}
+        id={'songs'}>
+        <Music.SongListInput
+          required={true}
+          label={t('fields.songs.label', { ns: 'music/discos' })}
+          name={'songs'}
+          className={'fullrow'}
+        />
       </Fieldset>
     </Toc>
   )

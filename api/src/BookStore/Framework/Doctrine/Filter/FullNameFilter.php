@@ -13,39 +13,28 @@ final class FullNameFilter extends CustomFilter
 {
     protected function eq(Expr $expr, string $field, mixed $value): ?string
     {
-        return (string) $expr->orX(
-            $this->iEq($expr, "{$field}.firstName", $value),
-            $this->iEq($expr, "{$field}.lastName", $value),
-        );
+        throw InvalidFilterException::make(Operator::EQUALS, $field);
+        // return (string)$expr->orX(...);
     }
 
     protected function neq(Expr $expr, string $field, mixed $value): ?string
     {
-        return (string) $expr->not($this->eq($expr, $field, $value));
+        throw InvalidFilterException::make(Operator::NOT_EQUALS, $field);
     }
 
     protected function contains(Expr $expr, string $field, mixed $value): ?string
     {
-        return (string) $expr->orX(
-            $this->iLike($expr, "{$field}.firstName", "%{$value}%"),
-            $this->iLike($expr, "{$field}.lastName", "%{$value}%"),
-        );
+        throw InvalidFilterException::make(Operator::CONTAINS, $field);
     }
 
     protected function startsWith(Expr $expr, string $field, mixed $value): ?string
     {
-        return (string) $expr->orX(
-            $this->iLike($expr, "{$field}.firstName", "{$value}%"),
-            $this->iLike($expr, "{$field}.lastName", "{$value}%"),
-        );
+        throw InvalidFilterException::make(Operator::STARTS_WITH, $field);
     }
 
     protected function endsWith(Expr $expr, string $field, mixed $value): ?string
     {
-        return (string) $expr->orX(
-            $this->iLike($expr, "{$field}.firstName", "%{$value}"),
-            $this->iLike($expr, "{$field}.lastName", "%{$value}"),
-        );
+        throw InvalidFilterException::make(Operator::ENDS_WITH, $field);
     }
 
     protected function gt(Expr $expr, string $field, mixed $value): ?string

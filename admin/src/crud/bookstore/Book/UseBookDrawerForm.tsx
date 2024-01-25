@@ -7,7 +7,6 @@ import {
 } from '@refinedev/antd'
 import React, { FC, useCallback } from 'react'
 import * as BookStore from '@crud/bookstore'
-import { normalizeFormProps } from '@planb/components'
 import { BaseKey, FormAction, useTranslate } from '@refinedev/core'
 import { FormProps, Drawer, Spin } from 'antd'
 
@@ -24,20 +23,13 @@ export const useBookDrawerForm = (
 ): UseBookDrawerFormReturnType => {
   const t = useTranslate()
 
-  const {
-    show,
-    saveButtonProps,
-    drawerProps,
-    formProps: _formProps,
-    formLoading,
-  } = useDrawerForm<BookStore.Book>({
-    resource: 'bookstore/books',
-    submitOnEnter: true,
-    redirect: false,
-    ...props,
-  })
-
-  const formProps: FormProps = normalizeFormProps(_formProps)
+  const { show, saveButtonProps, drawerProps, formProps, formLoading } =
+    useDrawerForm<BookStore.Book>({
+      resource: 'bookstore/books',
+      submitOnEnter: true,
+      redirect: false,
+      ...props,
+    })
 
   const Form =
     props.action === 'create'
@@ -53,7 +45,7 @@ export const useBookDrawerForm = (
                 breadcrumb={false}
                 goBack={false}
                 title={false}>
-                <BookStore.BookForm {...formProps} />
+                <BookStore.BookForm {...formProps} layout='vertical' />
               </Create>
             </Drawer>
           )
@@ -70,7 +62,7 @@ export const useBookDrawerForm = (
                 breadcrumb={false}
                 goBack={false}
                 title={false}>
-                <BookStore.BookForm {...formProps} />
+                <BookStore.BookForm {...formProps} layout='vertical' />
               </Edit>
             </Drawer>
           )

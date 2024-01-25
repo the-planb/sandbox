@@ -119,6 +119,40 @@
       font-weight: bold;
       color: $colorBgBase;
     }
+
+    .ant-form-item {
+      width: max-content;
+    }
+
+    .ant-form-item.fullrow {
+      width: auto;
+    }
+
+    ul.aggregate {
+      padding: 0;
+
+      li {
+        display: flex;
+        gap: 1em;
+        align-items: baseline;
+
+        .delete-action-first {
+          position: relative;
+          top: 35px;
+        }
+      }
+
+      .ant-form-item {
+        margin-bottom: 1em;
+        padding: 0;
+      }
+
+      .ant-form-item-label {
+        label {
+          font-weight: normal;
+        }
+      }
+    }
   }
 }
 
@@ -136,9 +170,11 @@
     .ant-modal-content {
       padding: 0 0 1px 0;
     }
+
     .ant-page-header-content {
       border: none;
     }
+
     .ant-card {
       box-shadow: none;
     }

@@ -9,6 +9,7 @@ use PlanB\Validation\Traits\ValidableTrait;
 final class FullName
 {
     use ValidableTrait;
+
     private string $firstName;
     private string $lastName;
 

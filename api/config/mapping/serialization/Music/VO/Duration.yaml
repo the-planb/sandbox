@@ -2,4 +2,4 @@
 App\Music\Domain\Model\VO\Duration:
   attributes:
     duration:
-      groups: [read, write]
+      groups: [get.item, get.collection, post, put]

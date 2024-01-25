@@ -10,6 +10,7 @@ use PlanB\Validation\Traits\ValidableTrait;
 final class Duration implements IntegerValue
 {
     use ValidableTrait;
+
     private int $duration;
 
     public function __construct(int $duration)

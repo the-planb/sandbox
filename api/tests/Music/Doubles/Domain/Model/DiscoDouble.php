@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace App\Tests\Music\Doubles\Domain\Model;
 
 use App\Music\Domain\Model\Disco;
+use App\Music\Domain\Model\DiscoId;
+use App\Music\Domain\Model\SongList;
+use App\Music\Domain\Model\VO\DiscoName;
 use PlanB\Framework\Testing\Double;
 use Prophecy\Prophecy\ObjectProphecy;
 
@@ -35,7 +38,7 @@ final class DiscoDouble extends Double
         return $this;
     }
 
-    public function withSongs(Song $songs): self
+    public function withSongs(SongList $songs): self
     {
         $this->double()
             ->getSongs()
@@ -43,6 +46,14 @@ final class DiscoDouble extends Double
         ;
 
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withId(new DiscoId());
+        $this->withTitle($this->mock(DiscoName::class)->reveal());
+
+        $this->withSongs(SongList::collect());
     }
 
     protected function classNameOrInterface(): string

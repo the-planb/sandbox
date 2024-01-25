@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace App\BookStore\Domain\Model;
 
 use App\BookStore\Domain\Model\VO\TagName;
+use PlanB\Domain\Model\Entity;
 
-class Tag
+class Tag implements Entity
 {
     private TagId $id;
     private TagName $name;

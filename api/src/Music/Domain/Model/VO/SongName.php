@@ -10,6 +10,7 @@ use PlanB\Validation\Traits\ValidableTrait;
 final class SongName implements StringValue
 {
     use ValidableTrait;
+
     private string $name;
 
     public function __construct(string $name)

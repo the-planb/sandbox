@@ -6,8 +6,8 @@ namespace App\BookStore\Framework\Api\State\Processor;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
-use App\BookStore\Application\Input\BookInput;
 use App\BookStore\Application\UseCase\Update\UpdateBook;
+use App\BookStore\Domain\Input\BookInput;
 use League\Tactician\CommandBus;
 
 final class UpdateBookProcessor implements ProcessorInterface
@@ -24,6 +24,7 @@ final class UpdateBookProcessor implements ProcessorInterface
         assert($data instanceof BookInput);
 
         $bookId = $context['previous_data']->getId();
+
         $command = new UpdateBook($data, $bookId);
 
         return $this->commandBus->handle($command);

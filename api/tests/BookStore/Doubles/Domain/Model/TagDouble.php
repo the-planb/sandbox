@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\BookStore\Doubles\Domain\Model;
 
 use App\BookStore\Domain\Model\Tag;
+use App\BookStore\Domain\Model\TagId;
+use App\BookStore\Domain\Model\VO\TagName;
 use PlanB\Framework\Testing\Double;
 use Prophecy\Prophecy\ObjectProphecy;
 
@@ -33,6 +35,12 @@ final class TagDouble extends Double
         ;
 
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withId(new TagId());
+        $this->withName($this->mock(TagName::class)->reveal());
     }
 
     protected function classNameOrInterface(): string
