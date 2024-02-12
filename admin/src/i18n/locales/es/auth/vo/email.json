@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "email": {
+      "label": "**emails.fields.email**",
+      "placeholder": "**emails.fields.email**"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+---
+App\Auth\Domain\Model\VO\UserName:
+  attributes:
+    name:
+      groups: [get.item, get.collection, post, put]

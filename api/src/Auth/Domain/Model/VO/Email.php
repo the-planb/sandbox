@@ -16,7 +16,6 @@ final class Email implements StringValue
     public function __construct(string $email)
     {
         $this->assert(email: $email);
-
         $this->email = $email;
     }
 

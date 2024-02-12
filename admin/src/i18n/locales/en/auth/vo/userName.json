@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "name": {
+      "label": "**usernames.fields.name**",
+      "placeholder": "**usernames.fields.name**"
+    }
+  }
+}

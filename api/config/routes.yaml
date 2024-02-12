@@ -12,10 +12,6 @@ gesdinet_jwt_refresh_token:
 token_logout:
     path: /api/token/logout
    
-#user_context_hash:
-#    path: /api/_fos_user_context_hash
-#    controller: \App\Auth\Framework\Controller\FosController
-
 planb:
     resource: "@PlanBBundle/Resources/config/routes.yaml"
     prefix:   /api

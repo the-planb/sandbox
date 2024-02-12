@@ -4,33 +4,30 @@ declare(strict_types=1);
 
 namespace App\Auth\Framework\Doctrine\Fixtures;
 
-use App\Auth\Application\CreateUser;
-use App\Auth\Application\Input\UserInput;
-use App\Auth\Domain\Model\RoleList;
-use App\Auth\Domain\Model\VO\Email;
-use App\Auth\Domain\Model\VO\Username;
+use App\Auth\Application\UseCase\Create\CreateUser;
+use App\Auth\Domain\Input\UserInput;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
 
-final class UserFixture extends UseCaseFixture
+/**
+ * @codeCoverageIgnore
+ */
+final class UserFixture extends UseCaseFixture // implements DependentFixtureInterface
 {
     public function loadData(): void
     {
-        $this->createRange(['editor', 'admin'], function (string $name) {
-            $input = new UserInput();
-            $input->username = new Username($name);
-            $input->email = new Email("{$name}@prueba.local");
-
-            $input->roles = RoleList::collect([
-                strtoupper("ROLE_{$name}"),
-            ]);
-
-            $input->password = $name;
-
-            $command = new CreateUser($input);
-
-            return $this->handle($command);
+        $this->createMany(100, function (int $index) {
+            //            $input = new UserInput();
+            //
+            //            $command = new CreateUser($input);
+            //            return $this->handle($command);
         });
     }
+
+    //    public function getDependencies()
+    //    {
+    //        return [OtherFixture];
+    //    }
 
     public function allowedEnvironments(): array
     {

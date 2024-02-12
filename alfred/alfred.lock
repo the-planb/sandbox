@@ -271,6 +271,198 @@ api/config/mapping/doctrine/Music/Song.orm.xml:
 api/config/mapping/api/Music/Song.resource.xml:
     timestamp: 1706960867
     hash: 36ec81432eb7271f38221ef5354902c2
+api/src/Auth/Domain/Model/VO/UserName.php:
+    timestamp: 1707738162
+    hash: 6359d6041a80beadf6330e579c084033
+api/tests/Auth/Domain/Model/VO/UserNameTest.php:
+    timestamp: 1707738162
+    hash: f9c48d73d912b9f51533f1a1578a0154
+api/tests/Auth/Doubles/Domain/Model/VO/UserNameDouble.php:
+    timestamp: 1707738162
+    hash: 6cc2fd67e0a2d11b8d96d14ef5b6b28e
+api/src/Auth/Domain/Model/VO/Constraint/UserNameConstraint.php:
+    timestamp: 1707738162
+    hash: 14ac2475f636408cad10ad6170180579
+api/src/Auth/Framework/Doctrine/DBAL/UserNameDBALType.php:
+    timestamp: 1707738162
+    hash: 96d11615e036d8c69f3f5eaf6f31ea3b
+api/tests/Auth/Framework/Doctrine/DBAL/UserNameDBALTypeTest.php:
+    timestamp: 1707738162
+    hash: 9303471a7ea066a9cc59047b28f6a632
+api/config/mapping/serialization/Auth/VO/UserName.yaml:
+    timestamp: 1707738162
+    hash: 28e0cf3782f8adfcd7142cfc688e803d
+api/src/Auth/Domain/Repository/UserRepository.php:
+    timestamp: 1707738162
+    hash: 211dc724ee3857efbfdc3df946381ba3
+api/src/Auth/Framework/Doctrine/Repository/UserDoctrineRepository.php:
+    timestamp: 1707738162
+    hash: 69cbfcd45328368bdc5916ebec0a2a0f
+api/tests/Auth/Framework/Doctrine/Repository/UserDoctrineRepositoryTest.php:
+    timestamp: 1707738162
+    hash: aa980bf8efe4a840c07fcc1a25256498
+api/src/Auth/Application/UseCase/Create/CreateUser.php:
+    timestamp: 1707738162
+    hash: d6549eeffedbc62987e86d8d33fc8f7f
+api/src/Auth/Application/UseCase/Create/CreateUserUseCase.php:
+    timestamp: 1707738162
+    hash: 1194ef30062f555ab83a134087c8d4be
+api/tests/Auth/Application/UseCase/Create/CreateUserUseCaseTest.php:
+    timestamp: 1707738162
+    hash: 3828f2b885e7c58d242abf2d4abe5f49
+api/src/Auth/Framework/Api/State/Processor/CreateUserProcessor.php:
+    timestamp: 1707738162
+    hash: d98e2b23538ccbbd943bde96b0d908f7
+api/tests/Auth/Framework/Api/State/Processor/CreateUserProcessorTest.php:
+    timestamp: 1707738162
+    hash: 309257be92b2138b059826154c88dc04
+api/src/Auth/Application/UseCase/Update/UpdateUser.php:
+    timestamp: 1707738162
+    hash: 58c45147f579a832e50bae3a4f9d9a04
+api/src/Auth/Application/UseCase/Update/UpdateUserUseCase.php:
+    timestamp: 1707738162
+    hash: bc95d57450e3fdba2bc06f8e9f3d8758
+api/tests/Auth/Application/UseCase/Update/UpdateUserUseCaseTest.php:
+    timestamp: 1707738162
+    hash: 11b80576421b727f9381f83b044c5630
+api/src/Auth/Framework/Api/State/Processor/UpdateUserProcessor.php:
+    timestamp: 1707738162
+    hash: a5b9ebe45b5693ed35db1aa3196c930b
+api/tests/Auth/Framework/Api/State/Processor/UpdateUserProcessorTest.php:
+    timestamp: 1707738162
+    hash: fa7a7fae5a5c9ed89c019946b040b3f1
+api/src/Auth/Application/UseCase/Delete/DeleteUser.php:
+    timestamp: 1707738162
+    hash: 5875295c445d530619744b3fccda4d7e
+api/src/Auth/Application/UseCase/Delete/DeleteUserUseCase.php:
+    timestamp: 1707738162
+    hash: c197517898e13727ef92ecf6edd6a7d8
+api/tests/Auth/Application/UseCase/Delete/DeleteUserUseCaseTest.php:
+    timestamp: 1707738162
+    hash: 14d5f5da16b0b0a99a06a4e46baeacc2
+api/src/Auth/Framework/Api/State/Processor/DeleteUserProcessor.php:
+    timestamp: 1707738162
+    hash: 3ae326632d0c82bf3ff05e257d9c1058
+api/tests/Auth/Framework/Api/State/Processor/DeleteUserProcessorTest.php:
+    timestamp: 1707738162
+    hash: fd809ceac89071a63f0de5a177cec8c8
+api/src/Auth/Application/UseCase/Search/SearchUser.php:
+    timestamp: 1707738162
+    hash: d08f12995b7d191cb20edd23a7ae2ba2
+api/src/Auth/Application/UseCase/Search/SearchUserUseCase.php:
+    timestamp: 1707738162
+    hash: e8e141d3a05e17e5d52ba3a4a8639b3f
+api/tests/Auth/Application/UseCase/Search/SearchUserUseCaseTest.php:
+    timestamp: 1707738162
+    hash: 9a64237fe25946d7837c66ce3b1fc023
+api/src/Auth/Framework/Api/State/Provider/GetUserCollectionProvider.php:
+    timestamp: 1707738162
+    hash: 05d4e57159fd21b0cc6e887bbf75497f
+api/tests/Auth/Framework/Api/State/Provider/GetUserCollectionProviderTest.php:
+    timestamp: 1707738162
+    hash: e9eb7448313d55e5e3831f1f83e03c1a
+api/src/Auth/Application/UseCase/FindById/FindUserById.php:
+    timestamp: 1707738162
+    hash: 460ddb8608cbc7d5192c6b48a408768f
+api/src/Auth/Application/UseCase/FindById/FindUserByIdUseCase.php:
+    timestamp: 1707738162
+    hash: 4ef02f7ff2bec665e8adcf9c5570ae55
+api/tests/Auth/Application/UseCase/FindById/FindUserByIdUseCaseTest.php:
+    timestamp: 1707738162
+    hash: 8dffc161d9b637b482cd29fff407dd41
+api/src/Auth/Framework/Api/State/Provider/GetUserItemProvider.php:
+    timestamp: 1707738162
+    hash: 4cdd915297037566e3638d845c290720
+api/tests/Auth/Framework/Api/State/Provider/GetUserItemProviderTest.php:
+    timestamp: 1707738162
+    hash: baabcbc83633032840c2b108a5b49ba7
+api/src/Auth/Framework/Doctrine/Fixtures/UserFixture.php:
+    timestamp: 1707738162
+    hash: 5a4d642a1e0defb7f4f6f27b00739df8
+api/config/mapping/api/Auth/User.resource.xml:
+    timestamp: 1707738162
+    hash: b9b45d75379874d2cb2e669005680a37
+api/config/mapping/api/Auth/User.properties.xml:
+    timestamp: 1707738162
+    hash: d3ad2ccb9cd33d0307a9e909eb2838f4
+api/src/Auth/Domain/Model/User.php:
+    timestamp: 1707738162
+    hash: c3a4b3ca423b14e567158634495a5a7b
+api/tests/Auth/Domain/Model/UserTest.php:
+    timestamp: 1707738162
+    hash: 819bf5ed1147cccb674b2d30c2a79053
+api/tests/Auth/Doubles/Domain/Model/UserDouble.php:
+    timestamp: 1707738162
+    hash: 1711c29259159ef598b244d208b8b16c
+api/src/Auth/Domain/Input/UserInput.php:
+    timestamp: 1707738162
+    hash: b052e37722f267e7d71215877f43ca08
+api/tests/Auth/Doubles/Domain/Input/UserInputDouble.php:
+    timestamp: 1707738162
+    hash: 1af3cdb3317ead2c6d6424b899d85dc9
+api/src/Auth/Domain/Input/UserListInput.php:
+    timestamp: 1707738162
+    hash: ff208ef7fa7829e3f5a0d92df5b9c670
+api/tests/Auth/Doubles/Domain/Input/UserListInputDouble.php:
+    timestamp: 1707738162
+    hash: 7a1ad7eba0fb5381a5a915a1a28cac1a
+api/src/Auth/Framework/Api/Normalizer/UserListInputNormalizer.php:
+    timestamp: 1707738162
+    hash: aa11b5b47cc51a2414037cac28c0469b
+api/tests/Auth/Framework/Api/Normalizer/UserListInputNormalizerTest.php:
+    timestamp: 1707738162
+    hash: c61e9367c64a66c510a776a6a4d4a6df
+api/src/Auth/Domain/Model/Traits/UserCollectionTrait.php:
+    timestamp: 1707738162
+    hash: 425ac6e6e4269df863776d882dec915b
+api/tests/Auth/Domain/Model/Traits/UserCollectionTraitTest.php:
+    timestamp: 1707738162
+    hash: 61aa49137fb5aa66c7d987bb15de2621
+api/src/Auth/Domain/Model/UserList.php:
+    timestamp: 1707738162
+    hash: 907400141fa6546b53345392b90e60fc
+api/tests/Auth/Doubles/Domain/Model/UserListDouble.php:
+    timestamp: 1707738162
+    hash: 55a8eb5b77fffb03b7e1f6a1e202f4ae
+api/src/Auth/Domain/Model/UserId.php:
+    timestamp: 1707738162
+    hash: 6d52c30cfedaf63ffd2799e4be1f4fe1
+api/src/Auth/Framework/Doctrine/DBAL/UserIdDBALType.php:
+    timestamp: 1707738162
+    hash: 183b8d1e4246521cafa70494f6c0bba0
+api/tests/Auth/Framework/Doctrine/DBAL/UserIdDBALTypeTest.php:
+    timestamp: 1707738162
+    hash: f3e614acbc45eebf46cf0efa5a12b36f
+api/config/mapping/serialization/Auth/User.yaml:
+    timestamp: 1707738162
+    hash: 880f639441a6fae89199e1093a67cd28
+api/config/mapping/validator/Auth/User.yaml:
+    timestamp: 1707738162
+    hash: c8e8655a8cea1decd6d3019ce0f09d91
+api/config/mapping/doctrine/Auth/User.orm.xml:
+    timestamp: 1707738162
+    hash: b5a7221d83493dc486b27efebd486cd4
+api/src/Auth/Domain/Model/VO/Email.php:
+    timestamp: 1707738162
+    hash: 271a06be059e6763d3a87654b2349fbb
+api/tests/Auth/Domain/Model/VO/EmailTest.php:
+    timestamp: 1707738162
+    hash: 6409accef6b2ebef705e67d3e4b0d6cb
+api/tests/Auth/Doubles/Domain/Model/VO/EmailDouble.php:
+    timestamp: 1707738162
+    hash: 72a2c802b49ad3385838da8ad55b45d6
+api/src/Auth/Domain/Model/VO/Constraint/EmailConstraint.php:
+    timestamp: 1707738162
+    hash: 227ee0b8b70d432f9fc6ba86c577980e
+api/src/Auth/Framework/Doctrine/DBAL/EmailDBALType.php:
+    timestamp: 1707738162
+    hash: 22c28f97d5283b7f8c69fdf665deb1eb
+api/tests/Auth/Framework/Doctrine/DBAL/EmailDBALTypeTest.php:
+    timestamp: 1707738162
+    hash: e7a8922c35e4a337f06391e919b7c2f4
+api/config/mapping/serialization/Auth/VO/Email.yaml:
+    timestamp: 1707738162
+    hash: 048a94deb422428785ea69d1424f4524
 api/src/BookStore/Domain/Model/VO/FullName.php:
     timestamp: 1707652396
     hash: 1b182bdaf6904fe46a80fda43f302a52
@@ -814,6 +1006,12 @@ api/config/packages/doctrine/Music.yaml:
 api/tests/Music/Doubles/MusicTrait.php:
     timestamp: 1707652396
     hash: 35fff0bf47ece6ff70cde0ed6c746f64
+api/config/packages/doctrine/Auth.yaml:
+    timestamp: 1707738162
+    hash: 2008bed98c09064af4b14a44a592dac7
+api/tests/Auth/Doubles/AuthTrait.php:
+    timestamp: 1707738162
+    hash: eaa0ceb03d7f8ba498fa544d9a87b818
 api/config/packages/doctrine/BookStore.yaml:
     timestamp: 1701717503
     hash: 02b91d598d7df9c244a4d0426c00a418
@@ -952,6 +1150,84 @@ admin/src/i18n/locales/es/music/songs.json:
 admin/src/i18n/locales/en/music/songs.json:
     timestamp: 1706960867
     hash: da585cd911a9535335f37c3e6e25a660
+admin/src/crud/auth/UserName/UserName.ts:
+    timestamp: 1707738162
+    hash: 9bb88db26c817b24d860076aca4ef8d2
+admin/src/crud/auth/UserName/UserNameValidator.ts:
+    timestamp: 1707738162
+    hash: ed31718e9d7de8471d94e9c5e56c9e9b
+admin/src/crud/auth/UserName/UserNameInput.tsx:
+    timestamp: 1707738162
+    hash: 16dad2f3884869467e256177a117f4ba
+admin/src/i18n/locales/es/auth/vo/userName.json:
+    timestamp: 1707738162
+    hash: 88583cc599563bf277541d2e8a877c2b
+admin/src/i18n/locales/en/auth/vo/userName.json:
+    timestamp: 1707738162
+    hash: 88583cc599563bf277541d2e8a877c2b
+'admin/app/[lang]/(private)/auth/users/page.tsx':
+    timestamp: 1707738162
+    hash: c53bfd47f572dabf82f290d75f2ec946
+'admin/app/[lang]/(private)/auth/users/edit/[id]/page.tsx':
+    timestamp: 1707738162
+    hash: ba51375910d03c00ff921546637b9f22
+'admin/app/[lang]/(private)/auth/users/create/page.tsx':
+    timestamp: 1707738162
+    hash: cec976670c7b65a0187712ab7890d13d
+admin/src/crud/auth/User/User.ts:
+    timestamp: 1707738162
+    hash: 27e5759b4ad114537229ca57d72a3f06
+admin/src/crud/auth/User/UserRenderer.ts:
+    timestamp: 1707738162
+    hash: 8d6f815d2ae6c28ae8718292d41b75eb
+admin/src/crud/auth/User/UserSelect.tsx:
+    timestamp: 1707738162
+    hash: cdb2be5e2cfdca51001e7f71cd102d6b
+admin/src/crud/auth/User/UserInput.tsx:
+    timestamp: 1707738162
+    hash: bde9f4189a3103294d61caf0f4978939
+admin/src/crud/auth/User/UserListInput.tsx:
+    timestamp: 1707738162
+    hash: 7e4ae84229cc91584f5e556f26ff2330
+admin/src/crud/auth/User/UserFilter.tsx:
+    timestamp: 1707738162
+    hash: 183c43a616b131aa0bc0d59d2f4b3f59
+admin/src/crud/auth/User/UserForm.tsx:
+    timestamp: 1707738162
+    hash: 21699c8fab5a7fc4b29b0db52fdccd01
+admin/src/crud/auth/User/UseUserForm.tsx:
+    timestamp: 1707738162
+    hash: 28c37aa5347d15e3e14d5aec4c9784bb
+admin/src/crud/auth/User/UseUserModalForm.tsx:
+    timestamp: 1707738162
+    hash: 873f279f7299d0285db33bf23c6a5a04
+admin/src/crud/auth/User/UseUserDrawerForm.tsx:
+    timestamp: 1707738162
+    hash: 5c3c742f9a1f7bdd97b6c28667af6626
+admin/src/crud/auth/User/UseUserTable.tsx:
+    timestamp: 1707738162
+    hash: 84d4ba5c6072d8ae716b70d0b84a847a
+admin/src/i18n/locales/es/auth/users.json:
+    timestamp: 1707738162
+    hash: 51ea06e605d5556b3f389ffcb2cf1b8b
+admin/src/i18n/locales/en/auth/users.json:
+    timestamp: 1707738162
+    hash: 51ea06e605d5556b3f389ffcb2cf1b8b
+admin/src/crud/auth/Email/Email.ts:
+    timestamp: 1707738162
+    hash: e471d6db3143a1eee9699f232b37fdf6
+admin/src/crud/auth/Email/EmailValidator.ts:
+    timestamp: 1707738162
+    hash: fcb4284249e93cdc214bce61cdb73f8a
+admin/src/crud/auth/Email/EmailInput.tsx:
+    timestamp: 1707738162
+    hash: 99203265ba4370efb6ab3b6a7270364d
+admin/src/i18n/locales/es/auth/vo/email.json:
+    timestamp: 1707738162
+    hash: 833650392303992979cc77f6738c9560
+admin/src/i18n/locales/en/auth/vo/email.json:
+    timestamp: 1707738162
+    hash: 833650392303992979cc77f6738c9560
 admin/src/crud/bookstore/FullName/FullName.ts:
     timestamp: 1706199663
     hash: 8640f68c2d5904e0377a66bec85721f8
@@ -1162,6 +1438,9 @@ admin/src/i18n/locales/en/bookstore/vo/title.json:
 admin/src/crud/music//index.ts:
     timestamp: 1707135525
     hash: e3653a6bcb60b48d1832f23d4f9c2acb
+admin/src/crud/auth//index.ts:
+    timestamp: 1707738162
+    hash: 5e1640941f647742f2d3fc407572e135
 admin/src/crud/bookstore//index.ts:
     timestamp: 1707135525
     hash: 5c02f3469cdec1b810b8eca57c1386d6

@@ -1,0 +1,34 @@
+{
+  "label": "users.label",
+  "fields": {
+    "id": {
+      "label": "**users.fields.id**",
+      "placeholder": "**users.fields.id**",
+      "column": "**users.fields.id**",
+      "filter": "**users.fields.id**"
+    },
+    "name": {
+      "label": "**users.fields.name**",
+      "placeholder": "**users.fields.name**",
+      "column": "**users.fields.name**",
+      "filter": "**users.fields.name**"
+    },
+    "email": {
+      "label": "**users.fields.email**",
+      "placeholder": "**users.fields.email**",
+      "column": "**users.fields.email**",
+      "filter": "**users.fields.email**"
+    }
+  },
+  "titles": {
+    "create": "users.titles.create",
+    "edit": "users.titles.edit",
+    "list": "users.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}
