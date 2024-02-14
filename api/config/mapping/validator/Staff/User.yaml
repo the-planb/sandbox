@@ -1,0 +1,19 @@
+---
+App\Staff\Domain\Model\User:
+  properties:
+    name:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Staff\Domain\Model\VO\Constraint\UserNameConstraint: ~
+    email:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Staff\Domain\Model\VO\Constraint\EmailConstraint: ~
+
+
+App\Staff\Domain\Input\UserInput:
+  properties:
+    name:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Staff\Domain\Model\VO\Constraint\UserNameConstraint: ~
+    email:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Staff\Domain\Model\VO\Constraint\EmailConstraint: ~

@@ -9,8 +9,6 @@ use App\Music\Domain\Model\Traits\SongCollectionTrait;
 use App\Music\Domain\Model\VO\DiscoName;
 use PlanB\Domain\Model\Entity;
 
-    
-
 class Disco implements Entity
 {
     use SongCollectionTrait;

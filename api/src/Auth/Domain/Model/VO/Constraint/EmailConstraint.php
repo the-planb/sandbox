@@ -8,6 +8,7 @@ use App\Auth\Domain\Model\VO\Email as VO_Email;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Type;
 
 final class EmailConstraint extends Compound
 {
@@ -24,9 +25,8 @@ final class EmailConstraint extends Compound
     protected function getConstraints(array $options): array
     {
         return [
-            new Email([
-                'min' => 3,
-            ]),
+            new Type('string'),
+            new Email(),
         ];
     }
 }

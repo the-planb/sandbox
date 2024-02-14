@@ -6,29 +6,21 @@ namespace App\Auth\Framework\Doctrine\Repository;
 
 use App\Auth\Domain\Model\User;
 use App\Auth\Domain\Model\UserId;
-use App\Auth\Domain\Model\UserList;
 use App\Auth\Domain\Repository\UserRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use PlanB\Domain\Criteria\Criteria;
-use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 final class UserDoctrineRepository extends ServiceEntityRepository implements UserRepository
 {
-    private DoctrineCriteriaConverter $criteriaConverter;
-
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
-        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
-        ]);
     }
 
-    public function save(User $user): User
+    public function save(User $user): void
     {
         $this->_em->persist($user);
-
-        return $user;
     }
 
     public function delete(UserId $userId): void
@@ -39,27 +31,22 @@ final class UserDoctrineRepository extends ServiceEntityRepository implements Us
 
     public function findById(UserId $userId): ?User
     {
-        $user = $this->find($userId);
-        assert($user instanceof User || is_null($user));
-
-        return $user;
+        return $this->find($userId);
     }
 
-    public function match(Criteria $criteria): UserList
+    public function loadUserByIdentifier(string $identifier): ?UserInterface
     {
-        $data = $this->criteriaConverter
-            ->match($criteria)
-            ->execute()
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQueryBuilder()
+            ->select('U')
+            ->from(User::class, 'U')
+            ->where('U.username = :identifier')
+            ->orWhere('U.email = :identifier')
+            ->setParameter('identifier', $identifier)
+            ->getQuery()
         ;
 
-        return UserList::collect($data);
-    }
-
-    public function totalItems(Criteria $criteria = null): int
-    {
-        return $this->criteriaConverter
-            ->count($criteria ?? Criteria::empty())
-            ->getSingleScalarResult()
-        ;
+        return $query->getOneOrNullResult();
     }
 }

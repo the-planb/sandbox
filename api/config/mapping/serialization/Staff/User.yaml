@@ -1,0 +1,19 @@
+---
+App\Staff\Domain\Model\User:
+  attributes:
+    id:
+      groups: [get.item, get.collection]
+    name:
+      groups: [get.item, get.collection]
+    email:
+      groups: [get.item, get.collection]
+
+
+App\Staff\Domain\Input\UserInput:
+  attributes:
+    id:
+      groups: [post, put]
+    name:
+      groups: [post, put]
+    email:
+      groups: [post, put]

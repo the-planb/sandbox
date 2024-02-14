@@ -6,7 +6,7 @@ namespace App\BookStore\Framework\Doctrine\Fixtures;
 
 use App\BookStore\Application\UseCase\Create\CreateAuthor;
 use App\BookStore\Domain\Input\AuthorInput;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use App\BookStore\Domain\Model\VO\FullName;
 use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
 
 /**
@@ -16,18 +16,18 @@ final class AuthorFixture extends UseCaseFixture // implements DependentFixtureI
 {
     public function loadData(): void
     {
-        $this->createMany(100, function (int $index) {
-            //            $input = new AuthorInput();
-            //
-            //            $command = new CreateAuthor($input);
-            //            return $this->handle($command);
+        $this->createMany(15, function (int $index) {
+            $input = new AuthorInput();
+            $input->name = new FullName(
+                firstName: $this->faker->firstName,
+                lastName: $this->faker->lastName,
+            );
+
+            $command = new CreateAuthor($input);
+
+            return $this->handle($command);
         });
     }
-
-    //    public function getDependencies()
-    //    {
-    //        return [OtherFixture];
-    //    }
 
     public function allowedEnvironments(): array
     {
