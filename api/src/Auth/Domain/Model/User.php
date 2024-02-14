@@ -1,49 +1,93 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Auth\Domain\Model;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
-use PlanB\Domain\Model\Entity;
 
-use App\Auth\Domain\Model\UserId;
-use App\Auth\Domain\Model\VO\UserName;
 use App\Auth\Domain\Model\VO\Email;
-use Symfony\Component\Security\Core\User\UserInterface;
+use App\Auth\Domain\Model\VO\Username;
+use App\Auth\Domain\Service\PasswordHasher;
+use PlanB\Domain\Model\Entity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-    
-    
+use Symfony\Component\Security\Core\User\UserInterface;
 
-class User implements UserInterface, PasswordAuthenticatedUserInterface implements Entity
+class User implements Entity, UserInterface, PasswordAuthenticatedUserInterface
 {
-    
-
     private UserId $id;
-    private UserName $name;
-private Email $email;
+    private Username $username;
+    private Email $email;
+    private RoleList $roles;
+    private string $password;
 
-    public function __construct(UserName $name, Email $email){
+    public function __construct(Username $username, Email $email, RoleList $roles, PasswordHasher $password)
+    {
         $this->id = new UserId();
-        $this->name = $name;
-$this->email = $email;
+
+        $this->setUsername($username);
+        $this->setEmail($email);
+        $this->setRoles($roles);
+        $this->setPassword($password);
     }
 
-    public function update(UserName $name, Email $email): self{
-        $this->name = $name;
-$this->email = $email;
+    public function getId(): UserId
+    {
+        return $this->id;
+    }
+
+    public function setUsername(Username $username): static
+    {
+        $this->username = $username;
+
         return $this;
     }
 
-        public function getId(): UserId
-    { 
-        return $this->id;
+    public function getUsername(): Username
+    {
+        return $this->username;
     }
-    public function getName(): UserName
-    { 
-        return $this->name;
+
+    public function setEmail(Email $email): static
+    {
+        $this->email = $email;
+
+        return $this;
     }
+
     public function getEmail(): Email
-    { 
+    {
         return $this->email;
+    }
+
+    public function setRoles(RoleList $roles): static
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    public function getRoles(): array
+    {
+        return $this->roles->toArray();
+    }
+
+    public function setPassword(PasswordHasher $hasher): static
+    {
+        $this->password = $hasher->hash($this);
+
+        return $this;
+    }
+
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->getEmail();
     }
 }

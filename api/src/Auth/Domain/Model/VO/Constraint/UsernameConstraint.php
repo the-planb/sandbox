@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace App\Auth\Domain\Model\VO\Constraint;
 
-use App\Auth\Domain\Model\VO\Email as VO_Email;
+use App\Auth\Domain\Model\VO\Username as VO_Username;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Type;
 
-final class EmailConstraint extends Compound
+final class UsernameConstraint extends Compound
 {
     public function getClassName(): string
     {
-        return VO_Email::class;
+        return VO_Username::class;
     }
 
     /**
@@ -26,7 +26,9 @@ final class EmailConstraint extends Compound
     {
         return [
             new Type('string'),
-            new Email(),
+            new Length([
+                'min' => 3,
+            ]),
         ];
     }
 }

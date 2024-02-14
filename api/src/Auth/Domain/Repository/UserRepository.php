@@ -6,18 +6,13 @@ namespace App\Auth\Domain\Repository;
 
 use App\Auth\Domain\Model\User;
 use App\Auth\Domain\Model\UserId;
-use App\Auth\Domain\Model\UserList;
-use PlanB\Domain\Criteria\Criteria;
+use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
 
-interface UserRepository
+interface UserRepository extends UserLoaderInterface
 {
-    public function save(User $user): User;
+    public function save(User $user): void;
 
-    public function delete(UserId $userId): void;
+    public function delete(UserId $user): void;
 
     public function findById(UserId $userId): ?User;
-
-    public function match(Criteria $criteria): UserList;
-
-    public function totalItems(): int;
 }
