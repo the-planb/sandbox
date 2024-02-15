@@ -6,10 +6,13 @@ namespace App\Tests\Staff\Doubles\Domain\Model\VO;
 
 use App\Staff\Domain\Model\VO\UserName;
 use PlanB\Framework\Testing\Double;
+use PlanB\Framework\Testing\FakesTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 final class UserNameDouble extends Double
 {
+    use FakesTrait;
+
     public function reveal(): UserName
     {
         return $this->double->reveal();
@@ -22,7 +25,17 @@ final class UserNameDouble extends Double
             ->willReturn($name)
         ;
 
+        $this->double()
+            ->__toString()
+            ->willReturn($name)
+        ;
+
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withName($this->string());
     }
 
     protected function classNameOrInterface(): string

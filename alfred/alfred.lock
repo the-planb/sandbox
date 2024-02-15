@@ -1,194 +1,227 @@
+api/src/Staff/Domain/Service/PasswordEncoder.php:
+    timestamp: 1708031133
+    hash: 4af15f3eed502473699d6bc2b7266dc3
+api/tests/Staff/Doubles/Domain/Service/PasswordEncoderDouble.php:
+    timestamp: 1708030651
+    hash: ba7f45f93beaf367f5a66919c8e5e5a3
+api/src/Staff/Domain/Model/RoleList.php:
+    timestamp: 1708030651
+    hash: 2629b5fc9fd5f773d0cf23f2e9cf78f7
+api/tests/Staff/Doubles/Domain/Model/RoleListDouble.php:
+    timestamp: 1708030651
+    hash: ca5403c17968fb4ee9b03736e5a1a929
 api/src/Staff/Domain/Model/VO/UserName.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 5d0bb6e2a52f369c4d62468cc49e9696
 api/tests/Staff/Domain/Model/VO/UserNameTest.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 632e53c37f8bf1e88e41069a800bb543
 api/tests/Staff/Doubles/Domain/Model/VO/UserNameDouble.php:
-    timestamp: 1707908647
-    hash: 787ec431270362cd7d6c31f4c83d6a6f
+    timestamp: 1708083932
+    hash: 4b3ce58257960002adc610b89de002a6
 api/src/Staff/Domain/Model/VO/Constraint/UserNameConstraint.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 17dad79d2db59703a27066c9c8bd5ad5
 api/src/Staff/Framework/Doctrine/DBAL/UserNameDBALType.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 556f2ff4f019a83a8e9dddbcdde90d3d
 api/tests/Staff/Framework/Doctrine/DBAL/UserNameDBALTypeTest.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 9026fc61962e8e3eead729b3692aee41
 api/config/mapping/serialization/Staff/VO/UserName.yaml:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 6fa6e349a8ceeb397104a1f19729ae76
 api/src/Staff/Domain/Repository/UserRepository.php:
-    timestamp: 1707908647
-    hash: 50360b6328e76dbba42e7c49fd79e236
+    timestamp: 1708030651
+    hash: 817608078ea5346e60d64f557e104127
 api/src/Staff/Framework/Doctrine/Repository/UserDoctrineRepository.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: c4119d8c3c50f56c81e15a2e0c6b82c0
 api/tests/Staff/Framework/Doctrine/Repository/UserDoctrineRepositoryTest.php:
-    timestamp: 1707908647
-    hash: f911065282b3064c899b82781ab3d472
+    timestamp: 1708030651
+    hash: e962064f213c0a240bfec65c5177afd0
 api/src/Staff/Application/UseCase/Create/CreateUser.php:
-    timestamp: 1707908647
-    hash: c32bc03feddcafe778b6c2d23bc0773d
+    timestamp: 1708030651
+    hash: 71200675817f7221b0a00ae7a72ff2a9
 api/src/Staff/Application/UseCase/Create/CreateUserUseCase.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 51b778d0b1af4610ab0c98fe74ba4ae0
 api/tests/Staff/Application/UseCase/Create/CreateUserUseCaseTest.php:
-    timestamp: 1707908647
-    hash: ddaa6791aea8cce4434145ad6a831899
+    timestamp: 1708030651
+    hash: aada6bfb0ba394c7aae63d8c9f748cc0
 api/src/Staff/Framework/Api/State/Processor/CreateUserProcessor.php:
-    timestamp: 1707908647
-    hash: d2a9e1a4841dbc1cc680d4a09b8c65d3
+    timestamp: 1708030651
+    hash: 9afd25a10428c8b637a8085e8c9a3bcf
 api/tests/Staff/Framework/Api/State/Processor/CreateUserProcessorTest.php:
-    timestamp: 1707908647
-    hash: b7804eb60a02b4593a756e73560c6b5e
+    timestamp: 1708030651
+    hash: c0707a0758275e14e2b2ed8959bc3213
 api/src/Staff/Application/UseCase/Update/UpdateUser.php:
-    timestamp: 1707908647
-    hash: 3a1e5f3948aa22bce11a9dd63d90716f
+    timestamp: 1708030651
+    hash: 39b4f185bb6135d55b299cad19258df4
 api/src/Staff/Application/UseCase/Update/UpdateUserUseCase.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 80598012774d3f836092d7755306ed02
 api/tests/Staff/Application/UseCase/Update/UpdateUserUseCaseTest.php:
-    timestamp: 1707908647
-    hash: 99b6a807e9027ec6e73a3ec2841b4f83
+    timestamp: 1708030651
+    hash: 7586b0709398f7eaa53ec0ec99ef2abc
 api/src/Staff/Framework/Api/State/Processor/UpdateUserProcessor.php:
-    timestamp: 1707908647
-    hash: ae7ade794eb02fef8d8440df5af07e41
+    timestamp: 1708030651
+    hash: dd7798c74a63acc7516480abfdef73e6
 api/tests/Staff/Framework/Api/State/Processor/UpdateUserProcessorTest.php:
-    timestamp: 1707908647
-    hash: 55a4defd131b3795c600ed4001466dcb
+    timestamp: 1708030651
+    hash: 80252195f80bcc552ba79c4d66b66163
 api/src/Staff/Application/UseCase/Delete/DeleteUser.php:
-    timestamp: 1707908647
-    hash: b07831a3aacd9a5b462bf590ab2f261b
+    timestamp: 1708030651
+    hash: d659a9b22cb64563548f4178ca769f9b
 api/src/Staff/Application/UseCase/Delete/DeleteUserUseCase.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 367ddd86cb52393c61d150e21f15b60a
 api/tests/Staff/Application/UseCase/Delete/DeleteUserUseCaseTest.php:
-    timestamp: 1707908647
-    hash: 6259b6ee31df74e4537326ea091b22f6
+    timestamp: 1708030651
+    hash: 081af3896a60a952abbe4ba5b9d0cd58
 api/src/Staff/Framework/Api/State/Processor/DeleteUserProcessor.php:
-    timestamp: 1707908647
-    hash: 00235204d6937e902bd753b7cb36819b
+    timestamp: 1708030651
+    hash: 2b2103261b5cc2d3bcc0df757040f32f
 api/tests/Staff/Framework/Api/State/Processor/DeleteUserProcessorTest.php:
-    timestamp: 1707908647
-    hash: 4ce6c9267497ebb0f0575885be23833b
+    timestamp: 1708030651
+    hash: 79cdc469db89e2cf8482cc9eea782eed
 api/src/Staff/Application/UseCase/Search/SearchUser.php:
-    timestamp: 1707908647
-    hash: 6921cec2aff01057909b37c18fc584da
+    timestamp: 1708030651
+    hash: c09bf97be680b3217190109f0b8b102f
 api/src/Staff/Application/UseCase/Search/SearchUserUseCase.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: fe9a0d9e90bd0546fb5dd3cedc6e91ed
 api/tests/Staff/Application/UseCase/Search/SearchUserUseCaseTest.php:
-    timestamp: 1707908647
-    hash: cd4ced810b9422eed227c053a2e9aae1
+    timestamp: 1708030651
+    hash: 04b94125b1735c311e6167102b97ac20
 api/src/Staff/Framework/Api/State/Provider/GetUserCollectionProvider.php:
-    timestamp: 1707908647
-    hash: 9db4cb24551a1931e7f5deefee623afd
+    timestamp: 1708030651
+    hash: 5e9f974bd48aac08278d9117bf65ed5f
 api/tests/Staff/Framework/Api/State/Provider/GetUserCollectionProviderTest.php:
-    timestamp: 1707908647
-    hash: 8b5c5a62e89caa18cec685342dd42b4f
+    timestamp: 1708030651
+    hash: ffeeef7b845e29a45c70927cdfeefaf5
 api/src/Staff/Application/UseCase/FindById/FindUserById.php:
-    timestamp: 1707908647
-    hash: e450b2449317f92f017b4984bdcb1079
+    timestamp: 1708030651
+    hash: 1b1ae1ca176816b9aa595ee5bfb0a47e
 api/src/Staff/Application/UseCase/FindById/FindUserByIdUseCase.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 1c9acf4c19571578ca20c5d5e1782712
 api/tests/Staff/Application/UseCase/FindById/FindUserByIdUseCaseTest.php:
-    timestamp: 1707908647
-    hash: 499c3a16a9e8c94eae76d7c6a12537de
+    timestamp: 1708030651
+    hash: 1d33c63fb5a84ebec629e83cc8f2199d
 api/src/Staff/Framework/Api/State/Provider/GetUserItemProvider.php:
-    timestamp: 1707908647
-    hash: d1d7e02b7308ad1e5b9c4680a310663d
+    timestamp: 1708030651
+    hash: 7c1e2666687a3bb4e73b30c4192dcf6e
 api/tests/Staff/Framework/Api/State/Provider/GetUserItemProviderTest.php:
-    timestamp: 1707908647
-    hash: d7940619ea49701cc8b4dc08a8196ca8
+    timestamp: 1708030651
+    hash: c7d18e3005b80b6845f18d4e50ec0b87
 api/src/Staff/Framework/Doctrine/Fixtures/UserFixture.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 804feb6757cba069d6be4183f0f4edf9
 api/config/mapping/api/Staff/User.resource.xml:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 0cd1f7fb36b01a4e639a529ecab177de
 api/config/mapping/api/Staff/User.properties.xml:
-    timestamp: 1707908647
-    hash: f286865bf0bd013764929eb677540ca0
+    timestamp: 1708030651
+    hash: b769c77b81a2ffe35fab6c29aeb5ae17
 api/src/Staff/Domain/Model/User.php:
-    timestamp: 1707908647
-    hash: 678f940e498ee50b9445186c4789b37d
+    timestamp: 1708030651
+    hash: 33c18a0f42d153d2f2c0b64beb5d3873
 api/tests/Staff/Domain/Model/UserTest.php:
-    timestamp: 1707908647
-    hash: b2d782c6fb7c72d232fde7ffde5c9058
+    timestamp: 1708081629
+    hash: 7e779d2dd9e65da7d3e7382623ed5dd1
 api/tests/Staff/Doubles/Domain/Model/UserDouble.php:
-    timestamp: 1707908647
-    hash: cdba92c2f9232fe22ea1b20bd8ef5459
+    timestamp: 1708083932
+    hash: cd71ae0c4b66c808f0e3e135901717b4
 api/src/Staff/Domain/Input/UserInput.php:
-    timestamp: 1707908647
-    hash: 922713caaf0880e6bad2d548b8d278d2
+    timestamp: 1708030651
+    hash: 3d4bb30dcb5474fcac15f88d605f7062
 api/tests/Staff/Doubles/Domain/Input/UserInputDouble.php:
-    timestamp: 1707908647
-    hash: 557fa0080b71a74b45efb30b899efde8
+    timestamp: 1708030651
+    hash: 857246353b12f4e6b5ca7443c7b2f2e2
 api/src/Staff/Domain/Input/UserListInput.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 84cc993da2065d7004b84959c8ba12fe
 api/tests/Staff/Doubles/Domain/Input/UserListInputDouble.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 93e99d357f3fe400340a8c82894fa85f
 api/src/Staff/Framework/Api/Normalizer/UserListInputNormalizer.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: a5353e3c17a799891ada92a7ac4831c8
 api/tests/Staff/Framework/Api/Normalizer/UserListInputNormalizerTest.php:
-    timestamp: 1707908647
-    hash: 9eb5d7b662e07032701939594fb556f7
+    timestamp: 1708030651
+    hash: bf2c59ee7daa20b87777781164d381d6
 api/src/Staff/Domain/Model/Traits/UserCollectionTrait.php:
-    timestamp: 1707908647
-    hash: 313650c178a4320a107b42a1c0752df3
+    timestamp: 1708030651
+    hash: b9d3c7d859df82d3c0c6312123dea57b
 api/tests/Staff/Domain/Model/Traits/UserCollectionTraitTest.php:
-    timestamp: 1707908647
-    hash: 3d12c6108482d9fe71a59785aeefa662
+    timestamp: 1708030651
+    hash: e129e162bba8fd8b9f5a430142e0fffe
 api/src/Staff/Domain/Model/UserList.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: f836cad67308a59d02cbaafc6b2d2a86
 api/tests/Staff/Doubles/Domain/Model/UserListDouble.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 2eca22bfe4468bef642f5eec19791c87
 api/src/Staff/Domain/Model/UserId.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: b8edd2cd1ff2335b626507ea253251c7
 api/src/Staff/Framework/Doctrine/DBAL/UserIdDBALType.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 9d0cd656949c06e5e3151b3755ca8dad
 api/tests/Staff/Framework/Doctrine/DBAL/UserIdDBALTypeTest.php:
-    timestamp: 1707908647
-    hash: f9e899abe00904c33ce8781461e5a9f9
+    timestamp: 1708030651
+    hash: c70f35d055d3f9004aab84aaf7fdedc2
 api/config/mapping/serialization/Staff/User.yaml:
-    timestamp: 1707908647
-    hash: c3f5ff8af81c1e5b5b6e14e1cd526527
+    timestamp: 1708030651
+    hash: 1772da8e4ee19cc73c56df0f68c91a54
 api/config/mapping/validator/Staff/User.yaml:
-    timestamp: 1707908647
-    hash: 6c8c35caaef5afe2a8a7d99eec9d682c
+    timestamp: 1708030651
+    hash: ba4126fa1af2486ab8a2c61179cd1951
 api/config/mapping/doctrine/Staff/User.orm.xml:
-    timestamp: 1707908647
-    hash: 8d6b422a223e689768209ba1447d74ad
+    timestamp: 1708030651
+    hash: 4d7bd53a5b997819d6139bf4f307d3f7
+api/src/Staff/Domain/Model/VO/Password.php:
+    timestamp: 1708030651
+    hash: 97e7929601c5a3b4f4045f55b5bd41a5
+api/tests/Staff/Domain/Model/VO/PasswordTest.php:
+    timestamp: 1708030651
+    hash: bca62135f2c3dba879266cbe462bc879
+api/tests/Staff/Doubles/Domain/Model/VO/PasswordDouble.php:
+    timestamp: 1708083932
+    hash: 1849c4479c38f2e99cc8398dd7a71700
+api/src/Staff/Domain/Model/VO/Constraint/PasswordConstraint.php:
+    timestamp: 1708030651
+    hash: df5a1d733c3b65bc910f3a687e3cca23
+api/src/Staff/Framework/Doctrine/DBAL/PasswordDBALType.php:
+    timestamp: 1708030651
+    hash: 526fe5e83fc1632ae209d9b935fe214c
+api/tests/Staff/Framework/Doctrine/DBAL/PasswordDBALTypeTest.php:
+    timestamp: 1708030651
+    hash: 1792228ec0e5031e259b1ae1e0e6d966
+api/config/mapping/serialization/Staff/VO/Password.yaml:
+    timestamp: 1708030651
+    hash: f63b350e188bd03f7f7332822896ee26
 api/src/Staff/Domain/Model/VO/Email.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: ef471902f66e03a40700875eb244068f
 api/tests/Staff/Domain/Model/VO/EmailTest.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 95b8be237360e8e71d8b5e38b504352b
 api/tests/Staff/Doubles/Domain/Model/VO/EmailDouble.php:
-    timestamp: 1707908647
-    hash: 505182b5b3cb465aa35e4350a31817fd
+    timestamp: 1708083932
+    hash: e865719ca088c1e5d152043406a178d5
 api/src/Staff/Domain/Model/VO/Constraint/EmailConstraint.php:
-    timestamp: 1707909214
+    timestamp: 1708030651
     hash: 7e4596be017502ef82ddce2869d11a26
 api/src/Staff/Framework/Doctrine/DBAL/EmailDBALType.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 8d20dbdf54e5900769bff153b5a953f8
 api/tests/Staff/Framework/Doctrine/DBAL/EmailDBALTypeTest.php:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: 25305ffc280700974f16256cc39528f2
 api/config/mapping/serialization/Staff/VO/Email.yaml:
-    timestamp: 1707908647
+    timestamp: 1708030651
     hash: da323724eaea2d9bb127fd4421b62460
 api/src/Music/Domain/Model/VO/SongName.php:
     timestamp: 1707652396
@@ -197,8 +230,8 @@ api/tests/Music/Domain/Model/VO/SongNameTest.php:
     timestamp: 1707652396
     hash: c7912cfd42ec7a38a908ff24a106327f
 api/tests/Music/Doubles/Domain/Model/VO/SongNameDouble.php:
-    timestamp: 1707652396
-    hash: 87f640a0ee3a974ed5b718ca1299f5ce
+    timestamp: 1708083932
+    hash: 3649dfe5ad394e260eac9991c1dad61c
 api/src/Music/Domain/Model/VO/Constraint/SongNameConstraint.php:
     timestamp: 1707652396
     hash: 28f3b1ab365ea3b27c4b9b2fa3930df6
@@ -224,7 +257,7 @@ api/src/Music/Application/UseCase/Create/CreateDisco.php:
     timestamp: 1707908654
     hash: 87c458bd6b5258f4fd689a3d204243dd
 api/src/Music/Application/UseCase/Create/CreateDiscoUseCase.php:
-    timestamp: 1707652396
+    timestamp: 1708028896
     hash: eae716f7d9381328dedb1c54c8f90fce
 api/tests/Music/Application/UseCase/Create/CreateDiscoUseCaseTest.php:
     timestamp: 1707908654
@@ -305,14 +338,14 @@ api/config/mapping/api/Music/Disco.properties.xml:
     timestamp: 1706960867
     hash: 9431a80ba3f826240c1a1e427a944e19
 api/src/Music/Domain/Model/Disco.php:
-    timestamp: 1707908654
-    hash: 6f0b20fb14159501984fc6c18ab7c9ef
+    timestamp: 1708030182
+    hash: cac3ff942254b4c0fb2b14ea7b491b30
 api/tests/Music/Domain/Model/DiscoTest.php:
-    timestamp: 1707908654
-    hash: 92d7cd792fb1162b88873aef83de7f91
+    timestamp: 1708081629
+    hash: c58448683c96a7dc83689522dc27cf9f
 api/tests/Music/Doubles/Domain/Model/DiscoDouble.php:
-    timestamp: 1707908654
-    hash: 3ecf2414d204c2ce5f158feedb3a16db
+    timestamp: 1708083932
+    hash: 0cf01a06ec1c2b9dbbf6b3facdea7972
 api/src/Music/Domain/Input/DiscoInput.php:
     timestamp: 1707908654
     hash: 6d8e977db511a3f97b3ca19b29b9e4d3
@@ -368,8 +401,8 @@ api/tests/Music/Domain/Model/VO/DurationTest.php:
     timestamp: 1707652396
     hash: d440d6a2a49511a0fc144a77bf7cea53
 api/tests/Music/Doubles/Domain/Model/VO/DurationDouble.php:
-    timestamp: 1707652396
-    hash: 665a6b615faf8757f68422a57f6467df
+    timestamp: 1708083932
+    hash: 68913ada2c8b3318735d141b532d5ccd
 api/src/Music/Domain/Model/VO/Constraint/DurationConstraint.php:
     timestamp: 1707652396
     hash: 13402a1e50aa3117905b7ac175168e20
@@ -389,8 +422,8 @@ api/tests/Music/Domain/Model/VO/DiscoNameTest.php:
     timestamp: 1707652396
     hash: 49f278182cb3dd92372907586c028b40
 api/tests/Music/Doubles/Domain/Model/VO/DiscoNameDouble.php:
-    timestamp: 1707652396
-    hash: b0203ef011f505678e4bac7af82228d0
+    timestamp: 1708083932
+    hash: f0c22783e0ac70454d710b554ddbf90b
 api/src/Music/Domain/Model/VO/Constraint/DiscoNameConstraint.php:
     timestamp: 1707652396
     hash: 83c73444445177555fad16548d25dc4d
@@ -404,14 +437,14 @@ api/config/mapping/serialization/Music/VO/DiscoName.yaml:
     timestamp: 1706963399
     hash: e19d592b9d4e0570b3d8852cd438e6c8
 api/src/Music/Domain/Model/Song.php:
-    timestamp: 1707908654
-    hash: 4d5d33e98cc006e8c85061ab3facf0eb
+    timestamp: 1708030203
+    hash: 619ebf13bbc0c1cf85eab8087da24902
 api/tests/Music/Domain/Model/SongTest.php:
-    timestamp: 1707908654
-    hash: 634cd9f0aadef325b025ede7a3a5cf95
+    timestamp: 1708081632
+    hash: eb24fdbd688ec93bbcc8326f6b753e00
 api/tests/Music/Doubles/Domain/Model/SongDouble.php:
-    timestamp: 1707908654
-    hash: 69ad5e5343e032518ff1b26b9bbd0df0
+    timestamp: 1708083932
+    hash: f766123b7e41e35d26e496bea4b9e02d
 api/src/Music/Domain/Input/SongInput.php:
     timestamp: 1707908654
     hash: bd7f63e349079738f73913f03fe0294e
@@ -470,8 +503,8 @@ api/tests/BookStore/Domain/Model/VO/FullNameTest.php:
     timestamp: 1707652396
     hash: 4e3587d1e150715f9a8327925d175ce2
 api/tests/BookStore/Doubles/Domain/Model/VO/FullNameDouble.php:
-    timestamp: 1707652396
-    hash: 6f0a0e2fa5df22586d9ba8ea31753a44
+    timestamp: 1708083932
+    hash: 6a3c7a9f420065ecb143cbe881ac7525
 api/src/BookStore/Domain/Model/VO/Constraint/FullNameConstraint.php:
     timestamp: 1707652396
     hash: 0953cc5e185a6d3acb2204dafcc27eae
@@ -494,8 +527,8 @@ api/tests/BookStore/Domain/Model/VO/TagNameTest.php:
     timestamp: 1707652396
     hash: 39876839966460aabb1fbae2caa2fcd8
 api/tests/BookStore/Doubles/Domain/Model/VO/TagNameDouble.php:
-    timestamp: 1707652396
-    hash: 2a9792e2ca19ba5414b714e92c0bff28
+    timestamp: 1708083932
+    hash: 5ed1e06d61d2985222800591e445b90f
 api/src/BookStore/Domain/Model/VO/Constraint/TagNameConstraint.php:
     timestamp: 1707652396
     hash: b417b3feb0b2fd7ef92a8a20bc535115
@@ -521,7 +554,7 @@ api/src/BookStore/Application/UseCase/Create/CreateBook.php:
     timestamp: 1707908655
     hash: ce5873ed974a4569b942da7edb8fd868
 api/src/BookStore/Application/UseCase/Create/CreateBookUseCase.php:
-    timestamp: 1707652396
+    timestamp: 1708028896
     hash: c643bd161bd25eb4e1c67ad4f57b1b50
 api/tests/BookStore/Application/UseCase/Create/CreateBookUseCaseTest.php:
     timestamp: 1707908655
@@ -602,14 +635,14 @@ api/config/mapping/api/BookStore/Book.properties.xml:
     timestamp: 1705777042
     hash: 4f94cae8688dd5217cbcd1c543c82d99
 api/src/BookStore/Domain/Model/Book.php:
-    timestamp: 1707908655
-    hash: bd65fb63ac06b697a9f32fed34c1df97
+    timestamp: 1708030182
+    hash: c02e3e6760fc10b18b77532a1925f069
 api/tests/BookStore/Domain/Model/BookTest.php:
-    timestamp: 1707908655
-    hash: b4e183ea97a64e33c6341e45bc18f864
+    timestamp: 1708081632
+    hash: 27073a8e86499651f5c83187283e3829
 api/tests/BookStore/Doubles/Domain/Model/BookDouble.php:
-    timestamp: 1707908655
-    hash: f5396f96e07474ac906c796cc61b7341
+    timestamp: 1708083932
+    hash: 5cb369c2e54b221d49db2bf8f872edad
 api/src/BookStore/Domain/Input/BookInput.php:
     timestamp: 1707908655
     hash: 55a5df09a6e184fef7a119c437029845
@@ -671,7 +704,7 @@ api/src/BookStore/Application/UseCase/Create/CreateAuthor.php:
     timestamp: 1707908655
     hash: 36307979ca018e5d469ea89112a82064
 api/src/BookStore/Application/UseCase/Create/CreateAuthorUseCase.php:
-    timestamp: 1707652396
+    timestamp: 1708028896
     hash: ef7bcc343051bca7fbb5a4c7e25e3ed6
 api/tests/BookStore/Application/UseCase/Create/CreateAuthorUseCaseTest.php:
     timestamp: 1707908655
@@ -752,14 +785,14 @@ api/config/mapping/api/BookStore/Author.properties.xml:
     timestamp: 1705777042
     hash: 1d683fb3f52e8a3046ffe129102abbc1
 api/src/BookStore/Domain/Model/Author.php:
-    timestamp: 1707908655
-    hash: 64bad4d17001eb47ee2a0da63cee236f
+    timestamp: 1708030182
+    hash: 1e947f3d09ff2964d934ee2b3a81c0a1
 api/tests/BookStore/Domain/Model/AuthorTest.php:
-    timestamp: 1707908655
-    hash: f9292c9902731e029104887de03f08c7
+    timestamp: 1708081632
+    hash: 4bf453f480e40af4108421164f6b9bad
 api/tests/BookStore/Doubles/Domain/Model/AuthorDouble.php:
-    timestamp: 1707908655
-    hash: 326208845a23723c8137cad478c10dbc
+    timestamp: 1708083932
+    hash: f8f486e446479fe59daab9b3c2145a67
 api/src/BookStore/Domain/Input/AuthorInput.php:
     timestamp: 1707908655
     hash: 1162523e2717023a8355374bc0aa3d96
@@ -821,7 +854,7 @@ api/src/BookStore/Application/UseCase/Create/CreateTag.php:
     timestamp: 1707908655
     hash: a0a814d28b29ab9a4a8623169cfcc41c
 api/src/BookStore/Application/UseCase/Create/CreateTagUseCase.php:
-    timestamp: 1707652396
+    timestamp: 1708028896
     hash: 00bb9a733fcadee2d362fecd7f3178e3
 api/tests/BookStore/Application/UseCase/Create/CreateTagUseCaseTest.php:
     timestamp: 1707908655
@@ -902,14 +935,14 @@ api/config/mapping/api/BookStore/Tag.properties.xml:
     timestamp: 1705777042
     hash: 137d655cb0d4fa79e26e8e538587b4c7
 api/src/BookStore/Domain/Model/Tag.php:
-    timestamp: 1707908655
-    hash: 92b216c0205207b986f43fefe6949e1c
+    timestamp: 1708030182
+    hash: 1de0c258f0cb4545ebecd18434d2f013
 api/tests/BookStore/Domain/Model/TagTest.php:
-    timestamp: 1707908655
-    hash: a7594c6dd3fd415e8fa6b9d94c258fec
+    timestamp: 1708081632
+    hash: d68bb6b7746be6f370cad745354af789
 api/tests/BookStore/Doubles/Domain/Model/TagDouble.php:
-    timestamp: 1707908655
-    hash: b88ce9cdd5ae5207fa2cfef96091390c
+    timestamp: 1708083932
+    hash: 05e2527ba10d0b509aacccb08b584c9d
 api/src/BookStore/Domain/Input/TagInput.php:
     timestamp: 1707908655
     hash: 7ec0ca09e683c16e36086e1c264e3127
@@ -965,8 +998,8 @@ api/tests/BookStore/Domain/Model/VO/PriceTest.php:
     timestamp: 1707652396
     hash: c114bb7a3141235834e0af9788b8db86
 api/tests/BookStore/Doubles/Domain/Model/VO/PriceDouble.php:
-    timestamp: 1707652396
-    hash: 70f3ad5b475910c3978bf8d89aaeb54c
+    timestamp: 1708083932
+    hash: 0e8a22f099efa69d6383a165fc96fbda
 api/src/BookStore/Domain/Model/VO/Constraint/PriceConstraint.php:
     timestamp: 1707652396
     hash: 2347176b22a315b12e2b478de76628a5
@@ -986,8 +1019,8 @@ api/tests/BookStore/Domain/Model/VO/TitleTest.php:
     timestamp: 1707652396
     hash: c788475d0cec51e90cec26e4e17f779f
 api/tests/BookStore/Doubles/Domain/Model/VO/TitleDouble.php:
-    timestamp: 1707652396
-    hash: 809d667c63f4c76b723656c9389d2df8
+    timestamp: 1708083932
+    hash: c009bd3261d8cd2bffbb627e5d4ea1a3
 api/src/BookStore/Domain/Model/VO/Constraint/TitleConstraint.php:
     timestamp: 1707652396
     hash: b3aaa321f00d39eef62b8a1f0fc03a83
@@ -1001,11 +1034,11 @@ api/config/mapping/serialization/BookStore/VO/Title.yaml:
     timestamp: 1706963399
     hash: eb4746d9ca7a10ba66a2f53e9f676314
 api/config/packages/doctrine/Staff.yaml:
-    timestamp: 1707908655
-    hash: f24c36856df26e573b01889606656e6e
+    timestamp: 1708030651
+    hash: b83b2e9c0bbd7bd690f72c1f929e73ff
 api/tests/Staff/Doubles/StaffTrait.php:
-    timestamp: 1707908655
-    hash: d169c046bc70b86a61d2cb80f55e2937
+    timestamp: 1708030651
+    hash: b4ab75eb49743fdbe22bfb5aa4be628f
 api/config/packages/doctrine/Music.yaml:
     timestamp: 1706960867
     hash: 7df699e066352d47de72f1be8aa845b2
@@ -1019,82 +1052,97 @@ api/tests/BookStore/Doubles/BookStoreTrait.php:
     timestamp: 1707652396
     hash: ee4bab4e79d9008b3c100c2c9a78d2ff
 admin/src/crud/staff/UserName/UserName.ts:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 49a84faf595122dbe3f3373c1b62c083
 admin/src/crud/staff/UserName/UserNameValidator.ts:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: c99e663e853d0f1fba96737ff5e27707
 admin/src/crud/staff/UserName/UserNameInput.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: dc55baef3864ac765921d50b186fbec6
 admin/src/i18n/locales/es/staff/vo/userName.json:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 88583cc599563bf277541d2e8a877c2b
 admin/src/i18n/locales/en/staff/vo/userName.json:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 88583cc599563bf277541d2e8a877c2b
 'admin/app/[lang]/(private)/staff/users/page.tsx':
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: d3d9c071797652896468643bcf43cad2
 'admin/app/[lang]/(private)/staff/users/edit/[id]/page.tsx':
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 082f280f65e42ac9866c43192c2edf7d
 'admin/app/[lang]/(private)/staff/users/create/page.tsx':
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: a19e3e39184a57a075b4c05710f9158a
 admin/src/crud/staff/User/User.ts:
-    timestamp: 1707908655
-    hash: dfb2651f7f8d6aac3dbf19ebdf58c40d
+    timestamp: 1708030651
+    hash: 5a3ec2735fcdd2de0ca445147b1cbb77
 admin/src/crud/staff/User/UserRenderer.ts:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 1668f721546e41ffc26d659e70e5309a
 admin/src/crud/staff/User/UserSelect.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: baabece5b3a5083ad59531f2ed36bd71
 admin/src/crud/staff/User/UserInput.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: badaa7d95d48c20167fd18a4795b4b6f
 admin/src/crud/staff/User/UserListInput.tsx:
-    timestamp: 1707908655
-    hash: d0ae55a3576ac938ce43a423f0e89750
+    timestamp: 1708030651
+    hash: f7c3bcedff1fed87b374fb720ec91eba
 admin/src/crud/staff/User/UserFilter.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: e4680b2be23450b70ca459a2a8b61188
 admin/src/crud/staff/User/UserForm.tsx:
-    timestamp: 1707908655
-    hash: 954b983471d4f46a73fb878559ce7d26
+    timestamp: 1708030651
+    hash: 20df0744bc8c04d09c8ecb1846e02e8c
 admin/src/crud/staff/User/UseUserForm.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 89b240352f7dd77e739b2b92ba1933d6
 admin/src/crud/staff/User/UseUserModalForm.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: fe1895f81441ed86dd206519c20620b9
 admin/src/crud/staff/User/UseUserDrawerForm.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 0d076fe5d254e6d75f26e445f63c6193
 admin/src/crud/staff/User/UseUserTable.tsx:
-    timestamp: 1707908655
-    hash: ffa0455ea753618f3f0150778bedd75b
+    timestamp: 1708030651
+    hash: 401d9d6e3833891cfb830c7659d28898
 admin/src/i18n/locales/es/staff/users.json:
-    timestamp: 1707908655
-    hash: 51ea06e605d5556b3f389ffcb2cf1b8b
+    timestamp: 1708030651
+    hash: 6725f6aaa6aff1420e572238fbb4dbba
 admin/src/i18n/locales/en/staff/users.json:
-    timestamp: 1707908655
-    hash: 51ea06e605d5556b3f389ffcb2cf1b8b
+    timestamp: 1708030651
+    hash: 6725f6aaa6aff1420e572238fbb4dbba
+admin/src/crud/staff/Password/Password.ts:
+    timestamp: 1708030651
+    hash: c1a2498e78808b7c69832d5ec70ae837
+admin/src/crud/staff/Password/PasswordValidator.ts:
+    timestamp: 1708030651
+    hash: 229483217db6ec6353ba367497cde6af
+admin/src/crud/staff/Password/PasswordInput.tsx:
+    timestamp: 1708030651
+    hash: 145fcdcab02f2c0320c086ca26e78128
+admin/src/i18n/locales/es/staff/vo/password.json:
+    timestamp: 1708030651
+    hash: e2ed6a346ad01fdfa1bd689e44c6d919
+admin/src/i18n/locales/en/staff/vo/password.json:
+    timestamp: 1708030651
+    hash: e2ed6a346ad01fdfa1bd689e44c6d919
 admin/src/crud/staff/Email/Email.ts:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 943ad38685be9ef1ecc27a6e43410d16
 admin/src/crud/staff/Email/EmailValidator.ts:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 6afb409e3906fc2c5dc3c77e51c6e858
 admin/src/crud/staff/Email/EmailInput.tsx:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 934d255aaa9b99d523f97ed8fd1b482f
 admin/src/i18n/locales/es/staff/vo/email.json:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 833650392303992979cc77f6738c9560
 admin/src/i18n/locales/en/staff/vo/email.json:
-    timestamp: 1707908655
+    timestamp: 1708030651
     hash: 833650392303992979cc77f6738c9560
 admin/src/crud/music/SongName/SongName.ts:
     timestamp: 1706960867
@@ -1436,8 +1484,8 @@ admin/src/i18n/locales/en/bookstore/vo/title.json:
     timestamp: 1707084667
     hash: d4b8b9d718ed0d209d59e0615768a421
 admin/src/crud/staff//index.ts:
-    timestamp: 1707908655
-    hash: 5e1640941f647742f2d3fc407572e135
+    timestamp: 1708030651
+    hash: a8a3d7734d1a21760f41ae86c21dda65
 admin/src/crud/music//index.ts:
     timestamp: 1707135525
     hash: e3653a6bcb60b48d1832f23d4f9c2acb

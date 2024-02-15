@@ -10,4 +10,5 @@ doctrine:
         types:
             Staff.UserId: App\Staff\Framework\Doctrine\DBAL\UserIdDBALType
             Staff.UserName: App\Staff\Framework\Doctrine\DBAL\UserNameDBALType
+            Staff.Password: App\Staff\Framework\Doctrine\DBAL\PasswordDBALType
             Staff.Email: App\Staff\Framework\Doctrine\DBAL\EmailDBALType

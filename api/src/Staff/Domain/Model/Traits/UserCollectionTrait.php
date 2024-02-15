@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\Staff\Domain\Model\Traits;
 
 use App\Staff\Domain\Input\UserListInput;
+use App\Staff\Domain\Model\RoleList;
 use App\Staff\Domain\Model\User;
 use App\Staff\Domain\Model\UserList;
 use App\Staff\Domain\Model\VO\Email;
+use App\Staff\Domain\Model\VO\Password;
 use App\Staff\Domain\Model\VO\UserName;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -24,9 +26,9 @@ trait UserCollectionTrait
         return $this;
     }
 
-    public function createUser(UserName $name, Email $email): static
+    public function createUser(UserName $name, Email $email, RoleList $roles, Password $password): static
     {
-        $user = new User($name, $email);
+        $user = new User($name, $email, $roles, $password);
         $this->users->add($user);
 
         return $this;

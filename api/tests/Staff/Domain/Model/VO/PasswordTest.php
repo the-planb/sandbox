@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Staff\Domain\Model\VO;
 
-use App\Staff\Domain\Model\VO\Email;
+use App\Staff\Domain\Model\VO\Password;
 use App\Tests\Staff\Doubles\StaffTrait;
 use PHPUnit\Framework\TestCase;
 use PlanB\Framework\Testing\FakesTrait;
@@ -12,7 +12,7 @@ use PlanB\Framework\Testing\FakesTrait;
 /**
  * @internal
  */
-class EmailTest extends TestCase
+class PasswordTest extends TestCase
 {
     use StaffTrait;
     use FakesTrait;
@@ -22,14 +22,14 @@ class EmailTest extends TestCase
      */
     public function test_it_can_be_instantiated_properly()
     {
-        $email = $this->email();
+        $password = $this->string();
 
-        $sut = new Email(...[
-            'email' => $email,
+        $sut = new Password(...[
+            'password' => $password,
         ]);
 
-        $this->assertSame($sut->getEmail(), $email);
+        $this->assertSame($sut->getPassword(), $password);
 
-        $this->assertSame((string) $sut, $email);
+        $this->assertSame((string) $sut, $password);
     }
 }

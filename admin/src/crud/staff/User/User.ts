@@ -6,4 +6,6 @@ export interface User extends BaseRecord {
   id: string
   name: Staff.UserName
   email: Staff.Email
+  roles: Staff.RoleList
+  password: Staff.Password
 }

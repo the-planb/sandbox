@@ -24,4 +24,24 @@
       </values>
     </openapiContext>
   </property>
+  <property resource="App\Staff\Domain\Input\UserInput" name="roles">
+    <openapiContext>
+      <values>
+        <value name="type">object</value>
+        <value name="example">
+          <values>
+            <value name="0">ROLE_ADMIN</value>
+          </values>
+        </value>
+      </values>
+    </openapiContext>
+  </property>
+  <property resource="App\Staff\Domain\Input\UserInput" name="password">
+    <openapiContext>
+      <values>
+        <value name="type">object</value>
+        <value name="example"/>
+      </values>
+    </openapiContext>
+  </property>
 </properties>

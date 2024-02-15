@@ -1,5 +1,8 @@
----
 App\Staff\Domain\Model\VO\UserName:
-  attributes:
-    name:
-      groups: [get.item, get.collection, post, put]
+    attributes:
+        name:
+            groups:
+                - get.item
+                - get.collection
+                - post
+                - put

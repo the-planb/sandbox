@@ -2,32 +2,32 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Music\Doubles\Domain\Model\VO;
+namespace App\Tests\Staff\Doubles\Domain\Model\VO;
 
-use App\Music\Domain\Model\VO\SongName;
+use App\Staff\Domain\Model\VO\Password;
 use PlanB\Framework\Testing\Double;
 use PlanB\Framework\Testing\FakesTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
-final class SongNameDouble extends Double
+final class PasswordDouble extends Double
 {
     use FakesTrait;
 
-    public function reveal(): SongName
+    public function reveal(): Password
     {
         return $this->double->reveal();
     }
 
-    public function withName(string $name): self
+    public function withPassword(string $password): self
     {
         $this->double()
-            ->getName()
-            ->willReturn($name)
+            ->getPassword()
+            ->willReturn($password)
         ;
 
         $this->double()
             ->__toString()
-            ->willReturn($name)
+            ->willReturn($password)
         ;
 
         return $this;
@@ -35,15 +35,15 @@ final class SongNameDouble extends Double
 
     protected function configure(): void
     {
-        $this->withName($this->string());
+        $this->withPassword($this->string());
     }
 
     protected function classNameOrInterface(): string
     {
-        return SongName::class;
+        return Password::class;
     }
 
-    protected function double(): ObjectProphecy|SongName
+    protected function double(): ObjectProphecy|Password
     {
         return $this->double;
     }

@@ -6,10 +6,13 @@ namespace App\Tests\Music\Doubles\Domain\Model\VO;
 
 use App\Music\Domain\Model\VO\DiscoName;
 use PlanB\Framework\Testing\Double;
+use PlanB\Framework\Testing\FakesTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 final class DiscoNameDouble extends Double
 {
+    use FakesTrait;
+
     public function reveal(): DiscoName
     {
         return $this->double->reveal();
@@ -22,7 +25,17 @@ final class DiscoNameDouble extends Double
             ->willReturn($name)
         ;
 
+        $this->double()
+            ->__toString()
+            ->willReturn($name)
+        ;
+
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withName($this->string());
     }
 
     protected function classNameOrInterface(): string

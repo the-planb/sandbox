@@ -18,5 +18,11 @@ return AggregateRoot('User')
         ->example([
             'name' => 'monica@example.com'
         ])
-    );
+    )
+    ->with('roles', Attribute('Sequence(RoleList)')
+        ->example([
+            'ROLE_ADMIN'
+        ])
+    )
+    ->with('password', Attribute('VO(Password)'));
 

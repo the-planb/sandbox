@@ -23,15 +23,24 @@ class UserTest extends TestCase
     {
         $name = $this->doubleUserName();
         $email = $this->doubleEmail();
+        $roles = $this->doubleRoleList();
+        $password = $this->doublePassword();
 
         $user = new User(...[
             'name' => $name,
             'email' => $email,
+            'roles' => $roles,
+            'password' => $password,
         ]);
+
+        $user->eraseCredentials();
 
         $this->assertInstanceOf(UserId::class, $user->getId());
         $this->assertSame($user->getName(), $name);
         $this->assertSame($user->getEmail(), $email);
+        $this->assertSame($user->getRoles(), $roles->toArray());
+        $this->assertSame($user->getPassword(), (string) $password);
+        $this->assertSame($user->getUserIdentifier(), (string) $email);
     }
 
     /**
@@ -45,12 +54,22 @@ class UserTest extends TestCase
 
         $name = $this->doubleUserName();
         $email = $this->doubleEmail();
+        $roles = $this->doubleRoleList();
+        $password = $this->doublePassword();
+
         $user->update(...[
             'name' => $name,
             'email' => $email,
+            'roles' => $roles,
+            'password' => $password,
         ]);
+
+        $user->eraseCredentials();
 
         $this->assertSame($user->getName(), $name);
         $this->assertSame($user->getEmail(), $email);
+        $this->assertSame($user->getRoles(), $roles->toArray());
+        $this->assertSame($user->getPassword(), (string) $password);
+        $this->assertSame($user->getUserIdentifier(), (string) $email);
     }
 }

@@ -41,6 +41,7 @@ class TagTest extends TestCase
         ;
 
         $name = $this->doubleTagName();
+
         $tag->update(...[
             'name' => $name,
         ]);

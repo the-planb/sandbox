@@ -30,6 +30,16 @@ const Main = () => {
           label={t('fields.email.label', { ns: 'staff/users' })}
           name={'email'}
         />
+        <Staff.RoleListInput
+          required={true}
+          label={t('fields.roles.label', { ns: 'staff/users' })}
+          name={'roles'}
+        />
+        <Staff.PasswordInput
+          required={true}
+          label={t('fields.password.label', { ns: 'staff/users' })}
+          name={'password'}
+        />
       </Fieldset>
       <Fieldset legend='Extra Fieldset' id={'extra'}>
         distribuir los campos en varios fieldsets ...

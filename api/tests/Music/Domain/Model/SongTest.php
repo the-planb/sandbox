@@ -48,15 +48,13 @@ class SongTest extends TestCase
 
         $title = $this->doubleSongName();
         $duration = $this->doubleDuration();
-        $album = $this->doubleDisco();
+
         $song->update(...[
             'title' => $title,
             'duration' => $duration,
-            'album' => $album,
         ]);
 
         $this->assertSame($song->getTitle(), $title);
         $this->assertSame($song->getDuration(), $duration);
-        $this->assertSame($song->getAlbum(), $album);
     }
 }

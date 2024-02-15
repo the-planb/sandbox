@@ -6,10 +6,13 @@ namespace App\Tests\BookStore\Doubles\Domain\Model\VO;
 
 use App\BookStore\Domain\Model\VO\FullName;
 use PlanB\Framework\Testing\Double;
+use PlanB\Framework\Testing\FakesTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 final class FullNameDouble extends Double
 {
+    use FakesTrait;
+
     public function reveal(): FullName
     {
         return $this->double->reveal();
@@ -33,6 +36,12 @@ final class FullNameDouble extends Double
         ;
 
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withFirstname($this->string());
+        $this->withLastname($this->string());
     }
 
     protected function classNameOrInterface(): string

@@ -18,6 +18,18 @@
       "placeholder": "**users.fields.email**",
       "column": "**users.fields.email**",
       "filter": "**users.fields.email**"
+    },
+    "roles": {
+      "label": "**users.fields.roles**",
+      "placeholder": "**users.fields.roles**",
+      "column": "**users.fields.roles**",
+      "filter": "**users.fields.roles**"
+    },
+    "password": {
+      "label": "**users.fields.password**",
+      "placeholder": "**users.fields.password**",
+      "column": "**users.fields.password**",
+      "filter": "**users.fields.password**"
     }
   },
   "titles": {

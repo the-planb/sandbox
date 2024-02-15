@@ -4,5 +4,7 @@
     <id name="id" type="Staff.UserId"/>
     <field name="name" type="Staff.UserName"/>
     <field name="email" type="Staff.Email"/>
+    <field name="roles" type="RoleList"/>
+    <field name="password" type="Staff.Password"/>
   </entity>
 </doctrine-mapping>

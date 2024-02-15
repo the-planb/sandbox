@@ -21,7 +21,6 @@ final class DiscoFixture extends UseCaseFixture // implements DependentFixtureIn
     public function loadData(): void
     {
         $this->createMany(100, function (int $index) {
-
             $songs = $this->createMany(rand(5, 8), function (int $index) {
                 $input = new SongInput();
                 $input->title = new SongName(sprintf('canción %02d', $index));
@@ -35,6 +34,7 @@ final class DiscoFixture extends UseCaseFixture // implements DependentFixtureIn
             $input->songs = SongListInput::collect($songs);
 
             $command = new CreateDisco($input);
+
             return $this->handle($command);
         });
     }

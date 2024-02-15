@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Staff\Domain\Model;
 
 use App\Staff\Domain\Model\VO\Email;
+use App\Staff\Domain\Model\VO\Password;
 use App\Staff\Domain\Model\VO\UserName;
 use PlanB\Domain\Model\Entity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -15,18 +16,24 @@ class User implements Entity, UserInterface, PasswordAuthenticatedUserInterface
     private UserId $id;
     private UserName $name;
     private Email $email;
+    private RoleList $roles;
+    private Password $password;
 
-    public function __construct(UserName $name, Email $email)
+    public function __construct(UserName $name, Email $email, RoleList $roles, Password $password)
     {
         $this->id = new UserId();
         $this->name = $name;
         $this->email = $email;
+        $this->roles = $roles;
+        $this->password = $password;
     }
 
-    public function update(UserName $name, Email $email): self
+    public function update(UserName $name, Email $email, RoleList $roles, Password $password): self
     {
         $this->name = $name;
         $this->email = $email;
+        $this->roles = $roles;
+        $this->password = $password;
 
         return $this;
     }
@@ -46,19 +53,18 @@ class User implements Entity, UserInterface, PasswordAuthenticatedUserInterface
         return $this->email;
     }
 
-    public function getPassword(): ?string
-    {
-        return 'xxxx';
-    }
-
     public function getRoles(): array
     {
-        return [];
+        return $this->roles->toArray();
+    }
+
+    public function getPassword(): string
+    {
+        return (string) $this->password;
     }
 
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
     }
 
     public function getUserIdentifier(): string

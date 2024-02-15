@@ -53,6 +53,7 @@ class BookTest extends TestCase
         $price = $this->doublePrice();
         $author = $this->doubleAuthor();
         $tags = $this->doubleTagListInput();
+
         $book->update(...[
             'title' => $title,
             'price' => $price,

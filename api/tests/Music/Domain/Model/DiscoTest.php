@@ -45,6 +45,7 @@ class DiscoTest extends TestCase
 
         $title = $this->doubleDiscoName();
         $songs = $this->doubleSongListInput();
+
         $disco->update(...[
             'title' => $title,
             'songs' => $songs,

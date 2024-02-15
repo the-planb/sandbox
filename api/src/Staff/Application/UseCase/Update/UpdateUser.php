@@ -5,14 +5,18 @@ declare(strict_types=1);
 namespace App\Staff\Application\UseCase\Update;
 
 use App\Staff\Domain\Input\UserInput;
+use App\Staff\Domain\Model\RoleList;
 use App\Staff\Domain\Model\UserId;
 use App\Staff\Domain\Model\VO\Email;
+use App\Staff\Domain\Model\VO\Password;
 use App\Staff\Domain\Model\VO\UserName;
 
 final class UpdateUser
 {
     private UserName $name;
     private Email $email;
+    private RoleList $roles;
+    private Password $password;
 
     private UserId $id;
 
@@ -20,6 +24,8 @@ final class UpdateUser
     {
         $this->name = $input->name;
         $this->email = $input->email;
+        $this->roles = $input->roles;
+        $this->password = $input->password;
 
         $this->id = $userId;
     }
@@ -29,6 +35,8 @@ final class UpdateUser
         return [
             'name' => $this->name,
             'email' => $this->email,
+            'roles' => $this->roles,
+            'password' => $this->password,
         ];
     }
 

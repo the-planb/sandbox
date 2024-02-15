@@ -37,6 +37,24 @@ export const UserListInput = ({ name, ...props }: FormItemProps) => {
                     required={true}
                     name={[name, 'email']}
                   />
+                  <Staff.RoleListInput
+                    label={
+                      key === 0
+                        ? t('fields.roles.label', { ns: 'staff/users' })
+                        : ''
+                    }
+                    required={true}
+                    name={[name, 'roles']}
+                  />
+                  <Staff.PasswordInput
+                    label={
+                      key === 0
+                        ? t('fields.password.label', { ns: 'staff/users' })
+                        : ''
+                    }
+                    required={true}
+                    name={[name, 'password']}
+                  />
                 </li>
               ))}
 

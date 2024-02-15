@@ -41,6 +41,7 @@ class AuthorTest extends TestCase
         ;
 
         $name = $this->doubleFullName();
+
         $author->update(...[
             'name' => $name,
         ]);

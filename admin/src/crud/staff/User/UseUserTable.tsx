@@ -75,10 +75,28 @@ export const useUserTable = (
           sorter: true,
           render: (value) => <TableCell value={value} />,
         },
+        {
+          dataIndex: 'roles',
+          width: 'auto',
+          title: t('fields.roles.column', { ns: 'staff/users' }),
+          sorter: true,
+          render: (value) => (
+            <TableCell value={value} renderer={Staff.roleListRenderer} />
+          ),
+        },
+        {
+          dataIndex: 'password',
+          width: 'auto',
+          title: t('fields.password.column', { ns: 'staff/users' }),
+          sorter: true,
+          render: (value) => <TableCell value={value} />,
+        },
       ],
       filters: {
         name: <TextFilter />,
         email: <TextFilter />,
+        roles: <TextFilter />,
+        password: <TextFilter />,
       },
       headerButtons: (
         <>

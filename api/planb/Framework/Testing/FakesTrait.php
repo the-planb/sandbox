@@ -61,4 +61,14 @@ trait FakesTrait
             return $faker->numberBetween($min, $max ?? 2147483647);
         });
     }
+
+    /**
+     * @throws \ReflectionException
+     */
+    private function email(): string
+    {
+        return $this->fake(function (Generator $faker) {
+            return $faker->email();
+        });
+    }
 }

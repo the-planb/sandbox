@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace App\Tests\Staff\Doubles\Domain\Input;
 
 use App\Staff\Domain\Input\UserInput;
+use App\Staff\Domain\Model\RoleList;
 use App\Staff\Domain\Model\UserId;
 use App\Staff\Domain\Model\VO\Email;
+use App\Staff\Domain\Model\VO\Password;
 use App\Staff\Domain\Model\VO\UserName;
 use PlanB\Framework\Testing\Double;
 use Prophecy\Prophecy\ObjectProphecy;
@@ -53,11 +55,33 @@ final class UserInputDouble extends Double
         return $this;
     }
 
+    public function withRoles(RoleList $roles): self
+    {
+        $this->double()
+            ->roles = $roles
+        ;
+
+        return $this;
+    }
+
+    public function withPassword(Password $password): self
+    {
+        $this->double()
+            ->password = $password
+        ;
+
+        return $this;
+    }
+
     protected function configure(): void
     {
         $this->double()->name = $this->mock(UserName::class)->reveal();
 
         $this->double()->email = $this->mock(Email::class)->reveal();
+
+        $this->double()->roles = $this->mock(RoleList::class)->reveal();
+
+        $this->double()->password = $this->mock(Password::class)->reveal();
     }
 
     protected function classNameOrInterface(): string

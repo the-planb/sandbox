@@ -23,11 +23,10 @@ class Song implements Entity
         $this->album = $album;
     }
 
-    public function update(SongName $title, ?Duration $duration, Disco $album): self
+    public function update(SongName $title, ?Duration $duration): self
     {
         $this->title = $title;
         $this->duration = $duration;
-        $this->album = $album;
 
         return $this;
     }

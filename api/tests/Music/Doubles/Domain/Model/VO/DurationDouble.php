@@ -6,10 +6,13 @@ namespace App\Tests\Music\Doubles\Domain\Model\VO;
 
 use App\Music\Domain\Model\VO\Duration;
 use PlanB\Framework\Testing\Double;
+use PlanB\Framework\Testing\FakesTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 final class DurationDouble extends Double
 {
+    use FakesTrait;
+
     public function reveal(): Duration
     {
         return $this->double->reveal();
@@ -23,6 +26,11 @@ final class DurationDouble extends Double
         ;
 
         return $this;
+    }
+
+    protected function configure(): void
+    {
+        $this->withDuration($this->int());
     }
 
     protected function classNameOrInterface(): string

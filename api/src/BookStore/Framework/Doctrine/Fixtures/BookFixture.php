@@ -14,6 +14,9 @@ use App\BookStore\Domain\Model\VO\Title;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
 
+/**
+ * @codeCoverageIgnore
+ */
 final class BookFixture extends UseCaseFixture implements DependentFixtureInterface
 {
     public function loadData(): void
