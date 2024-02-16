@@ -12,3 +12,4 @@ doctrine:
             Staff.UserName: App\Staff\Framework\Doctrine\DBAL\UserNameDBALType
             Staff.Password: App\Staff\Framework\Doctrine\DBAL\PasswordDBALType
             Staff.Email: App\Staff\Framework\Doctrine\DBAL\EmailDBALType
+            Staff.RoleList: App\Staff\Framework\Doctrine\DBAL\RoleListDBALType

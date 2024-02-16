@@ -1,5 +1,0 @@
----
-App\Auth\Domain\Model\VO\Email:
-  attributes:
-    email:
-      groups: [read, write]

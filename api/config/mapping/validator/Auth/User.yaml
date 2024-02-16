@@ -1,9 +1,0 @@
----
-App\Auth\Application\Input\UserInput:
-  properties:
-    username:
-      - App\Auth\Domain\Model\VO\Constraint\UsernameConstraint: ~
-    email:
-      - App\Auth\Domain\Model\VO\Constraint\EmailConstraint: ~
-    roles: []
-    password: []

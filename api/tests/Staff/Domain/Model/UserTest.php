@@ -6,6 +6,7 @@ namespace App\Tests\Staff\Domain\Model;
 
 use App\Staff\Domain\Model\User;
 use App\Staff\Domain\Model\UserId;
+use App\Tests\Staff\Doubles\Domain\Service\PasswordEncoderDouble;
 use App\Tests\Staff\Doubles\StaffTrait;
 use PHPUnit\Framework\TestCase;
 
@@ -24,13 +25,16 @@ class UserTest extends TestCase
         $name = $this->doubleUserName();
         $email = $this->doubleEmail();
         $roles = $this->doubleRoleList();
-        $password = $this->doublePassword();
+
+        $encoder = $this->doublePasswordEncoder(function (PasswordEncoderDouble $double) {
+            $double->withHash('###');
+        });
 
         $user = new User(...[
             'name' => $name,
             'email' => $email,
             'roles' => $roles,
-            'password' => $password,
+            'encoder' => $encoder,
         ]);
 
         $user->eraseCredentials();
@@ -39,7 +43,7 @@ class UserTest extends TestCase
         $this->assertSame($user->getName(), $name);
         $this->assertSame($user->getEmail(), $email);
         $this->assertSame($user->getRoles(), $roles->toArray());
-        $this->assertSame($user->getPassword(), (string) $password);
+        $this->assertSame($user->getPassword(), '###');
         $this->assertSame($user->getUserIdentifier(), (string) $email);
     }
 
@@ -55,13 +59,11 @@ class UserTest extends TestCase
         $name = $this->doubleUserName();
         $email = $this->doubleEmail();
         $roles = $this->doubleRoleList();
-        $password = $this->doublePassword();
 
         $user->update(...[
             'name' => $name,
             'email' => $email,
             'roles' => $roles,
-            'password' => $password,
         ]);
 
         $user->eraseCredentials();
@@ -69,7 +71,7 @@ class UserTest extends TestCase
         $this->assertSame($user->getName(), $name);
         $this->assertSame($user->getEmail(), $email);
         $this->assertSame($user->getRoles(), $roles->toArray());
-        $this->assertSame($user->getPassword(), (string) $password);
+
         $this->assertSame($user->getUserIdentifier(), (string) $email);
     }
 }

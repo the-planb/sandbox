@@ -7,6 +7,7 @@ namespace App\Staff\Domain\Model;
 use App\Staff\Domain\Model\VO\Email;
 use App\Staff\Domain\Model\VO\Password;
 use App\Staff\Domain\Model\VO\UserName;
+use App\Staff\Domain\Service\PasswordEncoder;
 use PlanB\Domain\Model\Entity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -19,21 +20,20 @@ class User implements Entity, UserInterface, PasswordAuthenticatedUserInterface
     private RoleList $roles;
     private Password $password;
 
-    public function __construct(UserName $name, Email $email, RoleList $roles, Password $password)
+    public function __construct(UserName $name, Email $email, RoleList $roles, PasswordEncoder $encoder)
     {
         $this->id = new UserId();
         $this->name = $name;
         $this->email = $email;
         $this->roles = $roles;
-        $this->password = $password;
+        $this->password = $encoder->hash($this);
     }
 
-    public function update(UserName $name, Email $email, RoleList $roles, Password $password): self
+    public function update(UserName $name, Email $email, RoleList $roles): self
     {
         $this->name = $name;
         $this->email = $email;
         $this->roles = $roles;
-        $this->password = $password;
 
         return $this;
     }

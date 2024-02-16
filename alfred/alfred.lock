@@ -1,8 +1,8 @@
 api/src/Staff/Domain/Service/PasswordEncoder.php:
-    timestamp: 1708031133
+    timestamp: 1708085975
     hash: 4af15f3eed502473699d6bc2b7266dc3
 api/tests/Staff/Doubles/Domain/Service/PasswordEncoderDouble.php:
-    timestamp: 1708030651
+    timestamp: 1708085975
     hash: ba7f45f93beaf367f5a66919c8e5e5a3
 api/src/Staff/Domain/Model/RoleList.php:
     timestamp: 1708030651
@@ -10,6 +10,9 @@ api/src/Staff/Domain/Model/RoleList.php:
 api/tests/Staff/Doubles/Domain/Model/RoleListDouble.php:
     timestamp: 1708030651
     hash: ca5403c17968fb4ee9b03736e5a1a929
+api/src/Staff/Framework/Doctrine/DBAL/RoleListDBALType.php:
+    timestamp: 1708114547
+    hash: c1ab7afea35e367482eec4c27d249406
 api/src/Staff/Domain/Model/VO/UserName.php:
     timestamp: 1708030651
     hash: 5d0bb6e2a52f369c4d62468cc49e9696
@@ -152,10 +155,10 @@ api/tests/Staff/Framework/Api/Normalizer/UserListInputNormalizerTest.php:
     timestamp: 1708030651
     hash: bf2c59ee7daa20b87777781164d381d6
 api/src/Staff/Domain/Model/Traits/UserCollectionTrait.php:
-    timestamp: 1708030651
+    timestamp: 1708086286
     hash: b9d3c7d859df82d3c0c6312123dea57b
 api/tests/Staff/Domain/Model/Traits/UserCollectionTraitTest.php:
-    timestamp: 1708030651
+    timestamp: 1708086286
     hash: e129e162bba8fd8b9f5a430142e0fffe
 api/src/Staff/Domain/Model/UserList.php:
     timestamp: 1708030651
@@ -179,8 +182,8 @@ api/config/mapping/validator/Staff/User.yaml:
     timestamp: 1708030651
     hash: ba4126fa1af2486ab8a2c61179cd1951
 api/config/mapping/doctrine/Staff/User.orm.xml:
-    timestamp: 1708030651
-    hash: 4d7bd53a5b997819d6139bf4f307d3f7
+    timestamp: 1708113076
+    hash: 590fbde5da3360656f5415e6786d3c15
 api/src/Staff/Domain/Model/VO/Password.php:
     timestamp: 1708030651
     hash: 97e7929601c5a3b4f4045f55b5bd41a5
@@ -1034,19 +1037,19 @@ api/config/mapping/serialization/BookStore/VO/Title.yaml:
     timestamp: 1706963399
     hash: eb4746d9ca7a10ba66a2f53e9f676314
 api/config/packages/doctrine/Staff.yaml:
-    timestamp: 1708030651
-    hash: b83b2e9c0bbd7bd690f72c1f929e73ff
+    timestamp: 1708114458
+    hash: 206a70e7fbc99ce93ae9c086e926fc86
 api/tests/Staff/Doubles/StaffTrait.php:
-    timestamp: 1708030651
+    timestamp: 1708085977
     hash: b4ab75eb49743fdbe22bfb5aa4be628f
 api/config/packages/doctrine/Music.yaml:
-    timestamp: 1706960867
+    timestamp: 1708114316
     hash: 7df699e066352d47de72f1be8aa845b2
 api/tests/Music/Doubles/MusicTrait.php:
     timestamp: 1707652396
     hash: 35fff0bf47ece6ff70cde0ed6c746f64
 api/config/packages/doctrine/BookStore.yaml:
-    timestamp: 1701717503
+    timestamp: 1708114316
     hash: 02b91d598d7df9c244a4d0426c00a418
 api/tests/BookStore/Doubles/BookStoreTrait.php:
     timestamp: 1707652396

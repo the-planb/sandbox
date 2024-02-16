@@ -20,6 +20,8 @@ final class UpdateUserUseCase implements UseCaseInterface
     public function __invoke(UpdateUser $command): User
     {
         $data = $command->toArray();
+        unset($data['password']);
+
         $userId = $command->getId();
 
         $previous = $this->repository->findById($userId);

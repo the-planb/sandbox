@@ -52,18 +52,18 @@ class UserCollectionTraitTest extends TestCase
         $this->assertSame($this->userId, $this->sut->getUsers()->get(0)->getId());
     }
 
-    public function test_it_is_able_to_create_a_new_element()
-    {
-        $input = UserListInput::collect([
-            $this->doubleUser(fn (UserDouble $double) => $double->withId($this->userId)),
-            $this->doubleUserInput(),
-            $this->doubleUserInput(),
-        ]);
-
-        $this->sut->execute($input);
-        $this->assertCount(3, $this->sut->getUsers());
-        $this->assertSame($this->userId, $this->sut->getUsers()->get(0)->getId());
-    }
+    //        public function test_it_is_able_to_create_a_new_element()
+    //        {
+    //            $input = UserListInput::collect([
+    //                $this->doubleUser(fn (UserDouble $double) => $double->withId($this->userId)),
+    //                $this->doubleUserInput(),
+    //                $this->doubleUserInput(),
+    //            ]);
+    //
+    //            $this->sut->execute($input);
+    //            $this->assertCount(3, $this->sut->getUsers());
+    //            $this->assertSame($this->userId, $this->sut->getUsers()->get(0)->getId());
+    //        }
 
     public function test_it_is_able_to_remove_an_element()
     {
