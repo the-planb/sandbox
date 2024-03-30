@@ -1,8 +1,0 @@
-{
-  "fields": {
-    "duration": {
-      "label": "**durations.fields.duration**",
-      "placeholder": "**durations.fields.duration**"
-    }
-  }
-}

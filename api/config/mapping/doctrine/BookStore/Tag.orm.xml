@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="App\BookStore\Domain\Model\Tag" table="bookstore_tags" repository-class="App\BookStore\Framework\Doctrine\Repository\TagDoctrineRepository">
-    <id name="id" type="BookStore.TagId"/>
-    <field name="name" type="BookStore.TagName"/>
-  </entity>
-</doctrine-mapping>

@@ -1,5 +1,0 @@
----
-App\BookStore\Domain\Model\VO\TagName:
-  attributes:
-    name:
-      groups: [get.item, get.collection, post, put]

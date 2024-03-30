@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<resources xmlns="https://api-platform.com/schema/metadata/resources-3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://api-platform.com/schema/metadata/resources-3.0 https://api-platform.com/schema/metadata/resources-3.0.xsd">
+  <resource class="App\Movies\Domain\Model\Movie" routePrefix="movies" shortName="Movie">
+    <operations>
+      <operation class="ApiPlatform\Metadata\Get" provider="App\Movies\Framework\Api\State\Provider\GetMovieItemProvider">
+        <normalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>get.item</value>
+              </values>
+            </value>
+          </values>
+        </normalizationContext>
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
+      <operation class="ApiPlatform\Metadata\GetCollection" provider="App\Movies\Framework\Api\State\Provider\GetMovieCollectionProvider">
+        <normalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>get.collection</value>
+              </values>
+            </value>
+          </values>
+        </normalizationContext>
+        <cacheHeaders>
+          <cacheHeader name="shared_max_age">3600</cacheHeader>
+          <cacheHeader name="max_age">10</cacheHeader>
+        </cacheHeaders>
+      </operation>
+      <operation class="ApiPlatform\Metadata\Post" input="App\Movies\Domain\Input\MovieInput" processor="App\Movies\Framework\Api\State\Processor\CreateMovieProcessor">
+        <denormalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>post</value>
+              </values>
+            </value>
+          </values>
+        </denormalizationContext>
+      </operation>
+      <operation class="ApiPlatform\Metadata\Put" input="App\Movies\Domain\Input\MovieInput" processor="App\Movies\Framework\Api\State\Processor\UpdateMovieProcessor">
+        <denormalizationContext>
+          <values>
+            <value name="groups">
+              <values>
+                <value>put</value>
+              </values>
+            </value>
+          </values>
+        </denormalizationContext>
+      </operation>
+      <operation class="ApiPlatform\Metadata\Delete" processor="App\Movies\Framework\Api\State\Processor\DeleteMovieProcessor"/>
+    </operations>
+  </resource>
+</resources>

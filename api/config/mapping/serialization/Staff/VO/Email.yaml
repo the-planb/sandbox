@@ -1,8 +1,0 @@
-App\Staff\Domain\Model\VO\Email:
-    attributes:
-        email:
-            groups:
-                - get.item
-                - get.collection
-                - post
-                - put

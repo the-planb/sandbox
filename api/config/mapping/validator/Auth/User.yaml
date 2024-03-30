@@ -1,0 +1,29 @@
+---
+App\Auth\Domain\Model\User:
+  properties:
+    name:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Auth\Domain\Model\VO\Constraint\UserNameConstraint: ~
+    email:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Auth\Domain\Model\VO\Constraint\EmailConstraint: ~
+    roles:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+    password:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Auth\Domain\Model\VO\Constraint\PasswordConstraint: ~
+
+
+App\Auth\Domain\Input\UserInput:
+  properties:
+    name:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Auth\Domain\Model\VO\Constraint\UserNameConstraint: ~
+    email:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Auth\Domain\Model\VO\Constraint\EmailConstraint: ~
+    roles:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+    password:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Auth\Domain\Model\VO\Constraint\PasswordConstraint: ~

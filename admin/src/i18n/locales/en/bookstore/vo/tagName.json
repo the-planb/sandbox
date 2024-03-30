@@ -1,8 +1,0 @@
-{
-  "fields": {
-    "name": {
-      "label": "**tagnames.fields.name**",
-      "placeholder": "**tagnames.fields.name**"
-    }
-  }
-}

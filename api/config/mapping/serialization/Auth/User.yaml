@@ -1,0 +1,27 @@
+---
+App\Auth\Domain\Model\User:
+  attributes:
+    id:
+      groups: [get.item, get.collection]
+    name:
+      groups: [get.item, get.collection]
+    email:
+      groups: [get.item, get.collection]
+    roles:
+      groups: [get.item, get.collection]
+    password:
+      groups: [get.item, get.collection]
+
+
+App\Auth\Domain\Input\UserInput:
+  attributes:
+    id:
+      groups: [post, put]
+    name:
+      groups: [post, put]
+    email:
+      groups: [post, put]
+    roles:
+      groups: [post, put]
+    password:
+      groups: [post, put]

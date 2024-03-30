@@ -1,5 +1,0 @@
----
-App\BookStore\Domain\Model\VO\Title:
-  attributes:
-    title:
-      groups: [get.item, get.collection, post, put]

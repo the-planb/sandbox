@@ -1,8 +1,0 @@
-{
-  "fields": {
-    "name": {
-      "label": "**songnames.fields.name**",
-      "placeholder": "**songnames.fields.name**"
-    }
-  }
-}

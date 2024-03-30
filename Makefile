@@ -104,13 +104,13 @@ cache/flushall:
 
 alfred/please:
 
-	@(/mnt/workspace/the-planb/alfred/bin/entrypoint && \
+	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred2/bin/entrypoint && \
 			(cd admin; pnpm prettier > /dev/null ) && \
 			(cd api; \
 			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null && \
 			export YAMLFIX_NONE_REPRESENTATION="~" && \
 			export export YAMLFIX_SECTION_WHITELINES="2" && \
-			yamlfix config/mapping config/filters 2> /dev/null) \
+			yamlfix config/mapping 2> /dev/null) \
   )
 
 qa:

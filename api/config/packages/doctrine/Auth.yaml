@@ -1,0 +1,15 @@
+doctrine:
+    orm:
+        mappings:
+            Staff:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/doctrine/Auth'
+                prefix: App\Auth\Domain\Model
+    dbal:
+        types:
+            Auth.UserId: App\Auth\Framework\Doctrine\DBAL\UserIdDBALType
+            Auth.UserName: App\Auth\Framework\Doctrine\DBAL\UserNameDBALType
+            Auth.Password: App\Auth\Framework\Doctrine\DBAL\PasswordDBALType
+            Auth.Email: App\Auth\Framework\Doctrine\DBAL\EmailDBALType
+            Auth.RoleList: App\Auth\Framework\Doctrine\DBAL\RoleListDBALType

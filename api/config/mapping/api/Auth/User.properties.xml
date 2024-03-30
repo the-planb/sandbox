@@ -1,35 +1,46 @@
 <?xml version="1.0"?>
-<properties xmlns="https://api-platform.com/schema/metadata/properties-3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://api-platform.com/schema/metadata/properties https://api-platform.com/schema/metadata/properties.xsd">
-  <property resource="App\Auth\Application\Input\UserInput" name="id" identifier="1"/>
-  <property resource="App\Auth\Application\Input\UserInput" name="username">
+<properties xmlns="https://api-platform.com/schema/metadata/properties-3.0">
+  <property resource="App\Auth\Domain\Input\UserInput" name="name">
     <openapiContext>
       <values>
         <value name="type">object</value>
-        <value name="example">pepito58</value>
+        <value name="example">
+          <values>
+            <value name="name">M&#xF3;nica</value>
+          </values>
+        </value>
       </values>
     </openapiContext>
   </property>
-  <property resource="App\Auth\Application\Input\UserInput" name="email">
+  <property resource="App\Auth\Domain\Input\UserInput" name="email">
     <openapiContext>
       <values>
         <value name="type">object</value>
-        <value name="example">pepito@prueba.com</value>
+        <value name="example">
+          <values>
+            <value name="name">monica@example.com</value>
+          </values>
+        </value>
       </values>
     </openapiContext>
   </property>
-  <property resource="App\Auth\Application\Input\UserInput" name="roles">
+  <property resource="App\Auth\Domain\Input\UserInput" name="roles">
     <openapiContext>
       <values>
-        <value name="type">array</value>
+        <value name="type">object</value>
+        <value name="example">
+          <values>
+            <value name="0">ROLE_ADMIN</value>
+          </values>
+        </value>
+      </values>
+    </openapiContext>
+  </property>
+  <property resource="App\Auth\Domain\Input\UserInput" name="password">
+    <openapiContext>
+      <values>
+        <value name="type">object</value>
         <value name="example"/>
-      </values>
-    </openapiContext>
-  </property>
-  <property resource="App\Auth\Application\Input\UserInput" name="password">
-    <openapiContext>
-      <values>
-        <value name="type">object</value>
-        <value name="example">secret</value>
       </values>
     </openapiContext>
   </property>

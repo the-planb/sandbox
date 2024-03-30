@@ -1,8 +1,0 @@
-{
-  "fields": {
-    "name": {
-      "label": "**disconames.fields.name**",
-      "placeholder": "**disconames.fields.name**"
-    }
-  }
-}

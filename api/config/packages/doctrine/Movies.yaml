@@ -1,0 +1,12 @@
+doctrine:
+    orm:
+        mappings:
+            Movies:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/doctrine/Movies'
+                prefix: App\Movies\Domain\Model
+    dbal:
+        types:
+            Movies.MovieId: App\Movies\Framework\Doctrine\DBAL\MovieIdDBALType
+            Movies.Title: App\Movies\Framework\Doctrine\DBAL\TitleDBALType
