@@ -1,0 +1,22 @@
+{
+  "label": "Directores",
+  "fields": {
+    "name": {
+      "label": "Nombre",
+      "placeholder": "Nombre",
+      "column": "Nombre",
+      "filter": "Nombre"
+    }
+  },
+  "titles": {
+    "create": "Nuevo director",
+    "edit": "Editar director",
+    "list": "Directores"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

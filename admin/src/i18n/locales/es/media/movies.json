@@ -1,0 +1,52 @@
+{
+  "label": "Pel\u00edculas",
+  "fields": {
+    "title": {
+      "label": "T\u00edtulo",
+      "placeholder": "Escribe aqu\u00ed el t\u00edtulo",
+      "column": "T\u00edtulo",
+      "filter": "T\u00edtulo"
+    },
+    "releaseYear": {
+      "label": "A\u00f1o de lanzamiento",
+      "placeholder": "A\u00f1o de lanzamiento",
+      "column": "A\u00f1o",
+      "filter": "A\u00f1o de lanzamiento"
+    },
+    "director": {
+      "label": "Director",
+      "placeholder": "Director",
+      "column": "Director",
+      "filter": "Director"
+    },
+    "reviews": {
+      "label": "Cr\u00edticas",
+      "placeholder": "Cr\u00edticas",
+      "column": "Cr\u00edticas",
+      "filter": "Cr\u00edticas"
+    },
+    "genres": {
+      "label": "Generos",
+      "placeholder": "Generos",
+      "column": "Generos",
+      "filter": "Generos"
+    },
+    "overview": {
+      "label": "Sinopsis",
+      "placeholder": "Sinopsis",
+      "column": "Sinopsis",
+      "filter": "Sinopsis"
+    }
+  },
+  "titles": {
+    "create": "Nueva pel\u00edcula",
+    "edit": "Editar pel\u00edcula",
+    "list": "Pel\u00edculas"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

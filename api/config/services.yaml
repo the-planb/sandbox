@@ -17,7 +17,8 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Entity/'
+            - '../src/Music/Domain/Model'
+            - '../src/Staff/Domain/Model'
             - '../src/Kernel.php'
             - '../src/Tests/'
 
@@ -29,3 +30,8 @@ services:
         class: App\Auth\Framework\EventListener\JWTCreatedListener
         tags:
             - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+#
+#    serializer.normalizer.backed_enum:
+#        class: PlanB\Framework\Api\Normalizer\EnumNormalizer
+#        tags:
+#            - { name: serializer.normalizer, priority: 10 }

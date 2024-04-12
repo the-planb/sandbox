@@ -32,5 +32,5 @@ export const TableCell = <T extends BaseRecord>({
     )
   }
 
-  return custom(value as T)
+  return <Space> {custom(value as T)} </Space>
 }

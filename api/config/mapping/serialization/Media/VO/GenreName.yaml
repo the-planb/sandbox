@@ -1,0 +1,5 @@
+---
+App\Media\Domain\Model\VO\GenreName:
+  attributes:
+    name:
+      groups: [get.item, get.collection, post, put]

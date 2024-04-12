@@ -1,4 +1,4 @@
-import { BaseKey, BaseRecord } from '@refinedev/core'
+import { BaseKey, BaseRecord, useDataProvider } from '@refinedev/core'
 import { ColumnType } from 'antd/es/table'
 import { Space } from 'antd'
 import { Fragment } from 'react'

@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "year": {
+      "label": "releaseyears.fields.year",
+      "placeholder": "releaseyears.fields.year"
+    }
+  }
+}

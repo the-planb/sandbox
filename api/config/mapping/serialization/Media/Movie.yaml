@@ -1,0 +1,45 @@
+---
+App\Media\Domain\Model\Movie:
+  attributes:
+    id:
+      groups: [get.item, get.collection]
+    title:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+    releaseYear:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+    director:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+    reviews:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+    genres:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+    overview:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+
+
+App\Media\Domain\Input\MovieInput:
+  attributes:
+    title:
+      max_depth: 1
+      groups: [post, put]
+    releaseYear:
+      max_depth: 1
+      groups: [post, put]
+    director:
+      max_depth: 1
+      groups: [post, put]
+    reviews:
+      max_depth: 1
+      groups: [post, put]
+    genres:
+      max_depth: 1
+      groups: [post, put]
+    overview:
+      max_depth: 1
+      groups: [post, put]

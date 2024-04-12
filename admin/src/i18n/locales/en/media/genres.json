@@ -1,0 +1,22 @@
+{
+  "label": "genres.label",
+  "fields": {
+    "name": {
+      "label": "genres.fields.name",
+      "placeholder": "genres.fields.name",
+      "column": "genres.fields.name",
+      "filter": "genres.fields.name"
+    }
+  },
+  "titles": {
+    "create": "genres.titles.create",
+    "edit": "genres.titles.edit",
+    "list": "genres.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

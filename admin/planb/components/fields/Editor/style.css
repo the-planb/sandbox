@@ -1,0 +1,9 @@
+:root {
+  --ck-border-radius: 6px;
+  --ck-color-base-border: #d9d9d9;
+}
+
+.ant-form-item .ck.ck-editor__editable_inline {
+  /*border-color: #d9d9d9;*/
+  border-color: var(--ck-color-base-border);
+}

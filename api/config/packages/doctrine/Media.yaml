@@ -1,0 +1,21 @@
+doctrine:
+    orm:
+        mappings:
+            Media:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/doctrine/Media'
+                prefix: App\Media\Domain\Model
+    dbal:
+        types:
+            Media.GenreId: App\Media\Framework\Doctrine\DBAL\GenreIdDBALType
+            Media.MovieId: App\Media\Framework\Doctrine\DBAL\MovieIdDBALType
+            Media.ReviewId: App\Media\Framework\Doctrine\DBAL\ReviewIdDBALType
+            Media.DirectorId: App\Media\Framework\Doctrine\DBAL\DirectorIdDBALType
+            Media.GenreName: App\Media\Framework\Doctrine\DBAL\GenreNameDBALType
+            Media.FullName: App\Media\Framework\Doctrine\DBAL\FullNameDBALType
+            Media.Overview: App\Media\Framework\Doctrine\DBAL\OverviewDBALType
+            Media.Score: App\Media\Framework\Doctrine\DBAL\ScoreDBALType
+            Media.MovieTitle: App\Media\Framework\Doctrine\DBAL\MovieTitleDBALType
+            Media.ReleaseYear: App\Media\Framework\Doctrine\DBAL\ReleaseYearDBALType
+            Media.ReviewContent: App\Media\Framework\Doctrine\DBAL\ReviewContentDBALType

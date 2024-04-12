@@ -1,0 +1,18 @@
+---
+App\Media\Domain\Input\MovieInput:
+  properties:
+    title:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Media\Domain\Model\VO\Constraint\MovieTitleConstraint: ~
+    releaseYear:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Media\Domain\Model\VO\Constraint\ReleaseYearConstraint: ~
+    director:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+    reviews:
+      - Symfony\Component\Validator\Constraints\Optional: ~
+    genres:
+      - Symfony\Component\Validator\Constraints\Optional: ~
+    overview:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Media\Domain\Model\VO\Constraint\OverviewConstraint: ~

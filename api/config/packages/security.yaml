@@ -1,69 +1,71 @@
+imports:
+  - { resource: 'security/' }
+
+
 security:
-    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
-    password_hashers:
-        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
-    # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
-    providers:
-        auth_provider:
-            entity:
-                class: App\Auth\Domain\Model\User
-    
-    role_hierarchy:
-        ROLE_BOOKSTORE_TAGS: [ ROLE_BOOKSTORE_TAGS_CREATE, ROLE_BOOKSTORE_TAGS_LIST, ROLE_BOOKSTORE_TAGS_EDIT, ROLE_BOOKSTORE_TAGS_DELETE, ROLE_BOOKSTORE_TAGS_SHOW ]
-        ROLE_BOOKSTORE_BOOKS: [ ROLE_BOOKSTORE_BOOKS_CREATE, ROLE_BOOKSTORE_BOOKS_LIST, ROLE_BOOKSTORE_BOOKS_EDIT, ROLE_BOOKSTORE_BOOKS_DELETE, ROLE_BOOKSTORE_BOOKS_SHOW ]
-        ROLE_BOOKSTORE_AUTHORS: [ ROLE_BOOKSTORE_AUTHORS_CREATE, ROLE_BOOKSTORE_AUTHORS_LIST, ROLE_BOOKSTORE_AUTHORS_EDIT, ROLE_BOOKSTORE_AUTHORS_DELETE, ROLE_BOOKSTORE_AUTHORS_SHOW ]
-        ROLE_MUSIC_DISCOS: [ ROLE_MUSIC_DISCOS_CREATE, ROLE_MUSIC_DISCOS_LIST, ROLE_MUSIC_DISCOS_EDIT, ROLE_MUSIC_DISCOS_DELETE, ROLE_MUSIC_DISCOS_SHOW ]
-        ROLE_MUSIC_SONGS: [ ROLE_MUSIC_SONGS_CREATE, ROLE_MUSIC_SONGS_LIST, ROLE_MUSIC_SONGS_EDIT, ROLE_MUSIC_SONGS_DELETE, ROLE_MUSIC_SONGS_SHOW ]
-        ROLE_EDITOR: [ ROLE_BOOKSTORE_BOOKS, ROLE_BOOKSTORE_TAGS, ROLE_BOOKSTORE_AUTHORS, ROLE_MUSIC_DISCOS, ROLE_MUSIC_SONGS, ROLE_DASHBOARD_LIST ]
-        ROLE_ADMIN: [ ROLE_EDITOR ]
-    
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-        main:
-            stateless: true
-            entry_point: jwt
-            provider: auth_provider
-            json_login:
-                check_path: /api/token/auth
-                username_path: username
-                password_path: password
-                success_handler: lexik_jwt_authentication.handler.authentication_success
-                failure_handler: lexik_jwt_authentication.handler.authentication_failure
-            
-            logout:
-                path: token_logout
-            
-            jwt: ~
-            refresh_jwt:
-                check_path: /api/token/refresh
-
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#the-firewall
-
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-        - { path: ^/api/docs, roles: PUBLIC_ACCESS }
-#        - { path: ^/api/_fos_user_context_hash, roles: PUBLIC_ACCESS }
-        - { path: ^/api/token/auth, roles: PUBLIC_ACCESS }
-        - { path: ^/api, roles: ROLE_EDITOR }
-#        - { path: ^/api, roles: PUBLIC_ACCESS }
+  # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+  password_hashers:
+    Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+  # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
+  providers:
+    auth_provider:
+      entity:
+        class: App\Auth\Domain\Model\User
+  
+  #    role_hierarchy:
+  #        ROLE_SAMPLE_PRODUCTS: [ ROLE_SAMPLE_PRODUCTS_CREATE, ROLE_SAMPLE_PRODUCTS_LIST, ROLE_SAMPLE_PRODUCTS_EDIT, ROLE_SAMPLE_PRODUCTS_DELETE, ROLE_SAMPLE_PRODUCTS_SHOW ]
+  #        ROLE_SAMPLE_CATEGORIES: [ ROLE_SAMPLE_CATEGORIES_CREATE, ROLE_SAMPLE_CATEGORIES_LIST, ROLE_SAMPLE_CATEGORIES_EDIT, ROLE_SAMPLE_CATEGORIES_DELETE, ROLE_SAMPLE_CATEGORIES_SHOW ]
+  #        ROLE_SAMPLE_TAGS: [ ROLE_SAMPLE_TAGS_CREATE, ROLE_SAMPLE_TAGS_LIST, ROLE_SAMPLE_TAGS_EDIT, ROLE_SAMPLE_TAGS_DELETE, ROLE_SAMPLE_TAGS_SHOW ]
+  #        ROLE_EDITOR: [ ROLE_SAMPLE_PRODUCTS, ROLE_SAMPLE_CATEGORIES, ROLE_SAMPLE_TAGS, ROLE_DASHBOARD_LIST ]
+  #        ROLE_ADMIN: [ ROLE_EDITOR ]
+  
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      stateless: true
+      entry_point: jwt
+      provider: auth_provider
+      json_login:
+        check_path: /api/token/auth
+        username_path: username
+        password_path: password
+        success_handler: lexik_jwt_authentication.handler.authentication_success
+        failure_handler: lexik_jwt_authentication.handler.authentication_failure
+      
+      logout:
+        path: token_logout
+      
+      jwt: ~
+      refresh_jwt:
+        check_path: /api/token/refresh
+      
+      # activate different ways to authenticate
+      # https://symfony.com/doc/current/security.html#the-firewall
+      
+      # https://symfony.com/doc/current/security/impersonating_user.html
+      # switch_user: true
+  
+  # Easy way to control access for large sections of your site
+  # Note: Only the *first* access control that matches will be used
+  access_control:
+    - { path: ^/api/docs, roles: PUBLIC_ACCESS }
+    #        - { path: ^/api/_fos_user_context_hash, roles: PUBLIC_ACCESS }
+    - { path: ^/api/token/auth, roles: PUBLIC_ACCESS }
+#    - { path: ^/api, roles: ROLE_EDITOR }
+    - { path: ^/api, roles: PUBLIC_ACCESS }
 
 
 when@test:
-    security:
-        password_hashers:
-            # By default, password hashers are resource intensive and take time. This is
-            # important to generate secure password hashes. In tests however, secure hashes
-            # are not important, waste resources and increase test times. The following
-            # reduces the work factor to the lowest possible values.
-            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
-                algorithm: auto
-                cost: 4 # Lowest possible value for bcrypt
-                time_cost: 3 # Lowest possible value for argon
-                memory_cost: 10 # Lowest possible value for argon
+  security:
+    password_hashers:
+      # By default, password hashers are resource intensive and take time. This is
+      # important to generate secure password hashes. In tests however, secure hashes
+      # are not important, waste resources and increase test times. The following
+      # reduces the work factor to the lowest possible values.
+      Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+        algorithm: auto
+        cost: 4 # Lowest possible value for bcrypt
+        time_cost: 3 # Lowest possible value for argon
+        memory_cost: 10 # Lowest possible value for argon

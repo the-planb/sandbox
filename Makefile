@@ -77,6 +77,9 @@ build/prod/admin: --prod
 build/prod/php: --prod
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build php
 
+build/prod/www: --prod
+	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build www
+
 build/prod/cache: --prod
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml build http-cache
 
@@ -85,8 +88,6 @@ build/dev: --dev
 
 build/dev/cache: --dev
 	docker-compose --env-file=.env build http-cache
-
-
 
 up/prod: --prod down
 	docker-compose --env-file=.env -f docker-compose.yml -f docker-compose.prod.yml up -d --remove-orphans
@@ -99,18 +100,23 @@ up/dev: --dev down
 down:
 	docker-compose down --remove-orphans
 
+doctrine/refresh:
+	docker-compose exec php bin/console doctrine:schema:update --complete --force
+	docker-compose exec php bin/console doctrine:fixtures:load
+	docker-compose exec redis redis-cli FLUSHALL
+
 cache/flushall:
 	docker-compose exec redis redis-cli FLUSHALL
 
 alfred/please:
 
-	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred2/bin/entrypoint && \
-			(cd admin; pnpm prettier > /dev/null ) && \
+	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred3/bin/entrypoint && \
 			(cd api; \
 			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null && \
 			export YAMLFIX_NONE_REPRESENTATION="~" && \
 			export export YAMLFIX_SECTION_WHITELINES="2" && \
-			yamlfix config/mapping 2> /dev/null) \
+			yamlfix config/mapping 2> /dev/null) && \
+			(cd admin; pnpm prettier src/crud src/backend app > /dev/null ) \
   )
 
 qa:

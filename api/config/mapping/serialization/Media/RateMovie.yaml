@@ -1,0 +1,9 @@
+---
+App\Media\Application\UseCase\Rate\RateMovie:
+  attributes:
+    score:
+      max_depth: 1
+      groups: [rate.movie]
+    score2:
+      max_depth: 1
+      groups: [rate.movie]

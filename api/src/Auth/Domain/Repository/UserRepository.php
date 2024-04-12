@@ -19,5 +19,5 @@ interface UserRepository
 
     public function match(Criteria $criteria): UserList;
 
-    public function totalItems(): int;
+    public function totalItems(Criteria $criteria): int;
 }

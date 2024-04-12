@@ -1,0 +1,21 @@
+---
+App\Media\Domain\Model\Genre:
+  attributes:
+    id:
+      groups: [get.item, get.collection]
+    name:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+    movies:
+      max_depth: 1
+      groups: [get.item, get.collection, post, put]
+
+
+App\Media\Domain\Input\GenreInput:
+  attributes:
+    name:
+      max_depth: 1
+      groups: [post, put]
+    movies:
+      max_depth: 1
+      groups: [post, put]

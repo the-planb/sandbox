@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "title": {
+      "label": "movietitles.fields.title",
+      "placeholder": "movietitles.fields.title"
+    }
+  }
+}

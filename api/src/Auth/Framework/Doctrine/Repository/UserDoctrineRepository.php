@@ -12,8 +12,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
+use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
-final class UserDoctrineRepository extends ServiceEntityRepository implements UserRepository
+final class UserDoctrineRepository extends ServiceEntityRepository implements UserRepository, UserLoaderInterface
 {
     private DoctrineCriteriaConverter $criteriaConverter;
 
@@ -39,10 +41,7 @@ final class UserDoctrineRepository extends ServiceEntityRepository implements Us
 
     public function findById(UserId $userId): ?User
     {
-        $user = $this->find($userId);
-        assert($user instanceof User || is_null($user));
-
-        return $user;
+        return $this->find($userId);
     }
 
     public function match(Criteria $criteria): UserList
@@ -60,6 +59,21 @@ final class UserDoctrineRepository extends ServiceEntityRepository implements Us
         return $this->criteriaConverter
             ->count($criteria ?? Criteria::empty())
             ->getSingleScalarResult()
+        ;
+    }
+
+    public function loadUserByIdentifier(string $identifier): ?UserInterface
+    {
+        $entityManager = $this->getEntityManager();
+
+        return $entityManager->createQuery(
+            'SELECT u
+                FROM App\Auth\Domain\Model\User u
+                WHERE u.name = :query
+                OR u.email = :query'
+        )
+            ->setParameter('query', $identifier)
+            ->getOneOrNullResult()
         ;
     }
 }

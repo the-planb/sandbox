@@ -1,0 +1,5 @@
+---
+App\Media\Domain\Model\VO\Score:
+  attributes:
+    score:
+      groups: [get.item, get.collection, post, put]

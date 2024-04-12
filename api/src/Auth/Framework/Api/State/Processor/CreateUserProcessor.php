@@ -7,7 +7,6 @@ namespace App\Auth\Framework\Api\State\Processor;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
 use App\Auth\Application\UseCase\Create\CreateUser;
-use App\Auth\Domain\Input\UserInput;
 use League\Tactician\CommandBus;
 
 final class CreateUserProcessor implements ProcessorInterface
@@ -21,8 +20,6 @@ final class CreateUserProcessor implements ProcessorInterface
 
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): mixed
     {
-        assert($data instanceof UserInput);
-
         $command = new CreateUser($data);
 
         return $this->commandBus->handle($command);

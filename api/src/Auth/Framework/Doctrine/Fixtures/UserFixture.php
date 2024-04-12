@@ -20,11 +20,12 @@ final class UserFixture extends UseCaseFixture // implements DependentFixtureInt
     public function loadData(): void
     {
         $this->createRange(['admin', 'editor', 'tester'], function (string $name) {
-            $input = new UserInput();
-            $input->name = new UserName($name);
-            $input->email = new Email("{$name}@prueba.local");
-            $input->roles = RoleList::collect([strtoupper("ROLE_{$name}")]);
-            $input->password = new Password($name);
+            $input = UserInput::make([
+                'name' => new UserName($name),
+                'email' => new Email("{$name}@prueba.local"),
+                'roles' => RoleList::collect([strtoupper("ROLE_{$name}")]),
+                'password' => new Password($name),
+            ]);
 
             $command = new CreateUser($input);
 

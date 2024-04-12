@@ -13,6 +13,8 @@
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@astronautlabs/jsonpath": "^1.1.2",
+    "@ckeditor/ckeditor5-build-classic": "^43.0.0",
+    "@ckeditor/ckeditor5-react": "^9.0.0",
     "@refinedev/antd": "^5.36.18",
     "@refinedev/cli": "^2.16.16",
     "@refinedev/core": "^4.44.12",
@@ -24,6 +26,8 @@
     "accept-language": "^3.0.18",
     "antd": "^5.11.1",
     "axios": "^1.6.1",
+    "ckeditor": "^4.12.1",
+    "ckeditor5": "^43.0.0",
     "classnames": "^2.3.2",
     "fetch-h2": "^3.0.2",
     "http2": "^3.3.7",

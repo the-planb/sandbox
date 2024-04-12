@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Media\Domain\Model\Movie" table="media_movies">
+    <id name="id" type="Media.MovieId"/>
+    <field name="title" type="Media.MovieTitle"/>
+    <field name="releaseYear" type="Media.ReleaseYear"/>
+    <field name="overview" type="Media.Overview"/>
+    <many-to-one field="director" target-entity="App\Media\Domain\Model\Director" inversed-by="movies">
+      <cascade>
+        <cascade-persist/>
+      </cascade>
+    </many-to-one>
+    <one-to-many field="reviews" target-entity="App\Media\Domain\Model\Review" mapped-by="movie" orphan-removal="true">
+      <cascade>
+        <cascade-persist/>
+        <cascade-remove/>
+      </cascade>
+      <order-by>
+        <order-by-field name="id"/>
+      </order-by>
+    </one-to-many>
+    <many-to-many field="genres" target-entity="App\Media\Domain\Model\Genre" inversed-by="movies">
+      <cascade>
+        <cascade-persist/>
+      </cascade>
+      <order-by>
+        <order-by-field name="id"/>
+      </order-by>
+      <join-table name="media_movie_genre"/>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

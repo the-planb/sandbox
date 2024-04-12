@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "score": {
+      "label": "scores.fields.score",
+      "placeholder": "scores.fields.score"
+    }
+  }
+}

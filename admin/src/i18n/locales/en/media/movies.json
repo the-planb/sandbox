@@ -1,0 +1,52 @@
+{
+  "label": "movies.label",
+  "fields": {
+    "title": {
+      "label": "movies.fields.title",
+      "placeholder": "movies.fields.title",
+      "column": "movies.fields.title",
+      "filter": "movies.fields.title"
+    },
+    "releaseYear": {
+      "label": "movies.fields.releaseYear",
+      "placeholder": "movies.fields.releaseYear",
+      "column": "movies.fields.releaseYear",
+      "filter": "movies.fields.releaseYear"
+    },
+    "director": {
+      "label": "movies.fields.director",
+      "placeholder": "movies.fields.director",
+      "column": "movies.fields.director",
+      "filter": "movies.fields.director"
+    },
+    "reviews": {
+      "label": "movies.fields.reviews",
+      "placeholder": "movies.fields.reviews",
+      "column": "movies.fields.reviews",
+      "filter": "movies.fields.reviews"
+    },
+    "genres": {
+      "label": "movies.fields.genres",
+      "placeholder": "movies.fields.genres",
+      "column": "movies.fields.genres",
+      "filter": "movies.fields.genres"
+    },
+    "overview": {
+      "label": "movies.fields.overview",
+      "placeholder": "movies.fields.overview",
+      "column": "movies.fields.overview",
+      "filter": "movies.fields.overview"
+    }
+  },
+  "titles": {
+    "create": "movies.titles.create",
+    "edit": "movies.titles.edit",
+    "list": "movies.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

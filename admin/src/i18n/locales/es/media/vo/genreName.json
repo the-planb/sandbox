@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "name": {
+      "label": "genrenames.fields.name",
+      "placeholder": "genrenames.fields.name"
+    }
+  }
+}

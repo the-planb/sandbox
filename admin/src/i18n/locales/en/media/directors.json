@@ -1,0 +1,22 @@
+{
+  "label": "directors.label",
+  "fields": {
+    "name": {
+      "label": "directors.fields.name",
+      "placeholder": "directors.fields.name",
+      "column": "directors.fields.name",
+      "filter": "directors.fields.name"
+    }
+  },
+  "titles": {
+    "create": "directors.titles.create",
+    "edit": "directors.titles.edit",
+    "list": "directors.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

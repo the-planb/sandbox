@@ -1,12 +1,11 @@
 'use client'
+import { useState } from 'react'
 
-import { useGo, useTranslate } from '@refinedev/core'
-import { Button } from 'antd'
+import { Editor } from '@planb/components/fields'
 
 export default function Dashboard() {
-  const t = useTranslate()
+  const [value, setValue] = useState('**Hello world!!!**')
 
-  const go = useGo()
-
-  return <></>
+  // return <></>
+  return <Editor />
 }

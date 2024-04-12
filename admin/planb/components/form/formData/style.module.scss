@@ -131,15 +131,14 @@
     ul.aggregate {
       padding: 0;
 
+      li.labels {
+        margin-left: 28px;
+      }
+
       li {
         display: flex;
         gap: 1em;
-        align-items: baseline;
-
-        .delete-action-first {
-          position: relative;
-          top: 35px;
-        }
+        align-items: center;
       }
 
       .ant-form-item {
