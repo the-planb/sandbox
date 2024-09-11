@@ -1,8 +1,8 @@
 {
   "fields": {
     "overview": {
-      "label": "overviews.fields.overview",
-      "placeholder": "overviews.fields.overview"
+      "label": "Overview",
+      "placeholder": "$t(fields.overview.label)"
     }
   }
 }

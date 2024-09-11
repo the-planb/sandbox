@@ -1,12 +1,7 @@
 <?xml version="1.0"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="App\Media\Domain\Model\Director" table="media_directors">
+  <entity name="App\Media\Domain\Model\Director" table="media_directors" repository-class="App\Media\Framework\Doctrine\Repository\DirectorDoctrineRepository">
     <id name="id" type="Media.DirectorId"/>
-    <field name="name" type="Media.FullName"/>
-    <one-to-many field="movies" target-entity="App\Media\Domain\Model\Movie" mapped-by="director">
-      <order-by>
-        <order-by-field name="id"/>
-      </order-by>
-    </one-to-many>
+    <embedded name="name" class="App\Media\Domain\Model\VO\FullName"/>
   </entity>
 </doctrine-mapping>

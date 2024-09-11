@@ -7,10 +7,7 @@ namespace App\Media\Domain\Model;
 use PlanB\DS\Attribute\ElementType;
 use PlanB\DS\Vector\Vector;
 
-/**
- * @extends Vector<Director>
- */
 #[ElementType(Director::class)]
-final class DirectorList extends Vector
+class DirectorList extends Vector
 {
 }

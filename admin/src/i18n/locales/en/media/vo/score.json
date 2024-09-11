@@ -1,8 +1,8 @@
 {
   "fields": {
     "score": {
-      "label": "scores.fields.score",
-      "placeholder": "scores.fields.score"
+      "label": "Score",
+      "placeholder": "$t(fields.score.label)"
     }
   }
 }

@@ -1,47 +1,37 @@
 {
-  "label": "Pel\u00edculas",
+  "singular": "película",
+  "plural": "Películas",
+  "label": "$t(plural)",
   "fields": {
     "title": {
-      "label": "T\u00edtulo",
-      "placeholder": "Escribe aqu\u00ed el t\u00edtulo",
-      "column": "T\u00edtulo",
-      "filter": "T\u00edtulo"
+      "label": "Título",
+      "placeholder": "$t(fields.title.label)",
+      "column": "$t(fields.title.label)",
+      "filter": "$t(fields.title.label)"
     },
     "releaseYear": {
-      "label": "A\u00f1o de lanzamiento",
-      "placeholder": "A\u00f1o de lanzamiento",
-      "column": "A\u00f1o",
-      "filter": "A\u00f1o de lanzamiento"
+      "label": "Año",
+      "placeholder": "$t(fields.releaseYear.label)",
+      "column": "$t(fields.releaseYear.label)",
+      "filter": "$t(fields.releaseYear.label)"
     },
     "director": {
       "label": "Director",
-      "placeholder": "Director",
-      "column": "Director",
-      "filter": "Director"
-    },
-    "reviews": {
-      "label": "Cr\u00edticas",
-      "placeholder": "Cr\u00edticas",
-      "column": "Cr\u00edticas",
-      "filter": "Cr\u00edticas"
-    },
-    "genres": {
-      "label": "Generos",
-      "placeholder": "Generos",
-      "column": "Generos",
-      "filter": "Generos"
+      "placeholder": "$t(fields.director.label)",
+      "column": "$t(fields.director.label)",
+      "filter": "$t(fields.director.label)"
     },
     "overview": {
       "label": "Sinopsis",
-      "placeholder": "Sinopsis",
-      "column": "Sinopsis",
-      "filter": "Sinopsis"
+      "placeholder": "$t(fields.overview.label)",
+      "column": "$t(fields.overview.label)",
+      "filter": "$t(fields.overview.label)"
     }
   },
   "titles": {
-    "create": "Nueva pel\u00edcula",
-    "edit": "Editar pel\u00edcula",
-    "list": "Pel\u00edculas"
+    "create": "Nuevo $t(singular)",
+    "edit": "Editar $t(singular)",
+    "list": "$t(plural)"
   },
   "tabs": {
     "main": "Principal"

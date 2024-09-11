@@ -1,17 +1,19 @@
 {
-  "label": "Directores",
+  "singular": "director",
+  "plural": "Directores",
+  "label": "$t(plural)",
   "fields": {
     "name": {
       "label": "Nombre",
-      "placeholder": "Nombre",
-      "column": "Nombre",
-      "filter": "Nombre"
+      "placeholder": "$t(fields.name.label)",
+      "column": "$t(fields.name.label)",
+      "filter": "$t(fields.name.label)"
     }
   },
   "titles": {
-    "create": "Nuevo director",
-    "edit": "Editar director",
-    "list": "Directores"
+    "create": "Nuevo $t(singular)",
+    "edit": "Editar $t(singular)",
+    "list": "$t(plural)"
   },
   "tabs": {
     "main": "Principal"

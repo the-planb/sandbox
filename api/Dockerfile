@@ -116,17 +116,3 @@ RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-jwt;
 
 
 FROM redis:alpine as app_redis
-
-#RUN /usr/local/openresty/luajit/bin/luarocks install luacrypto;
-#RUN /usr/local/openresty/luajit/bin/luarocks install luajwt;
-
-#FROM varnish:latest AS app_varnish
-#ADD frankenphp/varnish/ /etc/varnish/
-#COPY --link frankenphp/varnish/default.vcl /etc/varnish/default.vcl
-#
-#CMD ["varnishd", "-F", \
-#    "-a", ":6081", \
-#    "-T", "localhost:6082", \
-#    "-f", "/etc/varnish/default.vcl", \
-#    "-p", "http_resp_hdr_len=65536", \
-#    "-p", "http_resp_size=98304"]

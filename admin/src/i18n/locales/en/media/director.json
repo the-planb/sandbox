@@ -1,0 +1,24 @@
+{
+  "singular": "director",
+  "plural": "director",
+  "label": "$t(plural)",
+  "fields": {
+    "name": {
+      "label": "director.fields.name",
+      "placeholder": "director.fields.name",
+      "column": "director.fields.name",
+      "filter": "director.fields.name"
+    }
+  },
+  "titles": {
+    "create": "director.titles.create",
+    "edit": "director.titles.edit",
+    "list": "director.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

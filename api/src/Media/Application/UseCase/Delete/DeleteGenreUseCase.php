@@ -7,7 +7,7 @@ namespace App\Media\Application\UseCase\Delete;
 use App\Media\Domain\Repository\GenreRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-final class DeleteGenreUseCase implements UseCaseInterface
+class DeleteGenreUseCase implements UseCaseInterface
 {
     private GenreRepository $repository;
 

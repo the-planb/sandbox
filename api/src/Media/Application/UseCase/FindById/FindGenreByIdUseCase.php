@@ -8,7 +8,7 @@ use App\Media\Domain\Model\Genre;
 use App\Media\Domain\Repository\GenreRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-final class FindGenreByIdUseCase implements UseCaseInterface
+class FindGenreByIdUseCase implements UseCaseInterface
 {
     private GenreRepository $repository;
 

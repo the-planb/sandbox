@@ -1,8 +1,0 @@
----
-App\Media\Domain\Input\GenreInput:
-  properties:
-    name:
-      - Symfony\Component\Validator\Constraints\NotNull: ~
-      - App\Media\Domain\Model\VO\Constraint\GenreNameConstraint: ~
-    movies:
-      - Symfony\Component\Validator\Constraints\Optional: ~

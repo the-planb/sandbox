@@ -1,5 +1,5 @@
-import { type RuleObject } from 'rc-field-form/es/interface'
 import React from 'react'
+import { type RuleObject } from 'rc-field-form/es/interface'
 import * as Media from '@crud/media'
 
 export const fullNameValidator = async (

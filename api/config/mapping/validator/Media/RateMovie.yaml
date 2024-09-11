@@ -1,9 +1,0 @@
----
-App\Media\Application\UseCase\Rate\RateMovie:
-  properties:
-    score:
-      - Symfony\Component\Validator\Constraints\NotNull: ~
-      - App\Media\Domain\Model\VO\Constraint\ScoreConstraint: ~
-    score2:
-      - Symfony\Component\Validator\Constraints\NotNull: ~
-      - App\Media\Domain\Model\VO\Constraint\ScoreConstraint: ~

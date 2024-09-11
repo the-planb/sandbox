@@ -10,6 +10,7 @@ export const i18nNamespaces = [
   'media/vo/movieTitle',
   'media/vo/releaseYear',
   'media/reviews',
+  'media/classifications',
   'media/vo/reviewContent',
   'media/directors',
 ]
@@ -26,7 +27,7 @@ export const resources = (lang: string) => {
       create: `${lang}/media/genres/create`,
       edit: `${lang}/media/genres/edit/:id`,
       meta: {
-        canCreate: true,
+        canDelete: true,
       },
     },
     {
@@ -35,7 +36,7 @@ export const resources = (lang: string) => {
       create: `${lang}/media/movies/create`,
       edit: `${lang}/media/movies/edit/:id`,
       meta: {
-        canCreate: true,
+        canDelete: true,
       },
     },
     {
@@ -44,7 +45,7 @@ export const resources = (lang: string) => {
       create: `${lang}/media/directors/create`,
       edit: `${lang}/media/directors/edit/:id`,
       meta: {
-        canCreate: true,
+        canDelete: true,
       },
     },
   ]

@@ -1,0 +1,5 @@
+App\Media\Application\UseCase\Update\UpdateGenre:
+    attributes:
+        name:
+            groups:
+                - update.genre

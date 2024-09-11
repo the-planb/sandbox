@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\GenreId;
 use PlanB\Framework\Doctrine\DBAL\Type\EntityIdType;
 
-final class GenreIdDBALType extends EntityIdType
+class GenreIdDBALType extends EntityIdType
 {
     public function makeFromValue(string $value): GenreId
     {

@@ -13,9 +13,9 @@ doctrine:
             Media.ReviewId: App\Media\Framework\Doctrine\DBAL\ReviewIdDBALType
             Media.DirectorId: App\Media\Framework\Doctrine\DBAL\DirectorIdDBALType
             Media.GenreName: App\Media\Framework\Doctrine\DBAL\GenreNameDBALType
-            Media.FullName: App\Media\Framework\Doctrine\DBAL\FullNameDBALType
             Media.Overview: App\Media\Framework\Doctrine\DBAL\OverviewDBALType
             Media.Score: App\Media\Framework\Doctrine\DBAL\ScoreDBALType
             Media.MovieTitle: App\Media\Framework\Doctrine\DBAL\MovieTitleDBALType
             Media.ReleaseYear: App\Media\Framework\Doctrine\DBAL\ReleaseYearDBALType
             Media.ReviewContent: App\Media\Framework\Doctrine\DBAL\ReviewContentDBALType
+            Media.Classification: App\Media\Framework\Doctrine\DBAL\ClassificationDBALType

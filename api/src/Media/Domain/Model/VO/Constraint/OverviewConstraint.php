@@ -6,29 +6,19 @@ namespace App\Media\Domain\Model\VO\Constraint;
 
 use App\Media\Domain\Model\VO\Overview;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
-use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\Type;
 
-final class OverviewConstraint extends Compound
+class OverviewConstraint extends Compound
 {
     public function getClassName(): string
     {
         return Overview::class;
     }
 
-    /**
-     * @param mixed[] $options
-     *
-     * @return Constraint[]
-     */
     public function getConstraints(array $options): array
     {
         return [
-            new Type('string'),
-            new Length([
-                'min' => 10,
-            ]),
+            new Length(['min' => 10]),
         ];
     }
 }

@@ -1,8 +1,12 @@
 {
   "fields": {
     "name": {
-      "label": "fullnames.fields.name",
-      "placeholder": "fullnames.fields.name"
+      "label": "Name",
+      "placeholder": "$t(fields.name.label)"
+    },
+    "lastName": {
+      "label": "LastName",
+      "placeholder": "$t(fields.lastName.label)"
     }
   }
 }

@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\ReviewId;
 use PlanB\Framework\Doctrine\DBAL\Type\EntityIdType;
 
-final class ReviewIdDBALType extends EntityIdType
+class ReviewIdDBALType extends EntityIdType
 {
     public function makeFromValue(string $value): ReviewId
     {

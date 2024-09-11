@@ -6,9 +6,9 @@ namespace App\Media\Application\UseCase\Delete;
 
 use App\Media\Domain\Model\MovieId;
 
-final class DeleteMovie
+class DeleteMovie
 {
-    public MovieId $id;
+    private MovieId $id;
 
     public function __construct(MovieId $id)
     {

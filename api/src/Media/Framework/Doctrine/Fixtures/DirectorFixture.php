@@ -5,33 +5,22 @@ declare(strict_types=1);
 namespace App\Media\Framework\Doctrine\Fixtures;
 
 use App\Media\Application\UseCase\Create\CreateDirector;
-use App\Media\Domain\Input\DirectorInput;
 use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
+use Symfony\Component\Yaml\Yaml;
 
-final class DirectorFixture extends UseCaseFixture
+class DirectorFixture extends UseCaseFixture
 {
-    // implements DependentFixtureInterface
-
     public function loadData(): void
     {
-        $directors = ['Steven Spielberg', 'Margin Scorsese', 'George Lucas', 'David Fincher', 'George Miller', 'Denis Villeneuve'];
-
-        $this->createRange($directors, function (string $name) {
-            $input = $this->denormalize([
-                'name' => $name,
-                'movies' => [],
-            ], DirectorInput::class);
-
-            $command = new CreateDirector($input);
+        $data = Yaml::parseFile(__DIR__.'/data/directors.yaml');
+        $this->createRange($data, function (array $input) {
+            $command = $this->denormalize([
+                'name' => $input['name'],
+            ], CreateDirector::class);
 
             return $this->handle($command);
         });
     }
-
-    //    public function getDependencies()
-    //    {
-    //        return [OtherFixture];
-    //    }
 
     public function allowedEnvironments(): array
     {

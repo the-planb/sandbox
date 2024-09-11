@@ -1,5 +1,6 @@
----
 App\Media\Domain\Model\VO\ReleaseYear:
-  attributes:
-    year:
-      groups: [get.item, get.collection, post, put]
+    attributes:
+        year:
+            groups:
+                - read
+                - write

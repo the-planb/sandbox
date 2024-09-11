@@ -1,8 +1,8 @@
 {
   "fields": {
     "year": {
-      "label": "releaseyears.fields.year",
-      "placeholder": "releaseyears.fields.year"
+      "label": "Year",
+      "placeholder": "$t(fields.year.label)"
     }
   }
 }

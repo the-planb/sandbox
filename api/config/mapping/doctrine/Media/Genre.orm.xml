@@ -1,15 +1,7 @@
 <?xml version="1.0"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="App\Media\Domain\Model\Genre" table="media_genres">
+  <entity name="App\Media\Domain\Model\Genre" table="media_genres" repository-class="App\Media\Framework\Doctrine\Repository\GenreDoctrineRepository">
     <id name="id" type="Media.GenreId"/>
     <field name="name" type="Media.GenreName"/>
-    <many-to-many field="movies" target-entity="App\Media\Domain\Model\Movie" inversed-by="genres">
-      <cascade>
-        <cascade-persist/>
-      </cascade>
-      <order-by>
-        <order-by-field name="id"/>
-      </order-by>
-    </many-to-many>
   </entity>
 </doctrine-mapping>

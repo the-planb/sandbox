@@ -7,15 +7,15 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\VO\GenreName;
 use PlanB\Framework\Doctrine\DBAL\Type\StringType;
 
-final class GenreNameDBALType extends StringType
+class GenreNameDBALType extends StringType
 {
-    public function getFQN(): string
-    {
-        return GenreName::class;
-    }
-
     public function getName(): string
     {
         return 'Media.GenreName';
+    }
+
+    public function getFQN(): string
+    {
+        return GenreName::class;
     }
 }

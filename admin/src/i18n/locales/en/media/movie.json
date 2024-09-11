@@ -1,0 +1,42 @@
+{
+  "singular": "movie",
+  "plural": "movie",
+  "label": "$t(plural)",
+  "fields": {
+    "title": {
+      "label": "movie.fields.title",
+      "placeholder": "movie.fields.title",
+      "column": "movie.fields.title",
+      "filter": "movie.fields.title"
+    },
+    "releaseYear": {
+      "label": "movie.fields.releaseYear",
+      "placeholder": "movie.fields.releaseYear",
+      "column": "movie.fields.releaseYear",
+      "filter": "movie.fields.releaseYear"
+    },
+    "director": {
+      "label": "movie.fields.director",
+      "placeholder": "movie.fields.director",
+      "column": "movie.fields.director",
+      "filter": "movie.fields.director"
+    },
+    "overview": {
+      "label": "movie.fields.overview",
+      "placeholder": "movie.fields.overview",
+      "column": "movie.fields.overview",
+      "filter": "movie.fields.overview"
+    }
+  },
+  "titles": {
+    "create": "movie.titles.create",
+    "edit": "movie.titles.edit",
+    "list": "movie.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

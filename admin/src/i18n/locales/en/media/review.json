@@ -1,0 +1,36 @@
+{
+  "singular": "review",
+  "plural": "review",
+  "label": "$t(plural)",
+  "fields": {
+    "review": {
+      "label": "review.fields.review",
+      "placeholder": "review.fields.review",
+      "column": "review.fields.review",
+      "filter": "review.fields.review"
+    },
+    "score": {
+      "label": "review.fields.score",
+      "placeholder": "review.fields.score",
+      "column": "review.fields.score",
+      "filter": "review.fields.score"
+    },
+    "movie": {
+      "label": "review.fields.movie",
+      "placeholder": "review.fields.movie",
+      "column": "review.fields.movie",
+      "filter": "review.fields.movie"
+    }
+  },
+  "titles": {
+    "create": "review.titles.create",
+    "edit": "review.titles.edit",
+    "list": "review.titles.list"
+  },
+  "tabs": {
+    "main": "Principal"
+  },
+  "fieldsets": {
+    "data": "General"
+  }
+}

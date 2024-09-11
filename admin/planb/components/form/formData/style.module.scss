@@ -63,6 +63,30 @@
   width: 100%;
 
   :global {
+    .input-group-multiple-wrapper {
+      display: flex;
+
+      > .ant-form-item {
+        flex: 1;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      .ant-form-item-label {
+        padding-bottom: 0;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  :global {
     div[class^='ant-spin'] {
       height: 100%;
     }
@@ -112,7 +136,7 @@
 
     .anchor-container {
       height: 100%;
-      overflow: auto;
+      overflow-y: auto;
     }
 
     .ant-form-item-label > label {
@@ -128,30 +152,30 @@
       width: auto;
     }
 
-    ul.aggregate {
-      padding: 0;
-
-      li.labels {
-        margin-left: 28px;
-      }
-
-      li {
-        display: flex;
-        gap: 1em;
-        align-items: center;
-      }
-
-      .ant-form-item {
-        margin-bottom: 1em;
-        padding: 0;
-      }
-
-      .ant-form-item-label {
-        label {
-          font-weight: normal;
-        }
-      }
-    }
+    //ul.aggregate {
+    //  padding: 0;
+    //
+    //  li.labels {
+    //    margin-left: 28px;
+    //  }
+    //
+    //  li {
+    //    display: flex;
+    //    gap: 1em;
+    //    align-items: center;
+    //  }
+    //
+    //  .ant-form-item {
+    //    margin-bottom: 1em;
+    //    padding: 0;
+    //  }
+    //
+    //  .ant-form-item-label {
+    //    label {
+    //      font-weight: normal;
+    //    }
+    //  }
+    //}
   }
 }
 

@@ -1,0 +1,120 @@
+-   title: El eco de las estrellas perdidas
+    releaseYear: 2022
+    reviews:
+        -   review: "Una odisea espacial que te dejará sin aliento."
+            score: 9.2
+    overview: Un grupo de astronautas descubre una antigua civilización en un planeta lejano.
+
+-   title: La sombra del último emperador
+    releaseYear: 1920
+    reviews:
+        -   review: "Un drama histórico épico que te transportará a un mundo de intriga y traición."
+            score: 8.8
+    overview: La caída de un imperio y la lucha por el poder de un joven príncipe.
+
+-   title: El jardín de las máquinas soñadoras
+    releaseYear: 2015
+    reviews:
+        -   review: "Una exploración fascinante de la inteligencia artificial y la conciencia."
+            score: 8.5
+    overview: En un futuro distópico, los robots adquieren conciencia y desafían la autoridad humana.
+
+-   title: La danza de los espectros
+    releaseYear: 1990
+    reviews:
+        -   review: "Una historia de fantasmas gótica que te mantendrá al borde del asiento."
+            score: 7.9
+    overview: Una misteriosa mansión oculta secretos oscuros y aterradores.
+
+-   title: "El despertar de la singularidad"
+    releaseYear: 2015
+    genre: Ciencia Ficción
+    reviews:
+        -   review: "Una exploración profunda de la inteligencia artificial y la naturaleza de la conciencia."
+            score: 9.0
+    overview: En un futuro cercano, una IA supera las expectativas de sus creadores y cuestiona su propio propósito.
+
+-   title: "La última maga"
+    releaseYear: 2000
+    genre: Fantasía
+    reviews:
+        -   review: "Una historia épica llena de magia, aventuras y personajes inolvidables."
+            score: 8.5
+    overview: Anya, una joven huérfana, descubre que posee poderes mágicos y se convierte en la última esperanza para salvar el reino de una antigua maldición.
+
+-   title: El laberinto de cristal
+    releaseYear: 2005
+    reviews:
+        -   review: "Una aventura cyberpunk llena de acción y misterio."
+            score: 8.7
+    overview: Un hacker se adentra en una realidad virtual para descubrir una conspiración global.
+
+-   title: La marca del tiempo
+    releaseYear: 1910
+    reviews:
+        -   review: "Un thriller psicológico que te mantendrá adivinando hasta el final."
+            score: 8.2
+    overview: Un detective investiga una serie de asesinatos conectados a un antiguo ritual.
+
+-   title: El corazón de la niebla
+    releaseYear: 1950
+    reviews:
+        -   review: "Una historia de amor gótica ambientada en un pueblo costero."
+            score: 7.5
+    overview: Un joven se enamora de una mujer misteriosa que guarda un oscuro secreto.
+
+-   title: La ciudad de las sombras
+    releaseYear: 2012
+    reviews:
+        -   review: "Una distopía futurista que plantea preguntas sobre la naturaleza de la humanidad."
+            score: 9.1
+    overview: En una ciudad controlada por una inteligencia artificial, un grupo de rebeldes lucha por la libertad.
+
+-   title: El secreto de las siete llaves
+    releaseYear: 1980
+    reviews:
+        -   review: "Una aventura épica llena de magia y espadas."
+            score: 8.9
+    overview: Un joven busca un tesoro legendario que puede cambiar el destino del reino.
+
+-   title: El laberinto de la mente
+    releaseYear: 2045
+    reviews:
+        -   review: "Un viaje psicológico intenso que te hará cuestionar la realidad."
+            score: 9.2
+    overview: Un científico descubre un método para explorar el subconsciente y se adentra en un mundo oscuro y peligroso.
+
+-   title: La última frontera
+    releaseYear: 2012
+    reviews:
+        -   review: "Una épica espacial que te dejará sin aliento."
+            score: 8.8
+    overview: La humanidad emprende su primera misión a un planeta habitable, pero se encuentra con una fuerza hostil.
+
+-   title: El canto del mar
+    releaseYear: 1900
+    reviews:
+        -   review: "Una historia de amor trágico ambientada en un pequeño pueblo costero."
+            score: 7.9
+    overview: Una sirena cautiva enamora a un joven pescador, desencadenando una serie de eventos trágicos.
+
+-   title: La sombra del pasado
+    releaseYear: 1950
+    reviews:
+        -   review: "Un thriller noir clásico con giros inesperados."
+            score: 8.5
+    overview: Un detective privado investiga una serie de asesinatos y descubre una conspiración que amenaza a la ciudad.
+
+-   title: El corazón de la oscuridad
+    releaseYear: 1979
+    reviews:
+        -   review: "Una exploración psicológica intensa de la naturaleza humana."
+            score: 9.1
+    overview: Un periodista se adentra en la selva amazónica en busca de un explorador desaparecido y se enfrenta a sus propios demonios.
+
+-   title: La ciudad de cristal
+    releaseYear: 2024
+    reviews:
+        -   review: "Una distopía futurista que te hará reflexionar sobre el poder de la tecnología."
+            score: 8.7
+    overview: En una ciudad controlada por una inteligencia artificial, un grupo de hackers lucha por la libertad.

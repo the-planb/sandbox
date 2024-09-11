@@ -1,8 +1,0 @@
----
-App\Media\Domain\Input\DirectorInput:
-  properties:
-    name:
-      - Symfony\Component\Validator\Constraints\NotNull: ~
-      - App\Media\Domain\Model\VO\Constraint\FullNameConstraint: ~
-    movies:
-      - Symfony\Component\Validator\Constraints\Optional: ~

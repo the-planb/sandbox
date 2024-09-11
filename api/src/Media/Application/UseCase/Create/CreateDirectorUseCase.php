@@ -8,7 +8,7 @@ use App\Media\Domain\Model\Director;
 use App\Media\Domain\Repository\DirectorRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-final class CreateDirectorUseCase implements UseCaseInterface
+class CreateDirectorUseCase implements UseCaseInterface
 {
     private DirectorRepository $repository;
 

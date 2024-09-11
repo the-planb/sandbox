@@ -8,7 +8,7 @@ use App\Media\Domain\Model\Movie;
 use App\Media\Domain\Repository\MovieRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-final class CreateMovieUseCase implements UseCaseInterface
+class CreateMovieUseCase implements UseCaseInterface
 {
     private MovieRepository $repository;
 

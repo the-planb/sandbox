@@ -18,6 +18,4 @@ interface MovieRepository
     public function findById(MovieId $movieId): ?Movie;
 
     public function match(Criteria $criteria): MovieList;
-
-    public function totalItems(Criteria $criteria = null): int;
 }

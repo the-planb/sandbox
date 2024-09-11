@@ -11,13 +11,11 @@ security:
     auth_provider:
       entity:
         class: App\Auth\Domain\Model\User
-  
-  #    role_hierarchy:
-  #        ROLE_SAMPLE_PRODUCTS: [ ROLE_SAMPLE_PRODUCTS_CREATE, ROLE_SAMPLE_PRODUCTS_LIST, ROLE_SAMPLE_PRODUCTS_EDIT, ROLE_SAMPLE_PRODUCTS_DELETE, ROLE_SAMPLE_PRODUCTS_SHOW ]
-  #        ROLE_SAMPLE_CATEGORIES: [ ROLE_SAMPLE_CATEGORIES_CREATE, ROLE_SAMPLE_CATEGORIES_LIST, ROLE_SAMPLE_CATEGORIES_EDIT, ROLE_SAMPLE_CATEGORIES_DELETE, ROLE_SAMPLE_CATEGORIES_SHOW ]
-  #        ROLE_SAMPLE_TAGS: [ ROLE_SAMPLE_TAGS_CREATE, ROLE_SAMPLE_TAGS_LIST, ROLE_SAMPLE_TAGS_EDIT, ROLE_SAMPLE_TAGS_DELETE, ROLE_SAMPLE_TAGS_SHOW ]
-  #        ROLE_EDITOR: [ ROLE_SAMPLE_PRODUCTS, ROLE_SAMPLE_CATEGORIES, ROLE_SAMPLE_TAGS, ROLE_DASHBOARD_LIST ]
-  #        ROLE_ADMIN: [ ROLE_EDITOR ]
+      
+#  role_hierarchy:
+#    ROLE_MEDIA_GENRES: [ ROLE_MEDIA_GENRES_CREATE, ROLE_MEDIA_GENRES_LIST, ROLE_MEDIA_GENRES_EDIT, ROLE_MEDIA_GENRES_DELETE, ROLE_MEDIA_GENRES_SHOW ]
+#    ROLE_EDITOR: [ ROLE_MEDIA_GENRES, ROLE_DASHBOARD_LIST ]
+#    ROLE_ADMIN: [ ROLE_EDITOR ]
   
   firewalls:
     dev:
@@ -53,8 +51,8 @@ security:
     - { path: ^/api/docs, roles: PUBLIC_ACCESS }
     #        - { path: ^/api/_fos_user_context_hash, roles: PUBLIC_ACCESS }
     - { path: ^/api/token/auth, roles: PUBLIC_ACCESS }
-#    - { path: ^/api, roles: ROLE_EDITOR }
-    - { path: ^/api, roles: PUBLIC_ACCESS }
+    - { path: ^/api, roles: ROLE_EDITOR }
+    #- { path: ^/api, roles: PUBLIC_ACCESS }
 
 
 when@test:

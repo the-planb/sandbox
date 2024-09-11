@@ -6,9 +6,8 @@ namespace App\Media\Domain\Model;
 
 use App\Media\Domain\Model\VO\ReviewContent;
 use App\Media\Domain\Model\VO\Score;
-use PlanB\Domain\Model\Entity;
 
-class Review implements Entity
+class Review
 {
     private ReviewId $id;
     private ReviewContent $review;
@@ -17,12 +16,14 @@ class Review implements Entity
 
     public function __construct(ReviewContent $review, Score $score, Movie $movie)
     {
-        $this->update($review, $score, $movie);
+        $this->id = new ReviewId();
+        $this->review = $review;
+        $this->score = $score;
+        $this->movie = $movie;
     }
 
-    public function update(ReviewContent $review, Score $score, Movie $movie): self
+    public function update(ReviewContent $review, Score $score, Movie $movie): Review
     {
-        $this->id ??= new ReviewId();
         $this->review = $review;
         $this->score = $score;
         $this->movie = $movie;

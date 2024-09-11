@@ -1,8 +1,8 @@
 {
   "fields": {
     "content": {
-      "label": "reviewcontents.fields.content",
-      "placeholder": "reviewcontents.fields.content"
+      "label": "Content",
+      "placeholder": "$t(fields.content.label)"
     }
   }
 }

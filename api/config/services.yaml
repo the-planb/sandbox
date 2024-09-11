@@ -17,8 +17,8 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Music/Domain/Model'
-            - '../src/Staff/Domain/Model'
+            - '../src/Media/Domain/Model'
+            - '../src/Auth/Domain/Model'
             - '../src/Kernel.php'
             - '../src/Tests/'
 

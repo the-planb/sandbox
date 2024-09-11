@@ -7,15 +7,15 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\VO\Score;
 use PlanB\Framework\Doctrine\DBAL\Type\IntegerType;
 
-final class ScoreDBALType extends IntegerType
+class ScoreDBALType extends IntegerType
 {
-    public function getFQN(): string
-    {
-        return Score::class;
-    }
-
     public function getName(): string
     {
         return 'Media.Score';
+    }
+
+    public function getFQN(): string
+    {
+        return Score::class;
     }
 }

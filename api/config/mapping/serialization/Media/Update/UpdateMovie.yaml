@@ -1,0 +1,14 @@
+App\Media\Application\UseCase\Update\UpdateMovie:
+    attributes:
+        title:
+            groups:
+                - update.movie
+        releaseYear:
+            groups:
+                - update.movie
+        director:
+            groups:
+                - update.movie
+        overview:
+            groups:
+                - update.movie

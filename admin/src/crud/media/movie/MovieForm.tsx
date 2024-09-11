@@ -1,3 +1,5 @@
+import React from 'react'
+import { useTranslate } from '@refinedev/core'
 import {
   Col,
   Form,
@@ -9,9 +11,6 @@ import {
   Tabs,
 } from 'antd'
 import { Fieldset, FormData, Toc } from '@planb/components'
-import { useTranslate } from '@refinedev/core'
-
-import React from 'react'
 import * as Media from '@crud/media'
 
 const Main = () => {
@@ -23,45 +22,25 @@ const Main = () => {
         id={'data'}>
         <Media.MovieTitleField
           name={'title'}
-          required={true}
           label={t('fields.title.label', { ns: 'media/movies' })}
+          required={false}
           className={'fullrow'}
         />
-
         <Media.ReleaseYearField
           name={'releaseYear'}
-          required={true}
           label={t('fields.releaseYear.label', { ns: 'media/movies' })}
+          required={false}
           className={'fullrow'}
         />
-
         <Media.DirectorField
           name={'director'}
-          required={true}
           label={t('fields.director.label', { ns: 'media/movies' })}
-        />
-
-        <Media.ReviewListField
-          name={'reviews'}
           required={false}
-          label={t('fields.reviews.label', { ns: 'media/movies' })}
-          className={'fullrow'}
         />
-
-        <Media.GenreField
-          name={'genres'}
-          required={false}
-          label={t('fields.genres.label', { ns: 'media/movies' })}
-          className={'fullrow'}
-          selectProps={{
-            mode: 'multiple',
-          }}
-        />
-
         <Media.OverviewField
           name={'overview'}
-          required={true}
           label={t('fields.overview.label', { ns: 'media/movies' })}
+          required={false}
           className={'fullrow'}
         />
       </Fieldset>

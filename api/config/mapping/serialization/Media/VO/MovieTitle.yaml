@@ -1,5 +1,6 @@
----
 App\Media\Domain\Model\VO\MovieTitle:
-  attributes:
-    title:
-      groups: [get.item, get.collection, post, put]
+    attributes:
+        title:
+            groups:
+                - read
+                - write

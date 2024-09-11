@@ -1,0 +1,7 @@
+App\Media\Application\UseCase\Create\CreateDirector:
+    properties:
+        name:
+            -
+                Symfony\Component\Validator\Constraints\NotNull: ~
+            -
+                App\Media\Domain\Model\VO\Constraint\FullNameConstraint: ~

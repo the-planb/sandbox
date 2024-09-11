@@ -7,10 +7,9 @@ namespace App\Media\Domain\Model\VO;
 use PlanB\Type\StringValue;
 use PlanB\Validation\Traits\ValidableTrait;
 
-final class Overview implements StringValue
+class Overview implements StringValue
 {
     use ValidableTrait;
-
     private string $overview;
 
     public function __construct(string $overview)

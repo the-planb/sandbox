@@ -1,9 +1,9 @@
 import { Space } from 'antd'
 import { BaseRecord } from '@refinedev/core'
 
-interface TableCellProps<T> {
+interface TableCellProps<T extends BaseRecord> {
   value: T | T[] | number | string
-  renderer?: (value: T) => string
+  renderer?: (value: any) => string
 }
 
 const defaultRenderer = <T extends BaseRecord>(value: T | string | number) => {

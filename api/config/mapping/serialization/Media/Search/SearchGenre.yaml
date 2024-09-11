@@ -1,0 +1,10 @@
+App\Media\Domain\Model\Genre:
+    attributes:
+        id:
+            groups:
+                - search.genre
+                - read
+        name:
+            groups:
+                - search.genre
+                - read

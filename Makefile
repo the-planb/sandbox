@@ -109,15 +109,20 @@ cache/flushall:
 	docker-compose exec redis redis-cli FLUSHALL
 
 alfred/please:
-
 	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred3/bin/entrypoint && \
 			(cd api; \
-			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null && \
-			export YAMLFIX_NONE_REPRESENTATION="~" && \
-			export export YAMLFIX_SECTION_WHITELINES="2" && \
-			yamlfix config/mapping 2> /dev/null) && \
+			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null) && \
 			(cd admin; pnpm prettier src/crud src/backend app > /dev/null ) \
   )
+
+#	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred3/bin/entrypoint && \
+#			(cd api; \
+#			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null && \
+#			export YAMLFIX_NONE_REPRESENTATION="~" && \
+#			export export YAMLFIX_SECTION_WHITELINES="2" && \
+#			yamlfix config/mapping 2> /dev/null) && \
+#			(cd admin; pnpm prettier src/crud src/backend app > /dev/null ) \
+#  )
 
 qa:
 	(cd api; vendor/planb/planb/bin/qa src)

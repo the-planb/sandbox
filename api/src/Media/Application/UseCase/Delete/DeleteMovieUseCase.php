@@ -7,7 +7,7 @@ namespace App\Media\Application\UseCase\Delete;
 use App\Media\Domain\Repository\MovieRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-final class DeleteMovieUseCase implements UseCaseInterface
+class DeleteMovieUseCase implements UseCaseInterface
 {
     private MovieRepository $repository;
 

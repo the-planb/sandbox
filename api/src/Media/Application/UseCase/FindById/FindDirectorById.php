@@ -6,7 +6,7 @@ namespace App\Media\Application\UseCase\FindById;
 
 use App\Media\Domain\Model\DirectorId;
 
-final class FindDirectorById
+class FindDirectorById
 {
     private DirectorId $id;
 

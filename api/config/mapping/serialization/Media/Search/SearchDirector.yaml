@@ -1,0 +1,10 @@
+App\Media\Domain\Model\Director:
+    attributes:
+        id:
+            groups:
+                - search.director
+                - read
+        name:
+            groups:
+                - search.director
+                - read

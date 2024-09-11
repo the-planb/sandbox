@@ -13,7 +13,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
-final class DirectorDoctrineRepository extends ServiceEntityRepository implements DirectorRepository
+class DirectorDoctrineRepository extends ServiceEntityRepository implements DirectorRepository
 {
     private DoctrineCriteriaConverter $criteriaConverter;
 

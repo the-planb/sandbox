@@ -14,5 +14,8 @@ export function getOptions(lng = fallbackLng, defaultNS: string = 'common') {
     fallbackNS: defaultNS,
     defaultNS,
     ns: ['common', ...i18nNamespaces],
+    interpolation: {
+      escapeValue: false,
+    },
   }
 }

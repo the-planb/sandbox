@@ -6,7 +6,7 @@ namespace App\Media\Application\UseCase\Search;
 
 use PlanB\Domain\Criteria\Criteria;
 
-final class SearchMovie
+class SearchMovie
 {
     private Criteria $criteria;
 

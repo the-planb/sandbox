@@ -1,3 +1,5 @@
+import React from 'react'
+import { useTranslate } from '@refinedev/core'
 import {
   Col,
   Form,
@@ -9,9 +11,6 @@ import {
   Tabs,
 } from 'antd'
 import { Fieldset, FormData, Toc } from '@planb/components'
-import { useTranslate } from '@refinedev/core'
-
-import React from 'react'
 import * as Media from '@crud/media'
 
 const Main = () => {
@@ -23,8 +22,8 @@ const Main = () => {
         id={'data'}>
         <Media.GenreNameField
           name={'name'}
-          required={true}
           label={t('fields.name.label', { ns: 'media/genres' })}
+          required={false}
           className={'fullrow'}
         />
       </Fieldset>

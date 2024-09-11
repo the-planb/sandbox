@@ -1,29 +1,31 @@
 {
-  "label": "reviews.label",
+  "singular": "review",
+  "plural": "Reviews",
+  "label": "$t(plural)",
   "fields": {
     "review": {
-      "label": "reviews.fields.review",
-      "placeholder": "reviews.fields.review",
-      "column": "reviews.fields.review",
-      "filter": "reviews.fields.review"
+      "label": "Review",
+      "placeholder": "$t(fields.review.label)",
+      "column": "$t(fields.review.label)",
+      "filter": "$t(fields.review.label)"
     },
     "score": {
-      "label": "reviews.fields.score",
-      "placeholder": "reviews.fields.score",
-      "column": "reviews.fields.score",
-      "filter": "reviews.fields.score"
+      "label": "Score",
+      "placeholder": "$t(fields.score.label)",
+      "column": "$t(fields.score.label)",
+      "filter": "$t(fields.score.label)"
     },
     "movie": {
-      "label": "reviews.fields.movie",
-      "placeholder": "reviews.fields.movie",
-      "column": "reviews.fields.movie",
-      "filter": "reviews.fields.movie"
+      "label": "Película",
+      "placeholder": "$t(fields.movie.label)",
+      "column": "$t(fields.movie.label)",
+      "filter": "$t(fields.movie.label)"
     }
   },
   "titles": {
-    "create": "reviews.titles.create",
-    "edit": "reviews.titles.edit",
-    "list": "reviews.titles.list"
+    "create": "Nuevo $t(singular)",
+    "edit": "Editar $t(singular)",
+    "list": "$t(plural)"
   },
   "tabs": {
     "main": "Principal"

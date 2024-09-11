@@ -1,5 +1,6 @@
----
 App\Media\Domain\Model\VO\ReviewContent:
-  attributes:
-    content:
-      groups: [get.item, get.collection, post, put]
+    attributes:
+        content:
+            groups:
+                - read
+                - write

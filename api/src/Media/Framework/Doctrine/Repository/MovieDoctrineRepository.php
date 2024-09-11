@@ -13,7 +13,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
-final class MovieDoctrineRepository extends ServiceEntityRepository implements MovieRepository
+class MovieDoctrineRepository extends ServiceEntityRepository implements MovieRepository
 {
     private DoctrineCriteriaConverter $criteriaConverter;
 

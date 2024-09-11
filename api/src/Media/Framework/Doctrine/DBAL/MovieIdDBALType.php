@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\MovieId;
 use PlanB\Framework\Doctrine\DBAL\Type\EntityIdType;
 
-final class MovieIdDBALType extends EntityIdType
+class MovieIdDBALType extends EntityIdType
 {
     public function makeFromValue(string $value): MovieId
     {

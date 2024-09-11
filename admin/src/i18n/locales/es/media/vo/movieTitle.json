@@ -1,8 +1,8 @@
 {
   "fields": {
     "title": {
-      "label": "movietitles.fields.title",
-      "placeholder": "movietitles.fields.title"
+      "label": "Title",
+      "placeholder": "$t(fields.title.label)"
     }
   }
 }

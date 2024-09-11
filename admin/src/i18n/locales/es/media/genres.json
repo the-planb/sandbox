@@ -1,17 +1,19 @@
 {
-  "label": "G\u00e9neros",
+  "singular": "género",
+  "plural": "Géneros",
+  "label": "$t(plural)",
   "fields": {
     "name": {
-      "label": "G\u00e9nero",
-      "placeholder": "G\u00e9nero",
-      "column": "G\u00e9nero",
-      "filter": "G\u00e9nero"
+      "label": "Género",
+      "placeholder": "$t(fields.name.label)",
+      "column": "$t(fields.name.label)",
+      "filter": "$t(fields.name.label)"
     }
   },
   "titles": {
-    "create": "Nuevo g\u00e9nero",
-    "edit": "Editar g\u00e9nero",
-    "list": "G\u00e9neros"
+    "create": "Nuevo $t(singular)",
+    "edit": "Editar $t(singular)",
+    "list": "$t(plural)"
   },
   "tabs": {
     "main": "Principal"

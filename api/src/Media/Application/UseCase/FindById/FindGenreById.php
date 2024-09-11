@@ -6,7 +6,7 @@ namespace App\Media\Application\UseCase\FindById;
 
 use App\Media\Domain\Model\GenreId;
 
-final class FindGenreById
+class FindGenreById
 {
     private GenreId $id;
 

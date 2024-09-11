@@ -6,9 +6,9 @@ namespace App\Media\Application\UseCase\Delete;
 
 use App\Media\Domain\Model\DirectorId;
 
-final class DeleteDirector
+class DeleteDirector
 {
-    public DirectorId $id;
+    private DirectorId $id;
 
     public function __construct(DirectorId $id)
     {
