@@ -1,16 +1,16 @@
 {
-  "singular": "película",
-  "plural": "Películas",
+  "singular": "movie",
+  "plural": "Movies",
   "label": "$t(plural)",
   "fields": {
     "title": {
-      "label": "Título",
+      "label": "Title",
       "placeholder": "$t(fields.title.label)",
       "column": "$t(fields.title.label)",
       "filter": "$t(fields.title.label)"
     },
     "releaseYear": {
-      "label": "Año",
+      "label": "ReleaseYear",
       "placeholder": "$t(fields.releaseYear.label)",
       "column": "$t(fields.releaseYear.label)",
       "filter": "$t(fields.releaseYear.label)"
@@ -21,11 +21,35 @@
       "column": "$t(fields.director.label)",
       "filter": "$t(fields.director.label)"
     },
+    "reviews": {
+      "label": "Reviews",
+      "placeholder": "$t(fields.reviews.label)",
+      "column": "$t(fields.reviews.label)",
+      "filter": "$t(fields.reviews.label)"
+    },
+    "genres": {
+      "label": "Genres",
+      "placeholder": "$t(fields.genres.label)",
+      "column": "$t(fields.genres.label)",
+      "filter": "$t(fields.genres.label)"
+    },
     "overview": {
-      "label": "Sinopsis",
+      "label": "Overview",
       "placeholder": "$t(fields.overview.label)",
       "column": "$t(fields.overview.label)",
       "filter": "$t(fields.overview.label)"
+    },
+    "classification": {
+      "label": "Classification",
+      "placeholder": "$t(fields.classification.label)",
+      "column": "$t(fields.classification.label)",
+      "filter": "$t(fields.classification.label)"
+    },
+    "raw": {
+      "label": "Raw",
+      "placeholder": "$t(fields.raw.label)",
+      "column": "$t(fields.raw.label)",
+      "filter": "$t(fields.raw.label)"
     }
   },
   "titles": {

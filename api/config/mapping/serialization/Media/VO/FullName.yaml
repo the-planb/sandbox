@@ -1,10 +1,7 @@
+---
 App\Media\Domain\Model\VO\FullName:
-    attributes:
-        name:
-            groups:
-                - read
-                - write
-        lastName:
-            groups:
-                - read
-                - write
+  attributes:
+    name:
+      groups: [read, write]
+    lastName:
+      groups: [read, write]

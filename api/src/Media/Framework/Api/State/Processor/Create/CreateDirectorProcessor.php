@@ -8,7 +8,7 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
 use League\Tactician\CommandBus;
 
-class CreateDirectorProcessor implements ProcessorInterface
+final class CreateDirectorProcessor implements ProcessorInterface
 {
     private CommandBus $commandBus;
 

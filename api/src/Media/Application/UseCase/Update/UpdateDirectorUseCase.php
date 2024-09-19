@@ -8,7 +8,7 @@ use App\Media\Domain\Model\Director;
 use App\Media\Domain\Repository\DirectorRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-class UpdateDirectorUseCase implements UseCaseInterface
+final class UpdateDirectorUseCase implements UseCaseInterface
 {
     private DirectorRepository $repository;
 
@@ -21,9 +21,7 @@ class UpdateDirectorUseCase implements UseCaseInterface
     {
         $directorId = $command->getId();
         $previous = $this->repository->findById($directorId);
-
         $input = $command->toArray();
-
         $director = $previous->update(...$input);
 
         return $this->repository->save($director);

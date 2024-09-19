@@ -32,11 +32,6 @@ const Main = () => {
           required={false}
           className={'fullrow'}
         />
-        <Media.MovieField
-          name={'movie'}
-          label={t('fields.movie.label', { ns: 'media/reviews' })}
-          required={false}
-        />
       </Fieldset>
       <Fieldset legend='Extra Fieldset' id={'extra'}>
         distribuir los campos en varios fieldsets ...

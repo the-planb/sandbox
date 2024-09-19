@@ -37,9 +37,36 @@ const Main = () => {
           label={t('fields.director.label', { ns: 'media/movies' })}
           required={false}
         />
+        <Media.ReviewListField
+          name={'reviews'}
+          label={t('fields.reviews.label', { ns: 'media/movies' })}
+          required={false}
+          className={'fullrow'}
+        />
+        <Media.GenreField
+          name={'genres'}
+          label={t('fields.genres.label', { ns: 'media/movies' })}
+          required={false}
+          className={'fullrow'}
+          selectProps={{
+            mode: 'multiple',
+          }}
+        />
         <Media.OverviewField
           name={'overview'}
           label={t('fields.overview.label', { ns: 'media/movies' })}
+          required={false}
+          className={'fullrow'}
+        />
+        <Media.ClassificationField
+          name={'classification'}
+          label={t('fields.classification.label', { ns: 'media/movies' })}
+          required={false}
+          className={'fullrow'}
+        />
+        <Media.ScoreField
+          name={'raw'}
+          label={t('fields.raw.label', { ns: 'media/movies' })}
           required={false}
           className={'fullrow'}
         />

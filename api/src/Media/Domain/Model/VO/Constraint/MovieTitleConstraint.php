@@ -8,7 +8,7 @@ use App\Media\Domain\Model\VO\MovieTitle;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 use Symfony\Component\Validator\Constraints\Length;
 
-class MovieTitleConstraint extends Compound
+final class MovieTitleConstraint extends Compound
 {
     public function getClassName(): string
     {

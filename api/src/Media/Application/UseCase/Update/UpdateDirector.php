@@ -12,15 +12,15 @@ class UpdateDirector
     public DirectorId $id;
     public FullName $name;
 
+    public function getId(): DirectorId
+    {
+        return $this->id;
+    }
+
     public function toArray(): array
     {
         return [
             'name' => $this->name,
         ];
-    }
-
-    public function getId(): DirectorId
-    {
-        return $this->id;
     }
 }

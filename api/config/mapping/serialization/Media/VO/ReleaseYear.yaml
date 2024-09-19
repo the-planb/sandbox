@@ -1,6 +1,5 @@
+---
 App\Media\Domain\Model\VO\ReleaseYear:
-    attributes:
-        year:
-            groups:
-                - read
-                - write
+  attributes:
+    year:
+      groups: [read, write]

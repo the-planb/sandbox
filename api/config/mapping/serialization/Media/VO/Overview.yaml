@@ -1,6 +1,5 @@
+---
 App\Media\Domain\Model\VO\Overview:
-    attributes:
-        overview:
-            groups:
-                - read
-                - write
+  attributes:
+    overview:
+      groups: [read, write]

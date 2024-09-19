@@ -1,17 +1,18 @@
 export const i18nNamespaces = [
   'auth',
   'dashboard',
-  'media/genres',
   'media/vo/genreName',
   'media/vo/fullName',
   'media/vo/overview',
-  'media/movies',
   'media/vo/score',
   'media/vo/movieTitle',
   'media/vo/releaseYear',
-  'media/reviews',
   'media/classifications',
   'media/vo/reviewContent',
+  'media/genres',
+  'media/ratecalculators',
+  'media/movies',
+  'media/reviews',
   'media/directors',
 ]
 

@@ -7,7 +7,7 @@ namespace App\Media\Domain\Model\VO;
 use PlanB\Type\IntegerValue;
 use PlanB\Validation\Traits\ValidableTrait;
 
-class ReleaseYear implements IntegerValue
+final class ReleaseYear implements IntegerValue
 {
     use ValidableTrait;
     private int $year;

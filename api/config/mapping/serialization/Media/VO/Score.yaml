@@ -1,6 +1,5 @@
+---
 App\Media\Domain\Model\VO\Score:
-    attributes:
-        score:
-            groups:
-                - read
-                - write
+  attributes:
+    score:
+      groups: [read, write]

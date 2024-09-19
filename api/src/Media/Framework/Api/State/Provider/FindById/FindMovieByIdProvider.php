@@ -10,7 +10,7 @@ use App\Media\Application\UseCase\FindById\FindMovieById;
 use App\Media\Domain\Model\MovieId;
 use League\Tactician\CommandBus;
 
-class FindMovieByIdProvider implements ProviderInterface
+final class FindMovieByIdProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
 

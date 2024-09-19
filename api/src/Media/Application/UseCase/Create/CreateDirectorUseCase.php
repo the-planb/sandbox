@@ -8,7 +8,7 @@ use App\Media\Domain\Model\Director;
 use App\Media\Domain\Repository\DirectorRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-class CreateDirectorUseCase implements UseCaseInterface
+final class CreateDirectorUseCase implements UseCaseInterface
 {
     private DirectorRepository $repository;
 
@@ -20,7 +20,6 @@ class CreateDirectorUseCase implements UseCaseInterface
     public function __invoke(CreateDirector $command): Director
     {
         $input = $command->toArray();
-
         $director = new Director(...$input);
 
         return $this->repository->save($director);

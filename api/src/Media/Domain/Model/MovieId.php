@@ -6,6 +6,6 @@ namespace App\Media\Domain\Model;
 
 use PlanB\Domain\Model\EntityId;
 
-class MovieId extends EntityId
+final class MovieId extends EntityId
 {
 }

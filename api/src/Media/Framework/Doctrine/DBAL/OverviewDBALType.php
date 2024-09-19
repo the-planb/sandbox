@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\VO\Overview;
 use PlanB\Framework\Doctrine\DBAL\Type\TextType;
 
-class OverviewDBALType extends TextType
+final class OverviewDBALType extends TextType
 {
     public function getName(): string
     {

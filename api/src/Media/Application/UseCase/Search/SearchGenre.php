@@ -6,7 +6,7 @@ namespace App\Media\Application\UseCase\Search;
 
 use PlanB\Domain\Criteria\Criteria;
 
-class SearchGenre
+final class SearchGenre
 {
     private Criteria $criteria;
 

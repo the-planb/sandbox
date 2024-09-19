@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\VO\MovieTitle;
 use PlanB\Framework\Doctrine\DBAL\Type\StringType;
 
-class MovieTitleDBALType extends StringType
+final class MovieTitleDBALType extends StringType
 {
     public function getName(): string
     {

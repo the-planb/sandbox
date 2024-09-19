@@ -7,7 +7,7 @@ namespace App\Media\Domain\Model\VO;
 use PlanB\Type\IntegerValue;
 use PlanB\Validation\Traits\ValidableTrait;
 
-class Score implements IntegerValue
+final class Score implements IntegerValue
 {
     use ValidableTrait;
     private int $score;

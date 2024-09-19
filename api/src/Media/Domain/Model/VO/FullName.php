@@ -6,7 +6,7 @@ namespace App\Media\Domain\Model\VO;
 
 use PlanB\Validation\Traits\ValidableTrait;
 
-class FullName
+final class FullName
 {
     use ValidableTrait;
     private string $name;

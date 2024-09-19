@@ -152,6 +152,30 @@
       width: auto;
     }
 
+    .entity-list-field {
+      padding: 0;
+      list-style: none;
+
+      .entity-list-field-labels {
+        display: flex;
+        align-items: baseline;
+        margin-left: 1em;
+        label {
+          padding-left: 1em;
+        }
+      }
+
+      .entity-list-field-row {
+        display: flex;
+        align-items: baseline;
+      }
+
+      .ant-form-item {
+        padding: 0 0 0 1em;
+        margin-bottom: 1em;
+      }
+    }
+
     //ul.aggregate {
     //  padding: 0;
     //

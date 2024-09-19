@@ -3,5 +3,10 @@
   <entity name="App\Media\Domain\Model\Director" table="media_directors" repository-class="App\Media\Framework\Doctrine\Repository\DirectorDoctrineRepository">
     <id name="id" type="Media.DirectorId"/>
     <embedded name="name" class="App\Media\Domain\Model\VO\FullName"/>
+    <one-to-many field="movies" target-entity="App\Media\Domain\Model\Movie" mapped-by="director">
+      <order-by>
+        <order-by-field name="id"/>
+      </order-by>
+    </one-to-many>
   </entity>
 </doctrine-mapping>

@@ -8,7 +8,7 @@ use App\Media\Domain\Model\VO\ReleaseYear;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 use Symfony\Component\Validator\Constraints\Range;
 
-class ReleaseYearConstraint extends Compound
+final class ReleaseYearConstraint extends Compound
 {
     public function getClassName(): string
     {

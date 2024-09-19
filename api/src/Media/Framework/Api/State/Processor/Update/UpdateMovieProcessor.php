@@ -8,7 +8,7 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
 use League\Tactician\CommandBus;
 
-class UpdateMovieProcessor implements ProcessorInterface
+final class UpdateMovieProcessor implements ProcessorInterface
 {
     private CommandBus $commandBus;
 

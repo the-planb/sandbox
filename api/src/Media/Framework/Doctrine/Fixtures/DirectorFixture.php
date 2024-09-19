@@ -8,7 +8,7 @@ use App\Media\Application\UseCase\Create\CreateDirector;
 use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
 use Symfony\Component\Yaml\Yaml;
 
-class DirectorFixture extends UseCaseFixture
+final class DirectorFixture extends UseCaseFixture
 {
     public function loadData(): void
     {
@@ -25,5 +25,11 @@ class DirectorFixture extends UseCaseFixture
     public function allowedEnvironments(): array
     {
         return ['dev'];
+    }
+
+    public function getDependencies()
+    {
+        return [
+        ];
     }
 }

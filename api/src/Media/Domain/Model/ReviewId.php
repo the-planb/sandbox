@@ -6,6 +6,6 @@ namespace App\Media\Domain\Model;
 
 use PlanB\Domain\Model\EntityId;
 
-class ReviewId extends EntityId
+final class ReviewId extends EntityId
 {
 }

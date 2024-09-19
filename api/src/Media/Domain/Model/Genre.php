@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace App\Media\Domain\Model;
 
 use App\Media\Domain\Model\VO\GenreName;
+use PlanB\Domain\Model\Entity;
 
-class Genre
+class Genre implements Entity
 {
     private GenreId $id;
     private GenreName $name;
@@ -14,14 +15,21 @@ class Genre
     public function __construct(GenreName $name)
     {
         $this->id = new GenreId();
-        $this->name = $name;
+
+        $this->init($name);
+        // lanzar evento
     }
 
-    public function update(GenreName $name): Genre
+    public function update(GenreName $name): static
+    {
+        $this->init($name);
+        // lanzar evento
+        return $this;
+    }
+
+    private function init(GenreName $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     public function getId(): GenreId

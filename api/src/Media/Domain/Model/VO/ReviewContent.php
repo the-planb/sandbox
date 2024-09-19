@@ -7,7 +7,7 @@ namespace App\Media\Domain\Model\VO;
 use PlanB\Type\StringValue;
 use PlanB\Validation\Traits\ValidableTrait;
 
-class ReviewContent implements StringValue
+final class ReviewContent implements StringValue
 {
     use ValidableTrait;
     private string $content;
@@ -18,12 +18,12 @@ class ReviewContent implements StringValue
         $this->content = $content;
     }
 
-    public function __toString(): string
+    public function getContent(): string
     {
         return $this->content;
     }
 
-    public function getContent(): string
+    public function __toString(): string
     {
         return $this->content;
     }

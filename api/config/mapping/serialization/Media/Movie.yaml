@@ -1,0 +1,61 @@
+---
+App\Media\Domain\Model\Movie:
+  attributes:
+    id:
+      groups: [read]
+    title:
+      groups: [read, write]
+    releaseYear:
+      groups: [read, write]
+    director:
+      groups: [read, write]
+    reviews:
+      groups: [read, write]
+    genres:
+      groups: [read, write]
+    overview:
+      groups: [read, write]
+    classification:
+      groups: [read, write]
+    raw:
+      groups: [read, write]
+
+
+App\Media\Application\UseCase\Create\CreateMovie:
+  attributes:
+    title:
+      groups: [write]
+    releaseYear:
+      groups: [write]
+    director:
+      groups: [write]
+    reviews:
+      groups: [write]
+    genres:
+      groups: [write]
+    overview:
+      groups: [write]
+    classification:
+      groups: [write]
+    raw:
+      groups: [write]
+
+
+App\Media\Application\UseCase\Update\UpdateMovie:
+  attributes:
+    title:
+      groups: [write]
+    releaseYear:
+      groups: [write]
+    director:
+      groups: [write]
+    reviews:
+      groups: [write]
+    genres:
+      groups: [write]
+    overview:
+      groups: [write]
+    classification:
+      groups: [write]
+    raw:
+      groups: [write]

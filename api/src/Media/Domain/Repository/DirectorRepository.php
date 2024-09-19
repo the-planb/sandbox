@@ -18,4 +18,6 @@ interface DirectorRepository
     public function findById(DirectorId $directorId): ?Director;
 
     public function match(Criteria $criteria): DirectorList;
+
+    public function totalItems(Criteria $criteria = null): int;
 }

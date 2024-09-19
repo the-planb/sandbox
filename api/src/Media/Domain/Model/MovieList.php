@@ -8,6 +8,6 @@ use PlanB\DS\Attribute\ElementType;
 use PlanB\DS\Vector\Vector;
 
 #[ElementType(Movie::class)]
-class MovieList extends Vector
+final class MovieList extends Vector
 {
 }

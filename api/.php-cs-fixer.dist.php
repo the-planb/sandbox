@@ -19,6 +19,11 @@ return (new PhpCsFixer\Config())
         'method_chaining_indentation' => true,
         'trim_array_spaces' => true,
         'php_unit_test_class_requires_covers' => false,
-        'php_unit_method_casing' => ['case'=>'snake_case']
+        'php_unit_method_casing' => ['case' => 'snake_case'],
+        'ordered_class_elements'=>[
+            'order'=>['use_trait', 'case', 'constant_public', 'constant_protected', 'constant_private', 'property_public', 'property_protected', 'property_private', 'construct']
+        ]
+
+
     ])
     ->setFinder($finder);

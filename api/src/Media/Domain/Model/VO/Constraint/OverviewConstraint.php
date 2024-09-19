@@ -8,7 +8,7 @@ use App\Media\Domain\Model\VO\Overview;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 use Symfony\Component\Validator\Constraints\Length;
 
-class OverviewConstraint extends Compound
+final class OverviewConstraint extends Compound
 {
     public function getClassName(): string
     {

@@ -16,7 +16,7 @@
       "filter": "$t(fields.score.label)"
     },
     "movie": {
-      "label": "Película",
+      "label": "Movie",
       "placeholder": "$t(fields.movie.label)",
       "column": "$t(fields.movie.label)",
       "filter": "$t(fields.movie.label)"

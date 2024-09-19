@@ -7,7 +7,7 @@ namespace App\Media\Domain\Model\VO;
 use PlanB\Type\StringValue;
 use PlanB\Validation\Traits\ValidableTrait;
 
-class MovieTitle implements StringValue
+final class MovieTitle implements StringValue
 {
     use ValidableTrait;
     private string $title;
@@ -18,12 +18,12 @@ class MovieTitle implements StringValue
         $this->title = $title;
     }
 
-    public function __toString(): string
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function getTitle(): string
+    public function __toString(): string
     {
         return $this->title;
     }

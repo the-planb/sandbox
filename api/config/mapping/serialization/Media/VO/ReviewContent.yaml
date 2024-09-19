@@ -1,6 +1,5 @@
+---
 App\Media\Domain\Model\VO\ReviewContent:
-    attributes:
-        content:
-            groups:
-                - read
-                - write
+  attributes:
+    content:
+      groups: [read, write]

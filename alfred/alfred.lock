@@ -1,774 +1,909 @@
 api/config/packages/security/role_hierarchy.yaml:
-    timestamp: 1726052526
+    timestamp: 1727957384
     hash: 54d40adabd3dde5009ab8a0937ebfaea
 api/config/packages/doctrine/Media.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: 8da357cdaf9c667c3c5c793cf397c0b1
-api/config/mapping/api/Media/Create/CreateGenre.resource.xml:
-    timestamp: 1726010447
-    hash: 2742c0dc183c069cb3e3d1ccb00c0b8d
-api/config/mapping/api/Media/Update/UpdateGenre.resource.xml:
-    timestamp: 1726010447
-    hash: 17796d76b9b0e6062f143d7f31a5850c
-api/config/mapping/api/Media/Search/SearchGenre.resource.xml:
-    timestamp: 1726346237
-    hash: 8a3c4545ff159727067f3f392231becf
-api/config/mapping/api/Media/FindById/FindGenreById.resource.xml:
-    timestamp: 1726346237
-    hash: d1c9efd6fe7b1d5cf173edf5113b9c4f
-api/config/mapping/api/Media/Delete/DeleteGenre.resource.xml:
-    timestamp: 1726010447
-    hash: 6e2d6cf89505e12dbe2ad35d9b5e9414
-api/config/mapping/doctrine/Media/Genre.orm.xml:
-    timestamp: 1726010447
-    hash: 41909a87ff0e4619aa8b15c6ba4e155b
-api/config/mapping/serialization/Media/Create/CreateGenre.yaml:
-    timestamp: 1725996852
-    hash: d153106f6b929e6ee48901080116330b
-api/config/mapping/serialization/Media/Update/UpdateGenre.yaml:
-    timestamp: 1725996852
-    hash: b5c3923b03bb8007bdd250bbc0f0c9a8
-api/config/mapping/serialization/Media/Search/SearchGenre.yaml:
-    timestamp: 1726345778
-    hash: 8e673b13c1dcd5a471d699f0d3e277f9
-api/config/mapping/serialization/Media/FindById/FindGenreById.yaml:
-    timestamp: 1726145887
-    hash: fab956f5f5749f4e014a0a6b2437a787
-api/config/mapping/validator/Media/Create/CreateGenre.yaml:
-    timestamp: 1726010447
-    hash: d79db41dd51ba6dc858d3819d37322cc
-api/config/mapping/validator/Media/Update/UpdateGenre.yaml:
-    timestamp: 1726010447
-    hash: d79db41dd51ba6dc858d3819d37322cc
-api/src/Media/Framework/Api/State/Processor/Create/CreateGenreProcessor.php:
-    timestamp: 1725708890
-    hash: d545b6e7fc4ac1b9984a2c10d5f70c7a
-api/src/Media/Framework/Api/State/Processor/Update/UpdateGenreProcessor.php:
-    timestamp: 1725708890
-    hash: 0d5b02a24b551181378e2e5ae99837d0
-api/src/Media/Framework/Api/State/Provider/Search/SearchGenreProvider.php:
-    timestamp: 1726007904
-    hash: 356fd7697f284a7889264a5edc0b2e20
-api/src/Media/Framework/Api/State/Provider/FindById/FindGenreByIdProvider.php:
-    timestamp: 1726007904
-    hash: 942947fd6a2de5077788b428e127c6b3
-api/src/Media/Framework/Api/State/Provider/Delete/DeleteGenreProvider.php:
-    timestamp: 1726007904
-    hash: fd3c597d5cb38e86dd89605339ac6ca1
-api/src/Media/Framework/Doctrine/Repository/GenreDoctrineRepository.php:
-    timestamp: 1726007904
-    hash: f1edd4a80e97faae2276a34c03820fac
-api/src/Media/Framework/Doctrine/Fixtures/GenreFixture.php:
-    timestamp: 1726007904
-    hash: a5b415770ae4948fe490a7780c74dc01
-api/src/Media/Framework/Doctrine/Fixtures/data/genres.yaml:
-    timestamp: 1725796674
-    hash: cdc0b2a1f4dc6eb6279879944dd38fc6
-api/src/Media/Framework/Doctrine/DBAL/GenreIdDBALType.php:
-    timestamp: 1726007904
-    hash: 9561a396df31316b420506aee6674725
-api/src/Media/Application/UseCase/Create/CreateGenre.php:
-    timestamp: 1725708742
-    hash: 979d1d5d2f74a4ed46205b4eb99c3c15
-api/src/Media/Application/UseCase/Create/CreateGenreUseCase.php:
-    timestamp: 1725708742
-    hash: 44b2715501239fa61ee6c4b96b3f006c
-api/src/Media/Application/UseCase/Update/UpdateGenre.php:
-    timestamp: 1725708742
-    hash: 23af06d705a4b189cf1985c970617071
-api/src/Media/Application/UseCase/Update/UpdateGenreUseCase.php:
-    timestamp: 1726007904
-    hash: 210950b0f0c43f6b5f822059dc70d564
-api/src/Media/Application/UseCase/Search/SearchGenre.php:
-    timestamp: 1725709591
-    hash: ffbc12f799ecdca104eac3b0c75fb12c
-api/src/Media/Application/UseCase/Search/SearchGenreUseCase.php:
-    timestamp: 1725710650
-    hash: 2cbaa5e65c898835a7bf769d290bec8a
-api/src/Media/Application/UseCase/FindById/FindGenreById.php:
-    timestamp: 1725713917
-    hash: 68d4037cb95ce8e663657cdb421c403f
-api/src/Media/Application/UseCase/FindById/FindGenreByIdUseCase.php:
-    timestamp: 1726346806
-    hash: 31063ec19f32e57b1eefda13f2386032
-api/src/Media/Application/UseCase/Delete/DeleteGenre.php:
-    timestamp: 1725734300
-    hash: dbf2f1626bbbc486943ae78a3f1f90a2
-api/src/Media/Application/UseCase/Delete/DeleteGenreUseCase.php:
-    timestamp: 1726007904
-    hash: d1f2db77af9a264255f5f8a00101460d
-api/src/Media/Domain/Model/Genre.php:
-    timestamp: 1726007904
-    hash: 0ab875ff703c0c14fafd0e33c5a3ace6
-api/src/Media/Domain/Model/GenreId.php:
-    timestamp: 1725192338
-    hash: 79159d89042fb3eb37df4024c1337874
-api/src/Media/Domain/Model/GenreList.php:
-    timestamp: 1725274993
-    hash: d3c22e2b8f8af71fd852e203168a8395
-api/src/Media/Domain/Repository/GenreRepository.php:
-    timestamp: 1726007904
-    hash: 0699c11d58758ddf4885b190f7e8a268
 api/config/mapping/serialization/Media/VO/GenreName.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: e397ce4f916cea77c3348aa4ceade7ac
 api/src/Media/Framework/Doctrine/DBAL/GenreNameDBALType.php:
-    timestamp: 1725276404
-    hash: 46838e3bc20d22ffe2327ed2fc34fde1
+    timestamp: 1728469044
+    hash: dc140c1305b9b443603265ac826d2255
 api/src/Media/Domain/Model/VO/GenreName.php:
-    timestamp: 1725276404
-    hash: c6253e2e3c47a51eb0d3d79ed648149e
+    timestamp: 1728469044
+    hash: b6d7a00440605a999a5361d82f52e9b2
 api/src/Media/Domain/Model/VO/Constraint/GenreNameConstraint.php:
-    timestamp: 1725276404
-    hash: a892b894b34da2704a1425acd9a9c95c
+    timestamp: 1728469044
+    hash: fdd2071e17020541c48e5f46091bd610
 api/config/mapping/doctrine/Media/VO.FullName.orm.xml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: 047a4e3136ed9712b23757edf91d4a2b
 api/config/mapping/serialization/Media/VO/FullName.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: 7343ad26efb24544ccb11e250d4d401c
+api/src/Media/Framework/Doctrine/Filter/FullNameFilter.php:
+    timestamp: 1728469044
+    hash: ce4102ff0dd92987aa40fa7ce8adbe97
 api/src/Media/Domain/Model/VO/FullName.php:
-    timestamp: 1725276404
-    hash: 0fc3a74905839821e5d87d5df45ea68e
+    timestamp: 1728469044
+    hash: 78057639a10610d1dcda4ddc42e591a0
 api/src/Media/Domain/Model/VO/Constraint/FullNameConstraint.php:
-    timestamp: 1725742837
-    hash: 2feb7fa89982d456fb4210d20efd6eae
+    timestamp: 1728469044
+    hash: d499c879c117a610f443abd39fc513ed
 api/config/mapping/serialization/Media/VO/Overview.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: 47ca0c9c19d47294e5e669720ac336cc
 api/src/Media/Framework/Doctrine/DBAL/OverviewDBALType.php:
-    timestamp: 1725276404
-    hash: 8cc39e0070fced5f43683305f25a1558
+    timestamp: 1728469044
+    hash: 5cc6e6327c61b494ac97fa4234812e58
 api/src/Media/Domain/Model/VO/Overview.php:
-    timestamp: 1725276404
-    hash: 09226eaa64c414516a13fdfef6375c08
+    timestamp: 1728469044
+    hash: 036d58b0def02981dea241bdbf131d25
 api/src/Media/Domain/Model/VO/Constraint/OverviewConstraint.php:
-    timestamp: 1725276404
-    hash: e950e66d532c85df68cd4ec75326ee36
-api/config/mapping/api/Media/Create/CreateMovie.resource.xml:
-    timestamp: 1726010447
-    hash: 5597e1d96f8ae2d7eeeaaaa67da77ace
-api/config/mapping/api/Media/Update/UpdateMovie.resource.xml:
-    timestamp: 1726010447
-    hash: 15e4a8be933f863c03500a3989b4b4fe
-api/config/mapping/api/Media/Search/SearchMovie.resource.xml:
-    timestamp: 1726346237
-    hash: 6d1131b2f47618275588e0f547e5cee1
-api/config/mapping/api/Media/FindById/FindMovieById.resource.xml:
-    timestamp: 1726346237
-    hash: 958df9e63280453aca1206c7dee232c2
-api/config/mapping/api/Media/Delete/DeleteMovie.resource.xml:
-    timestamp: 1726010447
-    hash: 8b26e2001d23db7f999711a4c5bbfdb2
-api/config/mapping/doctrine/Media/Movie.orm.xml:
-    timestamp: 1726010447
-    hash: ce7374e15d46586d759260e035435027
-api/config/mapping/serialization/Media/Create/CreateMovie.yaml:
-    timestamp: 1725996852
-    hash: b6bc1b8c7ef5b2946cc329e5e0f2185d
-api/config/mapping/serialization/Media/Update/UpdateMovie.yaml:
-    timestamp: 1725996852
-    hash: 4e5460ceb36bd9ebc0e976b1391f1e78
-api/config/mapping/serialization/Media/Search/SearchMovie.yaml:
-    timestamp: 1726345778
-    hash: 2258ed0756c41bfcd5f1e141291cc7eb
-api/config/mapping/serialization/Media/FindById/FindMovieById.yaml:
-    timestamp: 1726145887
-    hash: aae412ef0555992ba083634f3dec3ccb
-api/config/mapping/validator/Media/Create/CreateMovie.yaml:
-    timestamp: 1726010447
-    hash: 76e7ec06f70a22952670911ed88ac0e3
-api/config/mapping/validator/Media/Update/UpdateMovie.yaml:
-    timestamp: 1726010447
-    hash: 76e7ec06f70a22952670911ed88ac0e3
-api/src/Media/Framework/Api/State/Processor/Create/CreateMovieProcessor.php:
-    timestamp: 1725708890
-    hash: ce79c00faa6cee146c076c86f43f087b
-api/src/Media/Framework/Api/State/Processor/Update/UpdateMovieProcessor.php:
-    timestamp: 1725708890
-    hash: 88722d661bcd0ef65b104f85eb071034
-api/src/Media/Framework/Api/State/Provider/Search/SearchMovieProvider.php:
-    timestamp: 1726007904
-    hash: 0ce84c10291b2dc4e70aac8a78db1323
-api/src/Media/Framework/Api/State/Provider/FindById/FindMovieByIdProvider.php:
-    timestamp: 1726007904
-    hash: 4552f44e3b861f3175d97720ae2ad8d2
-api/src/Media/Framework/Api/State/Provider/Delete/DeleteMovieProvider.php:
-    timestamp: 1726007904
-    hash: a16d9769b1abf7cb8b9ee5f28db64852
-api/src/Media/Framework/Doctrine/Repository/MovieDoctrineRepository.php:
-    timestamp: 1726007904
-    hash: 59b745339290ed0cca54cc1a80cc0114
-api/src/Media/Framework/Doctrine/Fixtures/MovieFixture.php:
-    timestamp: 1726007904
-    hash: daa9dc8131636d0ae0f9de5a3ddfa1b7
-api/src/Media/Framework/Doctrine/Fixtures/data/movies.yaml:
-    timestamp: 1725802005
-    hash: aa64a5fa5263a93a4007d0673ba55e25
-api/src/Media/Framework/Doctrine/DBAL/MovieIdDBALType.php:
-    timestamp: 1726007904
-    hash: 0e0694d9ec725e51281f45c523fff73e
-api/src/Media/Application/UseCase/Create/CreateMovie.php:
-    timestamp: 1725802214
-    hash: 361855deba16591701be195d4b8fe51a
-api/src/Media/Application/UseCase/Create/CreateMovieUseCase.php:
-    timestamp: 1725708742
-    hash: 82a9359aac8de455791893cfd2ea146f
-api/src/Media/Application/UseCase/Update/UpdateMovie.php:
-    timestamp: 1725802214
-    hash: 11069579775c9cf8c94381e9269bc6c0
-api/src/Media/Application/UseCase/Update/UpdateMovieUseCase.php:
-    timestamp: 1726007904
-    hash: 40e93ec4b1d492a67a4eba5b09da0915
-api/src/Media/Application/UseCase/Search/SearchMovie.php:
-    timestamp: 1725709591
-    hash: d98767f85f0f74465bfcc70b01bb6a00
-api/src/Media/Application/UseCase/Search/SearchMovieUseCase.php:
-    timestamp: 1725710650
-    hash: fbdb566f5a927ddbd627b7f55f7c8315
-api/src/Media/Application/UseCase/FindById/FindMovieById.php:
-    timestamp: 1725713917
-    hash: 8da0b1183c38b04893eadd611793ca22
-api/src/Media/Application/UseCase/FindById/FindMovieByIdUseCase.php:
-    timestamp: 1726346806
-    hash: 4e309de3b642b2e0fbe08128ca0803c0
-api/src/Media/Application/UseCase/Delete/DeleteMovie.php:
-    timestamp: 1725734300
-    hash: 2b396a9f5393aa085078dc6f00744cc9
-api/src/Media/Application/UseCase/Delete/DeleteMovieUseCase.php:
-    timestamp: 1726007904
-    hash: 591928433d11186d689045d088e9d7b8
-api/src/Media/Domain/Model/Movie.php:
-    timestamp: 1726007904
-    hash: 9a71c3a35e64ab1b2944814aa461c74e
-api/src/Media/Domain/Model/MovieId.php:
-    timestamp: 1725192338
-    hash: 8de0f561928b4f9d722f77298a497db4
-api/src/Media/Domain/Model/MovieList.php:
-    timestamp: 1725274993
-    hash: b57ccff9bde6d56d5730fd23ff86b22e
-api/src/Media/Domain/Repository/MovieRepository.php:
-    timestamp: 1726007904
-    hash: ed294fe883ed77284d71483850cbc2e2
+    timestamp: 1728469044
+    hash: 6bbc06ac632d12d92877c1e05e9569cb
 api/config/mapping/serialization/Media/VO/Score.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: 6268ffc52fc1f4d6af922ac0e67f486e
 api/src/Media/Framework/Doctrine/DBAL/ScoreDBALType.php:
-    timestamp: 1725276404
-    hash: 88d8f778d5149a4fdfda3df134026dd4
+    timestamp: 1728469044
+    hash: d0df0668db2cd3fd7ca23e5a910cf012
 api/src/Media/Domain/Model/VO/Score.php:
-    timestamp: 1725276404
-    hash: 7c9cb66442068eef55e7374f945781ba
+    timestamp: 1728469044
+    hash: 8b529517d178a4b52bd2844a22f5610c
 api/src/Media/Domain/Model/VO/Constraint/ScoreConstraint.php:
-    timestamp: 1725276404
-    hash: 8694a871a27f9296327fa5a8e702a345
+    timestamp: 1728469044
+    hash: a6b0caa0ad2c92b5ac6422058c3fc989
 api/config/mapping/serialization/Media/VO/MovieTitle.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: 926a0f95e2b1abc37c0bffae2128381c
 api/src/Media/Framework/Doctrine/DBAL/MovieTitleDBALType.php:
-    timestamp: 1725276404
-    hash: 078304956d3aeca7161e645c051ed42c
+    timestamp: 1728469044
+    hash: 6b1b0da660e53a9a9fa3f0e2141d3893
 api/src/Media/Domain/Model/VO/MovieTitle.php:
-    timestamp: 1725276404
-    hash: a8692ac9e59a77bd544591399b58d20e
+    timestamp: 1728469044
+    hash: 854747b6702e05eed57b606b08c6c9c4
 api/src/Media/Domain/Model/VO/Constraint/MovieTitleConstraint.php:
-    timestamp: 1725276404
-    hash: a6526ec7c6671b34a5d17c1626e95d8e
+    timestamp: 1728469044
+    hash: b6b01723d146ca4821044ab7ba8a10d0
 api/config/mapping/serialization/Media/VO/ReleaseYear.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: e4da3557d84b7de4a3a724805d9283ea
 api/src/Media/Framework/Doctrine/DBAL/ReleaseYearDBALType.php:
-    timestamp: 1725276404
-    hash: 5edd2c6bd7b869573a411cea4f8d7fb1
+    timestamp: 1728469044
+    hash: d1f3d30107f734b2e871b592ad67036a
 api/src/Media/Domain/Model/VO/ReleaseYear.php:
-    timestamp: 1725276404
-    hash: 0eb1c4b090ec0d425315cf89d466d668
+    timestamp: 1728469044
+    hash: ccee5dd512751889dae6349702621b51
 api/src/Media/Domain/Model/VO/Constraint/ReleaseYearConstraint.php:
-    timestamp: 1725276404
-    hash: 6497d234b360f76a49f53ce844c26abc
-api/config/mapping/doctrine/Media/Review.orm.xml:
-    timestamp: 1726010447
-    hash: 38f92e4557db3355f3db9d84f6a2a480
-api/src/Media/Framework/Doctrine/DBAL/ReviewIdDBALType.php:
-    timestamp: 1726007904
-    hash: 7edda2abcd2f6dd03545e36301a99ad0
-api/src/Media/Domain/Model/Review.php:
-    timestamp: 1726007904
-    hash: 45408cebd8c59592bbad523ec177cbbb
-api/src/Media/Domain/Model/ReviewId.php:
-    timestamp: 1725192338
-    hash: 549be472ecee9d7ba10a271a8336aaa8
-api/src/Media/Domain/Model/ReviewList.php:
-    timestamp: 1725274993
-    hash: c5f90d3fadbeca396b3d42ddeeef647c
+    timestamp: 1728469044
+    hash: 969ee8dff17db3464ae9018d9921512d
 api/src/Media/Framework/Doctrine/DBAL/ClassificationDBALType.php:
-    timestamp: 1725276404
-    hash: 28132a8bea93cc62442ec8a25021820d
+    timestamp: 1728469044
+    hash: 3d64d6829b669258af530e0dde5bd96a
 api/src/Media/Domain/Model/VO/Classification.php:
-    timestamp: 1725111653
+    timestamp: 1728222164
     hash: 91270249abd075ef6b8ae64a8343bef7
 api/src/Media/Domain/Model/VO/Constraint/ClassificationConstraint.php:
-    timestamp: 1725276404
-    hash: d5096762ad6d0ca5aa16c572d1de248b
+    timestamp: 1728469044
+    hash: e617affb56f81dedcc17d6782c37dfff
 api/config/mapping/serialization/Media/VO/ReviewContent.yaml:
-    timestamp: 1726010447
+    timestamp: 1727957384
     hash: 5e9fb215d3b5fcd0f7f00dafb389ba7a
 api/src/Media/Framework/Doctrine/DBAL/ReviewContentDBALType.php:
-    timestamp: 1725276404
-    hash: 857e5c2f3593b1784def6aceab58169e
+    timestamp: 1728469044
+    hash: 09060ad22bf838e1e4023da30ca61d4d
 api/src/Media/Domain/Model/VO/ReviewContent.php:
-    timestamp: 1725276404
-    hash: 87c28ca849314b6f1660ff9dcd7223a6
+    timestamp: 1728469044
+    hash: e82a578baf31abc64116a4264c11505b
 api/src/Media/Domain/Model/VO/Constraint/ReviewContentConstraint.php:
-    timestamp: 1725276404
-    hash: bf6a8966b804856c6f0c691e2d7b7454
-api/config/mapping/api/Media/Create/CreateDirector.resource.xml:
-    timestamp: 1726010447
-    hash: 016691a8a2bf551dd42ba67c3356004c
-api/config/mapping/api/Media/Update/UpdateDirector.resource.xml:
-    timestamp: 1726010447
-    hash: 381ec32288d703f095e71839f6f491c7
-api/config/mapping/api/Media/Search/SearchDirector.resource.xml:
-    timestamp: 1726346237
-    hash: fb88d243b0bfb5d4746c0e47d4b5e64a
-api/config/mapping/api/Media/FindById/FindDirectorById.resource.xml:
-    timestamp: 1726346237
-    hash: a600ea7c82b7a680eec59369b6e4e8b7
-api/config/mapping/api/Media/Delete/DeleteDirector.resource.xml:
-    timestamp: 1726010447
-    hash: ef8c4d6c11a8d4c213050d551d4667f3
+    timestamp: 1728469044
+    hash: 7bc6ebb19db0d5bf9f2cb50496fe63e6
+api/config/mapping/api/Media/Genre.resource.xml:
+    timestamp: 1727957384
+    hash: 71c943cc4bf68bcecb81a0c51521d2af
+api/config/mapping/doctrine/Media/Genre.orm.xml:
+    timestamp: 1727957384
+    hash: 41909a87ff0e4619aa8b15c6ba4e155b
+api/config/mapping/serialization/Media/Genre.yaml:
+    timestamp: 1728047763
+    hash: 0eb345da2742d29759679c705634d518
+api/config/mapping/validator/Media/Genre.yaml:
+    timestamp: 1727957384
+    hash: 54ff80fe4edaecee10119ea8702fba95
+api/src/Media/Framework/Api/Normalizer/GenreListInputNormalizer.php:
+    timestamp: 1728469894
+    hash: 8238deb5d6013a0ea65c3c91c8829df5
+api/src/Media/Framework/Api/State/Processor/Create/CreateGenreProcessor.php:
+    timestamp: 1728469044
+    hash: cda43968d32e35e089c87b5c1867c308
+api/src/Media/Framework/Api/State/Processor/Update/UpdateGenreProcessor.php:
+    timestamp: 1728469044
+    hash: c4ce94c45bce51dde4315d39de7a7d9a
+api/src/Media/Framework/Api/State/Provider/Search/SearchGenreProvider.php:
+    timestamp: 1728469044
+    hash: 22e7a92b88c55ed1f7d4ce32f172fb75
+api/src/Media/Framework/Api/State/Provider/FindById/FindGenreByIdProvider.php:
+    timestamp: 1728469044
+    hash: 435a07b3d3c11c5755cfad59ba6f5e80
+api/src/Media/Framework/Api/State/Provider/Delete/DeleteGenreProvider.php:
+    timestamp: 1728469044
+    hash: 49465c1fec4815220c49428b59a17025
+api/src/Media/Framework/Doctrine/Repository/GenreDoctrineRepository.php:
+    timestamp: 1728469044
+    hash: 8203f345ec7a19134ff0affbc6b682fc
+api/src/Media/Framework/Doctrine/Fixtures/GenreFixture.php:
+    timestamp: 1728469044
+    hash: 2852830a6ed520ab82ac53ff6a54035b
+api/src/Media/Framework/Doctrine/Fixtures/data/genres.yaml:
+    timestamp: 1727957384
+    hash: cdc0b2a1f4dc6eb6279879944dd38fc6
+api/src/Media/Framework/Doctrine/DBAL/GenreIdDBALType.php:
+    timestamp: 1728469044
+    hash: 4ec9d87ac72c3517107170c482312d8b
+api/src/Media/Application/UseCase/Create/CreateGenre.php:
+    timestamp: 1728469044
+    hash: 26dc4ac83929eef737a7cf8516672fb4
+api/src/Media/Application/UseCase/Create/CreateGenreUseCase.php:
+    timestamp: 1728469044
+    hash: 679f594add6357c5ac7f28c3324fa0eb
+api/src/Media/Application/UseCase/Update/UpdateGenre.php:
+    timestamp: 1728469044
+    hash: 9e7119229e6d28a38df8b474f73c4e37
+api/src/Media/Application/UseCase/Update/UpdateGenreUseCase.php:
+    timestamp: 1728469044
+    hash: f70fc8f2542783135a508ca29b740425
+api/src/Media/Application/UseCase/Search/SearchGenre.php:
+    timestamp: 1728469044
+    hash: ec9cdd95344a981c12fc331e054c2cd6
+api/src/Media/Application/UseCase/Search/SearchGenreUseCase.php:
+    timestamp: 1728469044
+    hash: 45f77496b36f8316916e233987588bf1
+api/src/Media/Application/UseCase/FindById/FindGenreById.php:
+    timestamp: 1728469044
+    hash: bfb9cba61e1df5b9c1e6a4a20d22a41d
+api/src/Media/Application/UseCase/FindById/FindGenreByIdUseCase.php:
+    timestamp: 1728469044
+    hash: d19f3d30d69097d4b12c029dda8d3fb2
+api/src/Media/Application/UseCase/Delete/DeleteGenre.php:
+    timestamp: 1728469044
+    hash: 4c6bb543c667a05321cf04e81ddcf0d3
+api/src/Media/Application/UseCase/Delete/DeleteGenreUseCase.php:
+    timestamp: 1728469044
+    hash: 1b4d2c8fef4e69ea209a5ba7e9a4b909
+api/src/Media/Domain/Input/GenreListInput.php:
+    timestamp: 1727957384
+    hash: 416067c0bb5145cf5f01394e9b4908f8
+api/src/Media/Domain/Model/Genre.php:
+    timestamp: 1728469044
+    hash: 59e6019bb229c5cda0f912523d70958f
+api/src/Media/Domain/Model/GenreId.php:
+    timestamp: 1727957384
+    hash: d3cacbbff3a6a1b43a924de585857b93
+api/src/Media/Domain/Model/GenreList.php:
+    timestamp: 1727957384
+    hash: 4aa1dac2472feaf91ac521b2657fb0ca
+api/src/Media/Domain/Repository/GenreRepository.php:
+    timestamp: 1728734446
+    hash: ce24bd0dfa6c8a84cc89d4ca78022061
+api/src/Media/Domain/Service/RateCalculator.php:
+    timestamp: 1728469044
+    hash: e2d5b033f15feface3c6de2b80cd7a0a
+api/config/mapping/api/Media/Movie.resource.xml:
+    timestamp: 1727957384
+    hash: 5bd0fd7609ac5d3ad1386dfc91d89c82
+api/config/mapping/doctrine/Media/Movie.orm.xml:
+    timestamp: 1728221365
+    hash: ba95b315601f23efe20cccab4256b22d
+api/config/mapping/serialization/Media/Movie.yaml:
+    timestamp: 1728221365
+    hash: d6cde74673f7987dc7f80fc0311ec7e9
+api/config/mapping/validator/Media/Movie.yaml:
+    timestamp: 1728221370
+    hash: 8ea58619b090ac3f8a978e0db8fdb5a4
+api/src/Media/Framework/Api/Normalizer/MovieListInputNormalizer.php:
+    timestamp: 1728469894
+    hash: 429c788b36a3a81dc34045c5a23726ce
+api/src/Media/Framework/Api/State/Processor/Create/CreateMovieProcessor.php:
+    timestamp: 1728469044
+    hash: 5dc81bfd52ee4326906ae892ee2fccb3
+api/src/Media/Framework/Api/State/Processor/Update/UpdateMovieProcessor.php:
+    timestamp: 1728469044
+    hash: c1d99550d32e128d4b85bb1dcdcf2512
+api/src/Media/Framework/Api/State/Provider/Search/SearchMovieProvider.php:
+    timestamp: 1728469044
+    hash: 63399dc5dcf68971a2dfdf5bafb103f8
+api/src/Media/Framework/Api/State/Provider/FindById/FindMovieByIdProvider.php:
+    timestamp: 1728469044
+    hash: 39179b34a85b61f4d7ccb380c7a63b59
+api/src/Media/Framework/Api/State/Provider/Delete/DeleteMovieProvider.php:
+    timestamp: 1728469044
+    hash: b0a61039e5b78248390812e72250cef1
+api/src/Media/Framework/Doctrine/Repository/MovieDoctrineRepository.php:
+    timestamp: 1728469044
+    hash: 9e1c4c47bc6cfe8d96e25dfa1e22eae4
+api/src/Media/Framework/Doctrine/Fixtures/MovieFixture.php:
+    timestamp: 1728469044
+    hash: 97051928b6acf85fca64b4e1af248a7f
+api/src/Media/Framework/Doctrine/Fixtures/data/movies.yaml:
+    timestamp: 1728221385
+    hash: 3e8be4352ba7e5eb933c9cf2658a232f
+api/src/Media/Framework/Doctrine/DBAL/MovieIdDBALType.php:
+    timestamp: 1728469044
+    hash: cfbb38656328e76546629446155f222d
+api/src/Media/Application/UseCase/Create/CreateMovie.php:
+    timestamp: 1728469044
+    hash: c5c6a0be918ad5f432c58f2fd5f54e40
+api/src/Media/Application/UseCase/Create/CreateMovieUseCase.php:
+    timestamp: 1728469044
+    hash: 9f418d2773acfa3e9c10ac7d6e40b908
+api/src/Media/Application/UseCase/Update/UpdateMovie.php:
+    timestamp: 1728469044
+    hash: c39be36ebeec3e78f2f4815a749145eb
+api/src/Media/Application/UseCase/Update/UpdateMovieUseCase.php:
+    timestamp: 1728469044
+    hash: 2ff157b6ef001781d56184a59e7a339e
+api/src/Media/Application/UseCase/Search/SearchMovie.php:
+    timestamp: 1728469044
+    hash: 3ccae3058e0f16c017707bbdb3f21fd6
+api/src/Media/Application/UseCase/Search/SearchMovieUseCase.php:
+    timestamp: 1728469044
+    hash: e0c8e705ee8c04853d47de61e6cc3283
+api/src/Media/Application/UseCase/FindById/FindMovieById.php:
+    timestamp: 1728469044
+    hash: 9c302d890df9a71ec84efd0af5c9d9d8
+api/src/Media/Application/UseCase/FindById/FindMovieByIdUseCase.php:
+    timestamp: 1728469044
+    hash: 7fa92a626993be3fe678ee09c85e4f05
+api/src/Media/Application/UseCase/Delete/DeleteMovie.php:
+    timestamp: 1728469044
+    hash: 86066bee4516e1cd4cec553c858d0919
+api/src/Media/Application/UseCase/Delete/DeleteMovieUseCase.php:
+    timestamp: 1728469044
+    hash: 4d61a5203c5628bdf1c61849d3ad62d8
+api/src/Media/Domain/Input/MovieListInput.php:
+    timestamp: 1728221385
+    hash: 1c4a54105dc1d41920b4a1c1b9f445ae
+api/src/Media/Domain/Model/Movie.php:
+    timestamp: 1728469044
+    hash: 24591d4216be269743874c284f46084d
+api/src/Media/Domain/Model/MovieId.php:
+    timestamp: 1728221385
+    hash: 0134efbe7e2db667483a3ff938a0f98e
+api/src/Media/Domain/Model/MovieList.php:
+    timestamp: 1728221385
+    hash: 13b7284a559996dd96a7fbf494c70825
+api/src/Media/Domain/Repository/MovieRepository.php:
+    timestamp: 1728734446
+    hash: bf84f59d58bb047281d735993e5ec278
+api/config/mapping/api/Media/Review.resource.xml:
+    timestamp: 1727957384
+    hash: ed8fc70e4214e1507e0bb8fc9fdb59d0
+api/config/mapping/doctrine/Media/Review.orm.xml:
+    timestamp: 1727957384
+    hash: 38f92e4557db3355f3db9d84f6a2a480
+api/config/mapping/serialization/Media/Review.yaml:
+    timestamp: 1728047763
+    hash: 4e99ef6d665961a12c3d0a61009db479
+api/src/Media/Framework/Api/Normalizer/ReviewListInputNormalizer.php:
+    timestamp: 1728469894
+    hash: ee0a01752a1a3ce233b221196241b6a6
+api/src/Media/Framework/Doctrine/DBAL/ReviewIdDBALType.php:
+    timestamp: 1728469044
+    hash: dbd9c456a8daf33b13e45d629e514e42
+api/src/Media/Domain/Input/ReviewListInput.php:
+    timestamp: 1727957384
+    hash: 848d62a225e8bc9d5431cae738a00441
+api/src/Media/Domain/Model/Review.php:
+    timestamp: 1728469044
+    hash: b4d0692210c526126b12fd06042b8c90
+api/src/Media/Domain/Model/ReviewId.php:
+    timestamp: 1727957384
+    hash: d5f0aa70902c39ef2a5164a9de90e81a
+api/src/Media/Domain/Model/ReviewList.php:
+    timestamp: 1727957384
+    hash: 0034eb27ae73be2243b6d4c59bcadecb
+api/config/mapping/api/Media/Director.resource.xml:
+    timestamp: 1727957384
+    hash: 49d6c98187f534b921125ee09b433b18
 api/config/mapping/doctrine/Media/Director.orm.xml:
-    timestamp: 1726081311
-    hash: c7965e2622ecb21ad0d2ce44898663d1
-api/config/mapping/serialization/Media/Create/CreateDirector.yaml:
-    timestamp: 1726081311
-    hash: 3ea35b97403b54361ad199d68c0dd820
-api/config/mapping/serialization/Media/Update/UpdateDirector.yaml:
-    timestamp: 1726081311
-    hash: 86e396a3a996cb145c6728a662df8009
-api/config/mapping/serialization/Media/Search/SearchDirector.yaml:
-    timestamp: 1726345782
-    hash: 1433863ab30a8227dede5cc8480dda35
-api/config/mapping/serialization/Media/FindById/FindDirectorById.yaml:
-    timestamp: 1726145887
-    hash: 71921a3133c3776dbf645a447f9b529a
-api/config/mapping/validator/Media/Create/CreateDirector.yaml:
-    timestamp: 1726081311
-    hash: bd20b677ce416bb195a619c16db754b7
-api/config/mapping/validator/Media/Update/UpdateDirector.yaml:
-    timestamp: 1726081311
-    hash: bd20b677ce416bb195a619c16db754b7
+    timestamp: 1728068731
+    hash: f3e1369a578ae998c1612b3b19a26a9e
+api/config/mapping/serialization/Media/Director.yaml:
+    timestamp: 1728047763
+    hash: 98a11aa976c77526501906f03d172d2d
+api/config/mapping/validator/Media/Director.yaml:
+    timestamp: 1727961095
+    hash: 7d4ec386d5b9ab95f1a1a08592414d1b
+api/src/Media/Framework/Api/Normalizer/DirectorListInputNormalizer.php:
+    timestamp: 1728469894
+    hash: 64b61ceff83573119b1d18f00c48d233
 api/src/Media/Framework/Api/State/Processor/Create/CreateDirectorProcessor.php:
-    timestamp: 1725708890
-    hash: 5d049acfe9b65723b70751fb7f5e93fc
+    timestamp: 1728469044
+    hash: 76b71c223ab183416fa6f50ff1899c81
 api/src/Media/Framework/Api/State/Processor/Update/UpdateDirectorProcessor.php:
-    timestamp: 1725708890
-    hash: c8976645db745ad8651569c6f21f7951
+    timestamp: 1728469044
+    hash: 64c3b01c2ed29b577d9a69bf24c0412b
 api/src/Media/Framework/Api/State/Provider/Search/SearchDirectorProvider.php:
-    timestamp: 1726007904
-    hash: 5359a0017b76e4ec986999c002d3973c
+    timestamp: 1728469044
+    hash: 483c00dd3c1a5ca17f73d986be176272
 api/src/Media/Framework/Api/State/Provider/FindById/FindDirectorByIdProvider.php:
-    timestamp: 1726007904
-    hash: aaf729c97f9a29c4721d6dd757385fa0
+    timestamp: 1728469044
+    hash: 42673028080eb14cb305c41b3bc6d3a1
 api/src/Media/Framework/Api/State/Provider/Delete/DeleteDirectorProvider.php:
-    timestamp: 1726007904
-    hash: 6c541b8d06ca5ba424a333bc4dbcd317
+    timestamp: 1728469044
+    hash: 4af4aab58b81a3f3bd511435ee9ac162
 api/src/Media/Framework/Doctrine/Repository/DirectorDoctrineRepository.php:
-    timestamp: 1726007904
-    hash: f3b34d0a4a687005e19b68e525916b88
+    timestamp: 1728469044
+    hash: c45127423bac841f58e64c12783e4264
 api/src/Media/Framework/Doctrine/Fixtures/DirectorFixture.php:
-    timestamp: 1726081313
-    hash: 5dc613a8b7c0524075127dd0e9c65b56
+    timestamp: 1728469044
+    hash: e801b6fedf09daf679db3eb2d3f321f4
 api/src/Media/Framework/Doctrine/Fixtures/data/directors.yaml:
-    timestamp: 1726081313
+    timestamp: 1727957384
     hash: 99591d3e33436a3c71291c5cb882183c
 api/src/Media/Framework/Doctrine/DBAL/DirectorIdDBALType.php:
-    timestamp: 1726007904
-    hash: 53afcaa896023716ed5aa22582db91e5
+    timestamp: 1728469044
+    hash: fb11446b2d6639942a381bf05f184747
 api/src/Media/Application/UseCase/Create/CreateDirector.php:
-    timestamp: 1726081313
-    hash: dde6802cdefd693794eab80c786149be
+    timestamp: 1728469044
+    hash: 52a551447274a18691bb6a764b767bae
 api/src/Media/Application/UseCase/Create/CreateDirectorUseCase.php:
-    timestamp: 1725708742
-    hash: a90b2991c49e7bb56205bbd6a12bd98b
+    timestamp: 1728469044
+    hash: 764a56428eee7aadeb070167f7ab94eb
 api/src/Media/Application/UseCase/Update/UpdateDirector.php:
-    timestamp: 1726081313
-    hash: 974f6ff75aab18cf0cd80f5ddc952a40
+    timestamp: 1728469044
+    hash: 06ef66c8cd86d4025b448e99256b5a5d
 api/src/Media/Application/UseCase/Update/UpdateDirectorUseCase.php:
-    timestamp: 1726007904
-    hash: 4179c29ce644a65bb1d3768a47adf224
+    timestamp: 1728469044
+    hash: a409382b40b2896e86525882861d220f
 api/src/Media/Application/UseCase/Search/SearchDirector.php:
-    timestamp: 1725709591
-    hash: dbed0c773d27042501831e1cc2964a5e
+    timestamp: 1728469044
+    hash: c0e3815a27d92fffce87585952cd6d2d
 api/src/Media/Application/UseCase/Search/SearchDirectorUseCase.php:
-    timestamp: 1725710650
-    hash: 0ff590023a4bcbb67d531d7a9db6a662
+    timestamp: 1728469044
+    hash: 0f51a7126655ba56f5a8d22c37159b7b
 api/src/Media/Application/UseCase/FindById/FindDirectorById.php:
-    timestamp: 1725713917
-    hash: 0f4ce9677b46dd4893f85294ed6d4e64
+    timestamp: 1728469044
+    hash: f7f240a266038bfa9b9c3079136b2cc5
 api/src/Media/Application/UseCase/FindById/FindDirectorByIdUseCase.php:
-    timestamp: 1726346806
-    hash: 1edd4ea07ecc7d5cfbf28108d464acb6
+    timestamp: 1728469044
+    hash: 2c44fe74a5331fbad14f05f586136a5c
 api/src/Media/Application/UseCase/Delete/DeleteDirector.php:
-    timestamp: 1725734300
-    hash: 91e53bde17bf3972fa9fa4256eb1f96b
+    timestamp: 1728469044
+    hash: f292d6f26fbd84341c5923562e3c8749
 api/src/Media/Application/UseCase/Delete/DeleteDirectorUseCase.php:
-    timestamp: 1726007904
-    hash: 4aea7556077f7ccf3d1815d9ab9ca5b0
+    timestamp: 1728469044
+    hash: df5ca24a9f77174c90de9675cadc92e0
+api/src/Media/Domain/Input/DirectorListInput.php:
+    timestamp: 1727957384
+    hash: 0ae846051c1ca00aeb08d0caff36c4c6
 api/src/Media/Domain/Model/Director.php:
-    timestamp: 1726081313
-    hash: d4c9fca5b67ca9d34ef9ada7bdd455c8
+    timestamp: 1728469044
+    hash: f0ff928ed50963e598cb4c8d22976102
 api/src/Media/Domain/Model/DirectorId.php:
-    timestamp: 1725192338
-    hash: d1f0f4c7a154381d1aeb53660f742149
+    timestamp: 1727957384
+    hash: b2b770d7006f62b74d1c3ed272ab7b33
 api/src/Media/Domain/Model/DirectorList.php:
-    timestamp: 1725274996
-    hash: 975bd3a24690faf6e5f0e5ec9470b92f
+    timestamp: 1727957384
+    hash: 34e62ce6434c27553b918954e52ae28b
 api/src/Media/Domain/Repository/DirectorRepository.php:
-    timestamp: 1726007904
-    hash: c93efb066c3c7b859bc294af3d4a68eb
+    timestamp: 1728734446
+    hash: fc9a7df390bbb99d07029d291602da6e
+api/tests/Media/Framework/Doctrine/DBAL/GenreNameDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: eee8d1de76e13f60a629e02e929de796
+api/tests/Media/Framework/Doctrine/Filter/FullNameFilterTest.php:
+    timestamp: 1728469109
+    hash: 3a002ffd8131f726aa23d8208e8d4508
+api/tests/Media/Framework/Doctrine/DBAL/OverviewDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: 14c9a78fb93984e15b108d2916e15a2b
+api/tests/Media/Framework/Doctrine/DBAL/ScoreDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: 916c75256a952bd242fa721930d020b9
+api/tests/Media/Framework/Doctrine/DBAL/MovieTitleDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: a06935473ef4818eb792cbd0c7dbf1e1
+api/tests/Media/Framework/Doctrine/DBAL/ReleaseYearDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: c3e244b5936fffe513a94b5d0a853766
+api/tests/Media/Framework/Doctrine/DBAL/ClassificationDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: f13ba4740068ce90b784e6483a88b60e
+api/tests/Media/Framework/Doctrine/DBAL/ReviewContentDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: 78746753b89830a9dd609a37d101bf4b
+api/tests/Media/Framework/Api/Normalizer/GenreListInputNormalizerTest.php:
+    timestamp: 1728672283
+    hash: 850bd67c487140ec2391c1b66fd66d1b
+api/tests/Media/Framework/Api/State/Processor/Create/CreateGenreProcessorTest.php:
+    timestamp: 1728731714
+    hash: 23e954ced30613551678a1b335526597
+api/tests/Media/Framework/Api/State/Processor/Update/UpdateGenreProcessorTest.php:
+    timestamp: 1728732411
+    hash: cc36f208386d95695d8a2cdfa280e0f1
+api/tests/Media/Framework/Api/State/Provider/Search/SearchGenreProviderTest.php:
+    timestamp: 1728734646
+    hash: 635315c52f5329b4819fab12b6b57965
+api/tests/Media/Framework/Api/State/Provider/FindById/FindGenreByIdProviderTest.php:
+    timestamp: 1728733704
+    hash: 58580dd536e5feeeb752113ba1acacde
+api/tests/Media/Framework/Api/State/Provider/Delete/DeleteGenreProviderTest.php:
+    timestamp: 1728733245
+    hash: 6aa79a5e0bf5e09e4516c905de52772e
+api/tests/Media/Framework/Doctrine/Repository/GenreDoctrineRepositoryTest.php:
+    timestamp: 1728469044
+    hash: b5f2f88c67575415bd7cc76c3cdb49d8
+api/tests/Media/Framework/Doctrine/DBAL/GenreIdDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: 2dab652ffac5338e752e5a260d93bf0c
+api/tests/Media/Application/UseCase/Create/CreateGenreUseCaseTest.php:
+    timestamp: 1728760545
+    hash: 28f2f6e8d69789bda1ef9f14245ffcb7
+api/tests/Media/Application/UseCase/Update/UpdateGenreUseCaseTest.php:
+    timestamp: 1728764228
+    hash: 11b7ad60ac240751a2dcef1a4c11e3d8
+api/tests/Media/Application/UseCase/Search/SearchGenreUseCaseTest.php:
+    timestamp: 1728764228
+    hash: daf9fa344ccc8a933371de7de86bf4ef
+api/tests/Media/Application/UseCase/FindById/FindGenreByIdUseCaseTest.php:
+    timestamp: 1728764422
+    hash: a270a7633935b456ec7018a06cc7ab62
+api/tests/Media/Application/UseCase/Delete/DeleteGenreUseCaseTest.php:
+    timestamp: 1728764228
+    hash: a920c41770424f4fde4c508cc4995096
+api/tests/Media/Framework/Api/Normalizer/MovieListInputNormalizerTest.php:
+    timestamp: 1728672283
+    hash: e539b5251ac43eb0f0d64821161e4d49
+api/tests/Media/Framework/Api/State/Processor/Create/CreateMovieProcessorTest.php:
+    timestamp: 1728731720
+    hash: b6dc483ec2d69d5f371fc0974a1a27f9
+api/tests/Media/Framework/Api/State/Processor/Update/UpdateMovieProcessorTest.php:
+    timestamp: 1728732411
+    hash: d303d0fe0dad974acda17691255c21ca
+api/tests/Media/Framework/Api/State/Provider/Search/SearchMovieProviderTest.php:
+    timestamp: 1728734646
+    hash: b7958cbf9900fb4eeca1de38c4bb0aa8
+api/tests/Media/Framework/Api/State/Provider/FindById/FindMovieByIdProviderTest.php:
+    timestamp: 1728733704
+    hash: 24882ae4548657a504f4d4f8a536ba5a
+api/tests/Media/Framework/Api/State/Provider/Delete/DeleteMovieProviderTest.php:
+    timestamp: 1728733245
+    hash: 9e8671d8729dcce4ab3a6138e47efabb
+api/tests/Media/Framework/Doctrine/Repository/MovieDoctrineRepositoryTest.php:
+    timestamp: 1728469044
+    hash: 75d7c5a275a6892ef238def408694e3a
+api/tests/Media/Framework/Doctrine/DBAL/MovieIdDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: c7e57b6eb1e7234e0b95367d8272a9e4
+api/tests/Media/Application/UseCase/Create/CreateMovieUseCaseTest.php:
+    timestamp: 1728760545
+    hash: b00719fa3a381eab0000fbcd5373c063
+api/tests/Media/Application/UseCase/Update/UpdateMovieUseCaseTest.php:
+    timestamp: 1728764228
+    hash: fc9c87ee20846987af2bca0c0665df38
+api/tests/Media/Application/UseCase/Search/SearchMovieUseCaseTest.php:
+    timestamp: 1728764228
+    hash: 69247a73d26e98105f73e12a4cc5b988
+api/tests/Media/Application/UseCase/FindById/FindMovieByIdUseCaseTest.php:
+    timestamp: 1728764422
+    hash: 2ca89ff7856f308bb90d2879484dcd79
+api/tests/Media/Application/UseCase/Delete/DeleteMovieUseCaseTest.php:
+    timestamp: 1728764228
+    hash: 1215e23f1ae49ed5c96f5a24da8036c7
+api/tests/Media/Framework/Api/Normalizer/ReviewListInputNormalizerTest.php:
+    timestamp: 1728672283
+    hash: 6e9650288735e84f97c3b180d5829205
+api/tests/Media/Framework/Doctrine/DBAL/ReviewIdDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: a77062580b867da3f1c2730d3bfa6c5a
+api/tests/Media/Framework/Api/Normalizer/DirectorListInputNormalizerTest.php:
+    timestamp: 1728672283
+    hash: d90555dff1b8356568ff5618e4c86672
+api/tests/Media/Framework/Api/State/Processor/Create/CreateDirectorProcessorTest.php:
+    timestamp: 1728731720
+    hash: 10bc194db6cd33441e3a8454eef076a0
+api/tests/Media/Framework/Api/State/Processor/Update/UpdateDirectorProcessorTest.php:
+    timestamp: 1728732411
+    hash: 5370de1fb6def0a85bde40eb1d171ccf
+api/tests/Media/Framework/Api/State/Provider/Search/SearchDirectorProviderTest.php:
+    timestamp: 1728734648
+    hash: 5ccc3b87b64e4d0d1d69d62f034671ed
+api/tests/Media/Framework/Api/State/Provider/FindById/FindDirectorByIdProviderTest.php:
+    timestamp: 1728733704
+    hash: aad8551bb6d1c73d3aa8fa1d32070c38
+api/tests/Media/Framework/Api/State/Provider/Delete/DeleteDirectorProviderTest.php:
+    timestamp: 1728733247
+    hash: f68f6c9ccb3ce90e8f21405826e6d535
+api/tests/Media/Framework/Doctrine/Repository/DirectorDoctrineRepositoryTest.php:
+    timestamp: 1728469044
+    hash: 3a1d524122367c879f8139f8b7eabe6a
+api/tests/Media/Framework/Doctrine/DBAL/DirectorIdDBALTypeTest.php:
+    timestamp: 1728469044
+    hash: 1dfa9c3a05e4b16905fc073a4d6f530e
+api/tests/Media/Application/UseCase/Create/CreateDirectorUseCaseTest.php:
+    timestamp: 1728760545
+    hash: 2ef04c18516814afcf1fe96497a87d86
+api/tests/Media/Application/UseCase/Update/UpdateDirectorUseCaseTest.php:
+    timestamp: 1728764228
+    hash: af57df35c15c43e83f467f90c91c30cb
+api/tests/Media/Application/UseCase/Search/SearchDirectorUseCaseTest.php:
+    timestamp: 1728764228
+    hash: 1de8757191409d091cbd2039e59f5f03
+api/tests/Media/Application/UseCase/FindById/FindDirectorByIdUseCaseTest.php:
+    timestamp: 1728764422
+    hash: 6689f996ddcc38c6265773bd42924390
+api/tests/Media/Application/UseCase/Delete/DeleteDirectorUseCaseTest.php:
+    timestamp: 1728764228
+    hash: c59ccf1eecbaaaf5604858abe5856f04
 admin/src/backend/index.ts:
-    timestamp: 1726231890
-    hash: bbedb3030e16b28a6d6e375f18dd0193
+    timestamp: 1727957388
+    hash: 2cfb94a32e720bfd9cb38359c3c27a53
 admin/src/crud/media/index.ts:
-    timestamp: 1725966537
-    hash: 559d387cc31a47af339c604d0d8db49e
-'admin/app/[lang]/(private)/media/genres/page.tsx':
-    timestamp: 1725884520
-    hash: 1f18adde432990a1ed0ae9ab637a9361
-'admin/app/[lang]/(private)/media/genres/edit/[id]/page.tsx':
-    timestamp: 1726158466
-    hash: 2ab5285d9d9768a96cacf5007d7e3c82
-'admin/app/[lang]/(private)/media/genres/create/page.tsx':
-    timestamp: 1726161076
-    hash: 7c187249f835f46ba9fafa210ec0ec81
-admin/src/i18n/locales/es/media/genres.json:
-    timestamp: 1726233577
-    hash: eaa06260e347e6c617b137c92be65a6d
-admin/src/i18n/locales/en/media/genre.json:
-    timestamp: 1726147472
-    hash: 7a54211e51c54465fa4b5ff34fc31629
-admin/src/crud/media/genre/index.ts:
-    timestamp: 1726339929
-    hash: 75388f88c807b3ed05bd52a350a9a4c6
-admin/src/crud/media/genre/Genre.tsx:
-    timestamp: 1725975574
-    hash: 4dd5db763851c555418cc263f07b4f4d
-admin/src/crud/media/genre/GenreRenderer.tsx:
-    timestamp: 1726136661
-    hash: 26e9ea992b1c2d20556efda8153f7b9b
-admin/src/crud/media/genre/GenreSelect.tsx:
-    timestamp: 1726339929
-    hash: 5a1a4bb311b5c8161a44fdc887c13fdb
-admin/src/crud/media/genre/GenreField.tsx:
-    timestamp: 1726339937
-    hash: a61ccefe55f936d4c0f11121abd0163c
-admin/src/crud/media/genre/GenreForm.tsx:
-    timestamp: 1726345782
-    hash: 6fc2b26ee48a8c369a82b06eed32cfe7
-admin/src/crud/media/genre/useGenreForm.tsx:
-    timestamp: 1726160149
-    hash: 1659bf1252720929458c2ecf16beacb9
-admin/src/crud/media/genre/useGenreModelForm.tsx:
-    timestamp: 1726010770
-    hash: 7d5d008ef5383285d184e9a9f5d9deb0
-admin/src/crud/media/genre/useGenreDrawerForm.tsx:
-    timestamp: 1726231895
-    hash: 0ceb63e310682bb9878bfff8d565c08a
-admin/src/crud/media/genre/useGenreTable.tsx:
-    timestamp: 1726231895
-    hash: 8a8b45588bca1486747d50e870a05f52
+    timestamp: 1727957388
+    hash: 5405110fc6ab13689bd070d3cf59b704
 admin/src/i18n/locales/es/media/vo/genreName.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: b74df151552021d890a155db15d0288c
 admin/src/i18n/locales/en/media/vo/genreName.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: b74df151552021d890a155db15d0288c
 admin/src/crud/media/genreName/index.ts:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 7a6ccdd3058e6a19d2ba10100b84fca1
 admin/src/crud/media/genreName/GenreName.tsx:
-    timestamp: 1725976060
+    timestamp: 1727957388
     hash: 02447f7afca22d33def889ad10a3eaf1
 admin/src/crud/media/genreName/GenreNameRenderer.tsx:
-    timestamp: 1726340332
+    timestamp: 1727957388
     hash: f15ec77f7b3596d6ed0b9e6bec01ee17
 admin/src/crud/media/genreName/GenreNameField.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: 28cb862df5579e9881f5821af340f4f9
 admin/src/crud/media/genreName/GenreNameValidator.tsx:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: fd9b34c24939119bab6341966226ddac
 admin/src/crud/media/genreName/GenreNameFilter.tsx:
-    timestamp: 1726143768
+    timestamp: 1727957388
     hash: abadd7592cb728192408c68712136a29
 admin/src/i18n/locales/es/media/vo/fullName.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: c5882d18413e9b465e594beb74bc918c
 admin/src/i18n/locales/en/media/vo/fullName.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: c5882d18413e9b465e594beb74bc918c
 admin/src/crud/media/fullName/index.ts:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: a849de027c613965ef6e20c2e3c22f03
 admin/src/crud/media/fullName/FullName.tsx:
-    timestamp: 1725975850
+    timestamp: 1727957388
     hash: 7572a7baac9d55418ccdf1f820bf4381
 admin/src/crud/media/fullName/FullNameRenderer.tsx:
-    timestamp: 1726340877
+    timestamp: 1727957388
     hash: 773980de3f579851457fe350c8c465b5
 admin/src/crud/media/fullName/FullNameField.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: bf4651c87d0db69a9513232684114a71
 admin/src/crud/media/fullName/FullNameValidator.tsx:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: ee6df76c08523284764cf0d56d7902e8
 admin/src/crud/media/fullName/FullNameFilter.tsx:
-    timestamp: 1726146640
+    timestamp: 1727957388
     hash: 1dac9b069e0e73e33dccbad584096a94
 admin/src/i18n/locales/es/media/vo/overview.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: f337a8eed7383f848b3c49cd324c4e15
 admin/src/i18n/locales/en/media/vo/overview.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: f337a8eed7383f848b3c49cd324c4e15
 admin/src/crud/media/overview/index.ts:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 36815d28feaba8655ae6fa152e224c65
 admin/src/crud/media/overview/Overview.tsx:
-    timestamp: 1725976060
+    timestamp: 1727957388
     hash: 87ac8a7df3d4d65bb70fe39e899eef7b
 admin/src/crud/media/overview/OverviewRenderer.tsx:
-    timestamp: 1726340332
+    timestamp: 1727957388
     hash: 6b526a046489e6fc8239a6710d95265c
 admin/src/crud/media/overview/OverviewField.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: 25a91addf6ed95d488f0f8d03be42d56
 admin/src/crud/media/overview/OverviewValidator.tsx:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 177e85a3cf1c5ddd29022a9bac941339
 admin/src/crud/media/overview/OverviewFilter.tsx:
-    timestamp: 1726143768
+    timestamp: 1727957388
     hash: a7443fe796fdb78ec7d045a3b0413f06
-'admin/app/[lang]/(private)/media/movies/page.tsx':
-    timestamp: 1725884520
-    hash: 533579d6d30669769a912df65a1f3a84
-'admin/app/[lang]/(private)/media/movies/edit/[id]/page.tsx':
-    timestamp: 1726158466
-    hash: 7639e279245625aab8d9a39b2aa2268c
-'admin/app/[lang]/(private)/media/movies/create/page.tsx':
-    timestamp: 1726161076
-    hash: f97aadc9be2a18a71cfef0aa3c0ec1c5
-admin/src/i18n/locales/es/media/movies.json:
-    timestamp: 1726233577
-    hash: c8267f62bd85814df463f865b05d88ff
-admin/src/i18n/locales/en/media/movie.json:
-    timestamp: 1726147472
-    hash: f86740c0ef2e08f5d603c9dd4a670cc7
-admin/src/crud/media/movie/index.ts:
-    timestamp: 1726339929
-    hash: e95f8aa20ec24f55552f38671205e285
-admin/src/crud/media/movie/Movie.tsx:
-    timestamp: 1725975574
-    hash: f3e4726afa516e906fd36adcacb72067
-admin/src/crud/media/movie/MovieRenderer.tsx:
-    timestamp: 1726136424
-    hash: 5b80f84785f0e1371aad76a5b1c9bcdd
-admin/src/crud/media/movie/MovieSelect.tsx:
-    timestamp: 1726339929
-    hash: 29339324007f02eba69e9973b6e10fe5
-admin/src/crud/media/movie/MovieField.tsx:
-    timestamp: 1726339937
-    hash: 97eb918c14dd98efb27136d6a053fb49
-admin/src/crud/media/movie/MovieForm.tsx:
-    timestamp: 1726345782
-    hash: d14593f72b00f9fe239fb40a59508dae
-admin/src/crud/media/movie/useMovieForm.tsx:
-    timestamp: 1726160149
-    hash: 9103559af580f927312af8cbe4dbb7bc
-admin/src/crud/media/movie/useMovieModelForm.tsx:
-    timestamp: 1726010770
-    hash: d09bf6b5484f3b29d1bb8a8c450e2356
-admin/src/crud/media/movie/useMovieDrawerForm.tsx:
-    timestamp: 1726231895
-    hash: 083c730edfac4e83e91d446905fd92b9
-admin/src/crud/media/movie/useMovieTable.tsx:
-    timestamp: 1726231895
-    hash: 278e26514194985de6ec952e0b3354eb
 admin/src/i18n/locales/es/media/vo/score.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 3c67627c65cb5448969346d716285643
 admin/src/i18n/locales/en/media/vo/score.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 3c67627c65cb5448969346d716285643
 admin/src/crud/media/score/index.ts:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 64b0e17e3dc43184f5f6545502bc0597
 admin/src/crud/media/score/Score.tsx:
-    timestamp: 1725976060
+    timestamp: 1727957388
     hash: 537aeac63b239d74caad856840fc8b8c
 admin/src/crud/media/score/ScoreRenderer.tsx:
-    timestamp: 1726340332
+    timestamp: 1727957388
     hash: e31e4c63eb41f9642379232281101374
 admin/src/crud/media/score/ScoreField.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: 0c3d8b895c04d97864acf3603f55a2d5
 admin/src/crud/media/score/ScoreValidator.tsx:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: c63699caf3cbb0fe84355f5dfb0e2d51
 admin/src/crud/media/score/ScoreFilter.tsx:
-    timestamp: 1726143768
+    timestamp: 1727957388
     hash: bc131ec4ed6a628d1e12d3a56913a0d2
 admin/src/i18n/locales/es/media/vo/movieTitle.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 16c39f22d7696873d99fd6b43978bf6d
 admin/src/i18n/locales/en/media/vo/movieTitle.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 16c39f22d7696873d99fd6b43978bf6d
 admin/src/crud/media/movieTitle/index.ts:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 254ca4ccac3a527c647e99ca44a2d0fa
 admin/src/crud/media/movieTitle/MovieTitle.tsx:
-    timestamp: 1725976060
+    timestamp: 1727957388
     hash: 24b5bba08a211553025562a8f8a18ca2
 admin/src/crud/media/movieTitle/MovieTitleRenderer.tsx:
-    timestamp: 1726340332
+    timestamp: 1727957388
     hash: d3f43c1f07ae17e46bc3ce9c0d3deecf
 admin/src/crud/media/movieTitle/MovieTitleField.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: 9ca3016ae38df0b2fa6b2b88eabf3bd7
 admin/src/crud/media/movieTitle/MovieTitleValidator.tsx:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 42af5f9495f1aef0f997f6a4c5d196ad
 admin/src/crud/media/movieTitle/MovieTitleFilter.tsx:
-    timestamp: 1726143768
+    timestamp: 1727957388
     hash: 345598ef2ec6c3abfa379ddf51728bbc
 admin/src/i18n/locales/es/media/vo/releaseYear.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 7312f4506d0d09ed0304fcabc932efe1
 admin/src/i18n/locales/en/media/vo/releaseYear.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 7312f4506d0d09ed0304fcabc932efe1
 admin/src/crud/media/releaseYear/index.ts:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 0b92d21929512a04837acdc1f14f27ad
 admin/src/crud/media/releaseYear/ReleaseYear.tsx:
-    timestamp: 1725976060
+    timestamp: 1727957388
     hash: 7c7e8141891baad884cca684642b972a
 admin/src/crud/media/releaseYear/ReleaseYearRenderer.tsx:
-    timestamp: 1726340332
+    timestamp: 1727957388
     hash: 111999519823b026ffc173228a5dc6da
 admin/src/crud/media/releaseYear/ReleaseYearField.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: fc3c6635025d3812223f11e2b7a168e5
 admin/src/crud/media/releaseYear/ReleaseYearValidator.tsx:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: c62527aef540d9d3b71b59aee110c252
 admin/src/crud/media/releaseYear/ReleaseYearFilter.tsx:
-    timestamp: 1726143768
+    timestamp: 1727957388
     hash: 4aee0ec935a4f535ff709ba7752fb46e
-admin/src/i18n/locales/es/media/reviews.json:
-    timestamp: 1726233577
-    hash: e0106b1c23df3814ee6ebca19beaeb14
-admin/src/i18n/locales/en/media/review.json:
-    timestamp: 1726147472
-    hash: 1c6a3b7a914b48fe21a2739057fed1d1
-admin/src/crud/media/review/index.ts:
-    timestamp: 1726339929
-    hash: 8b3fde4ee0d9ac8ea1828f15e8bf4d24
-admin/src/crud/media/review/Review.tsx:
-    timestamp: 1725975574
-    hash: 8ba0517ff39c5148e8486c28879e495f
-admin/src/crud/media/review/ReviewRenderer.tsx:
-    timestamp: 1726136424
-    hash: 71dc2eeba0336d47896da0dd5d6af7e8
-admin/src/crud/media/review/ReviewSelect.tsx:
-    timestamp: 1726339929
-    hash: c24fbe6a390e3a18bdcddfef6f575a2b
-admin/src/crud/media/review/ReviewField.tsx:
-    timestamp: 1726339937
-    hash: 3fdac4f2aab37320301d2eb4a16766a5
-admin/src/crud/media/review/ReviewForm.tsx:
-    timestamp: 1726345782
-    hash: 6059d727a5d674eb7f3aecbc7d082532
-admin/src/crud/media/review/useReviewForm.tsx:
-    timestamp: 1726160149
-    hash: e1c83fb37d54afc0743d20cddefc67ae
-admin/src/crud/media/review/useReviewModelForm.tsx:
-    timestamp: 1726010770
-    hash: af503737e469ab8bc8a6cffc74991e19
-admin/src/crud/media/review/useReviewDrawerForm.tsx:
-    timestamp: 1726231895
-    hash: 47fe1543c02ddda7581315d2185c6c27
-admin/src/crud/media/review/useReviewTable.tsx:
-    timestamp: 1726231895
-    hash: 0ee269a169d85cb12296626bacc66248
 admin/src/i18n/locales/es/media/vo/reviewContent.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 9286453b0f3c52795ad9e5c5d2d90b13
 admin/src/i18n/locales/en/media/vo/reviewContent.json:
-    timestamp: 1726233745
+    timestamp: 1727957388
     hash: 9286453b0f3c52795ad9e5c5d2d90b13
 admin/src/crud/media/reviewContent/index.ts:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 3783faadf3a7366ac40a0500adf79600
 admin/src/crud/media/reviewContent/ReviewContent.tsx:
-    timestamp: 1725976060
+    timestamp: 1727957388
     hash: 2feb3d4b78020e574ccc1925fe432ac6
 admin/src/crud/media/reviewContent/ReviewContentRenderer.tsx:
-    timestamp: 1726340332
+    timestamp: 1727957388
     hash: c69da660b92db3a52e1b88117c5d9b1d
 admin/src/crud/media/reviewContent/ReviewContentField.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: b1735b17e2738ddac31f16f79e512ecb
 admin/src/crud/media/reviewContent/ReviewContentValidator.tsx:
-    timestamp: 1726222428
+    timestamp: 1727957388
     hash: 5ff7fec14c3d4e6f71de79fd1d1b5623
 admin/src/crud/media/reviewContent/ReviewContentFilter.tsx:
-    timestamp: 1726143768
+    timestamp: 1727957388
     hash: 69c98ea5296063456b4e270d71eeb58c
+'admin/app/[lang]/(private)/media/genres/page.tsx':
+    timestamp: 1727957388
+    hash: 1f18adde432990a1ed0ae9ab637a9361
+'admin/app/[lang]/(private)/media/genres/edit/[id]/page.tsx':
+    timestamp: 1727957388
+    hash: 2ab5285d9d9768a96cacf5007d7e3c82
+'admin/app/[lang]/(private)/media/genres/create/page.tsx':
+    timestamp: 1727957388
+    hash: 568b33a7aee862683cf159f4eaa99159
+admin/src/i18n/locales/es/media/genres.json:
+    timestamp: 1727957388
+    hash: 730ebef1086db1c39db4b6136d2fde87
+admin/src/i18n/locales/en/media/genre.json:
+    timestamp: 1727957388
+    hash: 7a54211e51c54465fa4b5ff34fc31629
+admin/src/crud/media/genre/index.ts:
+    timestamp: 1727979564
+    hash: 3cb579226e23ee5ff6a933c8a9fba5fe
+admin/src/crud/media/genre/Genre.tsx:
+    timestamp: 1727957388
+    hash: 4dd5db763851c555418cc263f07b4f4d
+admin/src/crud/media/genre/GenreRenderer.tsx:
+    timestamp: 1727957388
+    hash: 26e9ea992b1c2d20556efda8153f7b9b
+admin/src/crud/media/genre/GenreSelect.tsx:
+    timestamp: 1727957388
+    hash: 5a1a4bb311b5c8161a44fdc887c13fdb
+admin/src/crud/media/genre/GenreField.tsx:
+    timestamp: 1727957388
+    hash: a61ccefe55f936d4c0f11121abd0163c
+admin/src/crud/media/genre/GenreListField.tsx:
+    timestamp: 1728046760
+    hash: 986a33150f985ba463c2b1571bf9a480
+admin/src/crud/media/genre/GenreFilter.tsx:
+    timestamp: 1727957388
+    hash: 9aeb85377a36210c7ce1b0baadf41234
+admin/src/crud/media/genre/GenreForm.tsx:
+    timestamp: 1728041629
+    hash: 6fc2b26ee48a8c369a82b06eed32cfe7
+admin/src/crud/media/genre/useGenreForm.tsx:
+    timestamp: 1727957388
+    hash: 1659bf1252720929458c2ecf16beacb9
+admin/src/crud/media/genre/useGenreModelForm.tsx:
+    timestamp: 1727957388
+    hash: 7d5d008ef5383285d184e9a9f5d9deb0
+admin/src/crud/media/genre/useGenreDrawerForm.tsx:
+    timestamp: 1727957388
+    hash: 0ceb63e310682bb9878bfff8d565c08a
+admin/src/crud/media/genre/useGenreTable.tsx:
+    timestamp: 1727957388
+    hash: 8a8b45588bca1486747d50e870a05f52
+'admin/app/[lang]/(private)/media/movies/page.tsx':
+    timestamp: 1727957388
+    hash: 533579d6d30669769a912df65a1f3a84
+'admin/app/[lang]/(private)/media/movies/edit/[id]/page.tsx':
+    timestamp: 1727957388
+    hash: 7639e279245625aab8d9a39b2aa2268c
+'admin/app/[lang]/(private)/media/movies/create/page.tsx':
+    timestamp: 1727957388
+    hash: b45c6d1927705ccfb724f1b0ae55dbe8
+admin/src/i18n/locales/es/media/movies.json:
+    timestamp: 1728221385
+    hash: 672dc961e6d2ca24664b2dd500f51075
+admin/src/i18n/locales/en/media/movie.json:
+    timestamp: 1728221385
+    hash: 84ad6095cbff3055bca1691c880325ba
+admin/src/crud/media/movie/index.ts:
+    timestamp: 1727979564
+    hash: 909529da33ada0d29d72bc3e47b4207f
+admin/src/crud/media/movie/Movie.tsx:
+    timestamp: 1728221385
+    hash: 1f3c81ba12292e8ce91af43a2fa80547
+admin/src/crud/media/movie/MovieRenderer.tsx:
+    timestamp: 1727957388
+    hash: 5b80f84785f0e1371aad76a5b1c9bcdd
+admin/src/crud/media/movie/MovieSelect.tsx:
+    timestamp: 1727957388
+    hash: 29339324007f02eba69e9973b6e10fe5
+admin/src/crud/media/movie/MovieField.tsx:
+    timestamp: 1727957388
+    hash: 97eb918c14dd98efb27136d6a053fb49
+admin/src/crud/media/movie/MovieListField.tsx:
+    timestamp: 1728221385
+    hash: 2e413b7d27f1e256708414a99a876482
+admin/src/crud/media/movie/MovieFilter.tsx:
+    timestamp: 1727957388
+    hash: 61a5cea0bda6610bef12ccc9eb2c74a1
+admin/src/crud/media/movie/MovieForm.tsx:
+    timestamp: 1728221385
+    hash: f5c2d529d0b0d7f908895ca78a89334c
+admin/src/crud/media/movie/useMovieForm.tsx:
+    timestamp: 1727957388
+    hash: 9103559af580f927312af8cbe4dbb7bc
+admin/src/crud/media/movie/useMovieModelForm.tsx:
+    timestamp: 1727957388
+    hash: d09bf6b5484f3b29d1bb8a8c450e2356
+admin/src/crud/media/movie/useMovieDrawerForm.tsx:
+    timestamp: 1727957388
+    hash: 083c730edfac4e83e91d446905fd92b9
+admin/src/crud/media/movie/useMovieTable.tsx:
+    timestamp: 1728221385
+    hash: 3f8d2c610f79a3a1fc1b79323472f357
+admin/src/i18n/locales/es/media/reviews.json:
+    timestamp: 1727957388
+    hash: ee6f933ef0fc717259dfc4c54db3b878
+admin/src/i18n/locales/en/media/review.json:
+    timestamp: 1727957388
+    hash: 1c6a3b7a914b48fe21a2739057fed1d1
+admin/src/crud/media/review/index.ts:
+    timestamp: 1728041420
+    hash: cf1eeb33780932f53bee551fd4168530
+admin/src/crud/media/review/Review.tsx:
+    timestamp: 1728041420
+    hash: 8ba0517ff39c5148e8486c28879e495f
+admin/src/crud/media/review/ReviewRenderer.tsx:
+    timestamp: 1728041420
+    hash: 71dc2eeba0336d47896da0dd5d6af7e8
+admin/src/crud/media/review/ReviewSelect.tsx:
+    timestamp: 1728041420
+    hash: c24fbe6a390e3a18bdcddfef6f575a2b
+admin/src/crud/media/review/ReviewField.tsx:
+    timestamp: 1728041420
+    hash: 3fdac4f2aab37320301d2eb4a16766a5
+admin/src/crud/media/review/ReviewListField.tsx:
+    timestamp: 1728046760
+    hash: 7acb52ea0aceb989324cf2a7ead3168d
+admin/src/crud/media/review/ReviewFilter.tsx:
+    timestamp: 1728041420
+    hash: c0201d6a4c683cfe80f7953f382e9ed9
+admin/src/crud/media/review/ReviewForm.tsx:
+    timestamp: 1728041629
+    hash: 07e6b887729baef3018e7952da9c25e7
+admin/src/crud/media/review/useReviewForm.tsx:
+    timestamp: 1728041420
+    hash: e1c83fb37d54afc0743d20cddefc67ae
+admin/src/crud/media/review/useReviewModelForm.tsx:
+    timestamp: 1728041420
+    hash: af503737e469ab8bc8a6cffc74991e19
+admin/src/crud/media/review/useReviewDrawerForm.tsx:
+    timestamp: 1728041420
+    hash: 47fe1543c02ddda7581315d2185c6c27
+admin/src/crud/media/review/useReviewTable.tsx:
+    timestamp: 1728041420
+    hash: 0ee269a169d85cb12296626bacc66248
 'admin/app/[lang]/(private)/media/directors/page.tsx':
-    timestamp: 1725884520
+    timestamp: 1727957388
     hash: 4dff98377d4eb71ff51bc658b89712d2
 'admin/app/[lang]/(private)/media/directors/edit/[id]/page.tsx':
-    timestamp: 1726158466
+    timestamp: 1727957388
     hash: 4b3fd1e1762dac6fd36ed7f0879b729b
 'admin/app/[lang]/(private)/media/directors/create/page.tsx':
-    timestamp: 1726161076
-    hash: 34428e1eadcbf4d889659c0b8ffecc36
+    timestamp: 1727957388
+    hash: 7073d21a1c7460b5e811522d6c2f82b0
 admin/src/i18n/locales/es/media/directors.json:
-    timestamp: 1726158325
-    hash: fab50d57d792ec96df3b264b41dea447
+    timestamp: 1728041347
+    hash: 07f2daf11291839aa6a75861d6f94e5a
 admin/src/i18n/locales/en/media/director.json:
-    timestamp: 1726147472
+    timestamp: 1728041347
     hash: 16f7eb8625ac78da16bc3ca166fbebe6
 admin/src/crud/media/director/index.ts:
-    timestamp: 1726339929
-    hash: 8219ddc8cc25c72b62eb6e66d616b4be
+    timestamp: 1727979564
+    hash: d340caf3fd0652938660b505bd92a238
 admin/src/crud/media/director/Director.tsx:
-    timestamp: 1726081313
-    hash: cccdcced2aa032a4841dc0cb105dd918
+    timestamp: 1727957388
+    hash: 454c84558b6f5a3824473cbbedbd83d9
 admin/src/crud/media/director/DirectorRenderer.tsx:
-    timestamp: 1726136661
+    timestamp: 1727957388
     hash: 5a0e6d708c29a8bf0217aa08493ca6e6
 admin/src/crud/media/director/DirectorSelect.tsx:
-    timestamp: 1726339929
+    timestamp: 1727957388
     hash: dd96f20e71830e858c28d3789c5e3fa1
 admin/src/crud/media/director/DirectorField.tsx:
-    timestamp: 1726339937
+    timestamp: 1727957388
     hash: 1a6b2d86c93afb7850f2b3da836951bd
+admin/src/crud/media/director/DirectorListField.tsx:
+    timestamp: 1728046760
+    hash: 0c8a5e4c25506cc98bffedb0a38c3dfd
+admin/src/crud/media/director/DirectorFilter.tsx:
+    timestamp: 1727957388
+    hash: f01b84693787df3b47b42cdff5376e6d
 admin/src/crud/media/director/DirectorForm.tsx:
-    timestamp: 1726345782
+    timestamp: 1728041629
     hash: 2b2ad67a88b0cc678a9286077fa07297
 admin/src/crud/media/director/useDirectorForm.tsx:
-    timestamp: 1726160149
+    timestamp: 1727957388
     hash: f8b8a1b77d849b43daeed3cddcd95fc5
 admin/src/crud/media/director/useDirectorModelForm.tsx:
-    timestamp: 1726010770
+    timestamp: 1727957388
     hash: 78a3cd5d86fc2fef340fc0a74d213ae5
 admin/src/crud/media/director/useDirectorDrawerForm.tsx:
-    timestamp: 1726231895
+    timestamp: 1727957388
     hash: a8cdc5ffea7a2bcf07841cba77dec2f3
 admin/src/crud/media/director/useDirectorTable.tsx:
-    timestamp: 1726231895
+    timestamp: 1727957388
     hash: ba4e2c393dabdf978599b77a203c7103

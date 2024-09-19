@@ -1,6 +1,8 @@
 SHELL = bash
 .ONESHELL:
 
+ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+
 --prod:
 	@echo "\n\n"
 	@echo "En prod, ejecutar directamente en la consola, para no dejar ficheros con info sensible"
@@ -109,26 +111,39 @@ cache/flushall:
 	docker-compose exec redis redis-cli FLUSHALL
 
 alfred/please:
-	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred3/bin/entrypoint && \
-			(cd api; \
-			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null) && \
-			(cd admin; pnpm prettier src/crud src/backend app > /dev/null ) \
-  )
+#	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred3/bin/entrypoint)
 
 #	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred3/bin/entrypoint && \
 #			(cd api; \
-#			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null && \
-#			export YAMLFIX_NONE_REPRESENTATION="~" && \
-#			export export YAMLFIX_SECTION_WHITELINES="2" && \
-#			yamlfix config/mapping 2> /dev/null) && \
+#			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null) && \
 #			(cd admin; pnpm prettier src/crud src/backend app > /dev/null ) \
 #  )
+
+	@(SYMFONY_DEPRECATIONS_HELPER=weak && /mnt/workspace/the-planb/alfred3/bin/entrypoint && \
+			(cd api; \
+			php-cs-fixer fix --config=".php-cs-fixer.dist.php" src tests > /dev/null 2> /dev/null && \
+			export YAMLFIX_NONE_REPRESENTATION="~" && \
+			export export YAMLFIX_SECTION_WHITELINES="2" && \
+			yamlfix config/mapping 2> /dev/null) && \
+			(cd admin; pnpm prettier src/crud src/backend app > /dev/null ) \
+  )
 
 qa:
 	(cd api; vendor/planb/planb/bin/qa src)
 
 tests/run:
-	docker-compose exec php bin/phpunit --no-coverage
+	docker-compose exec php bin/phpunit --no-coverage $(ARGS)
 
-tests/coverage:
-	docker-compose exec -e XDEBUG_MODE=coverage php bin/phpunit -d memory_limit=512M
+tests/coverage/run:
+	docker-compose exec -e XDEBUG_MODE=coverage php bin/phpunit -d memory_limit=512M $(ARGS)
+
+tests/coverage/show:
+	xdg-open api/build/reports/coverage/dashboard.html
+
+koko:
+	echo "hola esto es $(ARGS)"
+
+# Regla para manejar argumentos, y que no se queje de objetivos desconocidos
+%:
+	@:
+

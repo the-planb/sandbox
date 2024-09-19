@@ -1,0 +1,19 @@
+---
+App\Media\Domain\Model\Genre:
+  attributes:
+    id:
+      groups: [read]
+    name:
+      groups: [read, write]
+
+
+App\Media\Application\UseCase\Create\CreateGenre:
+  attributes:
+    name:
+      groups: [write]
+
+
+App\Media\Application\UseCase\Update\UpdateGenre:
+  attributes:
+    name:
+      groups: [write]

@@ -10,7 +10,7 @@ use App\Media\Application\UseCase\Delete\DeleteMovie;
 use App\Media\Domain\Model\MovieId;
 use League\Tactician\CommandBus;
 
-class DeleteMovieProvider implements ProviderInterface
+final class DeleteMovieProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
 

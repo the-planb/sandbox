@@ -1,8 +1,0 @@
-App\Media\Domain\Model\Genre:
-    attributes:
-        id:
-            groups:
-                - read.genre
-        name:
-            groups:
-                - read.genre

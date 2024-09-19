@@ -8,6 +8,6 @@ use PlanB\DS\Attribute\ElementType;
 use PlanB\DS\Vector\Vector;
 
 #[ElementType(Review::class)]
-class ReviewList extends Vector
+final class ReviewList extends Vector
 {
 }

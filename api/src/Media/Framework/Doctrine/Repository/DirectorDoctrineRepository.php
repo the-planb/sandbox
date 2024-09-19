@@ -8,19 +8,22 @@ use App\Media\Domain\Model\Director;
 use App\Media\Domain\Model\DirectorId;
 use App\Media\Domain\Model\DirectorList;
 use App\Media\Domain\Repository\DirectorRepository;
+use App\Media\Framework\Doctrine\Filter\FullNameFilter;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
-class DirectorDoctrineRepository extends ServiceEntityRepository implements DirectorRepository
+final class DirectorDoctrineRepository extends ServiceEntityRepository implements DirectorRepository
 {
     private DoctrineCriteriaConverter $criteriaConverter;
 
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Director::class);
-        $this->criteriaConverter = new DoctrineCriteriaConverter($this, []);
+        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
+            'name' => new FullNameFilter(),
+        ]);
     }
 
     public function save(Director $director): Director

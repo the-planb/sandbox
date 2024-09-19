@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\VO\ReviewContent;
 use PlanB\Framework\Doctrine\DBAL\Type\TextType;
 
-class ReviewContentDBALType extends TextType
+final class ReviewContentDBALType extends TextType
 {
     public function getName(): string
     {

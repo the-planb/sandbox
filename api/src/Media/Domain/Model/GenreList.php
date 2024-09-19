@@ -8,6 +8,6 @@ use PlanB\DS\Attribute\ElementType;
 use PlanB\DS\Vector\Vector;
 
 #[ElementType(Genre::class)]
-class GenreList extends Vector
+final class GenreList extends Vector
 {
 }

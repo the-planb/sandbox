@@ -1,0 +1,13 @@
+---
+App\Media\Application\UseCase\Create\CreateGenre:
+  properties:
+    name:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Media\Domain\Model\VO\Constraint\GenreNameConstraint: ~
+
+
+App\Media\Application\UseCase\Update\UpdateGenre:
+  properties:
+    name:
+      - Symfony\Component\Validator\Constraints\NotNull: ~
+      - App\Media\Domain\Model\VO\Constraint\GenreNameConstraint: ~

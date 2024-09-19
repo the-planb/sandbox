@@ -1,0 +1,19 @@
+---
+App\Media\Domain\Model\Director:
+  attributes:
+    id:
+      groups: [read]
+    name:
+      groups: [read, write]
+
+
+App\Media\Application\UseCase\Create\CreateDirector:
+  attributes:
+    name:
+      groups: [write]
+
+
+App\Media\Application\UseCase\Update\UpdateDirector:
+  attributes:
+    name:
+      groups: [write]

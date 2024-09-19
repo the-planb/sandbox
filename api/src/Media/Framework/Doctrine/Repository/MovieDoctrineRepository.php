@@ -13,14 +13,15 @@ use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
-class MovieDoctrineRepository extends ServiceEntityRepository implements MovieRepository
+final class MovieDoctrineRepository extends ServiceEntityRepository implements MovieRepository
 {
     private DoctrineCriteriaConverter $criteriaConverter;
 
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Movie::class);
-        $this->criteriaConverter = new DoctrineCriteriaConverter($this, []);
+        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
+        ]);
     }
 
     public function save(Movie $movie): Movie

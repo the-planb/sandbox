@@ -98,12 +98,32 @@ export const useMovieTable = (
             <TableCell value={value} renderer={Media.overviewRenderer} />
           ),
         },
+        {
+          dataIndex: 'classification',
+          width: 'auto',
+          title: t('fields.classification.column', { ns: 'media/movies' }),
+          sorter: true,
+          render: (value) => (
+            <TableCell value={value} renderer={Media.classificationRenderer} />
+          ),
+        },
+        {
+          dataIndex: 'koko',
+          width: 'auto',
+          title: t('fields.koko.column', { ns: 'media/movies' }),
+          sorter: true,
+          render: (value) => (
+            <TableCell value={value} renderer={Media.scoreRenderer} />
+          ),
+        },
       ],
       filters: {
         title: <Media.MovieTitleFilter />,
         releaseYear: <Media.ReleaseYearFilter />,
-        // director: <Media.DirectorFilter />,
+        director: <Media.DirectorFilter />,
         overview: <Media.OverviewFilter />,
+        classification: <Media.ClassificationFilter />,
+        koko: <Media.ScoreFilter />,
       },
       headerButtons: (
         <>

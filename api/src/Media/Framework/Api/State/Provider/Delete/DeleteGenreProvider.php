@@ -10,7 +10,7 @@ use App\Media\Application\UseCase\Delete\DeleteGenre;
 use App\Media\Domain\Model\GenreId;
 use League\Tactician\CommandBus;
 
-class DeleteGenreProvider implements ProviderInterface
+final class DeleteGenreProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
 

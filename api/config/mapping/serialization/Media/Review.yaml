@@ -1,0 +1,11 @@
+---
+App\Media\Domain\Model\Review:
+  attributes:
+    id:
+      groups: [read]
+    review:
+      groups: [read, write]
+    score:
+      groups: [read, write]
+    movie:
+      groups: [read]

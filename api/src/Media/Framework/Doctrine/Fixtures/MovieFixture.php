@@ -6,11 +6,12 @@ namespace App\Media\Framework\Doctrine\Fixtures;
 
 use App\Media\Application\UseCase\Create\CreateMovie;
 use App\Media\Domain\Model\Director;
+use App\Media\Domain\Model\Genre;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
 use Symfony\Component\Yaml\Yaml;
 
-class MovieFixture extends UseCaseFixture implements DependentFixtureInterface
+final class MovieFixture extends UseCaseFixture implements DependentFixtureInterface
 {
     public function loadData(): void
     {
@@ -19,8 +20,11 @@ class MovieFixture extends UseCaseFixture implements DependentFixtureInterface
             $command = $this->denormalize([
                 'title' => $input['title'],
                 'releaseYear' => $input['releaseYear'],
+                'reviews' => $input['reviews'],
                 'overview' => $input['overview'],
-
+                'classification' => $input['classification'],
+                'raw' => $input['raw'],
+                'genres' => $this->getManyReferencesLikeIri(Genre::class, 1, 4),
                 'director' => $this->getOneReferenceLikeIri(Director::class),
             ], CreateMovie::class);
 
@@ -36,6 +40,7 @@ class MovieFixture extends UseCaseFixture implements DependentFixtureInterface
     public function getDependencies()
     {
         return [
+            GenreFixture::class,
             DirectorFixture::class,
         ];
     }

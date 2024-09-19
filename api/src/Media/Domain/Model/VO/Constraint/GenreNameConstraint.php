@@ -6,8 +6,9 @@ namespace App\Media\Domain\Model\VO\Constraint;
 
 use App\Media\Domain\Model\VO\GenreName;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
+use Symfony\Component\Validator\Constraints\Length;
 
-class GenreNameConstraint extends Compound
+final class GenreNameConstraint extends Compound
 {
     public function getClassName(): string
     {
@@ -17,6 +18,7 @@ class GenreNameConstraint extends Compound
     public function getConstraints(array $options): array
     {
         return [
+            new Length(['min' => 3]),
         ];
     }
 }

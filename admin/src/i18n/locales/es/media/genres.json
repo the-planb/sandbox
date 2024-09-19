@@ -1,10 +1,10 @@
 {
-  "singular": "género",
-  "plural": "Géneros",
+  "singular": "genre",
+  "plural": "Genres",
   "label": "$t(plural)",
   "fields": {
     "name": {
-      "label": "Género",
+      "label": "Name",
       "placeholder": "$t(fields.name.label)",
       "column": "$t(fields.name.label)",
       "filter": "$t(fields.name.label)"

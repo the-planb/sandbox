@@ -1,5 +1,0 @@
-App\Media\Application\UseCase\Create\CreateDirector:
-    attributes:
-        name:
-            groups:
-                - create.director

@@ -6,7 +6,7 @@ namespace App\Media\Application\UseCase\Delete;
 
 use App\Media\Domain\Model\MovieId;
 
-class DeleteMovie
+final class DeleteMovie
 {
     private MovieId $id;
 

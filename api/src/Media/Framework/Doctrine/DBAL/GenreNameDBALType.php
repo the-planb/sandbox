@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\VO\GenreName;
 use PlanB\Framework\Doctrine\DBAL\Type\StringType;
 
-class GenreNameDBALType extends StringType
+final class GenreNameDBALType extends StringType
 {
     public function getName(): string
     {

@@ -10,7 +10,7 @@ use App\Media\Application\UseCase\FindById\FindGenreById;
 use App\Media\Domain\Model\GenreId;
 use League\Tactician\CommandBus;
 
-class FindGenreByIdProvider implements ProviderInterface
+final class FindGenreByIdProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
 

@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace App\Media\Framework\Symfony\Command;
 
+use App\Media\Application\UseCase\Create\CreateMovie;
 use App\Media\Domain\Input\MovieInput;
+use App\Media\Domain\Model\Genre;
+use App\Media\Domain\Model\VO\GenreName;
+use App\Media\Domain\Model\VO\Overview;
+use App\Media\Domain\Model\VO\ReleaseYear;
+use App\Media\Domain\Model\VO\ReviewContent;
 use League\Tactician\CommandBus;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -35,77 +41,13 @@ class BorrameCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $code = <<<'eof'
-            {
-                "title": "pelicula",
-                "releaseYear": 1960,
-                "director": {
-                    "@id": "/api/media/directors/019127a6-fd4f-85c1-24f7-6ece382101d9",
-                    "@type": "Director",
-                    "id": "019127a6-fd4f-85c1-24f7-6ece382101d9",
-                    "name": "asdad",
-                    "movies": [
-                        {
-                            "@id": "/api/media/movies/019127ab-7992-1f56-5045-cc9856018640",
-                            "@type": "Movie",
-                            "id": "019127ab-7992-1f56-5045-cc9856018640",
-                            "title": "asdfasfasfd",
-                            "releaseYear": 1967,
-                            "director": "/api/media/directors/019127a6-fd4f-85c1-24f7-6ece382101d9",
-                            "reviews": [
-                                {
-                                    "@id": "/api/media/reviews/019127ab-7992-1f56-5045-cc9856018641",
-                                    "@type": "Review",
-                                    "id": "019127ab-7992-1f56-5045-cc9856018641",
-                                    "name": "sdfasfasdfsaf",
-                                    "movie": "/api/media/movies/019127ab-7992-1f56-5045-cc9856018640"
-                                },
-                                {
-                                    "@id": "/api/media/reviews/019127ab-7992-1f56-5045-cc9856018642",
-                                    "@type": "Review",
-                                    "id": "019127ab-7992-1f56-5045-cc9856018642",
-                                    "name": "asdafafasfafasdfaf",
-                                    "movie": "/api/media/movies/019127ab-7992-1f56-5045-cc9856018640"
-                                }
-                            ],
-                            "genres": [
-                                {
-                                    "@id": "/api/media/genres/019127a7-25c7-6f35-fc14-e4d53412d9dc",
-                                    "@type": "Genre",
-                                    "id": "019127a7-25c7-6f35-fc14-e4d53412d9dc",
-                                    "name": "terror",
-                                    "movies": []
-                                }
-                            ],
-                            "overview": "asdadad asda dsadadsasdsa"
-                        },
-                        "/api/media/movies/019127a8-4799-a331-3c3a-fe74688645e2"
-                    ]
-                },
-                "reviews": [
-                    "/api/media/reviews/019127a8-4799-a331-3c3a-fe74688645e3"
-                ],
-                "genres": [
-                    {
-                        "@id": "/api/media/genres/019127a7-25c7-6f35-fc14-e4d53412d9dc",
-                        "@type": "Genre",
-                        "id": "019127a7-25c7-6f35-fc14-e4d53412d9dc",
-                        "name": "terror",
-                        "movies": []
-                    }
-                ],
-                "overview": "esto es el resumen de una pelicula que me lñalkadsaśd"
-            }
-            eof;
-
-        $data = json_decode($code, true);
-
-        $aaa = $this->denormalizer->denormalize($data, MovieInput::class, null, [
+        $command = $this->denormalizer->denormalize('ssss', ReviewContent::class, null, [
             'enable_max_depth' => true,
-            'groups' => ['post'],
+            'groups' => ['write'],
         ]);
 
-        dump($aaa);
+        dump($command);
+        //        $this->commandBus->handle($command);
 
         //        $genre = new Genre(new GenreName('acción'));
         //

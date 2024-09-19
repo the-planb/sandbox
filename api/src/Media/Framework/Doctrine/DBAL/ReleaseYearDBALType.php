@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\VO\ReleaseYear;
 use PlanB\Framework\Doctrine\DBAL\Type\IntegerType;
 
-class ReleaseYearDBALType extends IntegerType
+final class ReleaseYearDBALType extends IntegerType
 {
     public function getName(): string
     {

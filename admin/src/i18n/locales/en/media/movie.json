@@ -21,11 +21,35 @@
       "column": "movie.fields.director",
       "filter": "movie.fields.director"
     },
+    "reviews": {
+      "label": "movie.fields.reviews",
+      "placeholder": "movie.fields.reviews",
+      "column": "movie.fields.reviews",
+      "filter": "movie.fields.reviews"
+    },
+    "genres": {
+      "label": "movie.fields.genres",
+      "placeholder": "movie.fields.genres",
+      "column": "movie.fields.genres",
+      "filter": "movie.fields.genres"
+    },
     "overview": {
       "label": "movie.fields.overview",
       "placeholder": "movie.fields.overview",
       "column": "movie.fields.overview",
       "filter": "movie.fields.overview"
+    },
+    "classification": {
+      "label": "movie.fields.classification",
+      "placeholder": "movie.fields.classification",
+      "column": "movie.fields.classification",
+      "filter": "movie.fields.classification"
+    },
+    "raw": {
+      "label": "movie.fields.raw",
+      "placeholder": "movie.fields.raw",
+      "column": "movie.fields.raw",
+      "filter": "movie.fields.raw"
     }
   },
   "titles": {

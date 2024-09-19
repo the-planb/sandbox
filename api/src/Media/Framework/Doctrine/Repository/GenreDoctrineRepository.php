@@ -13,14 +13,15 @@ use Doctrine\Persistence\ManagerRegistry;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
-class GenreDoctrineRepository extends ServiceEntityRepository implements GenreRepository
+final class GenreDoctrineRepository extends ServiceEntityRepository implements GenreRepository
 {
     private DoctrineCriteriaConverter $criteriaConverter;
 
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Genre::class);
-        $this->criteriaConverter = new DoctrineCriteriaConverter($this, []);
+        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
+        ]);
     }
 
     public function save(Genre $genre): Genre

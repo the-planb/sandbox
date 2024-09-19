@@ -7,7 +7,7 @@ namespace App\Media\Application\UseCase\Delete;
 use App\Media\Domain\Repository\DirectorRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-class DeleteDirectorUseCase implements UseCaseInterface
+final class DeleteDirectorUseCase implements UseCaseInterface
 {
     private DirectorRepository $repository;
 

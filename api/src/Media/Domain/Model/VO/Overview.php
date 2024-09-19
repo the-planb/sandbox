@@ -7,7 +7,7 @@ namespace App\Media\Domain\Model\VO;
 use PlanB\Type\StringValue;
 use PlanB\Validation\Traits\ValidableTrait;
 
-class Overview implements StringValue
+final class Overview implements StringValue
 {
     use ValidableTrait;
     private string $overview;
@@ -18,12 +18,12 @@ class Overview implements StringValue
         $this->overview = $overview;
     }
 
-    public function __toString(): string
+    public function getOverview(): string
     {
         return $this->overview;
     }
 
-    public function getOverview(): string
+    public function __toString(): string
     {
         return $this->overview;
     }

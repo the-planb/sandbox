@@ -8,5 +8,10 @@ export interface Movie extends BaseRecord {
   title: Media.MovieTitle
   releaseYear: Media.ReleaseYear
   director: Media.Director
+  reviews: Media.Review[]
+  genres: Media.Genre[]
   overview: Media.Overview
+  classification: Media.Classification
+  raw: Media.Score
+  koko: Media.Score
 }

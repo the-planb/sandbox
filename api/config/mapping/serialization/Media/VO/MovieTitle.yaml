@@ -1,6 +1,5 @@
+---
 App\Media\Domain\Model\VO\MovieTitle:
-    attributes:
-        title:
-            groups:
-                - read
-                - write
+  attributes:
+    title:
+      groups: [read, write]

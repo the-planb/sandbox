@@ -1,10 +1,10 @@
 {
   "singular": "director",
-  "plural": "Directores",
+  "plural": "Directors",
   "label": "$t(plural)",
   "fields": {
     "name": {
-      "label": "Nombre",
+      "label": "Name",
       "placeholder": "$t(fields.name.label)",
       "column": "$t(fields.name.label)",
       "filter": "$t(fields.name.label)"

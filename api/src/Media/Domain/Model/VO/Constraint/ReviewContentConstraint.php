@@ -7,7 +7,7 @@ namespace App\Media\Domain\Model\VO\Constraint;
 use App\Media\Domain\Model\VO\ReviewContent;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 
-class ReviewContentConstraint extends Compound
+final class ReviewContentConstraint extends Compound
 {
     public function getClassName(): string
     {

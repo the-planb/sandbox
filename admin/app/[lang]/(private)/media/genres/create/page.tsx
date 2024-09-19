@@ -7,8 +7,7 @@ const Page = () => {
   const { Form: GenreForm } = Media.useGenreForm({
     action: 'create',
   })
-  return
-  ;<GenreForm />
+  return <GenreForm />
 }
 
 export default Page

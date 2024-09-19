@@ -8,7 +8,7 @@ use App\Media\Domain\Model\Genre;
 use App\Media\Domain\Repository\GenreRepository;
 use PlanB\UseCase\UseCaseInterface;
 
-class UpdateGenreUseCase implements UseCaseInterface
+final class UpdateGenreUseCase implements UseCaseInterface
 {
     private GenreRepository $repository;
 
@@ -21,9 +21,7 @@ class UpdateGenreUseCase implements UseCaseInterface
     {
         $genreId = $command->getId();
         $previous = $this->repository->findById($genreId);
-
         $input = $command->toArray();
-
         $genre = $previous->update(...$input);
 
         return $this->repository->save($genre);

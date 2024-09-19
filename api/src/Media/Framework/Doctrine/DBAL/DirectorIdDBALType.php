@@ -7,7 +7,7 @@ namespace App\Media\Framework\Doctrine\DBAL;
 use App\Media\Domain\Model\DirectorId;
 use PlanB\Framework\Doctrine\DBAL\Type\EntityIdType;
 
-class DirectorIdDBALType extends EntityIdType
+final class DirectorIdDBALType extends EntityIdType
 {
     public function makeFromValue(string $value): DirectorId
     {

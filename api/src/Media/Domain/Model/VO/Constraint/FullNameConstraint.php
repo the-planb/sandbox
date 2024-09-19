@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints\Collection;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Type;
 
-class FullNameConstraint extends Compound
+final class FullNameConstraint extends Compound
 {
     public function getClassName(): string
     {
@@ -31,7 +31,7 @@ class FullNameConstraint extends Compound
                         new Length(['min' => 3]),
                     ],
                 ],
-                'allowExtraFields' => false,
+                'allowExtraFields' => true,
             ]),
         ];
     }

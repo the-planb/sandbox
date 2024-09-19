@@ -10,7 +10,7 @@ use App\Media\Application\UseCase\FindById\FindDirectorById;
 use App\Media\Domain\Model\DirectorId;
 use League\Tactician\CommandBus;
 
-class FindDirectorByIdProvider implements ProviderInterface
+final class FindDirectorByIdProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
 

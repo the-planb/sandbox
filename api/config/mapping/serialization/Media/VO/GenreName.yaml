@@ -1,6 +1,5 @@
+---
 App\Media\Domain\Model\VO\GenreName:
-    attributes:
-        name:
-            groups:
-                - read
-                - write
+  attributes:
+    name:
+      groups: [read, write]

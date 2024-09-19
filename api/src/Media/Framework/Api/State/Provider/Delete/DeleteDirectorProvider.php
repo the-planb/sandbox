@@ -10,7 +10,7 @@ use App\Media\Application\UseCase\Delete\DeleteDirector;
 use App\Media\Domain\Model\DirectorId;
 use League\Tactician\CommandBus;
 
-class DeleteDirectorProvider implements ProviderInterface
+final class DeleteDirectorProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
 

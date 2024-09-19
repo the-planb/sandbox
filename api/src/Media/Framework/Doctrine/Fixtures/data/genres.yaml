@@ -1,14 +1,26 @@
--   name: Acción
--   name: Aventura
--   name: Ciencia ficción
--   name: Comedia
--   name: Drama
--   name: Fantasía
--   name: Terror
--   name: Histórico
--   name: Musical
--   name: Western
--   name: Thriller
--   name: Romance
--   name: Animación    
-
+- name: drama
+- name: comedia
+- name: acción
+- name: aventura
+- name: ciencia ficción
+- name: fantasía
+- name: terror
+- name: thriller
+- name: romance
+- name: histórico
+- name: bélico
+- name: western
+- name: policial
+- name: musical
+- name: animación
+- name: documental
+- name: deportivo
+- name: neo-noir
+- name: cyberpunk
+- name: distopía
+- name: road movie
+- name: coming-of-age
+- name: superhéroe
+- name: biográfico
+- name: psicológico
+- name: de época

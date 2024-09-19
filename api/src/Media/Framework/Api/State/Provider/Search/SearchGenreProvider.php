@@ -12,7 +12,7 @@ use League\Tactician\CommandBus;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Api\State\Pagination\CriteriaPaginator;
 
-class SearchGenreProvider implements ProviderInterface
+final class SearchGenreProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
     private GenreRepository $repository;

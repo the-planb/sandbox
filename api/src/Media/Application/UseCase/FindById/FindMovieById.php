@@ -6,7 +6,7 @@ namespace App\Media\Application\UseCase\FindById;
 
 use App\Media\Domain\Model\MovieId;
 
-class FindMovieById
+final class FindMovieById
 {
     private MovieId $id;
 

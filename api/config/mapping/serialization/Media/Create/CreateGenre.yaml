@@ -1,5 +1,0 @@
-App\Media\Application\UseCase\Create\CreateGenre:
-    attributes:
-        name:
-            groups:
-                - create.genre

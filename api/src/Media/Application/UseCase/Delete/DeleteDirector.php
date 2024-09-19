@@ -6,7 +6,7 @@ namespace App\Media\Application\UseCase\Delete;
 
 use App\Media\Domain\Model\DirectorId;
 
-class DeleteDirector
+final class DeleteDirector
 {
     private DirectorId $id;
 

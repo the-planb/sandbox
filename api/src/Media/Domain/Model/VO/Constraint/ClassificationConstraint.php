@@ -8,7 +8,7 @@ use App\Media\Domain\Model\VO\Classification;
 use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 use Symfony\Component\Validator\Constraints\Choice;
 
-class ClassificationConstraint extends Compound
+final class ClassificationConstraint extends Compound
 {
     public function getClassName(): string
     {
@@ -20,13 +20,13 @@ class ClassificationConstraint extends Compound
         return [
             new Choice([
                 'choices' => [
-                    'G',
-                    'PG',
-                    'PG_13',
-                    'R',
-                    'NC_17',
+                    'General Audiences',
+                    'Parental Guidance Suggested',
+                    'Parents Strongly Cautioned',
+                    'Restricted',
+                    'Adults Only',
                 ],
-                'message' => 'The value you selected is not a valid choice. [G|PG|PG_13|R|NC_17]',
+                'message' => "The value you selected is not a valid choice. ['General Audiences'|'Parental Guidance Suggested'|'Parents Strongly Cautioned'|'Restricted'|'Adults Only']",
             ]),
         ];
     }

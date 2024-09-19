@@ -6,6 +6,6 @@ namespace App\Media\Domain\Model;
 
 use PlanB\Domain\Model\EntityId;
 
-class DirectorId extends EntityId
+final class DirectorId extends EntityId
 {
 }

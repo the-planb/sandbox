@@ -18,4 +18,6 @@ interface GenreRepository
     public function findById(GenreId $genreId): ?Genre;
 
     public function match(Criteria $criteria): GenreList;
+
+    public function totalItems(Criteria $criteria = null): int;
 }

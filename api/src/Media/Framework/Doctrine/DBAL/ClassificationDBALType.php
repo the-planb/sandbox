@@ -8,7 +8,7 @@ use App\Media\Domain\Model\VO\Classification;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use PlanB\Framework\Doctrine\DBAL\Type\EnumType;
 
-class ClassificationDBALType extends EnumType
+final class ClassificationDBALType extends EnumType
 {
     public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {

@@ -12,83 +12,70 @@ use PlanB\Domain\Model\EntityId;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 
-final class ManagerRegistryDouble extends Double
+final class ManagerRegistryDouble extends TestDouble
 {
 
     private ?string $entityClass = null;
-    private ObjectProphecy|EntityManagerInterface $entityManager;
-    private ObjectProphecy|Query $query;
+    private ObjectProphecy $entityManager;
+    private ObjectProphecy $query;
 
-
-    protected function classNameOrInterface(): string
+    public function __construct(callable $callback)
     {
-        return ManagerRegistry::class;
+        parent::__construct($callback, ManagerRegistry::class);
     }
 
-    protected function configure(): void
+    protected function initialize(): void
     {
         $this->query = $this->mock(Query::class);
         $this->entityManager = $this->mock(EntityManagerInterface::class);
     }
 
-    public function withEntityClass(string $entityClass): static
+    public function withEntityClass(string $entityClass): self
     {
         $this->entityClass = $entityClass;
         return $this;
     }
 
-    public function reveal(): object
+    protected function configure(): void
     {
-        $classMetadata = $this->mock(ClassMetadata::class);
+        $classMetadata = $this->stub(ClassMetadata::class);
         $classMetadata->name = $this->entityClass;
 
-        $queryBuilder = $this->mock(QueryBuilder::class);
-        $queryBuilder
-            ->select(Argument::cetera())
-            ->willReturn($queryBuilder);
-        $queryBuilder
-            ->from(Argument::cetera())
-            ->willReturn($queryBuilder);
+        $this->query->execute(Argument::cetera())->willReturn([]);
 
-        $queryBuilder
-            ->setFirstResult(Argument::cetera())
-            ->willReturn($this->query);
-
-        $queryBuilder
-            ->setMaxResults(Argument::cetera())
-            ->willReturn($this->query);
-
-        $queryBuilder
-            ->getQuery(Argument::cetera())
-            ->willReturn($this->query);
+        $queryBuilder = $this->stub(QueryBuilder::class, fn($self) => [
+            'select' => $self,
+            'from' => $self,
+            'setFirstResult' => $this->query,
+            'setMaxResults' => $this->query,
+            'getQuery' => $this->query,
+        ]);
 
         $this->entityManager->getClassMetadata(Argument::any())
-            ->willReturn($classMetadata->reveal());
+            ->willReturn($classMetadata);
 
         $this->entityManager->createQueryBuilder(Argument::any())
-            ->willReturn($queryBuilder->reveal());
+            ->willReturn($queryBuilder);
 
-        $managerRegistry = $this->mock(ManagerRegistry::class);
-        $managerRegistry->getManagerForClass($this->entityClass ?? Argument::any())
+        $this->double()->getManagerForClass($this->entityClass ?? Argument::any())
             ->willReturn($this->entityManager->reveal());
 
-        return $managerRegistry->reveal();
     }
 
-
-    public function withReference(EntityId $id, Entity $entity): static
+    public function withReference(EntityId $id, Entity $entity): self
     {
-        $this->entityManager->getReference(Argument::any(), $id)
+        $this->entityManager
+            ->getReference(Argument::any(), $id)
             ->willReturn($entity);
 
-        $this->entityManager->find(Argument::any(), $id, Argument::cetera())
+        $this->entityManager
+            ->find(Argument::any(), $id, Argument::cetera())
             ->willReturn($entity);
 
         return $this;
     }
 
-
-    public function persists(Entity $entity): static
+    public function persists(Entity $entity): self
     {
         $this->entityManager
             ->persist($entity)
@@ -96,7 +83,7 @@ final class ManagerRegistryDouble extends Double
         return $this;
     }
 
-    public function remove(Entity $entity): static
+    public function remove(Entity $entity): self
     {
         $this->withReference($entity->getId(), $entity);
         $this->entityManager
@@ -105,8 +92,7 @@ final class ManagerRegistryDouble extends Double
         return $this;
     }
 
-
-    public function totalItems(int $total): static
+    public function totalItems(int $total): self
     {
         $this->query
             ->getSingleScalarResult()
@@ -122,10 +108,5 @@ final class ManagerRegistryDouble extends Double
             ->willReturn($data);
 
         return $this;
-    }
-
-    protected function double(): ManagerRegistry
-    {
-        return $this->double;
     }
 }

@@ -12,7 +12,7 @@ use League\Tactician\CommandBus;
 use PlanB\Domain\Criteria\Criteria;
 use PlanB\Framework\Api\State\Pagination\CriteriaPaginator;
 
-class SearchMovieProvider implements ProviderInterface
+final class SearchMovieProvider implements ProviderInterface
 {
     private CommandBus $commandBus;
     private MovieRepository $repository;
