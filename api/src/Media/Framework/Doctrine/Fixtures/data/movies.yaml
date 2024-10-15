@@ -1,112 +1,13 @@
--   title: La Nube Purpura
-    releaseYear: 1987
+-
+    title: ~
+    releaseYear: ~
     reviews:
-        -   review: "Una obra maestra visual que explora la soledad y la conexión humana."
-            score: 9
-        -   review: "Una película conmovedora y poética que te dejará pensando."
-            score: 8
-    overview: Un joven artista se muda a una isla remota y descubre un mundo mágico lleno de criaturas extrañas.
-    classification: 'General Audiences'
-    
-    raw: 7
-
--   title: El Silencio de los Árboles
-    releaseYear: 2012
-    reviews:
-        -   review: "Un thriller psicológico intenso y lleno de giros inesperados."
-            score: 10
-        -   review: "Una película que te mantendrá al borde del asiento hasta el final."
-            score: 9
-        -   review: "Una trama compleja y bien desarrollada que te hará cuestionar todo."
-            score: 8
-    overview: Un detective investiga una serie de asesinatos en un pequeño pueblo, pero pronto se da cuenta de que hay más de lo que parece.
-    classification: 'General Audiences'
-    raw: 3
-
--   title: El Viaje del Tiempo
-    releaseYear: 2024
-    reviews:
-        -   review: "Una aventura épica que desafía las leyes de la física y el tiempo."
-            score: 7
-        -   review: "Una película visualmente impresionante con efectos especiales de última generación."
-            score: 8
-    overview: Un científico descubre una forma de viajar en el tiempo y decide cambiar el pasado, pero las consecuencias son inesperadas.
-    classification: 'General Audiences'
-    raw: 5
-
--   title: El Jardín de las Estrellas
-    releaseYear: 1992
-    reviews:
-        -   review: "Una historia de amor cósmica que te dejará sin aliento."
-            score: 7
-        -   review: "Una película visualmente impresionante con efectos especiales innovadores para su época."
-            score: 8
-    overview: Un astronauta se enamora de una inteligencia artificial a bordo de una nave espacial.
-    classification: 'General Audiences'
-    raw: 4
-
--   title: La Sombra del Gigante
-    releaseYear: 2005
-    reviews:
-        -   review: "Un thriller psicológico intenso y claustrofóbico."
-            score: 9
-        -   review: "Una película que te mantendrá en vilo hasta el último minuto."
-            score: 8
-    overview: Un escritor de terror se muda a una casa antigua y empieza a experimentar sucesos paranormales.
-    classification: 'General Audiences'
-    raw: 6
-
--   title: El Último Guerrero
-    releaseYear: 1978
-    reviews:
-        -   review: "Una película de acción épica con impresionantes escenas de lucha."
-            score: 7
-        -   review: "Un homenaje a las películas de artes marciales clásicas."
-            score: 8
-    overview: Un maestro de artes marciales debe proteger a un pueblo de un ejército invasor.
-    classification: 'General Audiences'
-    raw: 9
-
--   title: La Ciudad Perdida
-    releaseYear: 2014
-    reviews:
-        -   review: "Una aventura emocionante llena de misterios y peligros."
-            score: 6
-        -   review: "Una película ideal para pasar un rato entretenido."
-            score: 7
-    overview: Un grupo de exploradores descubre una ciudad perdida en la selva amazónica.
-    classification: 'General Audiences'
-    raw: 2
-
--   title: La Sombra del Leviatán
-    releaseYear: 1972
-    reviews:
-        -   review: "Una alegoría política perturbadora que te hará cuestionar el poder."
-            score: 9
-        -   review: "Una película con una atmósfera opresiva y una banda sonora inolvidable."
-            score: 8
-    overview: En un futuro distópico, un hombre descubre una conspiración que amenaza la libertad individual.
-    classification: 'General Audiences'
-    raw: 6
-
--   title: El Jardín de Cristal Negro
-    releaseYear: 2001
-    reviews:
-        -   review: "Una historia de amor sobrenatural ambientada en un mundo mágico."
-            score: 7
-        -   review: "Efectos visuales impresionantes que te transportarán a otro mundo."
-            score: 8
-    overview: Una joven descubre que tiene poderes mágicos y debe enfrentarse a una antigua profecía.
-    classification: 'General Audiences'
-    raw: 4
-
--   title: La Ciudad de las Nubes
-    releaseYear: 1938
-    reviews:
-        -   review: "Una película de ciencia ficción pionera que explora los límites de la imaginación."
-            score: 8
-        -   review: "Una historia conmovedora sobre la soledad y la búsqueda de la identidad."
-            score: 7
-    overview: Un inventor crea una máquina que permite a las personas viajar a las nubes y construir una nueva sociedad.
-    classification: 'General Audiences'
-    raw: 5
+        -
+            review: ~
+            score: ~
+        -
+            review: ~
+            score: ~
+    overview: ~
+    classification: []
+    raw: ~

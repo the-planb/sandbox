@@ -35,6 +35,7 @@ final class ReviewListInputNormalizer implements DenormalizerInterface, Denormal
 
     private function fromData(array $item, string $format, array $context): array|Review
     {
+        // adios
         $input = [
             'review' => $this->denormalizer->denormalize($item['review'], ReviewContent::class, $format, $context),
             'score' => $this->denormalizer->denormalize($item['score'], Score::class, $format, $context),

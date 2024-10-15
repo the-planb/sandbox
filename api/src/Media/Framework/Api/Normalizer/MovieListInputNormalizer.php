@@ -40,6 +40,7 @@ final class MovieListInputNormalizer implements DenormalizerInterface, Denormali
 
     private function fromData(array $item, string $format, array $context): array|Movie
     {
+        // adios
         $input = [
             'title' => $this->denormalizer->denormalize($item['title'], MovieTitle::class, $format, $context),
             'releaseYear' => $this->denormalizer->denormalize($item['releaseYear'], ReleaseYear::class, $format, $context),
@@ -58,7 +59,7 @@ final class MovieListInputNormalizer implements DenormalizerInterface, Denormali
         return $input;
     }
 
-    public function supportsDenormalization(mixed $data, string $type, string $format = null): bool
+    public function supportsDenormalization(mixed $data, string $type, string $format = null)
     {
         return MovieListInput::class === $type and is_array($data);
     }

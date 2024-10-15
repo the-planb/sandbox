@@ -5,7 +5,7 @@
     <field name="title" type="Media.MovieTitle"/>
     <field name="releaseYear" type="Media.ReleaseYear"/>
     <field name="overview" type="Media.Overview"/>
-    <field name="classification" type="Media.Classification" nullable="true"/>
+    <field name="classification" type="Media.Classification"/>
     <field name="raw" type="Media.Score"/>
     <field name="koko" type="Media.Score"/>
     <many-to-one field="director" target-entity="App\Media\Domain\Model\Director" inversed-by="movies"/>

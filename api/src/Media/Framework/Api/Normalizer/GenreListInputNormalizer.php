@@ -34,6 +34,7 @@ final class GenreListInputNormalizer implements DenormalizerInterface, Denormali
 
     private function fromData(array $item, string $format, array $context): array|Genre
     {
+        // adios
         $input = [
             'name' => $this->denormalizer->denormalize($item['name'], GenreName::class, $format, $context),
         ];

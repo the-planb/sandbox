@@ -18,7 +18,7 @@ final class GenreNameConstraint extends Compound
     public function getConstraints(array $options): array
     {
         return [
-            new Length(['min' => 3]),
+            new Length(['min' => 5]),
         ];
     }
 }

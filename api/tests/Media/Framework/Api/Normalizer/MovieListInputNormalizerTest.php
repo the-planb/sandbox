@@ -64,6 +64,7 @@ final class MovieListInputNormalizerTest extends TestCase
 
         $denormalizer = new MovieListInputNormalizer();
         $denormalizer->setDenormalizer($this->denormalizer);
+
         $list = $denormalizer->denormalize([
             [
                 '@id' => $iri,

@@ -26,7 +26,6 @@ final class UpdateMovieUseCase implements UseCaseInterface
         $previous = $this->repository->findById($movieId);
         $input = $command->toArray();
         $movie = $previous->update(...$input);
-
         $movie->updateScore($command->raw, $this->rateCalculator);
 
         return $this->repository->save($movie);

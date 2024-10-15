@@ -34,6 +34,7 @@ final class DirectorListInputNormalizer implements DenormalizerInterface, Denorm
 
     private function fromData(array $item, string $format, array $context): array|Director
     {
+        // adios
         $input = [
             'name' => $this->denormalizer->denormalize($item['name'], FullName::class, $format, $context),
         ];

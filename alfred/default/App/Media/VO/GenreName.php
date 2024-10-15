@@ -2,7 +2,7 @@
 
 return ValueObject()
     ->with(Attribute('name', 'string')
-        ->constraint('Length', ['min' => 3])
+        ->constraint('Length', ['min' => 4])
     )
 //    ->with(ManyToOne('category', 'Entity(Category)')
 //        ->nullable()
