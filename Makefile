@@ -2,6 +2,14 @@ SHELL = bash
 .ONESHELL:
 
 ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+DATE := $(shell date +%Y-%m-%d)
+
+
+# Regla para manejar argumentos, y que no se queje de objetivos desconocidos
+%:
+	@:
+
+
 
 --prod:
 	@echo "\n\n"
@@ -140,10 +148,24 @@ tests/coverage/run:
 tests/coverage/show:
 	xdg-open api/build/reports/coverage/dashboard.html
 
-koko:
-	echo "hola esto es $(ARGS)"
+dump/database/test:
+		@mkdir -p "dump/test"
+		export PGPASSWORD=secret
 
-# Regla para manejar argumentos, y que no se queje de objetivos desconocidos
-%:
-	@:
+		pg_dump -h localhost -U api-platform -d api_test  --format=p --data-only --inserts > dump/test/$(DATE).sql;
+
+		true
+
+dump/database/dev:
+		@mkdir -p "dump/dev"
+		export PGPASSWORD=secret
+		pg_dump -h localhost -U api-platform -d api  --format=p --data-only --inserts > dump/dev/$(DATE).sql;
+#		psql -h localhost -U api-platform -d api -c '\dt' | grep public | cut -d "|" -f 2 > lista_tablas.txt
+#		tables=$$(psql -h localhost -U api-platform -d api -c '\dt' | grep public | cut -d "|" -f 2)
+#
+#		for tabla in $$tables ; do \
+#  		pg_dump -h localhost -U api-platform -d api -t $$tabla  --format=p --data-only --inserts > dump/dev/$$tabla.sql; \
+#		done;  \
+#		true
+
 

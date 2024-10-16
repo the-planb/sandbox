@@ -1,4 +1,78 @@
--
-    name:
-        name: ~
-        lastName: ~
+- name:
+      name: Alfred
+      lastName: Hitchcock
+- name:
+      name: Stanley
+      lastName: Kubrick
+- name:
+      name: Akira
+      lastName: Kurosawa
+- name:
+      name: Quentin
+      lastName: Tarantino
+- name:
+      name: David
+      lastName: Lynch
+- name:
+      name: Federico
+      lastName: Fellini
+- name:
+      name: Ingmar
+      lastName: Bergman
+- name:
+      name: Charlie
+      lastName: Chaplin
+- name:
+      name: Steven
+      lastName: Spielberg
+- name:
+      name: Christopher
+      lastName: Nolan
+- name:
+      name: Kathryn
+      lastName: Bigelow
+- name:
+      name: Sofia
+      lastName: Coppola
+- name:
+      name: Hayao
+      lastName: Miyazaki
+- name:
+      name: Wong
+      lastName: Kar-wai
+- name:
+      lastName: Kaurismäki
+      name: Aki
+- name:
+      name: Chantal
+      lastName: Akerman
+- name:
+      name: Agnes
+      lastName: Varda
+- name:
+      name: Spike
+      lastName: Lee
+- name:
+      name: Pedro
+      lastName: Almodóvar
+- name:
+      name: Céline
+      lastName: Sciamma
+- name:
+      name: Claire
+      lastName: Denis
+- name:
+      name: Alice
+      lastName: Rohrwacher
+- name:
+      name: Mira
+      lastName: Nair
+- name:
+      name: Julie
+      lastName: Dash
+- name:
+      name: Deepa
+      lastName: Mehta
+- name:
+      name: Lucrecia
+      lastName: Martel
