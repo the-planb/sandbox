@@ -4,19 +4,15 @@ declare(strict_types=1);
 
 namespace App\Media\Framework\Symfony\Command;
 
-use App\Media\Application\UseCase\Create\CreateMovie;
+use App\Media\Application\UseCase\Search\SearchMovie;
 use App\Media\Domain\Input\MovieInput;
-use App\Media\Domain\Model\Genre;
-use App\Media\Domain\Model\VO\GenreName;
-use App\Media\Domain\Model\VO\Overview;
-use App\Media\Domain\Model\VO\ReleaseYear;
-use App\Media\Domain\Model\VO\ReviewContent;
 use League\Tactician\CommandBus;
+use PlanB\Domain\Criteria\Criteria;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 #[AsCommand(
     name: 'app:borrame',
@@ -24,12 +20,12 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 )]
 class BorrameCommand extends Command
 {
-    private DenormalizerInterface $denormalizer;
+    private SerializerInterface $serializer;
     private CommandBus $commandBus;
 
-    public function __construct(DenormalizerInterface $denormalizer, CommandBus $commandBus)
+    public function __construct(SerializerInterface $denormalizer, CommandBus $commandBus)
     {
-        $this->denormalizer = $denormalizer;
+        $this->serializer = $denormalizer;
         $this->commandBus = $commandBus;
         parent::__construct();
     }
@@ -41,12 +37,20 @@ class BorrameCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $command = $this->denormalizer->denormalize('ssss', ReviewContent::class, null, [
+        $command = new SearchMovie(Criteria::fromValues([
+            'itemsPerPage' => 1,
+        ]));
+
+        $data = $this->commandBus->handle($command);
+
+        $command = $this->serializer->serialize($data, 'jsonld', [
             'enable_max_depth' => true,
-            'groups' => ['write'],
+            'groups' => ['read'],
         ]);
 
-        dump($command);
+        echo $command;
+
+        //        dump(json_encode(json_decode($command), JSON_PRETTY_PRINT ) );
         //        $this->commandBus->handle($command);
 
         //        $genre = new Genre(new GenreName('acción'));

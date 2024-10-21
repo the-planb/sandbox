@@ -4,7 +4,7 @@ App\Media\Domain\Model\Genre:
     id:
       groups: [read]
     name:
-      groups: [read, write]
+      groups: [read, write, genre]
 
 
 App\Media\Application\UseCase\Create\CreateGenre:

@@ -2,4 +2,4 @@
 App\Media\Domain\Model\VO\GenreName:
   attributes:
     name:
-      groups: [read, write]
+      groups: [read, write, value_object]

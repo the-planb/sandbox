@@ -2,4 +2,4 @@
 App\Media\Domain\Model\VO\MovieTitle:
   attributes:
     title:
-      groups: [read, write]
+      groups: [read, write, value_object]

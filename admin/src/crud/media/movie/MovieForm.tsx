@@ -58,12 +58,12 @@ const Main = () => {
           required={false}
           className={'fullrow'}
         />
-        <Media.ClassificationField
-          name={'classification'}
-          label={t('fields.classification.label', { ns: 'media/movies' })}
-          required={false}
-          className={'fullrow'}
-        />
+        {/*<Media.ClassificationField*/}
+        {/*  name={'classification'}*/}
+        {/*  label={t('fields.classification.label', { ns: 'media/movies' })}*/}
+        {/*  required={false}*/}
+        {/*  className={'fullrow'}*/}
+        {/*/>*/}
         <Media.ScoreField
           name={'raw'}
           label={t('fields.raw.label', { ns: 'media/movies' })}

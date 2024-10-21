@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace PlanB\Framework\Testing;
 
-use BackedEnum;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 use stdClass;
@@ -11,6 +10,9 @@ use UnitEnum;
 
 final class StubCreator
 {
+
+    private $callaback;
+
     private function __construct(callable $callback)
     {
         $this->callaback = $callback;

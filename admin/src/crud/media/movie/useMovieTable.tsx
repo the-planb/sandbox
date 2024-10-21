@@ -122,7 +122,7 @@ export const useMovieTable = (
         releaseYear: <Media.ReleaseYearFilter />,
         director: <Media.DirectorFilter />,
         overview: <Media.OverviewFilter />,
-        classification: <Media.ClassificationFilter />,
+        // classification: <Media.ClassificationFilter />,
         koko: <Media.ScoreFilter />,
       },
       headerButtons: (

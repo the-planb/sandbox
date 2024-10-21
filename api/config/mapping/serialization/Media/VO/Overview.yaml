@@ -2,4 +2,4 @@
 App\Media\Domain\Model\VO\Overview:
   attributes:
     overview:
-      groups: [read, write]
+      groups: [read, write, value_object]

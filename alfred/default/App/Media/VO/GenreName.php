@@ -2,6 +2,7 @@
 
 return ValueObject()
     ->with(Attribute('name', 'string')
+        ->example('comedia')
         ->constraint('Length', ['min' => 4])
     )
 //    ->with(ManyToOne('category', 'Entity(Category)')

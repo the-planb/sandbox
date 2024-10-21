@@ -4,21 +4,21 @@ App\Media\Domain\Model\Movie:
     id:
       groups: [read]
     title:
-      groups: [read, write]
+      groups: [read, write, movie]
     releaseYear:
-      groups: [read, write]
+      groups: [read, write, movie]
     director:
-      groups: [read, write]
+      groups: [read, write, movie]
     reviews:
-      groups: [read, write]
+      groups: [read, write, movie]
     genres:
-      groups: [read, write]
+      groups: [read, write, movie]
     overview:
-      groups: [read, write]
+      groups: [read, write, movie]
     classification:
-      groups: [read, write]
+      groups: [read, write, movie]
     raw:
-      groups: [read, write]
+      groups: [read, write, movie]
 
 
 App\Media\Application\UseCase\Create\CreateMovie:

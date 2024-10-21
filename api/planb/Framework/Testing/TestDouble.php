@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace PlanB\Framework\Testing;
 
-use PlanB\Framework\Testing\Traits\DoubleOfTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 /**
@@ -11,8 +10,6 @@ use Prophecy\Prophecy\ObjectProphecy;
  */
 abstract class TestDouble
 {
-    use DoubleOfTrait;
-
     private string $classOrInterface;
     private readonly ObjectProphecy $double;
     protected $callback;
@@ -51,10 +48,12 @@ abstract class TestDouble
 
     final public function reveal(): object
     {
-        $this->configure();
+        $this->finalize();
         return $this->double->reveal();
     }
 
-    abstract protected function configure(): void;
+    protected function finalize(): void
+    {
+    }
 
 }

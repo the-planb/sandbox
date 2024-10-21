@@ -5,7 +5,7 @@
          xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          backupGlobals="false"
          colors="true"
-         bootstrap="config/bootstrap.php"
+         bootstrap="tests/bootstrap.php"
          convertDeprecationsToExceptions="false"
          testdox="true"
 >
@@ -44,7 +44,7 @@
 
     <extensions>
         <extension class="PlanB\Testing\PhpUnit\Hook\BypassFinalHook"/>
-<!--        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension"/>-->
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension"/>
     </extensions>
 
 </phpunit>

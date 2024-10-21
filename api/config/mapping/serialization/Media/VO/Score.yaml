@@ -2,4 +2,4 @@
 App\Media\Domain\Model\VO\Score:
   attributes:
     score:
-      groups: [read, write]
+      groups: [read, write, value_object]

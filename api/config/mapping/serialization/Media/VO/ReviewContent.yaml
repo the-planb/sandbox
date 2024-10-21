@@ -2,4 +2,4 @@
 App\Media\Domain\Model\VO\ReviewContent:
   attributes:
     content:
-      groups: [read, write]
+      groups: [read, write, value_object]

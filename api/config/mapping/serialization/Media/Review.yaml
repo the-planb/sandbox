@@ -4,8 +4,8 @@ App\Media\Domain\Model\Review:
     id:
       groups: [read]
     review:
-      groups: [read, write]
+      groups: [read, write, review, movie]
     score:
-      groups: [read, write]
+      groups: [read, write, review, movie]
     movie:
       groups: [read]

@@ -7,17 +7,15 @@ namespace App\Tests\Media\Application\UseCase\Create;
 use App\Media\Application\UseCase\Create\CreateGenre;
 use App\Media\Application\UseCase\Create\CreateGenreUseCase;
 use App\Media\Domain\Model\Genre;
-use App\Media\Domain\Model\VO\GenreName;
 use App\Media\Domain\Repository\GenreRepository;
-use PHPUnit\Framework\TestCase;
+use PlanB\Framework\Testing\Test\FunctionalTest;
 use PlanB\Framework\Testing\Traits\DoublesTrait;
 use PlanB\UseCase\UseCaseInterface;
-use Prophecy\Argument;
 
 /**
  * @internal
  */
-final class CreateGenreUseCaseTest extends TestCase
+final class CreateGenreUseCaseTest extends FunctionalTest
 {
     use DoublesTrait;
 
@@ -32,23 +30,20 @@ final class CreateGenreUseCaseTest extends TestCase
 
     public function test_it_creates_a_new_genre_properly()
     {
-        $command = $this->commandDummy();
+        $itemsAfter = $this->totalItems(Genre::class);
 
-        $repository = $this->mock(GenreRepository::class);
-        $repository->save(Argument::type(Genre::class))
-            ->shouldBeCalled()
-        ;
-        $repository = $repository->reveal();
+        $this->dataLoader(Genre::class)
+            ->create()
 
-        $useCase = new CreateGenreUseCase($repository);
-        $useCase->__invoke($command);
-    }
 
-    public function commandDummy(): CreateGenre
-    {
-        $command = new CreateGenre();
-        $command->name = $this->dummy(GenreName::class);
+        $input = $this->loadData(Genre::class, 'create');
+        $command = $this->denormalize($input, CreateGenre::class);
 
-        return $command;
+        $response = $this->handle($command);
+
+        $itemsBefore = $this->totalItems(Genre::class);
+
+        $this->assertInstanceOf(Genre::class, $response);
+        $this->assertEquals($itemsBefore, $itemsAfter + 1);
     }
 }
