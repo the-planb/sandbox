@@ -8,13 +8,13 @@ use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
 
 final class MediaTestDataFixture extends UseCaseFixture
 {
-    public function loadData(): void
-    {
-        $this->loadSqlFile(__DIR__.'/sql/data_test.sql');
-    }
+	public function loadData(): void
+	{
+//		$this->loadSqlFile(__DIR__.'/sql/data_test.sql');
+	}
 
-    public function allowedEnvironments(): array
-    {
-        return ['test'];
-    }
+	public function allowedEnvironments(): array
+	{
+		return ['test'];
+	}
 }

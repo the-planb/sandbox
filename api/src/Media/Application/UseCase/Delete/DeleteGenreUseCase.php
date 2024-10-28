@@ -9,16 +9,16 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class DeleteGenreUseCase implements UseCaseInterface
 {
-    private GenreRepository $repository;
+	private GenreRepository $repository;
 
-    public function __construct(GenreRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(GenreRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(DeleteGenre $command): void
-    {
-        $genreId = $command->getId();
-        $this->repository->delete($genreId);
-    }
+	public function __invoke(DeleteGenre $command): void
+	{
+		$genreId = $command->getId();
+		$this->repository->delete($genreId);
+	}
 }

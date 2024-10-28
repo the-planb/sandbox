@@ -9,18 +9,18 @@ use App\Media\Domain\Model\VO\GenreName;
 
 class UpdateGenre
 {
-    public GenreId $id;
-    public GenreName $name;
+	public GenreId $id;
+	public GenreName $name;
 
-    public function getId(): GenreId
-    {
-        return $this->id;
-    }
+	public function getId(): GenreId
+	{
+		return $this->id;
+	}
 
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-        ];
-    }
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->name,
+		];
+	}
 }

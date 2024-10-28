@@ -12,20 +12,20 @@ use League\Tactician\CommandBus;
 
 final class FindMovieByIdProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $id = $uriVariables['id'];
-        $movieId = new MovieId($id);
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$id = $uriVariables['id'];
+		$movieId = new MovieId($id);
 
-        $command = new FindMovieById($movieId);
+		$command = new FindMovieById($movieId);
 
-        return $this->commandBus->handle($command);
-    }
+		return $this->commandBus->handle($command);
+	}
 }

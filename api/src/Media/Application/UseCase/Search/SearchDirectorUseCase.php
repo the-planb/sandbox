@@ -9,17 +9,17 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class SearchDirectorUseCase implements UseCaseInterface
 {
-    private DirectorRepository $repository;
+	private DirectorRepository $repository;
 
-    public function __construct(DirectorRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(DirectorRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(SearchDirector $command): array
-    {
-        $criteria = $command->getCriteria();
+	public function __invoke(SearchDirector $command): array
+	{
+		$criteria = $command->getCriteria();
 
-        return $this->repository->match($criteria)->toArray();
-    }
+		return $this->repository->match($criteria)->toArray();
+	}
 }

@@ -6,11 +6,6 @@
         <operations>
             <operation class="ApiPlatform\Metadata\Get" uriTemplate="/profile"
                        provider="App\Auth\Framework\Api\State\ProfileProvider">
-                <openapiContext>
-                    <values>
-                        <value name="summary">Retrieves the current user</value>
-                    </values>
-                </openapiContext>
             </operation>
             <operation class="ApiPlatform\Metadata\Get"
                        provider="App\Auth\Framework\Api\State\Provider\GetUserItemProvider">

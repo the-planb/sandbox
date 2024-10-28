@@ -13,49 +13,48 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 final class DirectorListInputNormalizer implements DenormalizerInterface, DenormalizerAwareInterface
 {
-    use DenormalizerAwareTrait;
+	use DenormalizerAwareTrait;
 
-    public function denormalize(mixed $data, string $type, string $format = null, array $context = [])
-    {
-        $input = [];
-        foreach ($data as $item) {
-            $input[] = is_string($item) ?
-                $this->fromIri($item, $format, $context) :
-                $this->fromData($item, $format, $context);
-        }
+	public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
+	{
+		$input = [];
+		foreach ($data as $item) {
+			$input[] = is_string($item) ?
+				$this->fromIri($item, $format, $context) :
+				$this->fromData($item, $format, $context);
+		}
 
-        return DirectorListInput::collect($input);
-    }
+		return DirectorListInput::collect($input);
+	}
 
-    private function fromIri(string $item, string $format, array $context): Director
-    {
-        return $this->denormalizer->denormalize($item, Director::class, $format, $context);
-    }
+	private function fromIri(string $item, string $format, array $context): Director
+	{
+		return $this->denormalizer->denormalize($item, Director::class, $format, $context);
+	}
 
-    private function fromData(array $item, string $format, array $context): array|Director
-    {
-        // adios
-        $input = [
-            'name' => $this->denormalizer->denormalize($item['name'], FullName::class, $format, $context),
-        ];
-        if (isset($item['@id'])) {
-            $entity = $this->fromIri($item['@id'], $format, $context);
+	private function fromData(array $item, string $format, array $context): array|Director
+	{
+		$input = [
+			'name' => $this->denormalizer->denormalize($item['name'], FullName::class, $format, $context),
+		];
+		if (isset($item['@id'])) {
+			$entity = $this->fromIri($item['@id'], $format, $context);
 
-            return $entity->update(...$input);
-        }
+			return $entity->update(...$input);
+		}
 
-        return $input;
-    }
+		return $input;
+	}
 
-    public function supportsDenormalization(mixed $data, string $type, string $format = null)
-    {
-        return DirectorListInput::class === $type and is_array($data);
-    }
+	public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
+	{
+		return DirectorListInput::class === $type and is_array($data);
+	}
 
-    public function getSupportedTypes(): array
-    {
-        return [
-            DirectorListInput::class => true, // Supports DirectorListInput and result is cacheable
-        ];
-    }
+	public function getSupportedTypes(?string $format = null): array
+	{
+		return [
+			DirectorListInput::class => true, // Supports DirectorListInput and result is cacheable
+		];
+	}
 }

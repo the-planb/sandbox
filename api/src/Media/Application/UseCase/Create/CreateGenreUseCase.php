@@ -10,18 +10,18 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class CreateGenreUseCase implements UseCaseInterface
 {
-    private GenreRepository $repository;
+	private GenreRepository $repository;
 
-    public function __construct(GenreRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(GenreRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(CreateGenre $command): Genre
-    {
-        $input = $command->toArray();
-        $genre = new Genre(...$input);
+	public function __invoke(CreateGenre $command): Genre
+	{
+		$input = $command->toArray();
+		$genre = new Genre(...$input);
 
-        return $this->repository->save($genre);
-    }
+		return $this->repository->save($genre);
+	}
 }

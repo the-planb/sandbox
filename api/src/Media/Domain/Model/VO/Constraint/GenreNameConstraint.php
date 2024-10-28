@@ -10,15 +10,15 @@ use Symfony\Component\Validator\Constraints\Length;
 
 final class GenreNameConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return GenreName::class;
-    }
+	public function getClassName(): string
+	{
+		return GenreName::class;
+	}
 
-    public function getConstraints(array $options): array
-    {
-        return [
-            new Length(['min' => 4]),
-        ];
-    }
+	public function getConstraints(array $options): array
+	{
+		return [
+			new Length(['min' => 4]),
+		];
+	}
 }

@@ -9,16 +9,16 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class DeleteMovieUseCase implements UseCaseInterface
 {
-    private MovieRepository $repository;
+	private MovieRepository $repository;
 
-    public function __construct(MovieRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(MovieRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(DeleteMovie $command): void
-    {
-        $movieId = $command->getId();
-        $this->repository->delete($movieId);
-    }
+	public function __invoke(DeleteMovie $command): void
+	{
+		$movieId = $command->getId();
+		$this->repository->delete($movieId);
+	}
 }

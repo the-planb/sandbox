@@ -8,12 +8,12 @@ use App\Media\Domain\Model\VO\GenreName;
 
 class CreateGenre
 {
-    public GenreName $name;
+	public GenreName $name;
 
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-        ];
-    }
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->name,
+		];
+	}
 }

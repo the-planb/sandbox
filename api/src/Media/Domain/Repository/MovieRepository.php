@@ -11,13 +11,13 @@ use PlanB\Domain\Criteria\Criteria;
 
 interface MovieRepository
 {
-    public function save(Movie $movie): Movie;
+	public function save(Movie $movie): Movie;
 
-    public function delete(MovieId $movieId): void;
+	public function delete(MovieId $movieId): void;
 
-    public function findById(MovieId $movieId): ?Movie;
+	public function findById(MovieId $movieId): ?Movie;
 
-    public function match(Criteria $criteria): MovieList;
+	public function match(Criteria $criteria): MovieList;
 
-    public function totalItems(Criteria $criteria = null): int;
+	public function totalItems(Criteria $criteria = null): int;
 }

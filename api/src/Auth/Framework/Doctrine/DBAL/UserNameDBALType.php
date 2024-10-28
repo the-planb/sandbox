@@ -9,13 +9,13 @@ use PlanB\Framework\Doctrine\DBAL\Type\StringType;
 
 final class UserNameDBALType extends StringType
 {
-    public function getFQN(): string
-    {
-        return UserName::class;
-    }
+	public function getFQN(): string
+	{
+		return UserName::class;
+	}
 
-    public function getName(): string
-    {
-        return 'Auth.UserName';
-    }
+	public function getName(): string
+	{
+		return 'Auth.UserName';
+	}
 }

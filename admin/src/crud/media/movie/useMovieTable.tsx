@@ -98,15 +98,7 @@ export const useMovieTable = (
             <TableCell value={value} renderer={Media.overviewRenderer} />
           ),
         },
-        {
-          dataIndex: 'classification',
-          width: 'auto',
-          title: t('fields.classification.column', { ns: 'media/movies' }),
-          sorter: true,
-          render: (value) => (
-            <TableCell value={value} renderer={Media.classificationRenderer} />
-          ),
-        },
+
         {
           dataIndex: 'koko',
           width: 'auto',

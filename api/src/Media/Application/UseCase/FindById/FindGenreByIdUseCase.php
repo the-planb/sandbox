@@ -10,17 +10,17 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class FindGenreByIdUseCase implements UseCaseInterface
 {
-    private GenreRepository $repository;
+	private GenreRepository $repository;
 
-    public function __construct(GenreRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(GenreRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(FindGenreById $command): Genre
-    {
-        $genreId = $command->getId();
+	public function __invoke(FindGenreById $command): Genre
+	{
+		$genreId = $command->getId();
 
-        return $this->repository->findById($genreId);
-    }
+		return $this->repository->findById($genreId);
+	}
 }

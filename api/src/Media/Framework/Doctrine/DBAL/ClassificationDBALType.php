@@ -10,18 +10,18 @@ use PlanB\Framework\Doctrine\DBAL\Type\EnumType;
 
 final class ClassificationDBALType extends EnumType
 {
-    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
-    {
-        return $platform->getStringTypeDeclarationSQL($column);
-    }
+	public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
+	{
+		return $platform->getStringTypeDeclarationSQL($column);
+	}
 
-    public function getName(): string
-    {
-        return 'Media.Classification';
-    }
+	public function getName(): string
+	{
+		return 'Media.Classification';
+	}
 
-    public function getFQN(): string
-    {
-        return Classification::class;
-    }
+	public function getFQN(): string
+	{
+		return Classification::class;
+	}
 }

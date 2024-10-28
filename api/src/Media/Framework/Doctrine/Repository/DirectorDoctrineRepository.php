@@ -16,49 +16,49 @@ use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
 final class DirectorDoctrineRepository extends ServiceEntityRepository implements DirectorRepository
 {
-    private DoctrineCriteriaConverter $criteriaConverter;
+	private DoctrineCriteriaConverter $criteriaConverter;
 
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Director::class);
-        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
-            'name' => new FullNameFilter(),
-        ]);
-    }
+	public function __construct(ManagerRegistry $registry)
+	{
+		parent::__construct($registry, Director::class);
+		$this->criteriaConverter = new DoctrineCriteriaConverter($this, [
+			'name' => new FullNameFilter(),
+		]);
+	}
 
-    public function save(Director $director): Director
-    {
-        $this->_em->persist($director);
+	public function save(Director $director): Director
+	{
+		$this->_em->persist($director);
 
-        return $director;
-    }
+		return $director;
+	}
 
-    public function delete(DirectorId $directorId): void
-    {
-        $director = $this->_em->getReference(Director::class, $directorId);
-        $this->_em->remove($director);
-    }
+	public function delete(DirectorId $directorId): void
+	{
+		$director = $this->_em->getReference(Director::class, $directorId);
+		$this->_em->remove($director);
+	}
 
-    public function findById(DirectorId $directorId): ?Director
-    {
-        return $this->find($directorId);
-    }
+	public function findById(DirectorId $directorId): ?Director
+	{
+		return $this->find($directorId);
+	}
 
-    public function match(Criteria $criteria): DirectorList
-    {
-        $data = $this->criteriaConverter
-            ->match($criteria)
-            ->execute()
-        ;
+	public function match(Criteria $criteria): DirectorList
+	{
+		$data = $this->criteriaConverter
+			->match($criteria)
+			->execute()
+		;
 
-        return DirectorList::collect($data);
-    }
+		return DirectorList::collect($data);
+	}
 
-    public function totalItems(Criteria $criteria = null): int
-    {
-        return $this->criteriaConverter
-            ->count($criteria ?? Criteria::empty())
-            ->getSingleScalarResult()
-        ;
-    }
+	public function totalItems(Criteria $criteria = null): int
+	{
+		return $this->criteriaConverter
+			->count($criteria ?? Criteria::empty())
+			->getSingleScalarResult()
+		;
+	}
 }

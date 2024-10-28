@@ -10,17 +10,17 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class FindMovieByIdUseCase implements UseCaseInterface
 {
-    private MovieRepository $repository;
+	private MovieRepository $repository;
 
-    public function __construct(MovieRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(MovieRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(FindMovieById $command): Movie
-    {
-        $movieId = $command->getId();
+	public function __invoke(FindMovieById $command): Movie
+	{
+		$movieId = $command->getId();
 
-        return $this->repository->findById($movieId);
-    }
+		return $this->repository->findById($movieId);
+	}
 }

@@ -9,13 +9,13 @@ use PlanB\Framework\Doctrine\DBAL\Type\ArrayType;
 
 final class RoleListDBALType extends ArrayType
 {
-    public function getFQN(): string
-    {
-        return RoleList::class;
-    }
+	public function getFQN(): string
+	{
+		return RoleList::class;
+	}
 
-    public function getName(): string
-    {
-        return 'Auth.RoleList';
-    }
+	public function getName(): string
+	{
+		return 'Auth.RoleList';
+	}
 }

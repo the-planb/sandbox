@@ -9,10 +9,10 @@ use PlanB\Domain\Exception\IncompleteMethodException;
 
 final class RateCalculator
 {
-    public function __invoke(Score $raw): Score
-    {
-        return $raw;
+	public function __invoke(Score $raw): Score
+	{
+		return $raw;
 
-        throw IncompleteMethodException::fromMethod(__METHOD__);
-    }
+		throw IncompleteMethodException::fromMethod(__METHOD__);
+	}
 }

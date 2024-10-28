@@ -10,18 +10,18 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class CreateDirectorUseCase implements UseCaseInterface
 {
-    private DirectorRepository $repository;
+	private DirectorRepository $repository;
 
-    public function __construct(DirectorRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(DirectorRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(CreateDirector $command): Director
-    {
-        $input = $command->toArray();
-        $director = new Director(...$input);
+	public function __invoke(CreateDirector $command): Director
+	{
+		$input = $command->toArray();
+		$director = new Director(...$input);
 
-        return $this->repository->save($director);
-    }
+		return $this->repository->save($director);
+	}
 }

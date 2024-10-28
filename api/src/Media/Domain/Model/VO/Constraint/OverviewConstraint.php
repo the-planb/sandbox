@@ -10,15 +10,15 @@ use Symfony\Component\Validator\Constraints\Length;
 
 final class OverviewConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return Overview::class;
-    }
+	public function getClassName(): string
+	{
+		return Overview::class;
+	}
 
-    public function getConstraints(array $options): array
-    {
-        return [
-            new Length(['min' => 10]),
-        ];
-    }
+	public function getConstraints(array $options): array
+	{
+		return [
+			new Length(['min' => 10]),
+		];
+	}
 }

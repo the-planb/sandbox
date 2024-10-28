@@ -9,16 +9,16 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class DeleteDirectorUseCase implements UseCaseInterface
 {
-    private DirectorRepository $repository;
+	private DirectorRepository $repository;
 
-    public function __construct(DirectorRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(DirectorRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(DeleteDirector $command): void
-    {
-        $directorId = $command->getId();
-        $this->repository->delete($directorId);
-    }
+	public function __invoke(DeleteDirector $command): void
+	{
+		$directorId = $command->getId();
+		$this->repository->delete($directorId);
+	}
 }

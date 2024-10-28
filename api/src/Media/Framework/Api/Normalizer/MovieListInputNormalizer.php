@@ -19,55 +19,54 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 final class MovieListInputNormalizer implements DenormalizerInterface, DenormalizerAwareInterface
 {
-    use DenormalizerAwareTrait;
+	use DenormalizerAwareTrait;
 
-    public function denormalize(mixed $data, string $type, string $format = null, array $context = [])
-    {
-        $input = [];
-        foreach ($data as $item) {
-            $input[] = is_string($item) ?
-                $this->fromIri($item, $format, $context) :
-                $this->fromData($item, $format, $context);
-        }
+	public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
+	{
+		$input = [];
+		foreach ($data as $item) {
+			$input[] = is_string($item) ?
+				   $this->fromIri($item, $format, $context) :
+				$this->fromData($item, $format, $context);
+		}
 
-        return MovieListInput::collect($input);
-    }
+		return MovieListInput::collect($input);
+	}
 
-    private function fromIri(string $item, string $format, array $context): Movie
-    {
-        return $this->denormalizer->denormalize($item, Movie::class, $format, $context);
-    }
+	private function fromIri(string $item, string $format, array $context): Movie
+	{
+		return $this->denormalizer->denormalize($item, Movie::class, $format, $context);
+	}
 
-    private function fromData(array $item, string $format, array $context): array|Movie
-    {
-        // adios
-        $input = [
-            'title' => $this->denormalizer->denormalize($item['title'], MovieTitle::class, $format, $context),
-            'releaseYear' => $this->denormalizer->denormalize($item['releaseYear'], ReleaseYear::class, $format, $context),
-            'director' => $this->denormalizer->denormalize($item['director'], Director::class, $format, $context),
-            'reviews' => $this->denormalizer->denormalize($item['reviews'], ReviewListInput::class, $format, $context),
-            'genres' => $this->denormalizer->denormalize($item['genres'], GenreListInput::class, $format, $context),
-            'overview' => $this->denormalizer->denormalize($item['overview'], Overview::class, $format, $context),
-            'classification' => $this->denormalizer->denormalize($item['classification'], Classification::class, $format, $context),
-        ];
-        if (isset($item['@id'])) {
-            $entity = $this->fromIri($item['@id'], $format, $context);
+	private function fromData(array $item, string $format, array $context): array|Movie
+	{
+		$input = [
+			'title' => $this->denormalizer->denormalize($item['title'], MovieTitle::class, $format, $context),
+			'releaseYear' => $this->denormalizer->denormalize($item['releaseYear'], ReleaseYear::class, $format, $context),
+			'director' => $this->denormalizer->denormalize($item['director'], Director::class, $format, $context),
+			'reviews' => $this->denormalizer->denormalize($item['reviews'], ReviewListInput::class, $format, $context),
+			'genres' => $this->denormalizer->denormalize($item['genres'], GenreListInput::class, $format, $context),
+			'overview' => $this->denormalizer->denormalize($item['overview'], Overview::class, $format, $context),
+			'classification' => $this->denormalizer->denormalize($item['classification'], Classification::class, $format, $context),
+		];
+		if (isset($item['@id'])) {
+			$entity = $this->fromIri($item['@id'], $format, $context);
 
-            return $entity->update(...$input);
-        }
+			return $entity->update(...$input);
+		}
 
-        return $input;
-    }
+		return $input;
+	}
 
-    public function supportsDenormalization(mixed $data, string $type, string $format = null)
-    {
-        return MovieListInput::class === $type and is_array($data);
-    }
+	public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
+	{
+		return MovieListInput::class === $type and is_array($data);
+	}
 
-    public function getSupportedTypes(): array
-    {
-        return [
-            MovieListInput::class => true, // Supports MovieListInput and result is cacheable
-        ];
-    }
+	public function getSupportedTypes(?string $format = null): array
+	{
+		return [
+			MovieListInput::class => true, // Supports MovieListInput and result is cacheable
+		];
+	}
 }

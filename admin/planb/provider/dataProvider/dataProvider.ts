@@ -24,14 +24,14 @@ export function DataProvider(): IDataProvider {
 
       if (error) {
         return Promise.reject({
-          message: error['hydra:description'] || 'An error occurred',
+          message: error['description'] || 'An error occurred',
           statusCode: status,
         })
       }
 
       return {
-        total: data['hydra:totalItems'],
-        data: data['hydra:member'],
+        total: data['totalItems'],
+        data: data['member'],
       }
     },
     getOne: async ({ resource, id, meta = {} }) => {
@@ -44,7 +44,7 @@ export function DataProvider(): IDataProvider {
 
       if (error) {
         return Promise.reject({
-          message: error['hydra:description'] || 'An error occurred',
+          message: error['description'] || 'An error occurred',
           statusCode: status,
         })
       }
@@ -63,7 +63,7 @@ export function DataProvider(): IDataProvider {
 
       if (error) {
         return Promise.reject({
-          message: error['hydra:description'] || 'An error occurred',
+          message: error['description'] || 'An error occurred',
           statusCode: status,
         })
       }
@@ -82,7 +82,7 @@ export function DataProvider(): IDataProvider {
 
       if (error) {
         return Promise.reject({
-          message: error['hydra:description'] || 'An error occurred',
+          message: error['description'] || 'An error occurred',
           statusCode: status,
         })
       }
@@ -102,7 +102,7 @@ export function DataProvider(): IDataProvider {
 
       if (error) {
         return Promise.reject({
-          message: error['hydra:description'] || 'An error occurred',
+          message: error['description'] || 'An error occurred',
           statusCode: status,
         })
       }

@@ -8,15 +8,15 @@ use App\Media\Domain\Model\MovieId;
 
 final class DeleteMovie
 {
-    private MovieId $id;
+	private MovieId $id;
 
-    public function __construct(MovieId $id)
-    {
-        $this->id = $id;
-    }
+	public function __construct(MovieId $id)
+	{
+		$this->id = $id;
+	}
 
-    public function getId(): MovieId
-    {
-        return $this->id;
-    }
+	public function getId(): MovieId
+	{
+		return $this->id;
+	}
 }

@@ -6,13 +6,13 @@ namespace App\Media\Domain\Model\VO;
 
 enum Classification: string
 {
-    case G = 'General Audiences';
+	case G = 'General Audiences';
 
-    case PG = 'Parental Guidance Suggested';
+	case PG = 'Parental Guidance Suggested';
 
-    case PG_13 = 'Parents Strongly Cautioned';
+	case PG_13 = 'Parents Strongly Cautioned';
 
-    case R = 'Restricted';
+	case R = 'Restricted';
 
-    case NC_17 = 'Adults Only';
+	case NC_17 = 'Adults Only';
 }

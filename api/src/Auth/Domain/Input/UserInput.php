@@ -12,28 +12,28 @@ use PlanB\Domain\Input\Input;
 
 final class UserInput extends Input
 {
-    //    public ?UserId $id = null;
+	//    public ?UserId $id = null;
 
-    public UserName $name;
-    public Email $email;
-    public RoleList $roles;
-    public Password $password;
+	public UserName $name;
+	public Email $email;
+	public RoleList $roles;
+	public Password $password;
 
-    /**
-     * @throws \Exception
-     */
-    public static function make(array $data): self
-    {
-        return new self($data);
-    }
+	/**
+	 * @throws \Exception
+	 */
+	public static function make(array $data): self
+	{
+		return new self($data);
+	}
 
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-            'email' => $this->email,
-            'roles' => $this->roles,
-            'password' => $this->password,
-        ];
-    }
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->name,
+			'email' => $this->email,
+			'roles' => $this->roles,
+			'password' => $this->password,
+		];
+	}
 }

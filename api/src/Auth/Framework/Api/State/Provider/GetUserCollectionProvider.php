@@ -14,29 +14,29 @@ use PlanB\Framework\Api\State\Pagination\CriteriaPaginator;
 
 final class GetUserCollectionProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
-    private UserRepository $repository;
+	private CommandBus $commandBus;
+	private UserRepository $repository;
 
-    public function __construct(CommandBus $commandBus, UserRepository $repository)
-    {
-        $this->commandBus = $commandBus;
-        $this->repository = $repository;
-    }
+	public function __construct(CommandBus $commandBus, UserRepository $repository)
+	{
+		$this->commandBus = $commandBus;
+		$this->repository = $repository;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $filters = $context['filters'] ?? [];
-        $criteria = Criteria::fromValues($filters);
-        $pagination = $criteria->getPagination();
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$filters = $context['filters'] ?? [];
+		$criteria = Criteria::fromValues($filters);
+		$pagination = $criteria->getPagination();
 
-        $command = new SearchUser($criteria);
-        $data = $this->commandBus->handle($command);
+		$command = new SearchUser($criteria);
+		$data = $this->commandBus->handle($command);
 
-        return new CriteriaPaginator(
-            $data,
-            $pagination->getCurrentPage(),
-            $pagination->getMaxResults(),
-            $this->repository->totalItems($criteria)
-        );
-    }
+		return new CriteriaPaginator(
+			$data,
+			$pagination->getCurrentPage(),
+			$pagination->getMaxResults(),
+			$this->repository->totalItems($criteria)
+		);
+	}
 }

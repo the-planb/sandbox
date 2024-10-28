@@ -9,13 +9,13 @@ use PlanB\Framework\Doctrine\DBAL\Type\TextType;
 
 final class ReviewContentDBALType extends TextType
 {
-    public function getName(): string
-    {
-        return 'Media.ReviewContent';
-    }
+	public function getName(): string
+	{
+		return 'Media.ReviewContent';
+	}
 
-    public function getFQN(): string
-    {
-        return ReviewContent::class;
-    }
+	public function getFQN(): string
+	{
+		return ReviewContent::class;
+	}
 }

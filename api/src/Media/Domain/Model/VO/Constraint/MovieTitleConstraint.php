@@ -10,15 +10,15 @@ use Symfony\Component\Validator\Constraints\Length;
 
 final class MovieTitleConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return MovieTitle::class;
-    }
+	public function getClassName(): string
+	{
+		return MovieTitle::class;
+	}
 
-    public function getConstraints(array $options): array
-    {
-        return [
-            new Length(['min' => 3]),
-        ];
-    }
+	public function getConstraints(array $options): array
+	{
+		return [
+			new Length(['min' => 3]),
+		];
+	}
 }

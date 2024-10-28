@@ -10,26 +10,21 @@ use Symfony\Component\Yaml\Yaml;
 
 final class GenreFixture extends UseCaseFixture
 {
-    public function loadData(): void
-    {
-        $data = Yaml::parseFile(__DIR__.'/data/genres.yaml');
-        $this->createRange($data, function (array $input) {
-            $command = $this->denormalize([
-                'name' => $input['name'],
-            ], CreateGenre::class);
+	public function loadData(): void
+	{
+		$data = Yaml::parseFile(__DIR__.'/data/genres.yaml');
+		$this->createRange($data, function (array $input) {
+			$command = $this->denormalize([
+				'name' => $input['name'],
+			], CreateGenre::class);
 
-            return $this->handle($command);
-        });
-    }
+			return $this->handle($command);
+		});
+	}
 
-    public function allowedEnvironments(): array
-    {
-        return ['dev'];
-    }
-
-    public function getDependencies()
-    {
-        return [
-        ];
-    }
+	public function getDependencies()
+	{
+		return [
+		];
+	}
 }

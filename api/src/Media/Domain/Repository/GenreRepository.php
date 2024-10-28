@@ -11,13 +11,13 @@ use PlanB\Domain\Criteria\Criteria;
 
 interface GenreRepository
 {
-    public function save(Genre $genre): Genre;
+	public function save(Genre $genre): Genre;
 
-    public function delete(GenreId $genreId): void;
+	public function delete(GenreId $genreId): void;
 
-    public function findById(GenreId $genreId): ?Genre;
+	public function findById(GenreId $genreId): ?Genre;
 
-    public function match(Criteria $criteria): GenreList;
+	public function match(Criteria $criteria): GenreList;
 
-    public function totalItems(Criteria $criteria = null): int;
+	public function totalItems(Criteria $criteria = null): int;
 }

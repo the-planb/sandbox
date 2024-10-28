@@ -12,20 +12,20 @@ use League\Tactician\CommandBus;
 
 final class GetUserItemProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $id = $uriVariables['id'];
-        $userId = new UserId($id);
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$id = $uriVariables['id'];
+		$userId = new UserId($id);
 
-        $command = new FindUserById($userId);
+		$command = new FindUserById($userId);
 
-        return $this->commandBus->handle($command);
-    }
+		return $this->commandBus->handle($command);
+	}
 }

@@ -155,9 +155,9 @@ api/config/mapping/validator/Media/Genre.yaml:
     hash: 5fa1d1fa600ebefa03aee3592a4dbd96
     content: 54ff80fe4edaecee10119ea8702fba95
 api/src/Media/Framework/Api/Normalizer/GenreListInputNormalizer.php:
-    timestamp: 1729016954
-    hash: 118899de2aa2b5b81e08b343643ea7f5
-    content: b582ff28cb3154be3abe57c6e544e9da
+    timestamp: 1730136884
+    hash: 92f17ae2ae6d28eb62adac66cc661c6d
+    content: b2261c690e0488f67a7f67f0ea29776e
 api/src/Media/Framework/Api/State/Processor/Create/CreateGenreProcessor.php:
     timestamp: 1728938627
     hash: baac2f12d063a2d57e1d6ff84414d830
@@ -183,9 +183,9 @@ api/src/Media/Framework/Doctrine/Repository/GenreDoctrineRepository.php:
     hash: 34ed8f1520e8142a986d4b99d4ed0bbc
     content: 8203f345ec7a19134ff0affbc6b682fc
 api/src/Media/Framework/Doctrine/Fixtures/GenreFixture.php:
-    timestamp: 1729102007
-    hash: 4727db0106897fb16a3b34c70da461a3
-    content: 2852830a6ed520ab82ac53ff6a54035b
+    timestamp: 1730136763
+    hash: e33e95795c03a3f57117c69cba93edd8
+    content: ff7512f51893640bbf2bc6cd9b3b25cd
 api/src/Media/Framework/Doctrine/Fixtures/data/genres.yaml:
     timestamp: 1728938627
     hash: 5cc8172914ca6ecb710e6c92286a4209
@@ -275,9 +275,9 @@ api/config/mapping/validator/Media/Movie.yaml:
     hash: 16afa9efa9800be57661978beab240d9
     content: 8ea58619b090ac3f8a978e0db8fdb5a4
 api/src/Media/Framework/Api/Normalizer/MovieListInputNormalizer.php:
-    timestamp: 1729016466
-    hash: 6d4f2421643f7c71aeabcd3bae872b51
-    content: d4bb67a40ecd7788d2808b502be64cb6
+    timestamp: 1730136884
+    hash: b3dceeffaec54c3377629ff0ef0c80d2
+    content: a33cd473d971489fc5e2e8d8b48b2847
 api/src/Media/Framework/Api/State/Processor/Create/CreateMovieProcessor.php:
     timestamp: 1728938627
     hash: c3c74bef71284939db3d0947a08c54d0
@@ -303,9 +303,9 @@ api/src/Media/Framework/Doctrine/Repository/MovieDoctrineRepository.php:
     hash: ee64289d4f888440ee5181136ed9e33b
     content: 9e1c4c47bc6cfe8d96e25dfa1e22eae4
 api/src/Media/Framework/Doctrine/Fixtures/MovieFixture.php:
-    timestamp: 1729102007
-    hash: d12064f919a5648359298257ed84cd1b
-    content: 97051928b6acf85fca64b4e1af248a7f
+    timestamp: 1730136763
+    hash: 4ba149b2b667376d7cbbb96b71daf82e
+    content: 530b5592ff6cd324e381e7b5a7f0831f
 api/src/Media/Framework/Doctrine/Fixtures/data/movies.yaml:
     timestamp: 1728938627
     hash: 968e966ab806bed41db4885cbc39fa56
@@ -387,9 +387,9 @@ api/config/mapping/serialization/Media/Review.yaml:
     hash: 0474d6795040f35a446534f087927d83
     content: afc6e1f9da8a53fe5d3043ed91393069
 api/src/Media/Framework/Api/Normalizer/ReviewListInputNormalizer.php:
-    timestamp: 1729016466
-    hash: ee7c2a902b04c54a3769cb58eb180c38
-    content: 3c4edea40b0da4ac52359b76dd523fbd
+    timestamp: 1730136884
+    hash: d2a4957786328ffa4e679ebaf7783ae0
+    content: 890fccc406168cdf42f9f53a06347691
 api/src/Media/Framework/Doctrine/DBAL/ReviewIdDBALType.php:
     timestamp: 1728938627
     hash: 3cea96ae2bcf33b383df66bd4f6bcfee
@@ -427,9 +427,9 @@ api/config/mapping/validator/Media/Director.yaml:
     hash: 63a5ee32dc2a60e7d3118155b1f4d2a2
     content: 7d4ec386d5b9ab95f1a1a08592414d1b
 api/src/Media/Framework/Api/Normalizer/DirectorListInputNormalizer.php:
-    timestamp: 1729016466
-    hash: 2e9fe2b59da5cacfe9c3d3c4e5833083
-    content: 56242cf36b5d946a69312af7ffd81b13
+    timestamp: 1730136884
+    hash: 825043da057fbaf42d0467fb60473178
+    content: 7d5ac7446f731904ffba87a436a2b92c
 api/src/Media/Framework/Api/State/Processor/Create/CreateDirectorProcessor.php:
     timestamp: 1728938627
     hash: 64708973df6b33b45a4628fd8c4deb35
@@ -455,9 +455,9 @@ api/src/Media/Framework/Doctrine/Repository/DirectorDoctrineRepository.php:
     hash: b34c3fbf71e2b6f5e713859030cae82a
     content: c45127423bac841f58e64c12783e4264
 api/src/Media/Framework/Doctrine/Fixtures/DirectorFixture.php:
-    timestamp: 1729102007
-    hash: 9be8401dccec0026e3db73e9e87aa0e9
-    content: e801b6fedf09daf679db3eb2d3f321f4
+    timestamp: 1730136763
+    hash: 79b6b729dd3bb27b69c58de12dc9ea22
+    content: db829455e9bea75787c73bc2c78e1be3
 api/src/Media/Framework/Doctrine/Fixtures/data/directors.yaml:
     timestamp: 1728938627
     hash: d5b7d757542d66039cf564bb0e3af7fe
@@ -526,22 +526,62 @@ api/src/Media/Domain/Repository/DirectorRepository.php:
     timestamp: 1728938627
     hash: 3b4cadeaa99207400a4ef59ea18ea5ad
     content: fc9a7df390bbb99d07029d291602da6e
-api/tests/DataFactory.php:
-    timestamp: 1729357749
-    hash: 8757f8f1aaa2068ab77fc6f156f0be4f
-    content: 807f648f5d908159a29bbe6e800aba66
-api/tests/Media/Application/UseCase/Create/CreateGenreUseCaseTest.php:
-    timestamp: 1729347193
-    hash: 7122899cca69a1f4169ae5d0fbe17ccf
-    content: bdf15c6112358aead3123d427e6cf2c3
-api/tests/Media/Application/UseCase/Create/CreateMovieUseCaseTest.php:
-    timestamp: 1729347193
-    hash: 1a8921e35d7377a428f57fbd9de16bef
-    content: aa6a671f383e2a8ce0274f43a48c0464
-api/tests/Media/Application/UseCase/Create/CreateDirectorUseCaseTest.php:
-    timestamp: 1729347193
-    hash: 3a91adf5da7fb1f1dc8e2d3142182644
-    content: 911151c293f00eb01ecc1c3687ed18b3
+api/tests/TestData/Media/Domain/Model/VO/GenreName.yml:
+    timestamp: 1729787146
+    hash: 3d4751fc974a94596acdead515e01056
+    content: 67d46e7bd29202c9a273f2dc9a2cffad
+api/tests/Unit/Media/Domain/Model/VO/GenreNameTest.php:
+    timestamp: 1729857865
+    hash: 07270c4665e8dffba0f131800f66e20c
+    content: a9ad7e69ca084559f9e0a6dcd1793c1e
+api/tests/TestData/Media/Domain/Model/VO/FullName.yml:
+    timestamp: 1729787146
+    hash: 758d886fd87ee1046b6174cd850ae405
+    content: bf4617bb384136682d68c83dae699a8e
+api/tests/Unit/Media/Domain/Model/VO/FullNameTest.php:
+    timestamp: 1729856766
+    hash: 0c4a3d6856cec3e798955cbe155d9f79
+    content: fee381ff34c996e2a6523410df8f4fd4
+api/tests/TestData/Media/Domain/Model/VO/Overview.yml:
+    timestamp: 1729787146
+    hash: 6e430588a15e7f895fff0d01c4f9e835
+    content: 6dc7fc573dd6dbaf3cf1f5c46e7e41bd
+api/tests/Unit/Media/Domain/Model/VO/OverviewTest.php:
+    timestamp: 1729857865
+    hash: bd48e88bc86f0e1e0a52ac9a80aa8637
+    content: a48f3fd8e9f9e619c40db1aebca2ec94
+api/tests/TestData/Media/Domain/Model/VO/Score.yml:
+    timestamp: 1729787146
+    hash: c3f29d9d05231231bfa063af8a09ff2e
+    content: 69707101cd8c336be97ce03fc57c96fc
+api/tests/Unit/Media/Domain/Model/VO/ScoreTest.php:
+    timestamp: 1729857865
+    hash: 9b4c2b71cfe71197d6679d991143b9fe
+    content: 2c368cc97da92f84a3e038ea88e443f6
+api/tests/TestData/Media/Domain/Model/VO/MovieTitle.yml:
+    timestamp: 1729787146
+    hash: c162c4c06eda950cab834f5c7d53916b
+    content: ad1f8fe654864381d6cd07b9fd563087
+api/tests/Unit/Media/Domain/Model/VO/MovieTitleTest.php:
+    timestamp: 1729857865
+    hash: 433b263f5b7b64e611b107613507c7d0
+    content: 6ff6c19a88becf3ce7848663fb5c706e
+api/tests/TestData/Media/Domain/Model/VO/ReleaseYear.yml:
+    timestamp: 1729787146
+    hash: b5db71000ca3e3355aacf02b1ab41705
+    content: f6d968db364dddc9e4c241bde790f719
+api/tests/Unit/Media/Domain/Model/VO/ReleaseYearTest.php:
+    timestamp: 1729857865
+    hash: 50c97d1f5460a476c88002f544943040
+    content: b4338afac9db233327ce3fe79080c959
+api/tests/TestData/Media/Domain/Model/VO/ReviewContent.yml:
+    timestamp: 1729787146
+    hash: 98583a725694d7d5a485d643e5006018
+    content: ff197a4540fa0237cecbbe07121af538
+api/tests/Unit/Media/Domain/Model/VO/ReviewContentTest.php:
+    timestamp: 1729857865
+    hash: 4f3b8ade60a516837a4044a41fcf67c6
+    content: c0757aa53b002fab56f113b4f5457db6
 admin/src/backend/index.ts:
     timestamp: 1728940720
     hash: 0d46fb9ba9e309b1d8887440a95a4e63

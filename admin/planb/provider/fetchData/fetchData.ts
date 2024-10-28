@@ -25,8 +25,8 @@ type FetchDataReturnType =
   | {
       data: undefined
       error: {
-        'hydra:description': string
-        'hydra:title': string
+        'description': string
+        'title': string
       }
       status: number
       ok: false
@@ -39,8 +39,8 @@ type FetchDataReturnType =
     }
 
 type HydraResponse = {
-  'hydra:totalItems': number
-  'hydra:member': BaseRecord[]
+  'totalItems': number
+  'member': BaseRecord[]
 }
 
 const parsePreloadHeaders = ({
@@ -53,7 +53,7 @@ const parsePreloadHeaders = ({
 
   return preload
     .map((field: string) => {
-      return collection ? `"hydra:member/*/${field}"` : `"/${field}"`
+      return collection ? `"member/*/${field}"` : `"/${field}"`
     })
     .join(',') as string
 }

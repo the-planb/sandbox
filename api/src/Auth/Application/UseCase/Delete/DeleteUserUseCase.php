@@ -9,16 +9,16 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class DeleteUserUseCase implements UseCaseInterface
 {
-    private UserRepository $repository;
+	private UserRepository $repository;
 
-    public function __construct(UserRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(UserRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(DeleteUser $command): void
-    {
-        $userId = $command->getId();
-        $this->repository->delete($userId);
-    }
+	public function __invoke(DeleteUser $command): void
+	{
+		$userId = $command->getId();
+		$this->repository->delete($userId);
+	}
 }

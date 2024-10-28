@@ -11,19 +11,19 @@ use League\Tactician\CommandBus;
 
 final class DeleteUserProcessor implements ProcessorInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): mixed
-    {
-        $userId = $context['previous_data']->getId();
+	public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): mixed
+	{
+		$userId = $context['previous_data']->getId();
 
-        $command = new DeleteUser($userId);
+		$command = new DeleteUser($userId);
 
-        return $this->commandBus->handle($command);
-    }
+		return $this->commandBus->handle($command);
+	}
 }

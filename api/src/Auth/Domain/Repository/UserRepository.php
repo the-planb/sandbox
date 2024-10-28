@@ -11,13 +11,13 @@ use PlanB\Domain\Criteria\Criteria;
 
 interface UserRepository
 {
-    public function save(User $user): User;
+	public function save(User $user): User;
 
-    public function delete(UserId $userId): void;
+	public function delete(UserId $userId): void;
 
-    public function findById(UserId $userId): ?User;
+	public function findById(UserId $userId): ?User;
 
-    public function match(Criteria $criteria): UserList;
+	public function match(Criteria $criteria): UserList;
 
-    public function totalItems(Criteria $criteria): int;
+	public function totalItems(Criteria $criteria): int;
 }

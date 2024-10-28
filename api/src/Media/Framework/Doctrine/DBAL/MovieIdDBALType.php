@@ -9,13 +9,13 @@ use PlanB\Framework\Doctrine\DBAL\Type\EntityIdType;
 
 final class MovieIdDBALType extends EntityIdType
 {
-    public function makeFromValue(string $value): MovieId
-    {
-        return new MovieId($value);
-    }
+	public function makeFromValue(string $value): MovieId
+	{
+		return new MovieId($value);
+	}
 
-    public function getName(): string
-    {
-        return 'Media.MovieId';
-    }
+	public function getName(): string
+	{
+		return 'Media.MovieId';
+	}
 }

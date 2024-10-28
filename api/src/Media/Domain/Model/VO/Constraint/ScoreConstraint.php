@@ -10,15 +10,15 @@ use Symfony\Component\Validator\Constraints\Range;
 
 final class ScoreConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return Score::class;
-    }
+	public function getClassName(): string
+	{
+		return Score::class;
+	}
 
-    public function getConstraints(array $options): array
-    {
-        return [
-            new Range(['min' => 0, 'max' => 10]),
-        ];
-    }
+	public function getConstraints(array $options): array
+	{
+		return [
+			new Range(['min' => 0, 'max' => 10]),
+		];
+	}
 }

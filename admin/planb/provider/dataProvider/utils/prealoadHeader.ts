@@ -6,7 +6,7 @@ export const PreloadHeaderCollection = (fields: string[]): HeadersInit => {
   }
 
   const Preload = fields
-    .map((field: string) => `"hydra:member/*/${field}"`)
+    .map((field: string) => `"member/*/${field}"`)
     .join(',')
 
   return { 'X-Preload': Preload }

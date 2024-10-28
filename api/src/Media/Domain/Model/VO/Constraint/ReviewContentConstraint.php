@@ -9,14 +9,14 @@ use PlanB\Framework\Symfony\Validator\Constraints\Compound;
 
 final class ReviewContentConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return ReviewContent::class;
-    }
+	public function getClassName(): string
+	{
+		return ReviewContent::class;
+	}
 
-    public function getConstraints(array $options): array
-    {
-        return [
-        ];
-    }
+	public function getConstraints(array $options): array
+	{
+		return [
+		];
+	}
 }

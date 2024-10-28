@@ -108,13 +108,7 @@ export const MovieListField = ({ name, ...props }: FormItemProps) => {
                       flex: 1,
                     }}
                   />
-                  <Media.ClassificationField
-                    name={[name, 'classification']}
-                    required={false}
-                    style={{
-                      flex: 1,
-                    }}
-                  />
+
                   <Media.ScoreField
                     name={[name, 'raw']}
                     required={false}

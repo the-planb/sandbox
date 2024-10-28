@@ -10,20 +10,20 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class UpdateGenreUseCase implements UseCaseInterface
 {
-    private GenreRepository $repository;
+	private GenreRepository $repository;
 
-    public function __construct(GenreRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(GenreRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(UpdateGenre $command): Genre
-    {
-        $genreId = $command->getId();
-        $previous = $this->repository->findById($genreId);
-        $input = $command->toArray();
-        $genre = $previous->update(...$input);
+	public function __invoke(UpdateGenre $command): Genre
+	{
+		$genreId = $command->getId();
+		$previous = $this->repository->findById($genreId);
+		$input = $command->toArray();
+		$genre = $previous->update(...$input);
 
-        return $this->repository->save($genre);
-    }
+		return $this->repository->save($genre);
+	}
 }

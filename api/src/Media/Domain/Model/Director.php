@@ -11,43 +11,43 @@ use PlanB\Domain\Model\Entity;
 
 class Director implements Entity
 {
-    private DirectorId $id;
-    private FullName $name;
-    private Collection $movies;
+	private DirectorId $id;
+	private FullName $name;
+	private Collection $movies;
 
-    public function __construct(FullName $name)
-    {
-        $this->id = new DirectorId();
-        $this->movies = new ArrayCollection();
+	public function __construct(FullName $name)
+	{
+		$this->id = new DirectorId();
+		$this->movies = new ArrayCollection();
 
-        $this->init($name);
-        // lanzar evento
-    }
+		$this->init($name);
+		// lanzar evento
+	}
 
-    public function update(FullName $name): static
-    {
-        $this->init($name);
-        // lanzar evento
-        return $this;
-    }
+	public function update(FullName $name): static
+	{
+		$this->init($name);
+		// lanzar evento
+		return $this;
+	}
 
-    private function init(FullName $name): void
-    {
-        $this->name = $name;
-    }
+	private function init(FullName $name): void
+	{
+		$this->name = $name;
+	}
 
-    public function getId(): DirectorId
-    {
-        return $this->id;
-    }
+	public function getId(): DirectorId
+	{
+		return $this->id;
+	}
 
-    public function getName(): FullName
-    {
-        return $this->name;
-    }
+	public function getName(): FullName
+	{
+		return $this->name;
+	}
 
-    public function getMovies(): MovieList
-    {
-        return MovieList::collect($this->movies);
-    }
+	public function getMovies(): MovieList
+	{
+		return MovieList::collect($this->movies);
+	}
 }

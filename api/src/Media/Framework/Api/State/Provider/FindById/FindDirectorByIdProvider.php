@@ -12,20 +12,20 @@ use League\Tactician\CommandBus;
 
 final class FindDirectorByIdProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $id = $uriVariables['id'];
-        $directorId = new DirectorId($id);
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$id = $uriVariables['id'];
+		$directorId = new DirectorId($id);
 
-        $command = new FindDirectorById($directorId);
+		$command = new FindDirectorById($directorId);
 
-        return $this->commandBus->handle($command);
-    }
+		return $this->commandBus->handle($command);
+	}
 }

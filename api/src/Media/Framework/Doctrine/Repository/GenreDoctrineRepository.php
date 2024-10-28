@@ -15,48 +15,48 @@ use PlanB\Framework\Doctrine\Criteria\DoctrineCriteriaConverter;
 
 final class GenreDoctrineRepository extends ServiceEntityRepository implements GenreRepository
 {
-    private DoctrineCriteriaConverter $criteriaConverter;
+	private DoctrineCriteriaConverter $criteriaConverter;
 
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Genre::class);
-        $this->criteriaConverter = new DoctrineCriteriaConverter($this, [
-        ]);
-    }
+	public function __construct(ManagerRegistry $registry)
+	{
+		parent::__construct($registry, Genre::class);
+		$this->criteriaConverter = new DoctrineCriteriaConverter($this, [
+		]);
+	}
 
-    public function save(Genre $genre): Genre
-    {
-        $this->_em->persist($genre);
+	public function save(Genre $genre): Genre
+	{
+		$this->_em->persist($genre);
 
-        return $genre;
-    }
+		return $genre;
+	}
 
-    public function delete(GenreId $genreId): void
-    {
-        $genre = $this->_em->getReference(Genre::class, $genreId);
-        $this->_em->remove($genre);
-    }
+	public function delete(GenreId $genreId): void
+	{
+		$genre = $this->_em->getReference(Genre::class, $genreId);
+		$this->_em->remove($genre);
+	}
 
-    public function findById(GenreId $genreId): ?Genre
-    {
-        return $this->find($genreId);
-    }
+	public function findById(GenreId $genreId): ?Genre
+	{
+		return $this->find($genreId);
+	}
 
-    public function match(Criteria $criteria): GenreList
-    {
-        $data = $this->criteriaConverter
-            ->match($criteria)
-            ->execute()
-        ;
+	public function match(Criteria $criteria): GenreList
+	{
+		$data = $this->criteriaConverter
+			->match($criteria)
+			->execute()
+		;
 
-        return GenreList::collect($data);
-    }
+		return GenreList::collect($data);
+	}
 
-    public function totalItems(Criteria $criteria = null): int
-    {
-        return $this->criteriaConverter
-            ->count($criteria ?? Criteria::empty())
-            ->getSingleScalarResult()
-        ;
-    }
+	public function totalItems(Criteria $criteria = null): int
+	{
+		return $this->criteriaConverter
+			->count($criteria ?? Criteria::empty())
+			->getSingleScalarResult()
+		;
+	}
 }

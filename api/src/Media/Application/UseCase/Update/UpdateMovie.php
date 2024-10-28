@@ -16,31 +16,31 @@ use App\Media\Domain\Model\VO\Score;
 
 class UpdateMovie
 {
-    public MovieId $id;
-    public MovieTitle $title;
-    public ReleaseYear $releaseYear;
-    public Director $director;
-    public ReviewListInput $reviews;
-    public GenreListInput $genres;
-    public Overview $overview;
-    public Classification $classification;
-    public Score $raw;
+	public MovieId $id;
+	public MovieTitle $title;
+	public ReleaseYear $releaseYear;
+	public Director $director;
+	public ReviewListInput $reviews;
+	public GenreListInput $genres;
+	public Overview $overview;
+	public Classification $classification;
+	public Score $raw;
 
-    public function getId(): MovieId
-    {
-        return $this->id;
-    }
+	public function getId(): MovieId
+	{
+		return $this->id;
+	}
 
-    public function toArray(): array
-    {
-        return [
-            'title' => $this->title,
-            'releaseYear' => $this->releaseYear,
-            'director' => $this->director,
-            'reviews' => $this->reviews,
-            'genres' => $this->genres,
-            'overview' => $this->overview,
-            'classification' => $this->classification,
-        ];
-    }
+	public function toArray(): array
+	{
+		return [
+			'title' => $this->title,
+			'releaseYear' => $this->releaseYear,
+			'director' => $this->director,
+			'reviews' => $this->reviews,
+			'genres' => $this->genres,
+			'overview' => $this->overview,
+			'classification' => $this->classification,
+		];
+	}
 }

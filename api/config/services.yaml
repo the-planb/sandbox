@@ -15,25 +15,28 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/'
-        exclude:
-            - '../src/DependencyInjection/'
+        exclude:            
             - '../src/Media/Domain/Model'
             - '../src/Auth/Domain/Model'
             - '../src/Kernel.php'
-            - '../src/Tests/'
 
     App\Auth\Framework\Api\OpenApi\JwtDecorator:
         decorates: 'api_platform.openapi.factory'
         arguments: [ '@.inner' ]
-
+        
+    PlanB\Framework\Api\State\Processor\AddHeadersProcessor:
+        decorates: "api_platform.state_processor.respond"
+        arguments:
+            $decorated: "@.inner"
+            $etag: '%api_platform.http_cache.etag%'
+            $maxAge: '%api_platform.http_cache.max_age%'
+            $sharedMaxAge: '%api_platform.http_cache.shared_max_age%'
+            $vary: '%api_platform.http_cache.vary%'
+            $public: '%api_platform.http_cache.public%'        
+    
     jwt_event_listener:
         class: App\Auth\Framework\EventListener\JWTCreatedListener
         tags:
             - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
-#
-#    serializer.normalizer.backed_enum:
-#        class: PlanB\Framework\Api\Normalizer\EnumNormalizer
-#        tags:
-#            - { name: serializer.normalizer, priority: 10 }
-    
+
 

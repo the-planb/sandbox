@@ -1,0 +1,16 @@
+PlanB\Framework\Testing\DataLoader\TestData:
+    happy:
+        input:
+            score: <numberBetween(0,10)>
+    less than 0:
+        input:
+            score: <numberBetween(-100,-1)>
+        exception:
+            className: Symfony\Component\Validator\Exception\ValidationFailedException
+            message: ''
+    greater than 10:
+        input:
+            score: <numberBetween(11,100)>
+        exception:
+            className: Symfony\Component\Validator\Exception\ValidationFailedException
+            message: ''

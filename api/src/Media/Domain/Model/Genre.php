@@ -9,36 +9,36 @@ use PlanB\Domain\Model\Entity;
 
 class Genre implements Entity
 {
-    private GenreId $id;
-    private GenreName $name;
+	private GenreId $id;
+	private GenreName $name;
 
-    public function __construct(GenreName $name)
-    {
-        $this->id = new GenreId();
+	public function __construct(GenreName $name)
+	{
+		$this->id = new GenreId();
 
-        $this->init($name);
-        // lanzar evento
-    }
+		$this->init($name);
+		// lanzar evento
+	}
 
-    public function update(GenreName $name): static
-    {
-        $this->init($name);
-        // lanzar evento
-        return $this;
-    }
+	public function update(GenreName $name): static
+	{
+		$this->init($name);
+		// lanzar evento
+		return $this;
+	}
 
-    private function init(GenreName $name): void
-    {
-        $this->name = $name;
-    }
+	private function init(GenreName $name): void
+	{
+		$this->name = $name;
+	}
 
-    public function getId(): GenreId
-    {
-        return $this->id;
-    }
+	public function getId(): GenreId
+	{
+		return $this->id;
+	}
 
-    public function getName(): GenreName
-    {
-        return $this->name;
-    }
+	public function getName(): GenreName
+	{
+		return $this->name;
+	}
 }

@@ -14,30 +14,30 @@ use PlanB\Framework\Api\State\Pagination\CriteriaPaginator;
 
 final class SearchMovieProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
-    private MovieRepository $repository;
+	private CommandBus $commandBus;
+	private MovieRepository $repository;
 
-    public function __construct(CommandBus $commandBus, MovieRepository $repository)
-    {
-        $this->commandBus = $commandBus;
-        $this->repository = $repository;
-    }
+	public function __construct(CommandBus $commandBus, MovieRepository $repository)
+	{
+		$this->commandBus = $commandBus;
+		$this->repository = $repository;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $filters = $context['filters'] ?? [];
-        $criteria = Criteria::fromValues($filters);
-        $pagination = $criteria->getPagination();
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$filters = $context['filters'] ?? [];
+		$criteria = Criteria::fromValues($filters);
+		$pagination = $criteria->getPagination();
 
-        $command = new SearchMovie($criteria);
+		$command = new SearchMovie($criteria);
 
-        $data = $this->commandBus->handle($command);
+		$data = $this->commandBus->handle($command);
 
-        return new CriteriaPaginator(
-            $data,
-            $pagination->getCurrentPage(),
-            $pagination->getMaxResults(),
-            $this->repository->totalItems($criteria)
-        );
-    }
+		return new CriteriaPaginator(
+			$data,
+			$pagination->getCurrentPage(),
+			$pagination->getMaxResults(),
+			$this->repository->totalItems($criteria)
+		);
+	}
 }

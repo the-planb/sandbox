@@ -9,18 +9,18 @@ use App\Media\Domain\Model\VO\FullName;
 
 class UpdateDirector
 {
-    public DirectorId $id;
-    public FullName $name;
+	public DirectorId $id;
+	public FullName $name;
 
-    public function getId(): DirectorId
-    {
-        return $this->id;
-    }
+	public function getId(): DirectorId
+	{
+		return $this->id;
+	}
 
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-        ];
-    }
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->name,
+		];
+	}
 }

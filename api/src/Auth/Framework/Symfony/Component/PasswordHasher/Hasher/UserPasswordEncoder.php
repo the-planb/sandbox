@@ -12,29 +12,29 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 final class UserPasswordEncoder implements PasswordEncoder
 {
-    private UserPasswordHasherInterface $hasher;
-    private Password $original;
+	private UserPasswordHasherInterface $hasher;
+	private Password $original;
 
-    public function __construct(UserPasswordHasherInterface $hasher)
-    {
-        $this->hasher = $hasher;
-    }
+	public function __construct(UserPasswordHasherInterface $hasher)
+	{
+		$this->hasher = $hasher;
+	}
 
-    public function setPassword(Password $password): self
-    {
-        $this->original = $password;
+	public function setPassword(Password $password): self
+	{
+		$this->original = $password;
 
-        return $this;
-    }
+		return $this;
+	}
 
-    public function hash(User $user): Password
-    {
-        if (!isset($this->original)) {
-            throw new PlainPasswordMissingException();
-        }
+	public function hash(User $user): Password
+	{
+		if (!isset($this->original)) {
+			throw new PlainPasswordMissingException();
+		}
 
-        $encoded = $this->hasher->hashPassword($user, (string) $this->original);
+		$encoded = $this->hasher->hashPassword($user, (string) $this->original);
 
-        return new Password($encoded);
-    }
+		return new Password($encoded);
+	}
 }

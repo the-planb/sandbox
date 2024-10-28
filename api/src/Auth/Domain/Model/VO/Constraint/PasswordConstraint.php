@@ -10,19 +10,19 @@ use Symfony\Component\Validator\Constraint;
 
 final class PasswordConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return VO_Password::class;
-    }
+	public function getClassName(): string
+	{
+		return VO_Password::class;
+	}
 
-    /**
-     * @param mixed[] $options
-     *
-     * @return Constraint[]
-     */
-    protected function getConstraints(array $options): array
-    {
-        return [
-        ];
-    }
+	/**
+	 * @param mixed[] $options
+	 *
+	 * @return Constraint[]
+	 */
+	protected function getConstraints(array $options): array
+	{
+		return [
+		];
+	}
 }

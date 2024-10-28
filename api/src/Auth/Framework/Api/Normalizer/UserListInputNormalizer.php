@@ -13,29 +13,29 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 final class UserListInputNormalizer implements DenormalizerInterface, DenormalizerAwareInterface
 {
-    use DenormalizerAwareTrait;
+	use DenormalizerAwareTrait;
 
-    public function denormalize(mixed $data, string $type, string $format = null, array $context = [])
-    {
-        $input = [];
-        foreach ($data as $item) {
-            $input[] = is_string($item) ?
-                 $this->denormalizer->denormalize($item, User::class, $format, $context) :
-                 $this->denormalizer->denormalize($item, UserInput::class, $format, $context);
-        }
+	public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
+	{
+		$input = [];
+		foreach ($data as $item) {
+			$input[] = is_string($item) ?
+				$this->denormalizer->denormalize($item, User::class, $format, $context) :
+				$this->denormalizer->denormalize($item, UserInput::class, $format, $context);
+		}
 
-        return UserListInput::collect($input);
-    }
+		return UserListInput::collect($input);
+	}
 
-    public function supportsDenormalization(mixed $data, string $type, string $format = null): bool
-    {
-        return UserListInput::class === $type and is_array($data);
-    }
+	public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
+	{
+		return UserListInput::class === $type and is_array($data);
+	}
 
-    public function getSupportedTypes(): array
-    {
-        return [
-            UserListInput::class => true, // Supports UserListInput and result is cacheable
-        ];
-    }
+	public function getSupportedTypes(?string $format): array
+	{
+		return [
+			UserListInput::class => true, // Supports UserListInput and result is cacheable
+		];
+	}
 }

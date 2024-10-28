@@ -12,26 +12,26 @@ use App\Auth\Domain\Model\VO\UserName;
 
 final class CreateUser
 {
-    private UserName $name;
-    private Email $email;
-    private RoleList $roles;
-    private Password $password;
+	private UserName $name;
+	private Email $email;
+	private RoleList $roles;
+	private Password $password;
 
-    public function __construct(UserInput $input)
-    {
-        $this->name = $input->name;
-        $this->email = $input->email;
-        $this->roles = $input->roles;
-        $this->password = $input->password;
-    }
+	public function __construct(UserInput $input)
+	{
+		$this->name = $input->name;
+		$this->email = $input->email;
+		$this->roles = $input->roles;
+		$this->password = $input->password;
+	}
 
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-            'email' => $this->email,
-            'roles' => $this->roles,
-            'password' => $this->password,
-        ];
-    }
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->name,
+			'email' => $this->email,
+			'roles' => $this->roles,
+			'password' => $this->password,
+		];
+	}
 }

@@ -11,22 +11,22 @@ use Symfony\Component\Validator\Constraints\Length;
 
 final class UserNameConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return VO_UserName::class;
-    }
+	public function getClassName(): string
+	{
+		return VO_UserName::class;
+	}
 
-    /**
-     * @param mixed[] $options
-     *
-     * @return Constraint[]
-     */
-    protected function getConstraints(array $options): array
-    {
-        return [
-            new Length([
-                'min' => 3,
-            ]),
-        ];
-    }
+	/**
+	 * @param mixed[] $options
+	 *
+	 * @return Constraint[]
+	 */
+	protected function getConstraints(array $options): array
+	{
+		return [
+			new Length([
+				'min' => 3,
+			]),
+		];
+	}
 }

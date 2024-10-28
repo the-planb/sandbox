@@ -12,19 +12,19 @@ use League\Tactician\CommandBus;
 
 final class DeleteGenreProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $genreId = new GenreId($uriVariables['id']);
-        $command = new DeleteGenre($genreId);
-        $this->commandBus->handle($command);
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$genreId = new GenreId($uriVariables['id']);
+		$command = new DeleteGenre($genreId);
+		$this->commandBus->handle($command);
 
-        return $genreId;
-    }
+		return $genreId;
+	}
 }

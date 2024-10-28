@@ -9,13 +9,13 @@ use PlanB\Framework\Doctrine\DBAL\Type\IntegerType;
 
 final class ReleaseYearDBALType extends IntegerType
 {
-    public function getName(): string
-    {
-        return 'Media.ReleaseYear';
-    }
+	public function getName(): string
+	{
+		return 'Media.ReleaseYear';
+	}
 
-    public function getFQN(): string
-    {
-        return ReleaseYear::class;
-    }
+	public function getFQN(): string
+	{
+		return ReleaseYear::class;
+	}
 }

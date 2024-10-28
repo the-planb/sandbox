@@ -13,49 +13,48 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 final class GenreListInputNormalizer implements DenormalizerInterface, DenormalizerAwareInterface
 {
-    use DenormalizerAwareTrait;
+	use DenormalizerAwareTrait;
 
-    public function denormalize(mixed $data, string $type, string $format = null, array $context = [])
-    {
-        $input = [];
-        foreach ($data as $item) {
-            $input[] = is_string($item) ?
-                $this->fromIri($item, $format, $context) :
-                $this->fromData($item, $format, $context);
-        }
+	public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
+	{
+		$input = [];
+		foreach ($data as $item) {
+			$input[] = is_string($item) ?
+				   $this->fromIri($item, $format, $context) :
+				$this->fromData($item, $format, $context);
+		}
 
-        return GenreListInput::collect($input);
-    }
+		return GenreListInput::collect($input);
+	}
 
-    private function fromIri(string $item, string $format, array $context): Genre
-    {
-        return $this->denormalizer->denormalize($item, Genre::class, $format, $context);
-    }
+	private function fromIri(string $item, string $format, array $context): Genre
+	{
+		return $this->denormalizer->denormalize($item, Genre::class, $format, $context);
+	}
 
-    private function fromData(array $item, string $format, array $context): array|Genre
-    {
-        // adios
-        $input = [
-            'name' => $this->denormalizer->denormalize($item['name'], GenreName::class, $format, $context),
-        ];
-        if (isset($item['@id'])) {
-            $entity = $this->fromIri($item['@id'], $format, $context);
+	private function fromData(array $item, string $format, array $context): array|Genre
+	{
+		$input = [
+			'name' => $this->denormalizer->denormalize($item['name'], GenreName::class, $format, $context),
+		];
+		if (isset($item['@id'])) {
+			$entity = $this->fromIri($item['@id'], $format, $context);
 
-            return $entity->update(...$input);
-        }
+			return $entity->update(...$input);
+		}
 
-        return $input;
-    }
+		return $input;
+	}
 
-    public function supportsDenormalization(mixed $data, string $type, string $format = null)
-    {
-        return GenreListInput::class === $type and is_array($data);
-    }
+	public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
+	{
+		return GenreListInput::class === $type and is_array($data);
+	}
 
-    public function getSupportedTypes(): array
-    {
-        return [
-            GenreListInput::class => true, // Supports GenreListInput and result is cacheable
-        ];
-    }
+	public function getSupportedTypes(?string $format = null): array
+	{
+		return [
+			GenreListInput::class => true, // Supports GenreListInput and result is cacheable
+		];
+	}
 }

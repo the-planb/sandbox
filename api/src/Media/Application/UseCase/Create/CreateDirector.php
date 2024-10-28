@@ -8,12 +8,12 @@ use App\Media\Domain\Model\VO\FullName;
 
 class CreateDirector
 {
-    public FullName $name;
+	public FullName $name;
 
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-        ];
-    }
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->name,
+		];
+	}
 }

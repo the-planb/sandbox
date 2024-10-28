@@ -12,20 +12,20 @@ use League\Tactician\CommandBus;
 
 final class FindGenreByIdProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $id = $uriVariables['id'];
-        $genreId = new GenreId($id);
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$id = $uriVariables['id'];
+		$genreId = new GenreId($id);
 
-        $command = new FindGenreById($genreId);
+		$command = new FindGenreById($genreId);
 
-        return $this->commandBus->handle($command);
-    }
+		return $this->commandBus->handle($command);
+	}
 }

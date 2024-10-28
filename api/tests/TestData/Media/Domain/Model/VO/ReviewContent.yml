@@ -1,0 +1,10 @@
+PlanB\Framework\Testing\DataLoader\TestData:
+    happy:
+        input:
+            content: <paragraph()>
+#    exception:
+#        input:
+#            content: ~
+#        exception:
+#            className: Symfony\Component\Validator\Exception\ValidationFailedException
+#            message: ''

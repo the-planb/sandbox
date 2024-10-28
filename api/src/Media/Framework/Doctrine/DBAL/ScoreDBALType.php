@@ -9,13 +9,13 @@ use PlanB\Framework\Doctrine\DBAL\Type\IntegerType;
 
 final class ScoreDBALType extends IntegerType
 {
-    public function getName(): string
-    {
-        return 'Media.Score';
-    }
+	public function getName(): string
+	{
+		return 'Media.Score';
+	}
 
-    public function getFQN(): string
-    {
-        return Score::class;
-    }
+	public function getFQN(): string
+	{
+		return Score::class;
+	}
 }

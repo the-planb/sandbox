@@ -10,15 +10,15 @@ use League\Tactician\CommandBus;
 
 final class CreateDirectorProcessor implements ProcessorInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): mixed
-    {
-        return $this->commandBus->handle($data);
-    }
+	public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): mixed
+	{
+		return $this->commandBus->handle($data);
+	}
 }

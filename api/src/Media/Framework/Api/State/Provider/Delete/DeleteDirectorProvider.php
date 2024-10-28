@@ -12,19 +12,19 @@ use League\Tactician\CommandBus;
 
 final class DeleteDirectorProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $directorId = new DirectorId($uriVariables['id']);
-        $command = new DeleteDirector($directorId);
-        $this->commandBus->handle($command);
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$directorId = new DirectorId($uriVariables['id']);
+		$command = new DeleteDirector($directorId);
+		$this->commandBus->handle($command);
 
-        return $directorId;
-    }
+		return $directorId;
+	}
 }

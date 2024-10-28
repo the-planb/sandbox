@@ -11,13 +11,13 @@ use PlanB\Domain\Criteria\Criteria;
 
 interface DirectorRepository
 {
-    public function save(Director $director): Director;
+	public function save(Director $director): Director;
 
-    public function delete(DirectorId $directorId): void;
+	public function delete(DirectorId $directorId): void;
 
-    public function findById(DirectorId $directorId): ?Director;
+	public function findById(DirectorId $directorId): ?Director;
 
-    public function match(Criteria $criteria): DirectorList;
+	public function match(Criteria $criteria): DirectorList;
 
-    public function totalItems(Criteria $criteria = null): int;
+	public function totalItems(Criteria $criteria = null): int;
 }

@@ -8,15 +8,15 @@ use Symfony\Bundle\SecurityBundle\Security;
 
 class ProfileProvider implements ProviderInterface
 {
-    private Security $security;
+	private Security $security;
 
-    public function __construct(Security $security)
-    {
-        $this->security = $security;
-    }
+	public function __construct(Security $security)
+	{
+		$this->security = $security;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        return $this->security->getUser();
-    }
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		return $this->security->getUser();
+	}
 }

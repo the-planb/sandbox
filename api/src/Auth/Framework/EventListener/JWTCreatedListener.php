@@ -10,25 +10,25 @@ use Symfony\Component\Security\Core\Role\RoleHierarchyInterface;
 
 final class JWTCreatedListener
 {
-    private RoleHierarchyInterface $roleHierarchy;
+	private RoleHierarchyInterface $roleHierarchy;
 
-    public function __construct(RoleHierarchyInterface $roleHierarchy)
-    {
-        $this->roleHierarchy = $roleHierarchy;
-    }
+	public function __construct(RoleHierarchyInterface $roleHierarchy)
+	{
+		$this->roleHierarchy = $roleHierarchy;
+	}
 
-    public function onJWTCreated(JWTCreatedEvent $event): void
-    {
-        $user = $event->getUser();
-        if (!$user instanceof User) {
-            return;
-        }
+	public function onJWTCreated(JWTCreatedEvent $event): void
+	{
+		$user = $event->getUser();
+		if (!$user instanceof User) {
+			return;
+		}
 
-        $data = $event->getData();
-        $data['username'] = (string) $user->getName();
-        $data['email'] = (string) $user->getEmail();
-        $data['roles'] = $this->roleHierarchy->getReachableRoleNames($data['roles']);
+		$data = $event->getData();
+		$data['username'] = (string) $user->getName();
+		$data['email'] = (string) $user->getEmail();
+		$data['roles'] = $this->roleHierarchy->getReachableRoleNames($data['roles']);
 
-        $event->setData($data);
-    }
+		$event->setData($data);
+	}
 }

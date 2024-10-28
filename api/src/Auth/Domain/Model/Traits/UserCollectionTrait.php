@@ -17,45 +17,45 @@ use PlanB\Domain\Model\EntityList;
 
 trait UserCollectionTrait
 {
-    private Collection $users;
+	private Collection $users;
 
-    public function removeUser(User $user): static
-    {
-        $this->users->removeElement($user);
+	public function removeUser(User $user): static
+	{
+		$this->users->removeElement($user);
 
-        return $this;
-    }
+		return $this;
+	}
 
-    //    public function createUser(UserName $name, Email $email, RoleList $roles, PasswordEncoder $password): static
-    //    {
-    //        $user = new User($name, $email, $roles, $password);
-    //        $this->users->add($user);
-    //
-    //        return $this;
-    //    }
+	//    public function createUser(UserName $name, Email $email, RoleList $roles, PasswordEncoder $password): static
+	//    {
+	//        $user = new User($name, $email, $roles, $password);
+	//        $this->users->add($user);
+	//
+	//        return $this;
+	//    }
 
-    public function addUser(User $user): self
-    {
-        $this->users->add($user);
+	public function addUser(User $user): self
+	{
+		$this->users->add($user);
 
-        return $this;
-    }
+		return $this;
+	}
 
-    public function getUsers(): UserList
-    {
-        return UserList::collect($this->users ?? []);
-    }
+	public function getUsers(): UserList
+	{
+		return UserList::collect($this->users ?? []);
+	}
 
-    private function userCollection(UserListInput $input): static
-    {
-        $this->users ??= new ArrayCollection();
-        $input
-            ->remove($this->removeUser(...))
+	private function userCollection(UserListInput $input): static
+	{
+		$this->users ??= new ArrayCollection();
+		$input
+			->remove($this->removeUser(...))
 //            ->create($this->createUser(...))
-            ->add($this->addUser(...))
-            ->with(EntityList::collect($this->users))
-        ;
+			->add($this->addUser(...))
+			->with(EntityList::collect($this->users))
+		;
 
-        return $this;
-    }
+		return $this;
+	}
 }

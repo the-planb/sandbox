@@ -9,17 +9,17 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class SearchGenreUseCase implements UseCaseInterface
 {
-    private GenreRepository $repository;
+	private GenreRepository $repository;
 
-    public function __construct(GenreRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(GenreRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(SearchGenre $command): array
-    {
-        $criteria = $command->getCriteria();
+	public function __invoke(SearchGenre $command): array
+	{
+		$criteria = $command->getCriteria();
 
-        return $this->repository->match($criteria)->toArray();
-    }
+		return $this->repository->match($criteria)->toArray();
+	}
 }

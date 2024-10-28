@@ -12,27 +12,27 @@ use Symfony\Component\Validator\Constraints\Type;
 
 final class FullNameConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return FullName::class;
-    }
+	public function getClassName(): string
+	{
+		return FullName::class;
+	}
 
-    public function getConstraints(array $options): array
-    {
-        return [
-            new Collection([
-                'fields' => [
-                    'name' => [
-                        new Type('string'),
-                        new Length(['min' => 3]),
-                    ],
-                    'lastName' => [
-                        new Type('string'),
-                        new Length(['min' => 3]),
-                    ],
-                ],
-                'allowExtraFields' => true,
-            ]),
-        ];
-    }
+	public function getConstraints(array $options): array
+	{
+		return [
+			new Collection([
+				'fields' => [
+					'name' => [
+						new Type('string'),
+						new Length(['min' => 3]),
+					],
+					'lastName' => [
+						new Type('string'),
+						new Length(['min' => 3]),
+					],
+				],
+				'allowExtraFields' => true,
+			]),
+		];
+	}
 }

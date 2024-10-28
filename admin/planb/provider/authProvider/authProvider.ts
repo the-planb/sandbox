@@ -18,7 +18,7 @@ export function AuthProvider(): AuthBindings {
       })
 
       if (error) {
-        return OnError(error['hydra:description'] || 'An error occurred')
+        return OnError(error['description'] || 'An error occurred')
       }
 
       return OnLogin(to)

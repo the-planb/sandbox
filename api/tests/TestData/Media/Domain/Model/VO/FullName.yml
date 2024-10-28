@@ -1,0 +1,12 @@
+PlanB\Framework\Testing\DataLoader\TestData:
+    happy:
+        input:
+            name: <regexify('\w{3,20}')>
+            lastName: <regexify('\w{3,20}')>
+    exception:
+        input:
+            name: <regexify('\w{1,2}')>
+            lastName: <regexify('\w{1,2}')>
+        exception:
+            className: Symfony\Component\Validator\Exception\ValidationFailedException
+            message: ''

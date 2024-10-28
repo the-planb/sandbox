@@ -11,23 +11,23 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class UpdateMovieUseCase implements UseCaseInterface
 {
-    private MovieRepository $repository;
-    private RateCalculator $rateCalculator;
+	private MovieRepository $repository;
+	private RateCalculator $rateCalculator;
 
-    public function __construct(MovieRepository $repository, RateCalculator $rateCalculator)
-    {
-        $this->repository = $repository;
-        $this->rateCalculator = $rateCalculator;
-    }
+	public function __construct(MovieRepository $repository, RateCalculator $rateCalculator)
+	{
+		$this->repository = $repository;
+		$this->rateCalculator = $rateCalculator;
+	}
 
-    public function __invoke(UpdateMovie $command): Movie
-    {
-        $movieId = $command->getId();
-        $previous = $this->repository->findById($movieId);
-        $input = $command->toArray();
-        $movie = $previous->update(...$input);
-        $movie->updateScore($command->raw, $this->rateCalculator);
+	public function __invoke(UpdateMovie $command): Movie
+	{
+		$movieId = $command->getId();
+		$previous = $this->repository->findById($movieId);
+		$input = $command->toArray();
+		$movie = $previous->update(...$input);
+		$movie->updateScore($command->raw, $this->rateCalculator);
 
-        return $this->repository->save($movie);
-    }
+		return $this->repository->save($movie);
+	}
 }

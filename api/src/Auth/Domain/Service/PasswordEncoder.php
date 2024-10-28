@@ -9,7 +9,7 @@ use App\Auth\Domain\Model\VO\Password;
 
 interface PasswordEncoder
 {
-    public function setPassword(Password $password): self;
+	public function setPassword(Password $password): self;
 
-    public function hash(User $user): Password;
+	public function hash(User $user): Password;
 }

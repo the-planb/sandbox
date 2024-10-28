@@ -9,17 +9,17 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class SearchUserUseCase implements UseCaseInterface
 {
-    private UserRepository $repository;
+	private UserRepository $repository;
 
-    public function __construct(UserRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(UserRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(SearchUser $command): array
-    {
-        $criteria = $command->getCriteria();
+	public function __invoke(SearchUser $command): array
+	{
+		$criteria = $command->getCriteria();
 
-        return $this->repository->match($criteria)->toArray();
-    }
+		return $this->repository->match($criteria)->toArray();
+	}
 }

@@ -1,6 +1,6 @@
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
+#kernel:
+#    resource: ../src/Kernel.php
+#    type: annotation
 
 authentication_token:
     path: /api/token/auth
@@ -15,3 +15,4 @@ token_logout:
 planb:
     resource: "@PlanBBundle/Resources/config/routes.yaml"
     prefix:   /api
+

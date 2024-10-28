@@ -1,0 +1,10 @@
+PlanB\Framework\Testing\DataLoader\TestData:
+    happy:
+        input:
+            overview: <regexify('\w{10,50}')>
+    exception:
+        input:
+            overview: <regexify('\w{0,9}')>
+        exception:
+            className: Symfony\Component\Validator\Exception\ValidationFailedException
+            message: ''

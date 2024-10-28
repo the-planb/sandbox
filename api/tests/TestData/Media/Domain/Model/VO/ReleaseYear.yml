@@ -1,0 +1,10 @@
+PlanB\Framework\Testing\DataLoader\TestData:
+    happy:
+        input:
+            year: <numberBetween(1900)>
+    exception:
+        input:
+            year: <numberBetween(0,1900)>
+        exception:
+            className: Symfony\Component\Validator\Exception\ValidationFailedException
+            message: ''

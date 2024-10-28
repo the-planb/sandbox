@@ -9,23 +9,23 @@ use PlanB\Validation\Traits\ValidableTrait;
 
 final class Password implements StringValue
 {
-    use ValidableTrait;
+	use ValidableTrait;
 
-    private string $password;
+	private string $password;
 
-    public function __construct(string $password)
-    {
-        $this->assert(password: $password);
-        $this->password = $password;
-    }
+	public function __construct(string $password)
+	{
+		$this->assert(password: $password);
+		$this->password = $password;
+	}
 
-    public function __toString(): string
-    {
-        return $this->getPassword();
-    }
+	public function __toString(): string
+	{
+		return $this->getPassword();
+	}
 
-    public function getPassword(): string
-    {
-        return $this->password;
-    }
+	public function getPassword(): string
+	{
+		return $this->password;
+	}
 }

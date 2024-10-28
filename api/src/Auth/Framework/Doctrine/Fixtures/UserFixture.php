@@ -17,29 +17,29 @@ use PlanB\Framework\Doctrine\Fixtures\UseCaseFixture;
  */
 final class UserFixture extends UseCaseFixture // implements DependentFixtureInterface
 {
-    public function loadData(): void
-    {
-        $this->createRange(['admin', 'editor', 'tester'], function (string $name) {
-            $input = UserInput::make([
-                'name' => new UserName($name),
-                'email' => new Email("{$name}@prueba.local"),
-                'roles' => RoleList::collect([strtoupper("ROLE_{$name}")]),
-                'password' => new Password($name),
-            ]);
+	public function loadData(): void
+	{
+		$this->createRange(['admin', 'editor', 'tester'], function (string $name) {
+			$input = UserInput::make([
+				'name' => new UserName($name),
+				'email' => new Email("{$name}@prueba.local"),
+				'roles' => RoleList::collect([strtoupper("ROLE_{$name}")]),
+				'password' => new Password($name),
+			]);
 
-            $command = new CreateUser($input);
+			$command = new CreateUser($input);
 
-            return $this->handle($command);
-        });
-    }
+			return $this->handle($command);
+		});
+	}
 
-    //    public function getDependencies()
-    //    {
-    //        return [OtherFixture];
-    //    }
+	//    public function getDependencies()
+	//    {
+	//        return [OtherFixture];
+	//    }
 
-    public function allowedEnvironments(): array
-    {
-        return ['dev'];
-    }
+	public function allowedEnvironments(): array
+	{
+		return ['dev'];
+	}
 }

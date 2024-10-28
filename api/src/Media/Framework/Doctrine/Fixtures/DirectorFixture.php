@@ -10,26 +10,26 @@ use Symfony\Component\Yaml\Yaml;
 
 final class DirectorFixture extends UseCaseFixture
 {
-    public function loadData(): void
-    {
-        $data = Yaml::parseFile(__DIR__.'/data/directors.yaml');
-        $this->createRange($data, function (array $input) {
-            $command = $this->denormalize([
-                'name' => $input['name'],
-            ], CreateDirector::class);
+	public function loadData(): void
+	{
+		$data = Yaml::parseFile(__DIR__.'/data/directors.yaml');
+		$this->createRange($data, function (array $input) {
+			$command = $this->denormalize([
+				'name' => $input['name'],
+			], CreateDirector::class);
 
-            return $this->handle($command);
-        });
-    }
+			return $this->handle($command);
+		});
+	}
+
+	public function getDependencies()
+	{
+		return [
+		];
+	}
 
     public function allowedEnvironments(): array
     {
-        return ['dev'];
-    }
-
-    public function getDependencies()
-    {
-        return [
-        ];
+        // TODO: Implement allowedEnvironments() method.
     }
 }

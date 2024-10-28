@@ -11,21 +11,21 @@ use Symfony\Component\Validator\Constraints\Email;
 
 final class EmailConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return VO_Email::class;
-    }
+	public function getClassName(): string
+	{
+		return VO_Email::class;
+	}
 
-    /**
-     * @param mixed[] $options
-     *
-     * @return Constraint[]
-     */
-    protected function getConstraints(array $options): array
-    {
-        return [
-            new Email([
-            ]),
-        ];
-    }
+	/**
+	 * @param mixed[] $options
+	 *
+	 * @return Constraint[]
+	 */
+	protected function getConstraints(array $options): array
+	{
+		return [
+			new Email([
+			]),
+		];
+	}
 }

@@ -10,15 +10,15 @@ use Symfony\Component\Validator\Constraints\Range;
 
 final class ReleaseYearConstraint extends Compound
 {
-    public function getClassName(): string
-    {
-        return ReleaseYear::class;
-    }
+	public function getClassName(): string
+	{
+		return ReleaseYear::class;
+	}
 
-    public function getConstraints(array $options): array
-    {
-        return [
-            new Range(['min' => 1900]),
-        ];
-    }
+	public function getConstraints(array $options): array
+	{
+		return [
+			new Range(['min' => 1900]),
+		];
+	}
 }

@@ -9,13 +9,13 @@ use PlanB\Framework\Doctrine\DBAL\Type\StringType;
 
 final class MovieTitleDBALType extends StringType
 {
-    public function getName(): string
-    {
-        return 'Media.MovieTitle';
-    }
+	public function getName(): string
+	{
+		return 'Media.MovieTitle';
+	}
 
-    public function getFQN(): string
-    {
-        return MovieTitle::class;
-    }
+	public function getFQN(): string
+	{
+		return MovieTitle::class;
+	}
 }

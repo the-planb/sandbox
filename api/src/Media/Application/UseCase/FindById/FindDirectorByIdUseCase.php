@@ -10,17 +10,17 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class FindDirectorByIdUseCase implements UseCaseInterface
 {
-    private DirectorRepository $repository;
+	private DirectorRepository $repository;
 
-    public function __construct(DirectorRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(DirectorRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(FindDirectorById $command): Director
-    {
-        $directorId = $command->getId();
+	public function __invoke(FindDirectorById $command): Director
+	{
+		$directorId = $command->getId();
 
-        return $this->repository->findById($directorId);
-    }
+		return $this->repository->findById($directorId);
+	}
 }

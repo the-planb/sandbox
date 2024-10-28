@@ -12,19 +12,19 @@ use League\Tactician\CommandBus;
 
 final class DeleteMovieProvider implements ProviderInterface
 {
-    private CommandBus $commandBus;
+	private CommandBus $commandBus;
 
-    public function __construct(CommandBus $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
+	public function __construct(CommandBus $commandBus)
+	{
+		$this->commandBus = $commandBus;
+	}
 
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {
-        $movieId = new MovieId($uriVariables['id']);
-        $command = new DeleteMovie($movieId);
-        $this->commandBus->handle($command);
+	public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
+	{
+		$movieId = new MovieId($uriVariables['id']);
+		$command = new DeleteMovie($movieId);
+		$this->commandBus->handle($command);
 
-        return $movieId;
-    }
+		return $movieId;
+	}
 }

@@ -9,17 +9,17 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class SearchMovieUseCase implements UseCaseInterface
 {
-    private MovieRepository $repository;
+	private MovieRepository $repository;
 
-    public function __construct(MovieRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(MovieRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(SearchMovie $command): array
-    {
-        $criteria = $command->getCriteria();
+	public function __invoke(SearchMovie $command): array
+	{
+		$criteria = $command->getCriteria();
 
-        return $this->repository->match($criteria)->toArray();
-    }
+		return $this->repository->match($criteria)->toArray();
+	}
 }

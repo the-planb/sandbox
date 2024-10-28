@@ -10,24 +10,24 @@ use PlanB\UseCase\UseCaseInterface;
 
 final class UpdateUserUseCase implements UseCaseInterface
 {
-    private UserRepository $repository;
+	private UserRepository $repository;
 
-    public function __construct(UserRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+	public function __construct(UserRepository $repository)
+	{
+		$this->repository = $repository;
+	}
 
-    public function __invoke(UpdateUser $command): User
-    {
-        $data = $command->toArray();
-        unset($data['password']);
+	public function __invoke(UpdateUser $command): User
+	{
+		$data = $command->toArray();
+		unset($data['password']);
 
-        $userId = $command->getId();
+		$userId = $command->getId();
 
-        $previous = $this->repository->findById($userId);
+		$previous = $this->repository->findById($userId);
 
-        $user = $previous->update(...$data);
+		$user = $previous->update(...$data);
 
-        return $this->repository->save($user);
-    }
+		return $this->repository->save($user);
+	}
 }
