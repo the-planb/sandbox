@@ -25,8 +25,8 @@ type FetchDataReturnType =
   | {
       data: undefined
       error: {
-        'description': string
-        'title': string
+        description: string
+        title: string
       }
       status: number
       ok: false
@@ -39,8 +39,8 @@ type FetchDataReturnType =
     }
 
 type HydraResponse = {
-  'totalItems': number
-  'member': BaseRecord[]
+  totalItems: number
+  member: BaseRecord[]
 }
 
 const parsePreloadHeaders = ({

@@ -5,9 +5,7 @@ export const PreloadHeaderCollection = (fields: string[]): HeadersInit => {
     return {}
   }
 
-  const Preload = fields
-    .map((field: string) => `"member/*/${field}"`)
-    .join(',')
+  const Preload = fields.map((field: string) => `"member/*/${field}"`).join(',')
 
   return { 'X-Preload': Preload }
 }

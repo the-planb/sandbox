@@ -18,7 +18,7 @@ final class ScoreTest extends TestCase
 {
 	use DataProviderTrait;
 
-	#[DataProviderExternal(\Tests\DataProvider::class, 'dataProviderMethod')]
+	#[DataProviderExternal(ScoreExample::class, 'dataSet')]
 	public function test_that_only_can_be_instantiated_with_correct_values(array $data, ?ExpectedException $expected)
 	{
 		$this->assertExpectedException($expected);

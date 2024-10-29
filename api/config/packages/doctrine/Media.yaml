@@ -1,5 +1,6 @@
 doctrine:
     orm:
+        validate_xml_mapping: true
         mappings:
             Media:
                 is_bundle: false

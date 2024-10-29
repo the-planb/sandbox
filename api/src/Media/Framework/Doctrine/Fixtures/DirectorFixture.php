@@ -28,8 +28,8 @@ final class DirectorFixture extends UseCaseFixture
 		];
 	}
 
-    public function allowedEnvironments(): array
-    {
-        // TODO: Implement allowedEnvironments() method.
-    }
+	public function allowedEnvironments(): array
+	{
+		// TODO: Implement allowedEnvironments() method.
+	}
 }

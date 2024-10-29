@@ -3,9 +3,9 @@ api/config/packages/security/role_hierarchy.yaml:
     hash: 58748d181d4d8d71fcf1d3f5eccb8a1e
     content: 54d40adabd3dde5009ab8a0937ebfaea
 api/config/packages/doctrine/Media.yaml:
-    timestamp: 1728940720
-    hash: 4cedf12f7ad9bf5e2c447c538fdf732a
-    content: 8da357cdaf9c667c3c5c793cf397c0b1
+    timestamp: 1730208695
+    hash: 41309b326f411d9a7a6192a787cb6258
+    content: a7de2977a38fea0814362722c598e650
 api/src/Media/Framework/Doctrine/Fixtures/MediaTestDataFixture.php:
     timestamp: 1729338397
     hash: 57533dffad46f7430c2f530867a6b1e2
